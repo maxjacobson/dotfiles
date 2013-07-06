@@ -1,0 +1,4 @@
+#!/usr/bin/ruby
+# encoding: UTF-8
+emoji = %w{🎈 🚽 🍆 🍆 ✊}
+print emoji[rand(emoji.length)]
