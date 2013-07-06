@@ -2,6 +2,4 @@
 
 ## todo
 
-get vim stuff working
-
-but maybe figure out how pathogen works first
+get a better sense of how pathogen works and whether that "vim-sensible" thing conflicts with the vimrc you had
