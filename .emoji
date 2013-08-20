@@ -1,4 +1,4 @@
-#!/usr/bin/ruby
+#!/usr/bin/env ruby
 # encoding: UTF-8
-emoji = %w{🎈 🚽 🍆 🍆 ✊}
-print emoji[rand(emoji.length)]
+emoji = %w{🐖 🐊 🐗 💾 💡 ☕ 🍆 🍆 🍆 🍆 🎈 👾}
+print emoji.sample
