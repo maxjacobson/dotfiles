@@ -33,7 +33,7 @@ hub clone kien/ctrlp.vim bundle/ctrlp.vim
 hub clone kchmck/vim-coffee-script bundle/vim-coffee-script/
 hub clone godlygeek/tabular bundle/tabular
 
-gem install pry rspec
+gem install pry rspec bundler
 
 if test $(which apt-get)
 then
