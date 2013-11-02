@@ -1,0 +1,36 @@
+#!/bin/sh
+
+# setup a machine for ruby hacking
+
+# get rvm, which will get its requirements
+\curl -L https://get.rvm.io | bash -s stable
+rvm requirements
+rvm install ruby-2.0.0-p247
+rm ~/.zlogin
+rm ~/.zshrc
+
+mkdir ~/bin
+
+gem install hub
+hub hub standalone > ~/bin/hub && chmod +x ~/bin/hub
+alias hub='git'
+
+git clone maxjacobson/dotfiles
+rm -rf dotfiles/.git
+rm dotfiles/README.md
+rm -rf dotfiles/scripts
+mv dotfiles/* .
+rm -rf dotfiles
+
+mkdir -p ~/.vim/autoload ~/.vim/bundle; \
+curl -Sso ~/.vim/autoload/pathogen.vim \
+    https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+
+cd ~/.vim
+git clone kien/ctrlp.vim bundle/ctrlp.vim
+git clone kchmck/vim-coffee-script bundle/vim-coffee-script/
+git clone godlygeek/tabular bundle/tabular
+
+gem install pry rspec
+
+source ~/.bash_profile

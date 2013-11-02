@@ -1,0 +1,7 @@
+alias 'g'='grep -rni --color' # recursive, numbers, case insensitive, colorful
+alias 'be'='bundle exec'
+alias 'git'='hub'
+alias 'l'='ls -lah'
+alias 'ls'='ls -G'
+alias 'puts'='less'
+alias 'irb'='pry'
