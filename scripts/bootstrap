@@ -19,7 +19,9 @@ hub clone maxjacobson/dotfiles
 rm -rf dotfiles/.git
 rm dotfiles/README.md
 rm -rf dotfiles/scripts
-mv dotfiles/* .
+
+ruby ~/dotfiles/scripts/move_dotfiles.rb
+
 rm -rf dotfiles
 
 mkdir -p ~/.vim/autoload ~/.vim/bundle; \
@@ -34,3 +36,5 @@ hub clone godlygeek/tabular bundle/tabular
 gem install pry rspec
 
 source ~/.bash_profile
+
+cd ~
