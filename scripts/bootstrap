@@ -38,4 +38,4 @@ hub clone godlygeek/tabular bundle/tabular
 gem install pry rspec bundler
 
 cd ~
-echo 'must now run: source ~/.bash_profile`
+echo 'must now run: source ~/.bash_profile'
