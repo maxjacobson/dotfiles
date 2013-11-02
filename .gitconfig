@@ -1,0 +1,13 @@
+[user]
+  name = Max Jacobson
+  email = maxwell.jacobson@gmail.com
+[alias]
+  br = branch
+  co = checkout
+  st = status
+  hist = log --pretty=format:'%h %ai | %s%d [%an]' --graph --date=short
+  l = log --pretty='[%h] [%ar] %an: %s'
+[core]
+  editor = vim
+[color]
+  ui = true
