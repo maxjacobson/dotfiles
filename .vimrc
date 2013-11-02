@@ -43,9 +43,15 @@ map k gk
 "clear search with ,/
 nmap <silent> ,/ :let@/=""<CR>
 
+"move backup files all into one place
+set backup
+set backupdir=~/.vim/backup
+set directory=~/.vim/tmp
+
 "learning from destroyallsotware
 " control l inserts a hash rockeT!!!
 imap <c-l> <space>=><space>
 " ,t runs a test file
 map ,t :w\|:!clear; rspec *spec.rb<cr>
 map ,r :w\|:!clear; ruby *.rb<cr>
+

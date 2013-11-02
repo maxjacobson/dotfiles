@@ -26,7 +26,7 @@ rm dotfiles/README.md
 ruby ~/dotfiles/scripts/move_dotfiles.rb
 rm -rf dotfiles
 
-mkdir -p ~/.vim/autoload ~/.vim/bundle; \
+mkdir -p ~/.vim/autoload ~/.vim/bundle ~/.vim/backup ~/.vim/tmp; \
 curl -Sso ~/.vim/autoload/pathogen.vim \
     https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
 
