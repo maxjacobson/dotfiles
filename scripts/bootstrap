@@ -2,6 +2,8 @@
 
 # setup a machine for ruby hacking
 
+cd ~
+
 # get rvm, which will get its requirements
 \curl -L https://get.rvm.io | bash -s stable
 
