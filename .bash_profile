@@ -1,4 +1,3 @@
-source ~/.bashrc
 source ~/.aliases
 source ~/.parse_git_branch
 source ~/.prompt

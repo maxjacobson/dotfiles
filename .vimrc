@@ -1,7 +1,5 @@
 execute pathogen#infect()
 
-
-
 " help it do the syntax recognition right
 syntax on
 filetype on
