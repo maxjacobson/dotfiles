@@ -1,5 +1,4 @@
 source ~/.aliases
-source ~/.parse_git_branch
 source ~/.prompt
 source ~/.handy_functions
 source ~/.bash-completion
