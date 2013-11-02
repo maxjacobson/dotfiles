@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-
+require 'fileutils'
 path_to_dotfiles = File.expand_path("~/dotfiles")
 dotfiles = Dir.entries(path_to_dotfiles) - ['.', '..', 'scripts']
 dotfiles.each do |dotfile|
