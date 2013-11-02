@@ -14,7 +14,7 @@ mkdir ~/bin
 
 gem install hub
 hub hub standalone > ~/bin/hub && chmod +x ~/bin/hub
-alias hub='git'
+alias 'git'='hub'
 
 git clone maxjacobson/dotfiles
 rm -rf dotfiles/.git
