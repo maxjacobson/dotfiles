@@ -18,9 +18,9 @@ hub hub standalone > ~/bin/hub && chmod +x ~/bin/hub
 hub clone maxjacobson/dotfiles
 rm -rf dotfiles/.git
 rm dotfiles/README.md
-rm -rf dotfiles/scripts
 
 ruby ~/dotfiles/scripts/move_dotfiles.rb
+rm -rf dotfiles/scripts
 
 rm -rf dotfiles
 
