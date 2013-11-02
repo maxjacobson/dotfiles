@@ -7,6 +7,7 @@
 source /home/`whoami`/.rvm/scripts/rvm
 rvm requirements
 rvm install ruby-2.0.0-p247
+rvm use 2.0.0-p247 --default
 rm ~/.zlogin
 rm ~/.zshrc
 
