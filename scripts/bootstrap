@@ -4,7 +4,9 @@
 
 # get rvm, which will get its requirements
 \curl -L https://get.rvm.io | bash -s stable
-source /home/`whoami`/.rvm/scripts/rvm
+
+source $HOME/.rvm/scripts/rvm
+
 rvm requirements
 rvm install ruby-2.0.0-p247
 rvm use 2.0.0-p247 --default
@@ -36,6 +38,11 @@ gem install pry rspec
 if test $(which apt-get)
 then
   sudo apt-get install bash-completion
+fi
+
+if test $(which brew)
+then
+  brew install bash-completion
 fi
 
 cd ~
