@@ -35,15 +35,5 @@ hub clone godlygeek/tabular bundle/tabular
 
 gem install pry rspec bundler
 
-if test $(which apt-get)
-then
-  sudo apt-get install bash-completion
-fi
-
-if test $(which brew)
-then
-  brew install bash-completion
-fi
-
 cd ~
 echo 'must now run: source ~/.bash_profile`
