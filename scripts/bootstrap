@@ -19,10 +19,7 @@ hub hub standalone > ~/bin/hub && chmod +x ~/bin/hub
 hub clone maxjacobson/dotfiles
 rm -rf dotfiles/.git
 rm dotfiles/README.md
-
 ruby ~/dotfiles/scripts/move_dotfiles.rb
-rm -rf dotfiles/scripts
-
 rm -rf dotfiles
 
 mkdir -p ~/.vim/autoload ~/.vim/bundle; \
@@ -42,4 +39,4 @@ then
 fi
 
 cd ~
-`source ~/.bash_profile`
+echo 'must now run: source ~/.bash_profile`
