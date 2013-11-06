@@ -1,7 +1,7 @@
 startup_message off
 vbell off
 
-hardstatus alwayslastline '%{= KW}[ %{C}%H %{W}][%= %{= KW}%?%-Lw%?%{c}(%{R}%n*%f%t%?(%u)%?%{c})%{W}%?%+Lw%?%?%= %{W}][%{R} %D %Y-%m-%d %{C}%C%a %{W}]'
+hardstatus alwayslastline '%{= YK}[ %{c}%H %{K}][%= %{= YK}%?%-Lw%?%{c}(%{m}%n*%f%t%?(%u)%?%{c})%{K}%?%+Lw%?%?%= %{K}][%{c} %D %Y-%m-%d %{c}%C%a %{K}]'
 
 # how many lines to remember in scrollback buffer. default is 100
 defscrollback 5000
