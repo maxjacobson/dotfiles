@@ -1,5 +1,9 @@
 execute pathogen#infect()
 
+" press jk to exit insert mode
+inoremap jk <ESC>
+let mapleader = ","
+
 " help it do the syntax recognition right
 syntax on
 filetype on
