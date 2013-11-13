@@ -1,15 +1,13 @@
 [user]
-  name = Max Jacobson
-  email = maxwell.jacobson@gmail.com
+	name = Max Jacobson
+	email = max@hardscrabble.net
 [alias]
-  br = branch
-  co = checkout
-  st = status
-  hist = log --pretty=format:'%h %ai | %s%d [%an]' --graph --date=short
-  l = log --pretty='[%h] [%ar] %an: %s'
+  br = "! git branch | cut -c 3- | selecta | xargs git checkout"
+	co = checkout
+	st = status
+	hist = log --pretty=format:'%h %ai | %s%d [%an]' --graph --date=short
+	l = log --pretty='[%h] [%ar] %an: %s'
 [core]
-  editor = vim
+	editor = vim
 [color]
-  ui = true
-[push]
-  default = matching
+	ui = true
