@@ -1,1 +1,2 @@
+#!/usr/bin/env bash
 export PS1="[\h] [\W]\$(parse_git_branch)\n\$(~/.emoji)  "

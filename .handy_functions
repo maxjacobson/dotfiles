@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # list path on multiple lines
 # via https://twitter.com/FriedDaniel/status/402108515637919745
 function path {
