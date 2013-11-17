@@ -3,7 +3,7 @@
 # list path on multiple lines
 # via https://twitter.com/FriedDaniel/status/402108515637919745
 function path {
-  echo "${PATH//:/$':\n'}"
+  echo "${PATH//:/$'\n'}"
 }
 
 # get current branch for prompt
