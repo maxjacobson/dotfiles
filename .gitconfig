@@ -4,7 +4,7 @@
 [alias]
   br = "! git branch | cut -c 3- | selecta | xargs git checkout"
 	co = checkout
-	st = status
+	st = status -sb
 	hist = log --pretty=format:'%h %ai | %s%d [%an]' --graph --date=short
 	l = log --pretty='[%h] [%ar] %an: %s'
 [core]
