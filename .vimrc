@@ -55,9 +55,9 @@ set directory=~/.vim/tmp
 "learning from destroyallsotware
 " control l inserts a hash rockeT!!!
 imap <c-l> <space>=><space>
-" ,t runs a test file
-map ,t :w\|:!clear; rspec *spec.rb<cr>
-map ,r :w\|:!clear; ruby *.rb<cr>
+
+" Run current file in ruby
+nmap <Leader>r :!ruby %<CR>
 
 " Run a given vim command on the results of fuzzy selecting from a given shell
 " command. See usage below.
