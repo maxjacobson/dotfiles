@@ -9,6 +9,7 @@ syntax on
 filetype on
 
 au BufNewFile,BufRead *.md set filetype=markdown
+au BufNewFile,BufRead *.pill set filetype=ruby
 
 " smart backspacing
 set backspace=indent,eol,start
