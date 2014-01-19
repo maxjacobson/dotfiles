@@ -1,14 +1,7 @@
-#!/usr/bin/env bash
-
-# list path on multiple lines
-# via https://twitter.com/FriedDaniel/status/402108515637919745
-function path {
-  echo "${PATH//:/$'\n'}"
-}
-
-# find routes matching the argument
-function routes {
-  rake routes | sed 's/^ *//g' | grep $1
+# open man page in vim read only mode
+# via https://twitter.com/thlorenz/status/424599639523065856
+vman () {
+  MANWIDTH=150 MANPAGER='col -bx' man $@ | vim -R -c "set ft=man" -
 }
 
 # get current branch for prompt
