@@ -81,3 +81,6 @@ endfunction
 " Fuzzy select one of those. Open the selected file with :e.
 nnoremap <c-p> :call SelectaCommand("find * -type f", "", ":e")<cr>
 
+
+set laststatus=2
+set statusline=[%f\ %l:%c]\ %{fugitive#statusline()}
