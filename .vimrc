@@ -1,5 +1,7 @@
 execute pathogen#infect()
 
+"colorscheme evening
+
 " press jk to exit insert mode
 inoremap jk <ESC>
 let mapleader = ","
@@ -62,6 +64,9 @@ map ,t :w\|:!clear; rspec *spec.rb<cr>
 " Run current file in ruby
 nmap <Leader>r :!clear; ruby %<CR>
 
+" Run current file with pepinoi
+nmap <Leader>p :!clear; xvfb-run --auto-servernum --server-num=1 --server-args="-screen 0, 1280x1024x24" bundle exec cucumber %<CR>
+
 " Run a given vim command on the results of fuzzy selecting from a given shell
 " command. See usage below.
 function! SelectaCommand(choice_command, selecta_args, vim_command)
@@ -89,4 +94,6 @@ set laststatus=2
 "%m file modified flag
 set statusline=[%f\ %l:%c]\ %{fugitive#statusline()}%m
 
+set splitright
+set splitbelow
 
