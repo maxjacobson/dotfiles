@@ -83,4 +83,10 @@ nnoremap <c-p> :call SelectaCommand("find * -type f", "", ":e")<cr>
 
 
 set laststatus=2
-set statusline=[%f\ %l:%c]\ %{fugitive#statusline()}
+"%f = file path
+"%l:%c = line and column
+"fugitive = git branch
+"%m file modified flag
+set statusline=[%f\ %l:%c]\ %{fugitive#statusline()}%m
+
+
