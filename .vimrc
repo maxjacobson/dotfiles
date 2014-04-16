@@ -12,6 +12,7 @@ filetype on
 
 au BufNewFile,BufRead *.md set filetype=markdown
 au BufNewFile,BufRead *.pill set filetype=ruby
+au BufNewFile,BufRead *.yml.example set filetype=yaml
 
 " smart backspacing
 set backspace=indent,eol,start
