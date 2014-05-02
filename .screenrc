@@ -1,8 +1,9 @@
 startup_message off
 vbell off
 
+screen -t bash 2
+screen -t git 1
 screen -t vim 0
-screen -t bash 1
 
 hardstatus alwayslastline '%{= Yk}[ %{c}%H %{k}][%= %{= Yk}%?%-Lw%?%{c}(%{m}%n*%f%t%?(%u)%?%{c})%{k}%?%+Lw%?%?%= %{k}][%{c} %c %D %Y-%m-%d %{k}]'
 # how many lines to remember in scrollback buffer. default is 100
