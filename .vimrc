@@ -59,14 +59,13 @@ set directory=~/.vim/tmp
 "learning from destroyallsotware
 " control l inserts a hash rockeT!!!
 imap <c-l> <space>=><space>
-" ,t runs a test file
-map ,t :w\|:!clear; rspec *spec.rb<cr>
 
 " Run current file in ruby
 nmap <Leader>r :!clear; ruby %<CR>
+"
+" Run current file in ruby
+nmap <Leader>p :!clear; python %<CR>
 
-" Run current file with pepinoi
-nmap <Leader>p :!clear; xvfb-run --auto-servernum --server-num=1 --server-args="-screen 0, 1280x1024x24" bundle exec cucumber %<CR>
 
 " Run a given vim command on the results of fuzzy selecting from a given shell
 " command. See usage below.
@@ -85,7 +84,7 @@ endfunction
 
 " Find all files in all non-dot directories starting in the working directory.
 " Fuzzy select one of those. Open the selected file with :e.
-nnoremap <c-p> :call SelectaCommand("find * -type f -not -path 'log/*' -not -path 'tmp/*'", "", ":e")<cr>
+nnoremap <c-p> :call SelectaCommand("find . -type f -not -path './log/*' -not -path './tmp/*' -not -path './.git/*'", "", ":e")<cr>
 
 set laststatus=2
 "%f = file path
