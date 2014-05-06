@@ -87,7 +87,6 @@ endfunction
 " Fuzzy select one of those. Open the selected file with :e.
 nnoremap <c-p> :call SelectaCommand("find * -type f -not -path 'log/*' -not -path 'tmp/*'", "", ":e")<cr>
 
-
 set laststatus=2
 "%f = file path
 "%l:%c = line and column
