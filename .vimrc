@@ -84,7 +84,7 @@ endfunction
 
 " Find all files in all non-dot directories starting in the working directory.
 " Fuzzy select one of those. Open the selected file with :e.
-nnoremap <c-p> :call SelectaCommand("find . -type f -not -path './log/*' -not -path './tmp/*' -not -path './.git/*'", "", ":e")<cr>
+nnoremap <c-p> :call SelectaCommand("find . -type f -not -path './.*/*'", "", ":e")<cr>
 
 set laststatus=2
 "%f = file path
