@@ -36,7 +36,7 @@ hub clone kchmck/vim-coffee-script bundle/vim-coffee-script/
 hub clone godlygeek/tabular bundle/tabular
 hub clone tpope/vim-fugitive bundle/vim-fugitive
 
-gem install pry rspec bundler
+gem install bundler
 
 cd ~
 echo 'must now run: source ~/.bash_profile'
