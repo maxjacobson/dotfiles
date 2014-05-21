@@ -11,7 +11,7 @@ source $HOME/.rvm/scripts/rvm
 
 rvm requirements
 rvm install ruby-2.0.0-p451
-rvm use 2.0.0-p247 --default
+rvm use 2.0.0-p451 --default
 rm ~/.zlogin
 rm ~/.zshrc
 
