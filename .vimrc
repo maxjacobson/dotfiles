@@ -99,3 +99,9 @@ set statusline=[%F\ %l:%c]\ %{fugitive#statusline()}%m
 set splitright
 set splitbelow
 
+set foldmethod=indent
+set nofoldenable
+set foldlevel=1
+set foldnestmax=10
+
+
