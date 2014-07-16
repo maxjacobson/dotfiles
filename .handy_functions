@@ -44,3 +44,7 @@ function extract () {
         echo "'$1' is not a valid file"
     fi
 }
+# remove DS_Store files
+function ds_store {
+  find . -name '.DS_Store' | xargs rm
+}
