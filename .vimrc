@@ -10,11 +10,9 @@ let mapleader = ","
 syntax on
 filetype on
 
-au BufNewFile,BufRead *.md set filetype=text
+au BufNewFile,BufRead *.md set filetype=markdown
 au BufNewFile,BufRead *.pill set filetype=ruby
-au BufNewFile,BufRead *.rabl set filetype=ruby
 au BufNewFile,BufRead *.yml.example set filetype=yaml
-au BufNewFile,BufRead *.mj set filetype=yaml
 
 " smart backspacing
 set backspace=indent,eol,start
@@ -30,6 +28,11 @@ set smartindent
 au BufRead,BufNewFile *.rb set shiftwidth=2
 au BufRead,BufNewFile *.rb set softtabstop=2
 au BufRead,BufNewFile *.rb set tabstop=2
+
+au BufRead,BufNewFile *.py set shiftwidth=2
+au BufRead,BufNewFile *.py set softtabstop=2
+au BufRead,BufNewFile *.py set tabstop=2
+
 
 set number
 set showcmd " shows commands (try `55 j` for example and look in the bottom right)
@@ -87,21 +90,20 @@ endfunction
 " Find all files and all non-dot directories
 " starting in the working directory
 " and edit the chosen thing
-nnoremap <c-p> :call SelectaCommand("find . -not -path './.*/*' -not -path './tmp/*'", "", ":e")<cr>
 
+nnoremap <c-p> :call SelectaCommand("find . -not -path './.*/*'", "", ":e")<cr>
 set laststatus=2
 "%f = file path
 "%l:%c = line and column
 "fugitive = git branch
 "%m file modified flag
-set statusline=[%F\ %l:%c]\ %{fugitive#statusline()}%m
+set statusline=[%f\ %l:%c]\ %{fugitive#statusline()}%m
 
 set splitright
 set splitbelow
 
-set foldmethod=indent
-set nofoldenable
-set foldlevel=1
-set foldnestmax=10
-
-
+" RSpec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>

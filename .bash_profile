@@ -4,8 +4,9 @@ source ~/.handy_functions
 source ~/.git-completion
 export PATH="$HOME/bin:$PATH"
 export PATH="/usr/local/share/npm/bin:$PATH"
+export EDITOR=vim
 
-
-# Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+source /usr/local/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh
+chruby 2.1.2
 
