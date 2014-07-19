@@ -3,10 +3,15 @@
 	email = max@hardscrabble.net
 [alias]
   br = "! git branch | cut -c 3- | selecta | xargs git checkout"
-	co = checkout
-	st = status -sb
-	hist = log --pretty=format:'%h %ai | %s%d [%an]' --graph --date=short
-	l = log --pretty='[%h] [%ar] %an: %s'
+  co = checkout
+  st = status
+  hist = log --pretty=format:'%h %ai | %s%d [%an]' --graph --date=short
+  l = log --pretty='[%h] [%ar] %an: %s'
+  squasher = "! git add . --all && git commit -m 'squasher' && git rebase -i HEAD~2"
+  aa = add -A
+  rc = rebase --continue
+  rs = rebase --skip
+  ra = rebase --abort
 [core]
 	editor = vim
 [color]

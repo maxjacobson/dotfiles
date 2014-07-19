@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+export PATH="$HOME/bin:$PATH"
+export EDITOR='vim'
+source ~/.aliases
+source ~/.handy_functions
+source ~/.prompt
+source ~/.git-completion

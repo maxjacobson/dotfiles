@@ -1,2 +1,9 @@
 #!/usr/bin/env bash
-export PS1="[\h] [\W]\$(parse_git_branch)\n\$(~/.emoji)  "
+
+# get current branch for prompt
+function parse_git_branch {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ [\1 branch]/'
+}
+
+export PS1="[\A] [\h] \e[0;33m[\W]\e[1;35m\$(parse_git_branch)\e[00m\n⇥ "
+
