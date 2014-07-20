@@ -1,5 +1,10 @@
 # my dotfiles
 
-mega work in progress and probably dangerous
+prerequisites: git and ruby
 
-`\curl -L https://raw.github.com/maxjacobson/dotfiles/master/scripts/bootstrap | bash -s stable`
+* `git clone git@github.com:maxjacobson/dotfiles.git`
+* `cd dotfiles`
+* `./scripts/bootstrap`
+* `cd ..`
+* `rm -rf dotfiles`
+

@@ -1,42 +1,50 @@
 #!/bin/sh
 
-# setup a machine for ruby hacking
+# assumes you already have a modern ruby installed
 
-cd ~
+# make a directory for executables if it doesn't already exist
+mkdir -p ~/bin
+# add it to the path for this session
+export PATH="$HOME/bin:$PATH"
 
-# get rvm, which will get its requirements
-\curl -L https://get.rvm.io | bash -s stable
-
-source $HOME/.rvm/scripts/rvm
-
-rvm requirements
-rvm install ruby-2.0.0-p451
-rvm use 2.0.0-p451 --default
-rm ~/.zlogin
-rm ~/.zshrc
-
-mkdir ~/bin
-
+# awesome extension for the git interface https://github.com/github/hub
+echo "Installing hub"
 gem install hub
-hub hub standalone > ~/bin/hub && chmod +x ~/bin/hub
-curl https://raw.github.com/garybernhardt/selecta/master/selecta > ~/bin/selecta && chmod +x ~/bin/selecta
+hub hub standalone > ~/bin/hub
+chmod +x ~/bin/hub
 
-hub clone maxjacobson/dotfiles
-rm -rf dotfiles/.git
-rm dotfiles/README.md
-ruby ~/dotfiles/scripts/move_dotfiles.rb
-rm -rf dotfiles
+echo "Installing git tab completion" # https://github.com/git/git/blob/master/contrib/completion/git-completion.bash
+curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash > ~/.git-completion
 
+echo "Installing selecta, the vim fuzzy file opener thing" # https://github.com/garybernhardt/selecta
+curl https://raw.github.com/garybernhardt/selecta/master/selecta > ~/bin/selecta
+chmod +x ~/bin/selecta
+
+echo "Installing pathogen, the vim plugin loader" # https://github.com/tpope/vim-pathogen
 mkdir -p ~/.vim/autoload ~/.vim/bundle ~/.vim/backup ~/.vim/tmp; \
 curl -Sso ~/.vim/autoload/pathogen.vim \
     https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
 
-cd ~/.vim
-hub clone kchmck/vim-coffee-script bundle/vim-coffee-script/
-hub clone godlygeek/tabular bundle/tabular
-hub clone tpope/vim-fugitive bundle/vim-fugitive
+echo "Installing several vim plugins"
+echo "If it's already installed, you may see a 'fatal' error message -- you'll live"
+for plugin in $(cat vim_plugins.txt); do
+  cd ~/.vim/bundle
+  hub clone $plugin
+  cd -
+done
 
-gem install bundler
+echo "Moving dotfiles into place"
+for filename in $(ls configs -A); do
+  echo $filename
+  if [ -f ~/$filename ];
+  then
+    echo "~/$filename already exists -- not overwriting"
+  else
+    echo "Creating ~/$filename"
+    cp configs/$filename ~
+  fi
+done
 
-cd ~
-echo 'must now run: source ~/.bash_profile'
+echo 'Final instructions: add `source ~/.bash_additions` to your ~/.bash_profile`'
+echo 'And add `source ~/.bash_profile` to your ~/.bashrc'
+echo "And make sure you don't have a ~/.profile or ~/.zshrc"

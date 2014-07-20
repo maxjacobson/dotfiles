@@ -1,0 +1,11 @@
+kchmck/vim-coffee-script
+godlygeek/tabular
+tpope/vim-fugitive
+ervandew/supertab
+tpope/vim-endwise
+thoughtbot/vim-rspec
+tpope/vim-bundler
+tpope/vim-cucumber
+groenewege/vim-less
+tpope/vim-sensible
+tpope/vim-dispatch
