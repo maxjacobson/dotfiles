@@ -31,13 +31,16 @@ mkdir -p ~/.vim/autoload ~/.vim/bundle ~/.vim/backup ~/.vim/tmp; \
 curl -Sso ~/.vim/autoload/pathogen.vim \
     https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
 
-cd ~/.vim
-hub clone kchmck/vim-coffee-script bundle/vim-coffee-script/
-hub clone godlygeek/tabular bundle/tabular
-hub clone tpope/vim-fugitive bundle/vim-fugitive
-hub clone ervandew/supertab bundle/supertab
-hub clone thoughtbot/vim-rspec bundle/vim-rspec
-hub clone tpope/vim-endwise bundle/vim-endwise
+cd ~/.vim/bundle
+hub clone kchmck/vim-coffee-script
+hub clone godlygeek/tabular
+hub clone tpope/vim-fugitive
+hub clone ervandew/supertab
+hub clone thoughtbot/vim-rspec
+hub clone tpope/vim-endwise
+hub clone tpope/vim-cucumber
+hub clone groenewege/vim-less
+hub clone tpope/vim-sensible
 
 gem install bundler
 
