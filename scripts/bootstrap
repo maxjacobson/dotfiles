@@ -21,9 +21,9 @@ curl https://raw.github.com/garybernhardt/selecta/master/selecta > ~/bin/selecta
 chmod +x ~/bin/selecta
 
 echo "Installing pathogen, the vim plugin loader" # https://github.com/tpope/vim-pathogen
-mkdir -p ~/.vim/autoload ~/.vim/bundle ~/.vim/backup ~/.vim/tmp; \
-curl -Sso ~/.vim/autoload/pathogen.vim \
-    https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+mkdir -p ~/.vim/autoload ~/.vim/bundle ~/.vim/backup ~/.vim/tmp
+
+curl https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim > ~/.vim/autoload/pathogen.vim
 
 echo "Installing several vim plugins"
 echo "If it's already installed, you may see a 'fatal' error message -- you'll live"
