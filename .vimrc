@@ -13,6 +13,7 @@ filetype on
 au BufNewFile,BufRead *.md set filetype=text
 au BufNewFile,BufRead *.pill set filetype=ruby
 au BufNewFile,BufRead *.rabl set filetype=ruby
+au BufNewFile,BufRead *.jbuilder set filetype=ruby
 au BufNewFile,BufRead *.yml.example set filetype=yaml
 au BufNewFile,BufRead *.mj set filetype=yaml
 
@@ -68,6 +69,11 @@ nmap <Leader>r :!clear; ruby %<CR>
 " Run current file in ruby
 nmap <Leader>p :!clear; python %<CR>
 
+" Run current file in node
+nmap <Leader>j :!clear; node %<CR>
+
+" Run current file in coffee
+nmap <Leader>c :!clear; coffee %<CR>
 
 " Run a given vim command on the results of fuzzy selecting from a given shell
 " command. See usage below.
@@ -104,4 +110,12 @@ set nofoldenable
 set foldlevel=1
 set foldnestmax=10
 
+" skip startup message
+set shortmess+=I
+
+" RSpec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
 
