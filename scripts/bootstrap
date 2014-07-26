@@ -41,6 +41,7 @@ hub clone tpope/vim-endwise
 hub clone tpope/vim-cucumber
 hub clone groenewege/vim-less
 hub clone tpope/vim-sensible
+hub clone nathanaelkane/vim-indent-guides
 
 gem install bundler
 
