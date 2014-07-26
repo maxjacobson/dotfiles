@@ -1,4 +1,9 @@
-alias 'g'='grep -rni --color' # recursive, numbers, case insensitive, colorful
+#!/usr/bin/env bash
+
 alias 'be'='bundle exec'
 alias 'fspec'='rspec spec/fast'
-alias l='ls -CFG'
+alias 'l'='ls -CFG'
+alias 'pepino'='xvfb-run --auto-servernum --server-num=1 --server-args="-screen 0, 1280x1024x24" bundle exec cucumber'
+alias 'again'='pepino @tmp/cucumber_failures.log'
+alias 'xana'='again'
+alias 'google'='grep -rn'
