@@ -1,6 +1,10 @@
+#!/usr/bin/env bash
+
+echo "Sourcing ~/.bash_profile"
+
 source ~/.aliases
-source ~/.prompt
 source ~/.handy_functions
+source ~/.prompt
 source ~/.git-completion
 export PATH="$HOME/bin:$PATH"
 export PATH="/usr/local/share/npm/bin:$PATH"
