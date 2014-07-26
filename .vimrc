@@ -10,11 +10,10 @@ let mapleader = ","
 syntax on
 filetype on
 
-au BufNewFile,BufRead *.md set filetype=text
+au BufNewFile,BufRead *.md set filetype=markdown
 au BufNewFile,BufRead *.pill set filetype=ruby
-au BufNewFile,BufRead *.rabl set filetype=ruby
+au BufNewFile,BufRead *.jbuilder set filetype=ruby
 au BufNewFile,BufRead *.yml.example set filetype=yaml
-au BufNewFile,BufRead *.mj set filetype=yaml
 
 " smart backspacing
 set backspace=indent,eol,start
@@ -68,6 +67,12 @@ nmap <Leader>r :!clear; ruby %<CR>
 " Run current file in ruby
 nmap <Leader>p :!clear; python %<CR>
 
+" Run current file in node
+nmap <Leader>j :!clear; node %<CR>
+
+" Run current file in coffee
+nmap <Leader>c :!clear; coffee %<CR>
+
 
 " Run a given vim command on the results of fuzzy selecting from a given shell
 " command. See usage below.
@@ -87,21 +92,23 @@ endfunction
 " Find all files and all non-dot directories
 " starting in the working directory
 " and edit the chosen thing
-nnoremap <c-p> :call SelectaCommand("find . -not -path './.*/*' -not -path './tmp/*'", "", ":e")<cr>
+nnoremap <c-p> :call SelectaCommand("find . -not -path './.*/*'", "", ":e")<cr>
 
 set laststatus=2
 "%f = file path
 "%l:%c = line and column
 "fugitive = git branch
 "%m file modified flag
-set statusline=[%F\ %l:%c]\ %{fugitive#statusline()}%m
+set statusline=[%f\ %l:%c]\ %{fugitive#statusline()}%m
 
 set splitright
 set splitbelow
 
-set foldmethod=indent
-set nofoldenable
-set foldlevel=1
-set foldnestmax=10
+" skip startup message
+set shortmess+=I
 
-
+" RSpec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>

@@ -7,6 +7,12 @@
 	st = status
 	hist = log --pretty=format:'%h %ai | %s%d [%an]' --graph --date=short
 	l = log --pretty='[%h] [%ar] %an: %s'
+  aa = add -A
+  rc = rebase --continue
+  rs = rebase --skip
+  ra = rebase --abort
+  cp = cherry-pick
+  pick = add . -p
 [core]
 	editor = vim
 [color]
