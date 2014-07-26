@@ -75,8 +75,8 @@ nmap <Leader>p :!clear; python %<CR>
 " Run current file in node
 nmap <Leader>j :!clear; node %<CR>
 
-" Run current file in coffee
-nmap <Leader>c :!clear; coffee %<CR>
+" run current file in cucumer
+nmap <Leader>c :!clear; bundle exec cucumber %<CR>
 
 " Run a given vim command on the results of fuzzy selecting from a given shell
 " command. See usage below.
