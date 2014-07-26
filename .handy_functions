@@ -1,8 +1,4 @@
-# open man page in vim read only mode
-# via https://twitter.com/thlorenz/status/424599639523065856
-vman () {
-  MANWIDTH=150 MANPAGER='col -bx' man $@ | vim -R -c "set ft=man" -
-}
+#!/usr/bin/env bash
 
 # get current branch for prompt
 function parse_git_branch {
@@ -48,4 +44,23 @@ function extract () {
 # remove DS_Store files
 function ds_store {
   find . -name '.DS_Store' | xargs rm
+}
+
+# list path on multiple lines
+# via https://twitter.com/FriedDaniel/status/402108515637919745
+function path {
+ echo "${PATH//:/$'\n'}"
+}
+
+function edit {
+ vim $(find . -not -path './.*/*' | selecta)
+}
+
+# find routes matching the argument
+function routes {
+ rake routes | sed 's/^ *//g' | grep $1
+}
+
+function bing {
+ grep -rn $1 .
 }
