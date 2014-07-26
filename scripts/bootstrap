@@ -35,6 +35,9 @@ cd ~/.vim
 hub clone kchmck/vim-coffee-script bundle/vim-coffee-script/
 hub clone godlygeek/tabular bundle/tabular
 hub clone tpope/vim-fugitive bundle/vim-fugitive
+hub clone ervandew/supertab bundle/supertab
+hub clone thoughtbot/vim-rspec bundle/vim-rspec
+hub clone tpope/vim-endwise bundle/vim-endwise
 
 gem install bundler
 
