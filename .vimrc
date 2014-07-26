@@ -68,6 +68,9 @@ nmap <Leader>r :!clear; ruby %<CR>
 " Run current file in ruby
 nmap <Leader>p :!clear; python %<CR>
 
+" run current file in cucumer
+nmap <Leader>c :!clear; bundle exec cucumber %<CR>
+
 
 " Run a given vim command on the results of fuzzy selecting from a given shell
 " command. See usage below.
@@ -89,6 +92,16 @@ endfunction
 " and edit the chosen thing
 nnoremap <c-p> :call SelectaCommand("find . -not -path './.*/*' -not -path './tmp/*'", "", ":e")<cr>
 
+
+function! SelectaIdentifier()
+  " Yank the word under the cursor into the z register
+  normal "zyiw
+  " Fuzzy match files in the current directory, starting with the word under
+  " the cursor
+  call SelectaCommand("find * -type f", "-s " . @z, ":e")
+endfunction
+nnoremap <c-g> :call SelectaIdentifier()<cr>
+
 set laststatus=2
 "%f = file path
 "%l:%c = line and column
@@ -104,4 +117,8 @@ set nofoldenable
 set foldlevel=1
 set foldnestmax=10
 
-
+" RSpec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
