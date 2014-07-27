@@ -13,6 +13,7 @@
   ra = rebase --abort
   cp = cherry-pick
   pick = add . -p
+  squasher = "! git add -A && git commit -am 'squasher' && git rebase -i HEAD~2"
 [core]
   editor = vim
 [color]
