@@ -14,6 +14,7 @@
   cp = cherry-pick
   pick = add . -p
   squasher = "! git add -A && git commit -am 'squasher' && git rebase -i HEAD~2"
+  git = "! git"
 [core]
   editor = vim
 [color]
