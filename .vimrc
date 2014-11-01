@@ -35,6 +35,12 @@ au BufRead,BufNewFile *.py set shiftwidth=2
 au BufRead,BufNewFile *.py set softtabstop=2
 au BufRead,BufNewFile *.py set tabstop=2
 
+" don't go too long!
+"
+" add a vertical column at 81 characters
+" discouraging lines longer than 80 characters, which appear to go into the
+set colorcolumn=81
+" autowrap at 80 characters for markdown files
 au BufRead,BufNewFile *.md set textwidth=80
 
 set number
