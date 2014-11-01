@@ -40,6 +40,9 @@ au BufRead,BufNewFile *.py set tabstop=2
 " add a vertical column at 81 characters
 " discouraging lines longer than 80 characters, which appear to go into the
 set colorcolumn=81
+" but it should be 51 in git commit message files
+autocmd Filetype gitcommit setlocal colorcolumn=51
+
 " autowrap at 80 characters for markdown files
 au BufRead,BufNewFile *.md set textwidth=80
 au BufRead,BufNewFile *.md set nowrap
