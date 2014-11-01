@@ -35,6 +35,8 @@ au BufRead,BufNewFile *.py set shiftwidth=2
 au BufRead,BufNewFile *.py set softtabstop=2
 au BufRead,BufNewFile *.py set tabstop=2
 
+au BufRead,BufNewFile *.md set textwidth=80
+
 set number
 set showcmd " shows commands (try `55 j` for example and look in the bottom right)
 set ignorecase " ignores case when search
