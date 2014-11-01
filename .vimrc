@@ -44,6 +44,8 @@ set colorcolumn=81
 au BufRead,BufNewFile *.md set textwidth=80
 " easily reflow text into 80 columns
 map ; gqG
+" ,; to get a quick word count
+nmap <Leader>; :Dispatch wc -w %<CR>
 
 set number
 set showcmd " shows commands (try `55 j` for example and look in the bottom right)
