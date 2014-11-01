@@ -42,6 +42,8 @@ au BufRead,BufNewFile *.py set tabstop=2
 set colorcolumn=81
 " autowrap at 80 characters for markdown files
 au BufRead,BufNewFile *.md set textwidth=80
+" easily reflow text into 80 columns
+map ; gqG
 
 set number
 set showcmd " shows commands (try `55 j` for example and look in the bottom right)
