@@ -85,15 +85,16 @@ imap <c-l> <space>=><space>
 
 " Run current file in ruby
 nmap <Leader>r :!clear; ruby %<CR>
-"
-" Run current file in ruby
-nmap <Leader>p :!clear; python %<CR>
+
+" Run current file with rubocop
+nmap <Leader>p :Dispatch rubocop %<CR>
 
 " Run current file in node
 nmap <Leader>j :!clear; node %<CR>
 
 " run current file in cucumer
-nmap <Leader>c :!clear; bundle exec cucumber %<CR>
+" nmap <Leader>c :!clear; bundle exec cucumber %<CR>
+map <Leader>c :Dispatch bundle exec cucumber %<CR>
 
 set laststatus=2
 "%f = file path
@@ -112,10 +113,21 @@ set foldnestmax=10
 
 " skip startup message
 set shortmess+=I
-
-" RSpec.vim mappings
+" RSpec.vim
+" mappings
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
-let g:rspec_command = "Dispatch rspec {spec}"
+" overrides
+let g:rspec_command = "Dispatch bundle exec rspec {spec}"
+
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor\ --column
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
