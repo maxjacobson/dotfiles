@@ -97,6 +97,7 @@ nmap <Leader>j :!clear; node %<CR>
 " nmap <Leader>c :!clear; bundle exec cucumber %<CR>
 map <Leader>c :Dispatch bundle exec cucumber %<CR>
 
+" status line
 set laststatus=2
 "%f = file path
 "%l:%c = line and column
@@ -104,9 +105,11 @@ set laststatus=2
 "%m file modified flag
 set statusline=[%F\ %l:%c]\ %{fugitive#statusline()}%m
 
+" splitting
 set splitright
 set splitbelow
 
+" folding
 set foldmethod=indent
 set nofoldenable
 set foldlevel=1
