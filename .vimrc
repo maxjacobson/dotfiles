@@ -47,7 +47,6 @@ highlight ColorColumn ctermbg=3
 
 " autowrap at 80 characters for markdown files
 au BufRead,BufNewFile *.md set textwidth=80
-au BufRead,BufNewFile *.md set nowrap
 " easily reflow text into 80 columns
 map ; gqG
 " ,; to get a quick word count
@@ -104,6 +103,9 @@ set laststatus=2
 "fugitive = git branch
 "%m file modified flag
 set statusline=[%F\ %l:%c]\ %{fugitive#statusline()}%m
+
+" editing
+set nowrap
 
 " splitting
 set splitright
