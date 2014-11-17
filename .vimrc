@@ -42,6 +42,7 @@ au BufRead,BufNewFile *.py set tabstop=2
 set colorcolumn=81
 " but it should be 51 in git commit message files
 autocmd Filetype gitcommit setlocal colorcolumn=51
+autocmd Filetype netrw setlocal colorcolumn=0
 highlight ColorColumn ctermbg=3
 
 " autowrap at 80 characters for markdown files
