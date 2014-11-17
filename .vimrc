@@ -90,7 +90,8 @@ nmap <Leader>r :!clear; ruby %<CR>
 nmap <Leader>p :Dispatch rubocop %<CR>
 
 " Run current file in node
-nmap <Leader>j :!clear; node %<CR>
+" nmap <Leader>j :!clear; node %<CR>
+nmap <Leader>j :Dispatch; node %<CR>
 
 " run current file in cucumer
 " nmap <Leader>c :!clear; bundle exec cucumber %<CR>
