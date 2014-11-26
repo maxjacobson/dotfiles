@@ -15,8 +15,10 @@
   pick = add . -p
   squasher = "! git add -A && git commit -am 'squasher' && git rebase -i HEAD~2"
   git = "! git"
+  freshen-up = "! git co staging && git pull && git co - && git rebase staging"
 [core]
   editor = vim
+	excludesfile = /Users/max/.gitignore_global
 [color]
   ui = true
 [push]
