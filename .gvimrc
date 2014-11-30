@@ -15,3 +15,6 @@ colorscheme smyck
 
 " prevent blinking cursor, which stresses me out?
 set guicursor=a:blinkon0
+
+" set a nice initial width
+set lines=25 columns=85
