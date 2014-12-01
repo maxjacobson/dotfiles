@@ -16,10 +16,25 @@
   squasher = "! git add -A && git commit -am 'squasher' && git rebase -i HEAD~2"
   git = "! git"
   freshen-up = "! git co staging && git pull && git co - && git rebase staging"
+  vim = "! vim"
+  dif = diff
 [core]
   editor = vim
-	excludesfile = /Users/max/.gitignore_global
+  excludesfile = /Users/max/.gitignore_global
 [color]
   ui = true
 [push]
   default = simple
+[mergetool "Kaleidoscope"]
+  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+  trustexitcode = true
+[merge]
+  tool = Kaleidoscope
+[difftool "Kaleidoscope"]
+  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[difftool]
+  prompt = false
+[mergetool]
+  prompt = false
+[diff]
+  tool = Kaleidoscope
