@@ -1,7 +1,5 @@
 execute pathogen#infect()
 
-"colorscheme evening
-
 " press jk to exit insert mode
 inoremap jk <ESC>
 let mapleader = ","
