@@ -76,8 +76,8 @@ nmap <silent> ,/ :let@/=""<CR>
 
 "move backup files all into one place
 set backup
-set backupdir=~/.vim/backup
-set directory=~/.vim/tmp
+set backupdir=~/.vim/backup,.
+set directory=~/.vim/tmp,.
 
 "learning from destroyallsotware
 " control l inserts a hash rockeT!!!
