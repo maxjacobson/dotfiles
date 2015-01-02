@@ -91,6 +91,9 @@ nmap <Leader>p :Dispatch rubocop %<CR>
 " nmap <Leader>j :!clear; node %<CR>
 nmap <Leader>j :Dispatch; node %<CR>
 
+" run current file in Go
+nmap <Leader>g :!clear; go run %<CR>
+
 " run current file in cucumer
 " nmap <Leader>c :!clear; bundle exec cucumber %<CR>
 map <Leader>c :Dispatch bundle exec cucumber %<CR>
@@ -137,6 +140,4 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '_site',
-  \ }
+let g:netrw_banner=0
