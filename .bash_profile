@@ -16,6 +16,7 @@ fi
 
 export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="/usr/local/go/bin:$PATH"
+export GOPATH="$HOME/go"
 
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
