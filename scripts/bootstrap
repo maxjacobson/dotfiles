@@ -44,6 +44,7 @@ hub clone tpope/vim-sensible
 hub clone nathanaelkane/vim-indent-guides
 hub clone tpope/vim-eunuch
 hub clone tpope/vim-commentary
+hub clone scrooloose/syntastic
 
 gem install bundler
 
