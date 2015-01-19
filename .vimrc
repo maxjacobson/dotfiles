@@ -72,6 +72,8 @@ map k gk
 "clear search with ,/
 nmap <silent> ,/ :let@/=""<CR>
 
+nmap <silent> ,e :Explore<CR>
+
 "move backup files all into one place
 set backup
 set backupdir=~/.vim/backup,.
