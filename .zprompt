@@ -1,0 +1,15 @@
+#!/usr/bin/env zsh
+
+# mostly via http://stackoverflow.com/a/1128583
+git_prompt() {
+    #[[ ( -f foo || -f bar ) && $report = y* ]] && print File exists.
+    [[ -d .git ]] && ref=$(git symbolic-ref HEAD | cut -d'/' -f3) && echo ":$ref"
+}
+
+setopt prompt_subst
+PS1="%* %m %c\$(git_prompt)
+* "
+
+autoload -U promptinit
+promptinit
+
