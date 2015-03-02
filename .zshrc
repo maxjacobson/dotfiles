@@ -3,5 +3,6 @@ echo 'sourcing ~/.zshrc'
 source ~/.aliases
 source ~/.zprompt
 
-# Add RVM to PATH for scripting
-export PATH="$PATH:$HOME/.rvm/bin"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+[[ -d "$HOME/.rvm/bin" ]] && export PATH="$PATH:$HOME/.rvm/bin"
+
