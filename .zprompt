@@ -4,16 +4,19 @@
 git_prompt() {
   if [[ -d .git ]]; then # we are in a git repo (-d checks existence of a directory)
     if [[ -e .git/rebase-apply ]]; then # we are mid-rebase (-e checks existence of a file)
-      echo " (mid rebase)"
+      echo " %F{red}%B(mid rebase)%b%f"
+    elif [[ -e .git/CHERRY_PICK_HEAD ]]; then
+      echo " %F{magenta}%B(mid cherry-pick)%b%f"
     else
-      ref=$(git symbolic-ref HEAD | cut -d'/' -f3) && echo ":$ref"
+      ref=$(git symbolic-ref HEAD | cut -d'/' -f3)
+      echo ":%F{green}%B$ref%b%f"
     fi
   fi
 }
 
 setopt prompt_subst
-PS1="%* %m %c\$(git_prompt)
-* "
+
+PS1="%F{grey}%C%f\$(git_prompt) "
 
 autoload -U promptinit
 promptinit
