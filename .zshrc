@@ -4,7 +4,6 @@ source ~/.aliases
 source ~/.zprompt
 
 setopt AUTO_CD # change directories just by referencing the directory name
-setopt PRINT_EXIT_VALUE
 PATH="$HOME/bin:$PATH"
 
 # git tab completion doesn't work without this:
