@@ -12,3 +12,7 @@ autoload -U compinit && compinit
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 [[ -d "$HOME/.rvm/bin" ]] && export PATH="$PATH:$HOME/.rvm/bin"
 
+if [[ -s "/usr/local/share/chruby/chruby.sh" ]]; then
+  source "/usr/local/share/chruby/chruby.sh"
+  chruby 2.2.0
+fi
