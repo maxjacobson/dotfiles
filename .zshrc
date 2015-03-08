@@ -6,6 +6,10 @@ source ~/.zprompt
 setopt AUTO_CD # change directories just by referencing the directory name
 PATH="$HOME/bin:$PATH"
 
+if [[ -d $HOME/go/bin ]]; then
+  PATH="$HOME/go/bin:$PATH"
+fi
+
 # git tab completion doesn't work without this:
 autoload -U compinit && compinit
 
