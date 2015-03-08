@@ -23,6 +23,7 @@ git_prompt() {
 setopt prompt_subst
 
 PS1="%F{grey}%C%f\$(git_prompt) "
+RPROMPT="%*"
 
 autoload -U promptinit
 promptinit
