@@ -2,6 +2,13 @@ echo 'sourcing ~/.zshrc'
 
 source ~/.aliases
 source ~/.zprompt
+source ~/.zhandy_functions
+
+# brew install zsh-completions
+fpath=(/usr/local/share/zsh-completions $fpath)
+
+# add ~/bin to path
+PATH=$HOME/bin:$PATH
 
 setopt AUTO_CD # change directories just by referencing the directory name
 PATH="$HOME/bin:$PATH"
