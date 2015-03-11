@@ -155,7 +155,7 @@
 	AAAZAAAAAAAAAAAAAAAAAAAA2Q==
 	</data>
 	<key>Bell</key>
-	<true/>
+	<false/>
 	<key>CursorBlink</key>
 	<false/>
 	<key>CursorColor</key>
@@ -175,10 +175,10 @@
 	<data>
 	YnBsaXN0MDDUAQIDBAUGGBlYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
 	AAGGoKQHCBESVSRudWxs1AkKCwwNDg8QVk5TU2l6ZVhOU2ZGbGFnc1ZOU05hbWVWJGNs
-	YXNzI0AwAAAAAAAAEBCAAoADVk1vbmFjb9ITFBUWWiRjbGFzc25hbWVYJGNsYXNzZXNW
-	TlNGb250ohUXWE5TT2JqZWN0XxAPTlNLZXllZEFyY2hpdmVy0RobVHJvb3SAAQgRGiMt
-	Mjc8QktSW2JpcnR2eH+Ej5ifoqu9wMUAAAAAAAABAQAAAAAAAAAcAAAAAAAAAAAAAAAA
-	AAAAxw==
+	YXNzI0AyAAAAAAAAEBCAAoADXkRlamFWdVNhbnNNb25v0hMUFRZaJGNsYXNzbmFtZVgk
+	Y2xhc3Nlc1ZOU0ZvbnSiFRdYTlNPYmplY3RfEA9OU0tleWVkQXJjaGl2ZXLRGhtUcm9v
+	dIABCBEaIy0yNzxCS1JbYmlydHZ4h4yXoKeqs8XIzQAAAAAAAAEBAAAAAAAAABwAAAAA
+	AAAAAAAAAAAAAADP
 	</data>
 	<key>FontAntialias</key>
 	<true/>
@@ -233,6 +233,10 @@
 	<true/>
 	<key>UseBrightBold</key>
 	<true/>
+	<key>VisualBellOnlyWhenMuted</key>
+	<false/>
+	<key>WindowTitle</key>
+	<string>idk</string>
 	<key>blackColour</key>
 	<data>
 	BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMBhARm
@@ -421,6 +425,10 @@
 			<key>ProcessName</key>
 			<string>ssh</string>
 		</dict>
+		<dict>
+			<key>ProcessName</key>
+			<string>zsh</string>
+		</dict>
 	</array>
 	<key>redColour</key>
 	<data>
@@ -433,6 +441,8 @@
 	<integer>1</integer>
 	<key>type</key>
 	<string>Window Settings</string>
+	<key>useOptionAsMetaKey</key>
+	<true/>
 	<key>whiteColour</key>
 	<data>
 	BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMBhARm
