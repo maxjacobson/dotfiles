@@ -13,6 +13,10 @@ PATH=$HOME/bin:$PATH
 setopt AUTO_CD # change directories just by referencing the directory name
 PATH="$HOME/bin:$PATH"
 
+# use vim for things like `bundle open rails`
+EDITOR="vim"
+BUNDLER_EDITOR="vim"
+
 if [[ -d $HOME/go/bin ]]; then
   PATH="$HOME/go/bin:$PATH"
 fi
