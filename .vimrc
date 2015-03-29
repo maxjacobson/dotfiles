@@ -157,4 +157,4 @@ let g:syntastic_check_on_wq = 0
 " remaps hii in normal mode
 " to a snippet I frequently use when blogging,
 " which is helpful, idk
-nnoremap hii i{% highlight ruby %}o{% endhighlight %}O  
+nnoremap hii i{% highlight ruby %}<ESC>o{% endhighlight %}<ESC>O
