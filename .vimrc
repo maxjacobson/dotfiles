@@ -146,14 +146,6 @@ let g:netrw_banner=0
 let g:netrw_list_hide=netrw_gitignore#Hide()
 let g:go_fmt_command = "goimports"
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 " remaps hii in normal mode
 " to a snippet I frequently use when blogging,
 " which is helpful, idk
