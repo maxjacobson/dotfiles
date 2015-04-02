@@ -72,7 +72,7 @@ map k gk
 "clear search with ,/
 nmap <silent> ,/ :let@/=""<CR>
 
-nmap <silent> ,e :Explore<CR>
+nmap <silent> ,e :Explore<CR>jj
 
 "move backup files all into one place
 set backup
