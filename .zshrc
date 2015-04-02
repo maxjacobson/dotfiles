@@ -14,12 +14,12 @@ setopt AUTO_CD # change directories just by referencing the directory name
 PATH="$HOME/bin:$PATH"
 
 # use vim for things like `bundle open rails`
-EDITOR="vim"
-BUNDLER_EDITOR="vim"
+export EDITOR="vim"
 
 if [[ -d $HOME/go/bin ]]; then
   PATH="$HOME/go/bin:$PATH"
 fi
+export GOPATH="$HOME/go"
 
 # git tab completion doesn't work without this:
 autoload -U compinit && compinit
