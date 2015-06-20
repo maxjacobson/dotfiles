@@ -6,7 +6,13 @@ helpful scripts that some of the dotfiles might depend on.
 
 Put them on your $PATH if you want to use them.
 
-## Other nice-to-haves
+## Other things to install
 
+* zsh
+* tmux
+* vim
+* ruby-build
+* chruby
 * selecta
 * reattach-to-user-namespace
+* zsh-completions
