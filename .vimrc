@@ -80,7 +80,7 @@ autocmd Filetype netrw setlocal colorcolumn=0
 highlight ColorColumn ctermbg=3
 
 " autowrap at 80 characters for markdown files
-au BufRead,BufNewFile *.md set textwidth=80
+" au BufRead,BufNewFile *.md set textwidth=80
 " easily reflow text into 80 columns
 map ; gqG
 " ,; to get a quick word count
@@ -185,6 +185,8 @@ let g:netrw_banner=0
 " " hide gitignored files from netrw
 let g:netrw_list_hide=netrw_gitignore#Hide()
 let g:go_fmt_command = "goimports"
+
+nnoremap <Leader>fu :CtrlPFunky<Cr>
 
 " remaps hii in normal mode
 " to a snippet I frequently use when blogging,
