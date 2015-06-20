@@ -2,7 +2,7 @@
   name = Max Jacobson
   email = max@hardscrabble.net
 [alias]
-  br = "! git branch | cut -c 3- | selecta | xargs git checkout"
+  br = "! branch" ; script that helps switch branches, in dotfiles/bin
   co = checkout
   st = status
   hist = log --pretty=format:'%h %ai | %s%d [%an]' --graph --date=short

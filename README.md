@@ -1,5 +1,7 @@
 # my dotfiles
 
-mega work in progress and probably dangerous
+Most of these are actually dotfiles (meaning, files whose filename begins with
+a dot and belong in your home directory). The files in the "bin" folder are
+helpful scripts that some of the dotfiles might depend on.
 
-`\curl -L https://raw.github.com/maxjacobson/dotfiles/master/scripts/bootstrap | bash -s stable`
+Put them on your $PATH if you want to use them.
