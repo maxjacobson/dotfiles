@@ -1,4 +1,39 @@
-execute pathogen#infect()
+" Using this vimrc:
+"
+" Install vim plug: https://github.com/junegunn/vim-plug#usage
+" run: mkdir ~/.vim/backup
+" run: mkdir ~/.vim/tmp
+" copy this code to ~/.vimrc
+" open this file in vim
+" run :PlugInstall
+call plug#begin('~/.vim/plugged')
+" rust syntax highlighting, etc
+Plug 'rust-lang/rust.vim'
+" using to pull current git branch into status bar
+Plug 'tpope/vim-fugitive'
+" useful for opening files
+Plug 'kien/ctrlp.vim'
+" useful for tab completing
+Plug 'ervandew/supertab'
+" not sure if I use this
+Plug 'tpope/vim-bundler'
+" useful for quickly commenting code
+Plug 'tpope/vim-commentary'
+" useful for syntax highlighting
+Plug 'kchmck/vim-coffee-script'
+" useful for asynchronously running things from vim while in tmux
+Plug 'tpope/vim-dispatch'
+" useful for auto-ending ruby methods/classes/blocks
+Plug 'tpope/vim-endwise'
+" not sure if I use this one
+Plug 'tpope/vim-eunuch'
+" not sure if I use this one
+Plug 'pangloss/vim-javascript'
+" super useful for running rspecs
+Plug 'thoughtbot/vim-rspec'
+" help look up step definitions
+Plug 'tpope/vim-cucumber'
+call plug#end()
 
 " press jk to exit insert mode
 inoremap jk <ESC>
