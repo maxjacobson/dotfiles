@@ -4,7 +4,7 @@ echo 'sourcing ~/.zshrc'
 
 source ~/.aliases
 source ~/.prompt
-source ~/.zhandy_functions
+source ~/.handy_functions
 source ~/.golang-configuration
 source ~/.chruby-configuration
 
