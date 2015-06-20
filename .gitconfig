@@ -18,6 +18,7 @@
   freshen-up = "! git co staging && git pull && git co - && git rebase staging"
   vim = "! vim"
   dif = diff
+  pro = pull --rebase origin
 [core]
   editor = vim
   excludesfile = /Users/max/.gitignore_global
