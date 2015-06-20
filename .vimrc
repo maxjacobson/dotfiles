@@ -133,16 +133,6 @@ map <Leader>a :call RunAllSpecs()<CR>
 " overrides
 let g:rspec_command = "Dispatch bundle exec rspec {spec}"
 
-" The Silver Searcher
-if executable('ag')
-  " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor\ --column
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-endif
-
 let g:netrw_banner=0
 let g:netrw_list_hide=netrw_gitignore#Hide()
 let g:go_fmt_command = "goimports"
