@@ -5,3 +5,8 @@ a dot and belong in your home directory). The files in the "bin" folder are
 helpful scripts that some of the dotfiles might depend on.
 
 Put them on your $PATH if you want to use them.
+
+## Other nice-to-haves
+
+* selecta
+* reattach-to-user-namespace
