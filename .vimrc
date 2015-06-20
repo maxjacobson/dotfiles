@@ -133,6 +133,18 @@ map <Leader>a :call RunAllSpecs()<CR>
 " overrides
 let g:rspec_command = "Dispatch bundle exec rspec {spec}"
 
+" Tab mappings.
+" via https://github.com/edgibbs/.vim/blob/master/vimrc#L55-L64
+map <leader>tt :tabnew<cr>
+map <leader>te :tabedit
+map <leader>tc :tabclose<cr>
+map <leader>to :tabonly<cr>
+map <leader>tn :tabnext<cr>
+map <leader>tp :tabprevious<cr>
+map <leader>tf :tabfirst<cr>
+map <leader>tl :tablast<cr>
+map <leader>tm :tabmove
+
 let g:netrw_banner=0
 let g:netrw_list_hide=netrw_gitignore#Hide()
 let g:go_fmt_command = "goimports"
