@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+if [[ -s "/usr/local/share/chruby/chruby.sh" ]]; then
+  source "/usr/local/share/chruby/chruby.sh"
+
+  # default Ruby upon login:
+  chruby 2.2.2
+  source "/usr/local/share/chruby/auto.sh"
+fi
