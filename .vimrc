@@ -152,4 +152,4 @@ let g:go_fmt_command = "goimports"
 " remaps hii in normal mode
 " to a snippet I frequently use when blogging,
 " which is helpful, idk
-nnoremap hii i{% highlight ruby %}<ESC>o{% endhighlight %}<ESC>O
+nnoremap <Leader>hii i{% highlight ruby %}<ESC>o{% endhighlight %}<ESC>O
