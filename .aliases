@@ -1,12 +1,6 @@
-#!/usr/bin/env bash
-
-alias 'g'='grep -rni --color' # recursive, numbers, case insensitive, colorful
+# this is helpful!
 alias 'be'='bundle exec'
-alias 'b'='bundle'
-alias 'fspec'='rspec spec/fast'
-alias 'l'='ls -CFG'
-alias 'pepino'='xvfb-run --auto-servernum --server-num=1 --server-args="-screen 0, 1280x1024x24" bundle exec cucumber'
-alias 'again'='pepino @tmp/cucumber_failures.log'
-alias 'xana'='again'
-alias 'google'='grep -rn'
+
+# help with my muscle memory transitioning from ack to ag
+alias 'ack'='ag'
 [[ -s "$HOME/.aliases.local" ]] && source "$HOME/.aliases.local"
