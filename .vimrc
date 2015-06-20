@@ -51,7 +51,7 @@ map ; gqG
 " ,; to get a quick word count
 nmap <Leader>; :Dispatch wc -w %<CR>
 
-set number
+set number " show line numbers
 set showcmd " shows commands (try `55 j` for example and look in the bottom right)
 set ignorecase " ignores case when search
 set hlsearch " highlights search
