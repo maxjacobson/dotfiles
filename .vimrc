@@ -37,6 +37,7 @@ au BufRead,BufNewFile *.py set tabstop=2
 "
 " add a vertical column at 81 characters
 " discouraging lines longer than 80 characters, which appear to go into the
+" danger zone
 set colorcolumn=81
 " but it should be 51 in git commit message files
 autocmd Filetype gitcommit setlocal colorcolumn=51
