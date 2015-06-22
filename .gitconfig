@@ -8,16 +8,24 @@
   hist = log --pretty=format:'%h %ai | %s%d [%an]' --graph --date=short
   l = log --pretty='[%h] [%ar] %an: %s'
   aa = add -A
+  q = "! git add . --all && git commit --amend --no-message"
+  ughgem = "! rm Gemfile.lock && bundle && git add . --all && git rebase --continue"
+  p = push
+  pu = pull --rebase
   rc = rebase --continue
   rs = rebase --skip
   ra = rebase --abort
   cp = cherry-pick
+  d = diff
+  picky = add . -p
   pick = add . -p
   squasher = "! git add -A && git commit -am 'squasher' && git rebase -i HEAD~2"
+  p = add . -p
   git = "! git"
-  freshen-up = "! git co staging && git pull && git co - && git rebase staging"
   vim = "! vim"
   dif = diff
+  dc = cat-file -p
+  rebsae = rebase
   pro = pull --rebase origin
 [core]
   editor = vim
