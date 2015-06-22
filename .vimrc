@@ -183,7 +183,6 @@ map <leader>tm :tabmove
 " hide the giant banner at the top of netrw
 let g:netrw_banner=0
 " " hide gitignored files from netrw
-let g:netrw_list_hide=netrw_gitignore#Hide()
 let g:go_fmt_command = "goimports"
 
 nnoremap <Leader>fu :CtrlPFunky<Cr>
