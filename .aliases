@@ -1,6 +1,8 @@
 # this is helpful!
 alias 'be'='bundle exec'
-
+alias 'giit'='git'
+alias 't'='tmux'
+alias 'gst'='git status'
 # help with my muscle memory transitioning from ack to ag
 alias 'ack'='ag'
 [[ -s "$HOME/.aliases.local" ]] && source "$HOME/.aliases.local"
