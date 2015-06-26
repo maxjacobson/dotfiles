@@ -16,3 +16,4 @@ Put them on your $PATH if you want to use them.
 * selecta
 * reattach-to-user-namespace
 * zsh-completions
+* ag
