@@ -1,0 +1,5 @@
+fpath=(/usr/local/share/zsh-completions $fpath) # brew install zsh-completions
+setopt AUTO_CD # change directories just by referencing the directory name
+autoload -U compinit && compinit # git tab completion doesn't work without this
+export HISTFILE=~/.zsh_history
+export SAVEHIST=1000
