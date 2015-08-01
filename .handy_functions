@@ -47,3 +47,57 @@ zle -N insert-selecta-path-in-command-line
 # Bind the key to the newly created widget
 bindkey "^S" "insert-selecta-path-in-command-line"
 
+########## tmux helper functions #########################
+# inspired by / mostly stolen from:
+# https://github.com/unmanbearpig/.bash/blob/master/tmux.sh
+function _clean_up_session_name {
+    echo $1 | tr . -
+}
+
+function _open_tmux {
+    session_name=$(_clean_up_session_name $1)
+    if [[ $TMUX ]]; then
+        tmux switch-client -t $session_name
+    else
+        tmux new-session -A -s $session_name
+    fi
+}
+
+# enter tmux
+# use the name of my current directory for the session name
+# if a session already exists with that name, just attach to it
+function t {
+    if [[ $# == 0 ]]; then
+        session_name=`basename $PWD`
+    elif [[ $# == 1 ]]; then
+        if [[ -d $1 ]]; then
+            cd $1
+            session_name=`basename $PWD`
+        else
+            session_name=$1
+        fi
+    fi
+
+    session_name=`_clean_up_session_name "$session_name"`
+
+    _open_tmux $session_name
+}
+
+# attach to a previously-running tmux session
+function ta {
+  # if no argument was supplied, just attach to the most-recently-used session
+  if [[ -z $1 ]]; then
+    tmux attach
+
+  # if an argument was supplied, attach to a specific session
+  else
+    tmux attach -t "$1"
+  fi
+}
+
+# list the background sessions
+function tl {
+  tmux ls
+}
+
+########## end tmux helper functions #####################
