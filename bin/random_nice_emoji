@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+
+e = %w(pig2 sweat_smile cherry_blossom).sample
+puts ":#{e}:"
