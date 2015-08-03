@@ -8,6 +8,7 @@ source ~/.handy_functions
 source ~/.golang-configuration
 source ~/.chruby-configuration
 source ~/.zsh-configuration
+source ~/.private-environment-variables
 
 export PATH="$HOME/bin:$PATH" # add ~/bin to path
 export EDITOR="vim" # use vim for `bundle open rails`, `git commit -v`, etc
