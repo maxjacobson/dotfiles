@@ -34,7 +34,7 @@ function _clean_up_session_name {
 
 function _open_tmux {
     session_name=$(_clean_up_session_name $1)
-    if [[ $TMUX ]]; then
+    if [ $TMUX ]; then
         tmux switch-client -t $session_name
     else
         tmux new-session -A -s $session_name
