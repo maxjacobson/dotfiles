@@ -46,6 +46,7 @@ filetype on
 au BufNewFile,BufRead *.md set filetype=text
 au BufNewFile,BufRead *.pill set filetype=ruby
 au BufNewFile,BufRead *.rabl set filetype=ruby
+au BufNewFile,BufRead Guardfile set filetype=ruby
 au BufNewFile,BufRead *.jbuilder set filetype=ruby
 au BufNewFile,BufRead *.yml.example set filetype=yaml
 au BufNewFile,BufRead *.mj set filetype=yaml
