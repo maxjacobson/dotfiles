@@ -37,6 +37,7 @@ call plug#end()
 
 " press jk to exit insert mode
 inoremap jk <ESC>
+inoremap JK <ESC>
 let mapleader = ","
 
 " help it do the syntax recognition right
