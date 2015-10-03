@@ -14,6 +14,5 @@ Put them on your $PATH if you want to use them.
 * ruby-build
 * chruby
 * selecta
-* reattach-to-user-namespace
 * zsh-completions
 * ag
