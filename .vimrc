@@ -7,6 +7,8 @@
 " open this file in vim
 " run :PlugInstall
 call plug#begin('~/.vim/plugged')
+" sensible defaults
+Plug 'tpope/vim-sensible'
 " rust syntax highlighting, etc
 Plug 'rust-lang/rust.vim'
 " using to pull current git branch into status bar
