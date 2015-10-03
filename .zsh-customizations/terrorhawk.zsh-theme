@@ -1,5 +1,3 @@
-#!/usr/bin/env zsh
-
 # branch-plucking line via mostly via http://stackoverflow.com/a/1128583
 # uncommitted work check mostly via via http://0xfe.blogspot.com/2010/04/adding-git-status-information-to-your.html
 git_prompt() {
@@ -9,10 +7,10 @@ git_prompt() {
     elif [[ -e .git/CHERRY_PICK_HEAD ]]; then # we are mid cherry-pick
       echo " %F{magenta}%B(mid cherry-pick)%b%f"
     elif [[ $(git diff HEAD --shortstat 2> /dev/null | tail -n1) != "" ]]; then # we have uncommitted work among our tracked files
-      branch=$(git symbolic-ref HEAD | cut -d'/' -f 3,4)
+      branch=$(git symbolic-ref HEAD | cut -d'/' -f3)
       echo " %F{red}%B$branch*%b%f"
     else
-      branch=$(git symbolic-ref HEAD | cut -d'/' -f 3,4)
+      branch=$(git symbolic-ref HEAD | cut -d'/' -f3)
       echo " %F{green}%B$branch%b%f"
     fi
   else
@@ -20,10 +18,4 @@ git_prompt() {
   fi
 }
 
-setopt prompt_subst
-
-PS1="%F{grey}%C%f \$(emojify \$(random_nice_emoji)) \$(git_prompt) "
-
-autoload -U promptinit
-promptinit
-
+PROMPT="%F{grey}%C%f \$(emojify \$(random_nice_emoji)) \$(git_prompt) "
