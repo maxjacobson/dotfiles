@@ -19,6 +19,7 @@
   cpc = cherry-pick --continue
   cpa = cherry-pick --abort
   d = diff
+  dc = diff --cached
   picky = add . -p
   pick = add . -p
   squasher = "! git add -A && git commit -am 'squasher' && git rebase -i HEAD~2"
@@ -26,7 +27,6 @@
   git = "! git"
   vim = "! vim"
   dif = diff
-  dc = cat-file -p
   rebsae = rebase
   pro = pull --rebase origin
 [core]
