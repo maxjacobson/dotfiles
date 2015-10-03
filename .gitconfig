@@ -29,6 +29,7 @@
   dif = diff
   rebsae = rebase
   pro = pull --rebase origin
+  pru = pull --rebase upstream
 [core]
   editor = vim
   excludesfile = /Users/max/.gitignore_global
