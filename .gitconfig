@@ -16,6 +16,8 @@
   rs = rebase --skip
   ra = rebase --abort
   cp = cherry-pick
+  cpc = cherry-pick --continue
+  cpa = cherry-pick --abort
   d = diff
   picky = add . -p
   pick = add . -p
