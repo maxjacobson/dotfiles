@@ -47,5 +47,3 @@
   prompt = false
 [diff]
   tool = Kaleidoscope
-[commit]
-  template = ~/.gitmessage
