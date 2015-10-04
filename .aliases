@@ -6,6 +6,4 @@ alias 'gst'='git status'
 # vi is aliased to the system vim, but I want to use the homebrew vim
 alias 'vi'='vim'
 
-# help with my muscle memory transitioning from ack to ag
-alias 'ack'='ag'
 [[ -s "$HOME/.aliases.local" ]] && source "$HOME/.aliases.local"
