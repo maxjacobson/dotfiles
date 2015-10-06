@@ -15,6 +15,7 @@
   rc = rebase --continue
   rs = rebase --skip
   ra = rebase --abort
+  rh = reset HEAD --hard
   cp = cherry-pick
   cpc = cherry-pick --continue
   cpa = cherry-pick --abort
