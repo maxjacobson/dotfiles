@@ -1,4 +1,12 @@
 #!/usr/bin/env ruby
 
-e = %w(pig2 sweat_smile cherry_blossom).sample
+e = %w(
+  pig2
+  sweat_smile
+  cherry_blossom
+  whale2
+  rice_scene
+  rainbow
+  sparkles
+  octopus).sample
 puts ":#{e}:"
