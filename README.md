@@ -19,3 +19,4 @@ Also, copy the .zsh-customizations folder into your home folder.
 * selecta
 * zsh-completions
 * ag
+* matcher - https://github.com/burke/matcher
