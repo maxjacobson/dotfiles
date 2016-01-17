@@ -1,0 +1,2 @@
+feh --bg-fill ~/Pictures/empire_by_yuseda.jpg
+setxkbmap -option ctrl:nocaps

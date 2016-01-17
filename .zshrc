@@ -35,4 +35,6 @@ source ~/.aliases
 source ~/.handy_functions
 source ~/.golang-configuration
 source ~/.chruby-configuration
+source ~/.nvm-configuration
 source ~/.private-environment-variables
+source ~/.linux-only-stuff
