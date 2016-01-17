@@ -4,6 +4,6 @@ if [[ -s "/usr/local/share/chruby/chruby.sh" ]]; then
   source "/usr/local/share/chruby/chruby.sh"
 
   # default Ruby upon login:
-  chruby 2.2.3
+  chruby 2.3.0
   source "/usr/local/share/chruby/auto.sh"
 fi
