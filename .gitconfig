@@ -6,7 +6,7 @@
   co = checkout
   st = status
   hist = log --pretty=format:'%h %ai | %s%d [%an]' --graph --date=short
-  l = log --pretty='%<|(50,trunc)%s %Cred%h %Cresetauthored %ar by %Cgreen%aN'
+  l = log --pretty='%Cred%h %Creset%<|(58,trunc)%s%n%Cgreen%aN%Creset, %ar%n'
   aa = add -A
   q = "! git add . --all && git commit --amend --no-message"
   ughgem = "! rm Gemfile.lock && bundle && git add . --all && git rebase --continue"
