@@ -6,4 +6,8 @@ alias 'gst'='git status'
 # vi is aliased to the system vim, but I want to use the homebrew vim
 alias 'vi'='vim'
 
+alias 't'='tmux new-session -A -s $(basename $PWD | tr -d .)'
+alias 'ta'='tmux attach'
+alias 'tl'='tmux ls'
+
 [[ -s "$HOME/.aliases.local" ]] && source "$HOME/.aliases.local"
