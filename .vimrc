@@ -35,6 +35,9 @@ Plug 'pangloss/vim-javascript'
 Plug 'thoughtbot/vim-rspec'
 " help look up step definitions
 Plug 'tpope/vim-cucumber'
+
+" trying to get visual find and replace working...
+Plug 'osyo-manga/vim-over'
 call plug#end()
 
 " press jk to exit insert mode
@@ -221,4 +224,16 @@ function! GoodMatch(items, str, limit, mmode, ispath, crfile, regex)
 
   return split(system(cmd), "\n")
 
+endfunction
+
+" via toranb dotfiles
+nnoremap <Leader>fr :call VisualFindAndReplace()<CR>
+xnoremap <Leader>fr :call VisualFindAndReplaceWithSelection()<CR>
+function! VisualFindAndReplace()
+    :OverCommandLine%s/
+    :w
+endfunction
+function! VisualFindAndReplaceWithSelection() range
+    :'<,'>OverCommandLine s/
+    :w
 endfunction
