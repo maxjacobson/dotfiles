@@ -32,6 +32,7 @@ source $ZSH/oh-my-zsh.sh
 export BUNDLER_EDITOR=vim
 
 source ~/.aliases
+source ~/.tmux-helpers
 source ~/.handy_functions
 source ~/.golang-configuration
 source ~/.chruby-configuration
