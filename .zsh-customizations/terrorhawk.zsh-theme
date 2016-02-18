@@ -6,11 +6,13 @@ git_prompt() {
       echo " %F{red}%B(mid rebase)%b%f"
     elif [[ -e .git/CHERRY_PICK_HEAD ]]; then # we are mid cherry-pick
       echo " %F{magenta}%B(mid cherry-pick)%b%f"
-    elif [[ $(git diff HEAD --shortstat 2> /dev/null | tail -n1) != "" ]]; then # we have uncommitted work among our tracked files
-      branch=$(git symbolic-ref HEAD | cut -d'/' -f3)
+    elif [[ $(git diff HEAD --shortstat 2>/dev/null | tail -n1) != "" ]]; then # we have uncommitted work among our tracked files
+      branch_part=$(git symbolic-ref HEAD 2>/dev/null || echo '(idk)')
+      branch=$(echo $branch_part | cut -d '/' -f3)
       echo " %F{red}%B$branch*%b%f"
     else
-      branch=$(git symbolic-ref HEAD | cut -d'/' -f3)
+      branch_part=$(git symbolic-ref HEAD 2>/dev/null || echo '(idk)')
+      branch=$(echo $branch_part | cut -d '/' -f3)
       echo " %F{green}%B$branch%b%f"
     fi
   else
