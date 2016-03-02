@@ -38,6 +38,9 @@ Plug 'tpope/vim-cucumber'
 
 " trying to get visual find and replace working...
 Plug 'osyo-manga/vim-over'
+
+" search the codebase with ag ("the silver searcher")
+Plug 'rking/ag.vim'
 call plug#end()
 
 " press jk to exit insert mode
