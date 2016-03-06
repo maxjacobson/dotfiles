@@ -35,6 +35,8 @@ Plug 'pangloss/vim-javascript'
 Plug 'thoughtbot/vim-rspec'
 " help look up step definitions
 Plug 'tpope/vim-cucumber'
+" elixir
+Plug 'elixir-lang/vim-elixir'
 
 " trying to get visual find and replace working...
 Plug 'osyo-manga/vim-over'
