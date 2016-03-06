@@ -31,6 +31,8 @@ source $ZSH/oh-my-zsh.sh
 
 export BUNDLER_EDITOR=vim
 
+export ROOSTER_FILE="$HOME/Dropbox/.passwords"
+
 source ~/.aliases
 source ~/.tmux-helpers
 source ~/.handy_functions
