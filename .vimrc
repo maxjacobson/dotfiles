@@ -197,11 +197,6 @@ let g:netrw_banner=0
 " " hide gitignored files from netrw
 let g:go_fmt_command = "goimports"
 
-" remaps hii in normal mode
-" to a snippet I frequently use when blogging,
-" which is helpful, idk
-nnoremap <Leader>hii i{% highlight ruby %}<ESC>o{% endhighlight %}<ESC>O
-
 let g:path_to_matcher = "/usr/local/bin/matcher"
 
 let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files . -co --exclude-standard']
