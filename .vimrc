@@ -217,9 +217,6 @@ function! GoodMatch(items, str, limit, mmode, ispath, crfile, regex)
   " a:mmode is currently ignored. In the future, we should probably do
   " something about that. the matcher behaves like "full-line".
   let cmd = g:path_to_matcher.' --limit '.a:limit.' --manifest '.cachefile.' '
-  if !( exists('g:ctrlp_dotfiles') && g:ctrlp_dotfiles )
-    let cmd = cmd.'--no-dotfiles '
-  endif
   let cmd = cmd.a:str
 
   return split(system(cmd), "\n")
