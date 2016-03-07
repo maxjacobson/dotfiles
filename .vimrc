@@ -14,7 +14,7 @@ Plug 'rust-lang/rust.vim'
 " using to pull current git branch into status bar
 Plug 'tpope/vim-fugitive'
 " useful for opening files
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 " useful for tab completing
 Plug 'ervandew/supertab'
 " not sure if I use this
