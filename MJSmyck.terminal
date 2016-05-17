@@ -175,7 +175,7 @@
 	<data>
 	YnBsaXN0MDDUAQIDBAUGGBlYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
 	AAGGoKQHCBESVSRudWxs1AkKCwwNDg8QVk5TU2l6ZVhOU2ZGbGFnc1ZOU05hbWVWJGNs
-	YXNzI0A4AAAAAAAAEBCAAoADW0luY29uc29sYXRh0hMUFRZaJGNsYXNzbmFtZVgkY2xh
+	YXNzI0AsAAAAAAAAEBCAAoADW0luY29uc29sYXRh0hMUFRZaJGNsYXNzbmFtZVgkY2xh
 	c3Nlc1ZOU0ZvbnSiFRdYTlNPYmplY3RfEA9OU0tleWVkQXJjaGl2ZXLRGhtUcm9vdIAB
 	CBEaIy0yNzxCS1JbYmlydHZ4hImUnaSnsMLFygAAAAAAAAEBAAAAAAAAABwAAAAAAAAA
 	AAAAAAAAAADM
@@ -199,18 +199,26 @@
 	</data>
 	<key>ShouldLimitScrollback</key>
 	<integer>0</integer>
+	<key>ShowActiveProcessArgumentsInTitle</key>
+	<true/>
 	<key>ShowActiveProcessInTitle</key>
 	<false/>
 	<key>ShowCommandKeyInTitle</key>
 	<false/>
 	<key>ShowDimensionsInTitle</key>
 	<false/>
+	<key>ShowRepresentedURLInTitle</key>
+	<false/>
 	<key>ShowShellCommandInTitle</key>
 	<false/>
 	<key>ShowTTYNameInTitle</key>
 	<false/>
+	<key>ShowTerminalInDockIcon</key>
+	<true/>
 	<key>ShowWindowSettingsNameInTitle</key>
 	<false/>
+	<key>TerminalType</key>
+	<string>dtterm</string>
 	<key>TextBoldColor</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
@@ -238,7 +246,7 @@
 	<key>VisualBellOnlyWhenMuted</key>
 	<false/>
 	<key>WindowTitle</key>
-	<string>idk</string>
+	<string>🐚</string>
 	<key>blackColour</key>
 	<data>
 	BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMBhARm
@@ -290,7 +298,7 @@
 	ZmZmAQGDzbVMPwGG
 	</data>
 	<key>columnCount</key>
-	<integer>85</integer>
+	<integer>80</integer>
 	<key>cyanColour</key>
 	<data>
 	BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMBhARm
@@ -431,6 +439,10 @@
 			<key>ProcessName</key>
 			<string>zsh</string>
 		</dict>
+		<dict>
+			<key>ProcessName</key>
+			<string>t</string>
+		</dict>
 	</array>
 	<key>redColour</key>
 	<data>
@@ -438,7 +450,7 @@
 	ZmZmAYPZ2Ng+g8HAwD4Bhg==
 	</data>
 	<key>rowCount</key>
-	<integer>30</integer>
+	<integer>20</integer>
 	<key>shellExitAction</key>
 	<integer>1</integer>
 	<key>type</key>
