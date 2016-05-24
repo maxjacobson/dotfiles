@@ -18,6 +18,8 @@ COMPLETION_WAITING_DOTS="true"
 # don't set the title in tmux tabs
 DISABLE_AUTO_TITLE="true"
 
+# allow brackets in commands, which lets you pass arguments to rake tasks
+unsetopt nomatch
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 source $ZSH/oh-my-zsh.sh
