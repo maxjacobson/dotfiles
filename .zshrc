@@ -18,11 +18,6 @@ COMPLETION_WAITING_DOTS="true"
 # don't set the title in tmux tabs
 DISABLE_AUTO_TITLE="true"
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-# plugins=(chruby)
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 source $ZSH/oh-my-zsh.sh
