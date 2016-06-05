@@ -20,3 +20,4 @@ Also, copy the .zsh-customizations folder into your home folder.
 * zsh-completions
 * ag
 * matcher - https://github.com/burke/matcher
+* random_nice_emoji - https://github.com/maxjacobson/random_nice_emoji
