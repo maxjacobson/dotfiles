@@ -20,4 +20,4 @@ git_prompt() {
   fi
 }
 
-PROMPT="%F{grey}%C%f \$(emojify \$(random_nice_emoji)) \$(git_prompt) "
+PROMPT="%F{grey}%C%f \$(random_nice_emoji) \$(git_prompt) "
