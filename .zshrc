@@ -39,3 +39,4 @@ source ~/.chruby-configuration
 source ~/.nvm-configuration
 source ~/.private-environment-variables
 source ~/.linux-only-stuff
+eval "$(docker-machine env default)"
