@@ -38,8 +38,13 @@ Plug 'tpope/vim-cucumber'
 " elixir
 Plug 'elixir-lang/vim-elixir'
 
+" slim template
+Plug 'slim-template/vim-slim'
+
 " trying to get visual find and replace working...
 Plug 'osyo-manga/vim-over'
+
+Plug 'wfleming/vim-codeclimate'
 
 " search the codebase with ag ("the silver searcher")
 Plug 'rking/ag.vim'
@@ -90,13 +95,6 @@ set colorcolumn=81
 autocmd Filetype gitcommit setlocal colorcolumn=51
 autocmd Filetype netrw setlocal colorcolumn=0
 highlight ColorColumn ctermbg=0
-
-" autowrap at 80 characters for markdown files
-" au BufRead,BufNewFile *.md set textwidth=80
-" easily reflow text into 80 columns
-map ; gqG
-" ,; to get a quick word count
-nmap <Leader>; :Dispatch wc -w %<CR>
 
 set number " show line numbers
 set showcmd " shows commands (try `55 j` for example and look in the bottom right)
