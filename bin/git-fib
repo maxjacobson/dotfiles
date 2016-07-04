@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+
+function abortIfNotGitRepo {
+  if [[ ! -d .git ]]; then
+    echo "Not a git repo! Get out of here!"
+    exit 1
+  fi
+}
+
+function abortIfMidCherryPick {
+  if [[ -e .git/CHERRY_PICK_HEAD ]]; then
+    echo "I don't want to fib right now, you're in the middle of a cherry-pick"
+    exit 1
+  fi
+}
+
+function abortIfMidRebase {
+  if [[ -e .git/rebase-apply ]]; then
+    echo "I don't want to fib right now, you're mid rebase"
+    exit 1
+  fi
+}
+
+# via http://0xfe.blogspot.com/2010/04/adding-git-status-information-to-your.html
+function abortIfThereAreUncommittedChanges {
+  if [[ $(git diff HEAD --shortstat 2> /dev/null | tail -n1) != "" ]]; then
+    echo "I don't want to fib right now, you have uncommited work"
+    exit 1
+  fi
+}
+
+# the gitFib function does the work of git fibbing
+function gitFib {
+  # check a few things
+  abortIfNotGitRepo
+  abortIfMidCherryPick
+  abortIfMidRebase
+  abortIfThereAreUncommittedChanges
+
+  # read some values from the last commit before we reset it
+  local msg
+  msg=$(git log -1 --pretty=%B 2>/dev/null)
+  local authorName
+  authorName=$(git log -1 --pretty=%an 2>/dev/null)
+  local authorEmail
+  authorEmail=$(git log -1 --pretty=%ae 2>/dev/null)
+
+  # uncommit the last commit
+  git reset HEAD~1
+
+  # stage all the changes again
+  git add -A
+
+  # recommit with the same message
+  git commit -m "$msg" --author="$authorName <$authorEmail>"
+}
+
+# call the function and do the thing!
+gitFib
