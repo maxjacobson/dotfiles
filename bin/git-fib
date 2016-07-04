@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# More info: http://www.hardscrabble.net/2015/improved-commit-squashing
 function abortIfNotGitRepo {
   if [[ ! -d .git ]]; then
     echo "Not a git repo! Get out of here!"
