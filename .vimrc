@@ -232,3 +232,6 @@ function! VisualFindAndReplaceWithSelection() range
     :'<,'>OverCommandLine s/
     :w
 endfunction
+
+" use system clipboard???
+set clipboard=unnamed
