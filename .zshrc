@@ -40,4 +40,3 @@ source ~/.nvm-configuration
 source ~/.private-environment-variables
 source ~/.linux-only-stuff
 source ~/.docker-helpers
-eval "$(docker-machine env default)"
