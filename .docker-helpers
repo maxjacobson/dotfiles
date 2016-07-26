@@ -1,0 +1,15 @@
+# for boot2docker/docker machine
+function docker-env {
+  if [ -S /var/run/docker.sock ]; then
+    # for dlite support, backing away from docker-machine
+    unset DOCKER_TLS_VERIFY DOCKER_HOST DOCKER_CERT_PATH DOCKER_MACHINE_NAME
+  elif command -v docker-machine > /dev/null 2>&1; then
+    eval "$(docker-machine env default)"
+  fi
+}
+docker-env
+
+function docker-cleanup {
+  docker ps -a | grep 'weeks ago' | awk '{print $1}' | xargs docker rm
+  docker images | fgrep "<none>" | awk '{print $3}' | xargs docker rmi
+}
