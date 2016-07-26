@@ -46,6 +46,8 @@ Plug 'osyo-manga/vim-over'
 
 Plug 'wfleming/vim-codeclimate'
 
+Plug 'mustache/vim-mustache-handlebars'
+
 " search the codebase with ag ("the silver searcher")
 Plug 'rking/ag.vim'
 call plug#end()
