@@ -157,9 +157,8 @@ map <Leader>c :Dispatch bundle exec cucumber %<CR>
 set laststatus=2
 "%f = file path
 "%l:%c = line and column
-"fugitive = git branch
-"%m file modified flag
-set statusline=[%F\ %l:%c]\ %{fugitive#statusline()}%m
+"%m file modified flag ([+] when there are unsaved changes)
+set statusline=%F\ %l:%c\ %m
 
 " editing
 set nowrap
