@@ -8,11 +8,11 @@ git_prompt() {
       echo " %F{magenta}%B(mid cherry-pick)%b%f"
     elif [[ $(git diff HEAD --shortstat 2>/dev/null | tail -n1) != "" ]]; then # we have uncommitted work among our tracked files
       branch_part=$(git symbolic-ref HEAD 2>/dev/null || echo '(idk)')
-      branch=$(echo $branch_part | cut -d '/' -f3)
+      branch=$(echo $branch_part | cut -d '/' -f3-)
       echo " %F{red}%B$branch*%b%f"
     else
       branch_part=$(git symbolic-ref HEAD 2>/dev/null || echo '(idk)')
-      branch=$(echo $branch_part | cut -d '/' -f3)
+      branch=$(echo $branch_part | cut -d '/' -f3-)
       echo " %F{green}%B$branch%b%f"
     fi
   else
