@@ -119,9 +119,12 @@ set listchars=tab:\ \ ,trail:⠐,extends:#,nbsp:.
 map j gj
 map k gk
 
+" TODO: change these explicit references to comma to <Leader>
+
 "clear search with ,/
 nmap <silent> ,/ :let@/=""<CR>
 
+" jump to the list of files with ,e
 nmap <silent> ,e :Explore<CR>jj
 
 "move backup files all into one place
