@@ -240,4 +240,4 @@ function! VisualFindAndReplaceWithSelection() range
 endfunction
 
 " use system clipboard???
-set clipboard=unnamed
+set clipboard=unnamed,unnamedplus
