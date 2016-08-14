@@ -24,6 +24,7 @@ unsetopt nomatch
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="$HOME/.cargo/bin:$PATH"
 source $ZSH/oh-my-zsh.sh
+export RUST_SRC_PATH="$HOME/src/rust/src"
 
 # User configuration
 
