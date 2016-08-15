@@ -56,6 +56,8 @@ Plug 'rking/ag.vim'
 
 " haskell stuff
 Plug 'begriffs/haskell-vim-now'
+
+Plug 'sotte/presenting.vim'
 call plug#end()
 
 " press jk to exit insert mode
