@@ -109,6 +109,7 @@ OS = {
 entries.each do |path|
   next unless File.file?(path)
   next unless path.start_with?(".")
+  next if path == ".gitignore"
   next if OS != :linux && path == ".linux-only-stuff"
 
   path_to_home_copy = Pathname.new(
