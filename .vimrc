@@ -11,6 +11,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 " rust syntax highlighting, etc
 Plug 'rust-lang/rust.vim'
+Plug 'racer-rust/vim-racer'
 " using to pull current git branch into status bar
 Plug 'tpope/vim-fugitive'
 " useful for opening files
@@ -241,3 +242,8 @@ endfunction
 
 " use system clipboard???
 set clipboard=unnamed,unnamedplus
+
+" TODO: make this generic instead of hardcoded to mac/maxjacobson
+set hidden
+let g:racer_cmd = "/Users/maxjacobson/.cargo/bin/racer"
+let $RUST_SRC_PATH="/Users/maxjacobson/src/rust/src"
