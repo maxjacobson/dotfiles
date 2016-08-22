@@ -1,0 +1,139 @@
+#!/usr/bin/env ruby
+
+require 'pathname'
+require 'readline'
+require 'logger'
+require 'pry'
+
+class My
+  def self.logger
+    return @logger if defined?(@logger)
+
+    @logger = Logger.new(STDOUT)
+    @logger.formatter = proc do |severity, datetime, progname, msg|
+      time = datetime.strftime("%H:%M")
+      "(#{time}) #{msg}\n"
+    end
+
+    @logger
+  end
+end
+
+def assert(bool, msg)
+  return if bool
+
+  puts msg
+  exit 1
+end
+
+def get_from(valid_inputs)
+  actually_valid_inputs = valid_inputs + valid_inputs.map do |word|
+    word.chars.detect do |char|
+      char.upcase == char
+    end
+  end
+
+  actually_valid_inputs = actually_valid_inputs.compact.map(&:downcase)
+
+  loop do
+    prompt = "[" + valid_inputs.join(", ") + "] $ "
+    input = begin
+              Readline.readline(prompt)
+            rescue Interrupt
+              return "exit"
+            end
+
+    input or return "exit" # handle ^d
+    return input if actually_valid_inputs.include?(input.downcase)
+    puts "Invalid input: #{input}"
+  end
+end
+
+def do_exit
+  puts
+  puts "Exiting..."
+  exit
+end
+
+def on_path?(bin)
+  ENV["PATH"].split(":").any? do |path|
+    if Dir.exist?(path)
+      Dir.entries(path).include?(bin)
+    else
+      My.logger.warn "#{path} does not even exist... but it's on your path!"
+      false
+    end
+  end
+end
+
+LINUX_ONLY_STUFF = ".linux-only-stuff"
+
+entries = Dir.entries(".")
+
+assert entries.include?(LINUX_ONLY_STUFF),
+       "I should have this file if the logic exists around it"
+
+assert Dir.exist?(File.expand_path("~/bin")),
+       "~/bin should exist"
+
+Dir.chdir("bin") do
+  bins = Dir.entries(".")
+  bins.each do |bin|
+    next unless File.file?(bin)
+    path_to_home_bin = Pathname.new(
+      File.expand_path("~/bin/#{bin}")
+    )
+
+    assert File.exist?(path_to_home_bin),
+           "Expected #{path_to_home_bin}"
+
+    assert path_to_home_bin.read == File.read(bin),
+           "bin/#{bin} is not synced fully"
+  end
+end
+
+expected_global_bins = %w(
+  selecta
+  ag
+)
+
+expected_global_bins.each do |global_bin|
+  assert on_path?(global_bin),
+    "#{global_bin} should be installed"
+end
+
+OS = {
+  "Darwin" => :macos
+}.fetch(`uname`.chomp, :linux)
+
+entries.each do |path|
+  next unless File.file?(path)
+  next unless path.start_with?(".")
+  next if OS != :linux && path == ".linux-only-stuff"
+
+  path_to_home_copy = Pathname.new(
+    File.expand_path "~/#{path}"
+  )
+
+  assert File.exist?(path_to_home_copy),
+        "#{path_to_home_copy} must exist"
+
+  content = File.read(path)
+  home_content = path_to_home_copy.read
+
+  if content != home_content
+    puts "Not in sync: #{path}"
+    input = get_from %w(Show sKip)
+    do_exit if input == "exit"
+    next if %w(k skip).include?(input.downcase)
+
+    assert %w(show s).include?(input.downcase),
+           "I think the input must be show now..."
+
+    puts "Here's the diff... the one on top is the one in this repo"
+    system "diff #{path} #{path_to_home_copy}"
+    redo
+  end
+end
+
+puts "Success!"
