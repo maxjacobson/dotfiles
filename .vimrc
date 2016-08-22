@@ -53,6 +53,9 @@ Plug 'davidoc/taskpaper.vim'
 
 " search the codebase with ag ("the silver searcher")
 Plug 'rking/ag.vim'
+
+" haskell stuff
+Plug 'begriffs/haskell-vim-now'
 call plug#end()
 
 " press jk to exit insert mode
