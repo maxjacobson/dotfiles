@@ -5,5 +5,6 @@ alias 'gst'='git status'
 
 # vi is aliased to the system vim, but I want to use the homebrew vim
 alias 'vi'='vim'
+alias ag='ag --hidden'
 
 [[ -s "$HOME/.aliases.local" ]] && source "$HOME/.aliases.local"
