@@ -252,3 +252,11 @@ set clipboard=unnamed,unnamedplus
 set hidden
 let g:racer_cmd = "/Users/maxjacobson/.cargo/bin/racer"
 let $RUST_SRC_PATH="/Users/maxjacobson/src/rust/src"
+
+" Don't accidentally enter Ex mode
+" http://www.bestofvim.com/tip/leave-ex-mode-good/
+nnoremap Q <nop>
+
+" While I'm at it, disable K to lookup man pages
+" I never use it on purpose...
+nnoremap K <nop>
