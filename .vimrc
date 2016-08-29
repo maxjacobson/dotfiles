@@ -209,7 +209,7 @@ let g:go_fmt_command = "goimports"
 
 let g:path_to_matcher = "/usr/local/bin/matcher"
 
-let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files . -co --exclude-standard | uniq']
+let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files . -co --exclude-standard | uniq | fuzzy_file_helper']
 
 let g:ctrlp_match_func = { 'match': 'GoodMatch' }
 

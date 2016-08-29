@@ -21,6 +21,7 @@ Also, copy the .zsh-customizations folder into your home folder.
 * ag
 * matcher - https://github.com/burke/matcher
 * random_nice_emoji - https://github.com/maxjacobson/random_nice_emoji
+* fuzzy_file_helper - https://github.com/maxjacobson/fuzzy_file_helper
 
 ## setup
 
