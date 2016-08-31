@@ -91,9 +91,9 @@ set smartindent
 au BufRead,BufNewFile *.rb set shiftwidth=2
 au BufRead,BufNewFile *.rb set softtabstop=2
 au BufRead,BufNewFile *.rb set tabstop=2
-au BufRead,BufNewFile *.py set shiftwidth=2
-au BufRead,BufNewFile *.py set softtabstop=2
-au BufRead,BufNewFile *.py set tabstop=2
+au BufRead,BufNewFile *.py set shiftwidth=4
+au BufRead,BufNewFile *.py set softtabstop=4
+au BufRead,BufNewFile *.py set tabstop=4
 
 " don't go too long!
 "
