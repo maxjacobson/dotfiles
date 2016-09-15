@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+
+require 'json'
+require 'shellwords'
+
+# FIXME: where am I mysteriously setting this???
+ENV.delete('ROOSTER_FILE') if ENV.key?('ROOSTER_FILE')
+
+logins = begin
+           JSON.parse(`rooster export`)
+         rescue Interrupt
+           exit 1
+         end
+
+services = logins.map do |login|
+  "#{login.fetch('name')} - #{login.fetch('username')}"
+end.join("\n")
+
+selected = `echo #{services.shellescape} | selecta`.chomp
+name = selected.split(" - ").fetch(0)
+system "rooster get #{name}"
