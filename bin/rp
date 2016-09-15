@@ -14,8 +14,17 @@ logins = begin
 
 services = logins.map do |login|
   "#{login.fetch('name')} - #{login.fetch('username')}"
-end.join("\n")
+end.sort.join("\n")
 
-selected = `echo #{services.shellescape} | selecta`.chomp
+selected = begin
+             `echo #{services.shellescape} | selecta 2>/dev/null`.chomp
+           rescue Interrupt
+             exit 1
+           end
 name = selected.split(" - ").fetch(0)
-system "rooster get #{name}"
+
+begin
+  system "rooster get #{name}"
+rescue Interrupt
+  exit 1
+end
