@@ -6,7 +6,10 @@ function docker-env {
     eval $(/usr/local/bin/docker-machine env default)
   fi
 }
-docker-env
+
+if command -v docker-machine; then
+  docker-env
+fi
 
 function docker-cleanup {
   docker ps -a | grep 'weeks ago' | awk '{print $1}' | xargs docker rm
