@@ -7,7 +7,7 @@ function docker-env {
   fi
 }
 
-if command -v docker-machine; then
+if command -v docker-machine 1>/dev/null; then
   docker-env
 fi
 
