@@ -63,7 +63,7 @@ call plug#end()
 " press jk to exit insert mode
 inoremap jk <ESC>
 inoremap JK <ESC>
-let mapleader = ","
+let mapleader = " "
 
 " help it do the syntax recognition right
 syntax on
@@ -125,13 +125,11 @@ set listchars=tab:\ \ ,trail:⠐,extends:#,nbsp:.
 map j gj
 map k gk
 
-" TODO: change these explicit references to comma to <Leader>
+"clear search with <Leader>/
+nmap <silent> <Leader>/ :let@/=""<CR>
 
-"clear search with ,/
-nmap <silent> ,/ :let@/=""<CR>
-
-" jump to the list of files with ,e
-nmap <silent> ,e :Explore<CR>jj
+" jump to the list of files with <Leader>e
+nmap <silent> <Leader>e :Explore<CR>jj
 
 "move backup files all into one place
 set backup
