@@ -24,7 +24,7 @@ selected = begin
 name = selected.split(" - ").fetch(0)
 
 begin
-  system "rooster get #{name}"
+  system %{rooster get "#{name}"}
 rescue Interrupt
   exit 1
 end
