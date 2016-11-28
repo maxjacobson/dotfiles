@@ -3,14 +3,14 @@
 require 'json'
 require 'shellwords'
 
-# FIXME: where am I mysteriously setting this???
-ENV.delete('ROOSTER_FILE') if ENV.key?('ROOSTER_FILE')
-
-logins = begin
-           JSON.parse(`rooster export`)
-         rescue Interrupt
-           exit 1
-         end
+logins =
+  begin
+    JSON.parse(`rooster export`)
+  rescue Interrupt
+    exit 1
+  rescue JSON::ParserError
+    exit 1
+  end
 
 services = logins.map do |login|
   "#{login.fetch('name')} - #{login.fetch('username')}"
@@ -24,7 +24,12 @@ selected = begin
 name = selected.split(" - ").fetch(0)
 
 begin
-  system %{rooster get "#{name}"}
+  login = logins.detect { |l| l.fetch("name") == name } or raise "BAD CHOICE"
+  if system("echo #{login.fetch('password').shellescape} | pbcopy")
+    puts "Alright! On clipboard..."
+  else
+    puts "Ah boo"
+  end
 rescue Interrupt
   exit 1
 end
