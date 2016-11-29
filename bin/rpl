@@ -75,6 +75,19 @@ class App
     end
   end
 
+  def search(input)
+    logins = @logins.select { |login| login.name.include?(input) }
+    if logins.length == 1
+      login = logins.first
+      puts "Found: #{login.name}"
+      puts login.to_s_with_password
+    elsif logins.length == 0
+      puts "No login with input #{input}"
+    else
+      puts "Found #{logins.map(&:name).inspect}"
+    end
+  end
+
   def list
     @logins.each do |login|
       puts login
@@ -93,7 +106,7 @@ class App
         words = input.split(" ")
         args = words[1..-1]
         if !args.empty?
-          args = args.join(" ")
+          args = [args.join(" ")]
         end
         @input = [words.first, args]
       end
@@ -103,7 +116,7 @@ class App
   end
 
   def valid_inputs
-    %w[list get]
+    %w[list get search]
   end
 
   def validate_input
@@ -111,8 +124,15 @@ class App
       exit 1
     end
 
+
     if !valid_inputs.include?(@input.first)
       puts "bad command: #{@input.first}. Valid commands: #{valid_inputs}"
+      return false
+    end
+
+    arity = method(@input.first).arity
+    if arity != @input.last.length
+      puts "Wrong number of arguments to #{@input.first}. Expected #{arity}, got #{@input.last.length}: #{@input.last.inspect}"
       return false
     end
 
@@ -121,8 +141,6 @@ class App
 
   def process_input
     public_send @input.first, *@input.last
-  rescue ArgumentError
-    puts "Bad arguments to #{@input.first}"
   end
 end
 
