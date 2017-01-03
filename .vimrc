@@ -257,6 +257,7 @@ set clipboard=unnamed,unnamedplus
 set hidden
 let g:racer_cmd = "/Users/maxjacobson/.cargo/bin/racer"
 let $RUST_SRC_PATH="/Users/maxjacobson/src/rust/src"
+let g:racer_experimental_completer = 1
 
 " Don't accidentally enter Ex mode
 " http://www.bestofvim.com/tip/leave-ex-mode-good/
