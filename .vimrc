@@ -56,6 +56,8 @@ Plug 'rking/ag.vim'
 Plug 'begriffs/haskell-vim-now'
 
 Plug 'sotte/presenting.vim'
+
+Plug 'sjl/gundo.vim'
 call plug#end()
 
 " press jk to exit insert mode
@@ -154,6 +156,8 @@ nmap <Leader>g :!clear; go run %<CR>
 " run current file in cucumer
 " nmap <Leader>c :!clear; bundle exec cucumber %<CR>
 map <Leader>c :Dispatch bundle exec cucumber %<CR>
+
+nnoremap gu :GundoToggle<CR>
 
 " status line
 set laststatus=2
