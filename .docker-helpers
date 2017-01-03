@@ -1,17 +1,12 @@
-# for boot2docker/docker machine
-function docker-env {
-  a=$(docker-machine status)
-  b="Stopped"
-  if [ "$a" != "$b" ]; then
-    eval $(/usr/local/bin/docker-machine env default)
-  fi
-}
-
-if command -v docker-machine 1>/dev/null; then
-  docker-env
-fi
-
 function docker-cleanup {
   docker ps -a | grep 'weeks ago' | awk '{print $1}' | xargs docker rm
-  docker images | fgrep "<none>" | awk '{print $3}' | xargs docker rmi
+  docker images | fgrep "<none>" | awk '{print $3}' | xargs docker rmi -f
 }
+
+echo "starting pinata-ssh-forward. If this hangs, restart docker"
+pinata-ssh-forward 1>/dev/null 2>/dev/null
+
+alias 'dc'='docker-compose'
+alias 'up'='docker-compose --file docker-compose.yml --file docker-compose.docker-sync.yml up -d'
+alias 'down'='docker-compose --file docker-compose.yml --file docker-compose.docker-sync.yml down'
+alias 'ds'='docker-sync clean && docker-sync start'
