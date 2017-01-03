@@ -58,6 +58,8 @@ Plug 'begriffs/haskell-vim-now'
 Plug 'sotte/presenting.vim'
 
 Plug 'sjl/gundo.vim'
+
+Plug 'scrooloose/nerdtree'
 call plug#end()
 
 " press jk to exit insert mode
@@ -158,6 +160,7 @@ nmap <Leader>g :!clear; go run %<CR>
 map <Leader>c :Dispatch bundle exec cucumber %<CR>
 
 nnoremap gu :GundoToggle<CR>
+nnoremap <c-\> :NERDTreeToggle<CR>
 
 " status line
 set laststatus=2
