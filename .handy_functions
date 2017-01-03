@@ -1,7 +1,6 @@
 #!/usr/bin/env sh
 
 # create and change into a directory
-unalias md # unalias md first, because oh-my-zsh overpowers this function
 function md () {
   mkdir -p "$@" && cd "$@";
 }

@@ -1,22 +1,12 @@
 # I find this helpful:
 echo "Sourcing ~/.zshrc"
 
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
-
-# where to look for custom themes/plugins
-ZSH_CUSTOM=$HOME/.zsh-customizations
-
-# Look in ~/.oh-my-zsh/themes/
-# and ~/.zsh-customizations/themes
-# or "random" to pick one randomly
-ZSH_THEME="terrorhawk"
-
 # display red dots when preparing autocomplete
 COMPLETION_WAITING_DOTS="true"
 
 # don't set the title in tmux tabs
 DISABLE_AUTO_TITLE="true"
+setopt AUTO_CD
 
 # allow brackets in commands, which lets you pass arguments to rake tasks
 unsetopt nomatch
@@ -24,15 +14,18 @@ unsetopt nomatch
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
-source $ZSH/oh-my-zsh.sh
 export RUST_SRC_PATH="$HOME/src/rust/src"
+export GOPATH="$HOME/src/gopath"
+export PATH="$GOPATH/bin:$PATH"
 alias grep='grep'
 
 # User configuration
 
 export BUNDLER_EDITOR=vim
 
-export ROOSTER_FILE="$HOME/Dropbox/.passwords"
+if [ -d "$HOME/Dropbox" ]; then
+  export ROOSTER_FILE="$HOME/Dropbox/.passwords.rooster"
+fi
 
 source ~/.aliases
 source ~/.tmux-helpers
@@ -43,3 +36,40 @@ source ~/.nvm-configuration
 source ~/.private-environment-variables
 source ~/.linux-only-stuff
 source ~/.docker-helpers
+source ~/.prompt
+
+# brew install keychain
+# http://www.funtoo.org/Keychain
+# https://github.com/funtoo/keychain
+eval `keychain --eval --agents ssh --inherit any id_rsa`
+
+zstyle ':completion:*:*:git:*' script ~/.git-completion.bash
+# For: https://github.com/git/git/blob/master/contrib/completion/git-completion.zsh
+fpath=(~/.zsh $fpath)
+autoload -Uz compinit && compinit
+
+export HISTFILE=~/.zsh_history
+export HISTSIZE=1000000
+export SAVEHIST=1000000
+
+# Show history
+case $HIST_STAMPS in
+  "mm/dd/yyyy") alias history='fc -fl 1' ;;
+  "dd.mm.yyyy") alias history='fc -El 1' ;;
+  "yyyy-mm-dd") alias history='fc -il 1' ;;
+  *) alias history='fc -l 1' ;;
+esac
+
+setopt append_history
+setopt extended_history
+setopt hist_expire_dups_first
+setopt hist_ignore_dups # ignore duplication command history list
+setopt hist_ignore_space
+setopt hist_verify
+setopt inc_append_history
+setopt share_history # share command history data
+
+
+# make search up and down work, so partially type and hit up/down to find relevant stuff
+bindkey '^[[A' up-line-or-search
+bindkey '^[[B' down-line-or-search

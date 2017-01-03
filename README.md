@@ -6,11 +6,8 @@ helpful scripts that some of the dotfiles might depend on.
 
 Put them on your $PATH if you want to use them.
 
-Also, copy the .zsh-customizations folder into your home folder.
-
 ## Other things to install
 
-* oh-my-zsh
 * zsh
 * tmux
 * vim

@@ -25,4 +25,5 @@ git_prompt() {
   fi
 }
 
+setopt prompt_subst
 PROMPT="%F{grey}%C%f \$(random_nice_emoji) \$(git_prompt) "
