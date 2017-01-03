@@ -48,8 +48,6 @@ Plug 'osyo-manga/vim-over'
 Plug 'wfleming/vim-codeclimate'
 
 Plug 'mustache/vim-mustache-handlebars'
-" taskpaper!!!
-Plug 'davidoc/taskpaper.vim'
 
 " search the codebase with ag ("the silver searcher")
 Plug 'rking/ag.vim'
