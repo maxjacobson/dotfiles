@@ -23,10 +23,6 @@ alias grep='grep'
 
 export BUNDLER_EDITOR=vim
 
-if [ -d "$HOME/Dropbox" ]; then
-  export ROOSTER_FILE="$HOME/Dropbox/.passwords.rooster"
-fi
-
 source ~/.aliases
 source ~/.tmux-helpers
 source ~/.handy_functions
