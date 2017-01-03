@@ -11,9 +11,6 @@
   l = log --pretty='%Cred%h %Creset%<|(58,trunc)%s%n%Cgreen%aN%Creset, %ar%n'
   aa = add -A
   q = "! git add . --all && git commit --amend --no-message"
-  ughgem = "! rm Gemfile.lock && bundle && git add . --all && git rebase --continue"
-  p = push
-  pu = pull --rebase
   rc = rebase --continue
   rs = rebase --skip
   ra = rebase --abort
