@@ -266,3 +266,13 @@ nnoremap Q <nop>
 " While I'm at it, disable K to lookup man pages
 " I never use it on purpose...
 nnoremap K <nop>
+
+" http://stackoverflow.com/a/1618401
+fun! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun
+
+autocmd FileType c,cpp,java,php,ruby,python,txt,text autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
