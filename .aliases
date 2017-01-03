@@ -10,7 +10,7 @@ alias ag='ag --hidden'
 # find instances of method calls, whether the dot is on the previous line
 # or not
 calls() {
-  ag \.(\n[[:space:]]+)?$1
+  ag \.(\n[[:space:]]+)?$1 $2
 }
 
 [[ -s "$HOME/.aliases.local" ]] && source "$HOME/.aliases.local"
