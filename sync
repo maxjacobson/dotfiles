@@ -3,7 +3,6 @@
 require 'pathname'
 require 'readline'
 require 'logger'
-require 'pry'
 
 class My
   def self.logger
