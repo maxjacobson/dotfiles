@@ -32,7 +32,7 @@
   pru = pull --rebase upstream
 [core]
   editor = vim
-  excludesfile = /Users/max/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [color]
   ui = true
 [push]
