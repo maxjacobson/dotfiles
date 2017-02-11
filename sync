@@ -91,10 +91,31 @@ Dir.chdir("bin") do
   end
 end
 
-expected_global_bins = %w(
-  selecta
-  ag
-)
+expected_global_bins = {
+  via_rustup: %w(
+    rustc
+    cargo
+  ),
+  via_homebrew: %w(
+    selecta
+    ag
+    tmux
+    git
+    vim
+    tree
+    ruby-build
+    htop
+    ncdu
+    keychain
+  ),
+  via_manual_install: %w(
+    matcher
+  ),
+  via_cargo_install: %w(
+    rooster
+    random_nice_emoji
+  )
+}.values.flatten
 
 expected_global_bins.each do |global_bin|
   assert on_path?(global_bin),
