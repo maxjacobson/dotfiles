@@ -1,6 +1,3 @@
-# I find this helpful:
-echo "Sourcing ~/.zshrc"
-
 # display red dots when preparing autocomplete
 COMPLETION_WAITING_DOTS="true"
 
@@ -36,7 +33,7 @@ source ~/.prompt
 # brew install keychain
 # http://www.funtoo.org/Keychain
 # https://github.com/funtoo/keychain
-eval `keychain --eval --agents ssh --inherit any id_rsa`
+eval `keychain --quiet --eval --agents ssh --inherit any id_rsa`
 
 zstyle ':completion:*:*:git:*' script ~/.git-completion.bash
 # For: https://github.com/git/git/blob/master/contrib/completion/git-completion.zsh
