@@ -68,3 +68,6 @@ bindkey '^[[B' down-line-or-search
 
 # case-insensitive tab completion (borrowed from oh-my-zsh)
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
+
+# added by travis gem
+[ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
