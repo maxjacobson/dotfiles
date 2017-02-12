@@ -124,7 +124,6 @@ class App
       exit 1
     end
 
-
     if !valid_inputs.include?(@input.first)
       puts "bad command: #{@input.first}. Valid commands: #{valid_inputs}"
       return false
