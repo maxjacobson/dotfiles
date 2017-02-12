@@ -3,8 +3,11 @@ function docker-cleanup {
   docker images | fgrep "<none>" | awk '{print $3}' | xargs docker rmi -f
 }
 
-echo "starting pinata-ssh-forward. If this hangs, restart docker"
-pinata-ssh-forward 1>/dev/null 2>/dev/null
+if ! docker ps | grep pinata-ssh | grep Up >/dev/null; then
+  printf "starting pinata-ssh-forward. If this hangs, restart docker... "
+  pinata-ssh-forward 1>/dev/null 2>/dev/null
+  printf "done"
+fi
 
 alias 'dc'='docker-compose'
 alias 'up'='docker-compose --file docker-compose.yml --file docker-compose.docker-sync.yml up -d'
