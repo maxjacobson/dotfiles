@@ -6,7 +6,7 @@ function docker-cleanup {
 if ! docker ps | grep pinata-ssh | grep Up >/dev/null; then
   printf "starting pinata-ssh-forward. If this hangs, restart docker... "
   pinata-ssh-forward 1>/dev/null 2>/dev/null
-  printf "done"
+  printf "done\n"
 fi
 
 alias 'dc'='docker-compose'
