@@ -101,10 +101,11 @@ class App
   def get_input
     Readline.readline("> ").tap do |input|
       if input.nil?
-        @input = []
+        # ctrl d
+        byeee
       else
         words = input.split(" ")
-        args = words[1..-1]
+        args = words[1..-1] || []
         if !args.empty?
           args = [args.join(" ")]
         end
@@ -112,7 +113,8 @@ class App
       end
     end
   rescue Interrupt
-    @input = []
+    # ctrl c
+    byeee
   end
 
   def valid_inputs
@@ -120,12 +122,10 @@ class App
   end
 
   def validate_input
-    if @input.empty?
-      exit 1
-    end
+    return false if @input.first.nil?
 
     if !valid_inputs.include?(@input.first)
-      puts "bad command: #{@input.first}. Valid commands: #{valid_inputs}"
+      puts "bad command: #{@input.first.inspect}. Valid commands: #{valid_inputs}"
       return false
     end
 
@@ -140,6 +140,11 @@ class App
 
   def process_input
     public_send @input.first, *@input.last
+  end
+
+  def byeee
+    print "\rBye!\n"
+    exit 1
   end
 end
 
