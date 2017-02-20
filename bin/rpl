@@ -122,8 +122,6 @@ class App
   end
 
   def validate_input
-    return false if @input.first.nil?
-
     if !valid_inputs.include?(@input.first)
       puts "bad command: #{@input.first.inspect}. Valid commands: #{valid_inputs}"
       return false
