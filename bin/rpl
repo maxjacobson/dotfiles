@@ -55,7 +55,7 @@ logins =
   end
 
 Readline.completion_proc = proc do |word|
-  logins.map(&:name).grep(Regexp.new(Regexp.escape(word), "i"))
+  logins.map(&:name).grep(Regexp.new("^" + Regexp.escape(word), "i"))
 end
 
 class App
