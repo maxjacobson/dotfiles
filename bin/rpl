@@ -103,7 +103,7 @@ class App
   attr_reader :logins
 
   def get_input
-    Readline.readline("> ").tap do |input|
+    Readline.readline("> ", keep_history = true).tap do |input|
       if input.nil?
         # ctrl d
         byeee
