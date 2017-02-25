@@ -58,8 +58,6 @@ Plug 'begriffs/haskell-vim-now'
 Plug 'sotte/presenting.vim'
 
 Plug 'sjl/gundo.vim'
-
-Plug 'scrooloose/nerdtree'
 call plug#end()
 
 " press jk to exit insert mode
@@ -132,6 +130,7 @@ nmap <silent> <Leader>/ :let@/=""<CR>
 
 " jump to the list of files with <Leader>e
 nmap <silent> <Leader>e :Explore<CR>jj
+nnoremap <c-\> :Explore<CR>
 
 "move backup files all into one place
 set backup
@@ -160,7 +159,6 @@ nmap <Leader>g :!clear; go run %<CR>
 map <Leader>c :Dispatch bundle exec cucumber %<CR>
 
 nnoremap gu :GundoToggle<CR>
-nnoremap <c-\> :NERDTreeToggle<CR>
 
 " status line
 set laststatus=2
@@ -209,6 +207,14 @@ nmap <Leader>af :CodeClimateAnalyzeCurrentFile<CR>
 
 " hide the giant banner at the top of netrw
 let g:netrw_banner=0
+
+" use the tree view of netrw
+let g:netrw_liststyle= 3
+
+" when selecting a file from netrw, how large to make the new window
+" (hint: press o or v to open the file in a split)
+let g:netrw_winsize=85
+
 " " hide gitignored files from netrw
 let g:go_fmt_command = "goimports"
 
