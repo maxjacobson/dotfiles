@@ -1,0 +1,5 @@
+#!/bin/sh
+
+scrot 'Screen Shot %Y-%m-%d at %H.%M.%S.png' \
+  -q 100 \
+  -e 'mv "$f" ~/Dropbox/Screenshots'
