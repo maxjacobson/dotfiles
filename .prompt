@@ -25,5 +25,11 @@ git_prompt() {
   fi
 }
 
+random_nice_emoji_maybe() {
+  if [ "$(uname)" != "Linux" ]; then
+    echo " \$(random_nice_emoji) "
+  fi
+}
+
 setopt prompt_subst
-PROMPT="%F{grey}%C%f \$(random_nice_emoji) \$(git_prompt) "
+PROMPT="%F{grey}%C%f\$(random_nice_emoji_maybe)\$(git_prompt) "

@@ -10,3 +10,8 @@ bind-key -t vi-copy y copy-pipe "reattach-to-user-namespace pbcopy"
 # Update default binding of `Enter` to also use copy-pipe
 unbind -t vi-copy Enter
 bind-key -t vi-copy Enter copy-pipe "reattach-to-user-namespace pbcopy"
+
+# use nice colors from smyck
+set -g status-bg '#DC8D89'
+set -g status-fg '#F7F7F7'
+
