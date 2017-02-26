@@ -27,7 +27,7 @@ git_prompt() {
 
 random_nice_emoji_maybe() {
   if [ "$(uname)" != "Linux" ]; then
-    echo " \$(random_nice_emoji) "
+    echo " `random_nice_emoji` "
   fi
 }
 
