@@ -23,7 +23,6 @@ export BUNDLER_EDITOR=vim
 source ~/.aliases
 source ~/.tmux-helpers
 source ~/.handy_functions
-source ~/.golang-configuration
 source ~/.chruby-configuration
 source ~/.private-environment-variables
 source ~/.linux-only-stuff

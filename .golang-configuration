@@ -1,6 +1,0 @@
-#!/usr/bin/env sh
-
-if [[ -d $HOME/go/bin ]]; then
-  export PATH="$HOME/go/bin:$PATH"
-  export GOPATH="$HOME/go"
-fi
