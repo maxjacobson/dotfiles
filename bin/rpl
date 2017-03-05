@@ -6,12 +6,13 @@ require 'readline'
 require 'shellwords'
 
 class Login
-  def initialize(name:, username:, password:, created_at:, updated_at:)
+  def initialize(name:, username:, password:, created_at:, updated_at:, copy_command:)
     @name = name
     @username = username
     @password = password
     @created_at = Time.at(created_at)
     @updated_at = Time.at(updated_at)
+    @copy_command = copy_command
   end
 
   def to_s
@@ -19,11 +20,15 @@ class Login
   end
 
   def to_s_with_password
-    if system("echo #{password.shellescape} | pbcopy")
+    if system("echo #{password.shellescape} | #{copy_command}")
       "On clipboard! Username is #{username}"
     else
       puts "Boo... could not copy..."
     end
+  end
+
+  def to_s_with_password_to_terminal
+    puts "#{username} - #{password}"
   end
 
   def <=>(other)
@@ -34,8 +39,15 @@ class Login
 
   private
 
-  attr_reader :username, :password, :created_at, :updated_at
+  attr_reader :username, :password, :created_at, :updated_at, :copy_command
 end
+
+copy_command =
+  if `uname`.chomp == "Linux"
+    "xclip"
+  else
+    "pbcopy"
+  end
 
 logins =
   begin
@@ -46,6 +58,7 @@ logins =
         password: login.fetch("password"),
         created_at: login.fetch("created_at"),
         updated_at: login.fetch("updated_at"),
+        copy_command: copy_command,
       )
     }
   rescue JSON::ParserError
@@ -55,7 +68,7 @@ logins =
   end
 
 Readline.completion_proc = proc do |word|
-  logins.map(&:name).grep(Regexp.new("^" + Regexp.escape(word), "i"))
+  logins.map(&:name).grep(Regexp.new(Regexp.escape(word), "i"))
 end
 
 class App
@@ -85,6 +98,19 @@ class App
       login = logins.first
       puts "Found: #{login.name}"
       puts login.to_s_with_password
+    elsif logins.length == 0
+      puts "No login with input #{input}"
+    else
+      puts "Found #{logins.map(&:name).inspect}"
+    end
+  end
+
+  def show(input)
+    logins = @logins.select { |login| login.name == input }
+    if logins.length == 1
+      login = logins.first
+      puts "Found: #{login.name}"
+      puts login.to_s_with_password_to_terminal
     elsif logins.length == 0
       puts "No login with input #{input}"
     else
@@ -122,7 +148,7 @@ class App
   end
 
   def valid_inputs
-    %w[list get search]
+    %w[list get search show]
   end
 
   def validate_input
