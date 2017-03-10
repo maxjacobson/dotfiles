@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -ex
+
+if [[ -z "$1" ]]; then
+  echo "missing first argument"
+  exit 1
+fi
+
+ruby-build -v $1 ~/.rubies/$1
