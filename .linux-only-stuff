@@ -1,25 +1,3 @@
 #!/usr/bin/env sh
 
-function vol () {
-  case $1 in
-    up)
-      pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +15%
-      ;;
-    down)
-      pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -15%
-      ;;
-    quiet)
-      pactl set-sink-mute 0 false ; pactl set-sink-volume 0 40%
-      notify-send "Volume 40%"
-      ;;
-    loud)
-      pactl set-sink-mute 0 false ; pactl set-sink-volume 0 90%
-      notify-send "Volume 90%"
-      ;;
-    *)
-      echo "usage: vol (up|down|loud|quiet)"
-      ;;
-  esac
-}
-
-alias 'batt'='acpi'
+alias 'db'='dropbox-cli'
