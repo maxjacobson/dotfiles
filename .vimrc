@@ -208,9 +208,6 @@ nmap <Leader>af :CodeClimateAnalyzeCurrentFile<CR>
 " hide the giant banner at the top of netrw
 let g:netrw_banner=0
 
-" use the tree view of netrw
-let g:netrw_liststyle= 3
-
 " when selecting a file from netrw, how large to make the new window
 " (hint: press o or v to open the file in a split)
 let g:netrw_winsize=85
