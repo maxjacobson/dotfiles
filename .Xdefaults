@@ -1,5 +1,5 @@
 Rxvt*scrollBar: False
-URxvt.font: xft:inconsolata:pixelsize=22
+URxvt.font: xft:inconsolata:pixelsize=16
 
 ! "visibone alt-2" via terminal.sexy (that's a website)
 ! special
