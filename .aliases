@@ -28,3 +28,4 @@ man() {
 }
 
 alias 'c'='codeclimate'
+alias 'emacs'='emacs -nw'
