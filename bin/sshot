@@ -1,5 +1,6 @@
 #!/bin/sh
 
 scrot 'Screen Shot %Y-%m-%d at %H.%M.%S.png' \
+  -s \
   -q 100 \
   -e 'mv "$f" ~/Pictures/Screenshots'
