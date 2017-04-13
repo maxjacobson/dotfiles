@@ -165,7 +165,7 @@ entries.each do |path|
                "Expected #{path_to_home_copy}"
 
         assert path_to_home_copy.read == File.read(dir_entry),
-               "#{path} is not synced fully"
+               "#{path} is not synced fully, check #{path}/#{dir_entry}"
       end
     end
   end
