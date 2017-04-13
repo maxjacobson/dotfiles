@@ -4,6 +4,3 @@ function docker-cleanup {
 }
 
 alias 'dc'='docker-compose'
-alias 'up'='docker-compose --file docker-compose.yml --file docker-compose.docker-sync.yml up -d'
-alias 'down'='docker-compose --file docker-compose.yml --file docker-compose.docker-sync.yml down'
-alias 'ds'='docker-sync clean && docker-sync start'
