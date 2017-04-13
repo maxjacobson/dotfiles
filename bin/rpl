@@ -44,7 +44,7 @@ end
 
 copy_command =
   if `uname`.chomp == "Linux"
-    "xclip"
+    "xsel"
   else
     "pbcopy"
   end
