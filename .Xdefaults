@@ -38,3 +38,7 @@ URxvt.font: xft:inconsolata:pixelsize=16
 ! white
 *.color7:       #cccccc
 *.color15:      #ffffff
+
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
