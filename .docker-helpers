@@ -1,6 +1,0 @@
-function docker-cleanup {
-  docker ps -a | grep -E "Exited.+days ago" | awk '{print $1}' | xargs --no-run-if-empty docker rm
-  docker images | fgrep "<none>" | awk '{print $3}' | xargs --no-run-if-empty docker rmi -f
-}
-
-alias 'dc'='docker-compose'

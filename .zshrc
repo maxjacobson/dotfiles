@@ -26,7 +26,6 @@ source ~/.handy_functions
 source ~/.chruby-configuration
 source ~/.private-environment-variables
 source ~/.linux-only-stuff
-source ~/.docker-helpers
 source ~/.prompt
 
 # brew install keychain
