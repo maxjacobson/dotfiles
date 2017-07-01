@@ -103,6 +103,7 @@ expected_global_bins = {
     htop
     ncdu
     keychain
+    jq
   ),
   via_manual_install: %w(
     matcher
