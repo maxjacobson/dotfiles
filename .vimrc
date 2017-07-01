@@ -32,10 +32,6 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
 " not sure if I use this one
 Plug 'pangloss/vim-javascript'
-" super useful for running rspecs
-Plug 'thoughtbot/vim-rspec'
-" help look up step definitions
-Plug 'tpope/vim-cucumber'
 " elixir
 Plug 'elixir-lang/vim-elixir'
 
@@ -154,10 +150,6 @@ nmap <Leader>j :Dispatch; node %<CR>
 " run current file in Go
 nmap <Leader>g :!clear; go run %<CR>
 
-" run current file in cucumer
-" nmap <Leader>c :!clear; bundle exec cucumber %<CR>
-map <Leader>c :Dispatch bundle exec cucumber %<CR>
-
 nnoremap gu :GundoToggle<CR>
 
 " status line
@@ -182,14 +174,6 @@ set foldnestmax=10
 
 " skip startup message
 set shortmess+=I
-" RSpec.vim
-" mappings
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
-" overrides
-let g:rspec_command = "Dispatch bundle exec rspec {spec}"
 
 " Tab mappings.
 " via https://github.com/edgibbs/.vim/blob/master/vimrc#L55-L64
@@ -258,8 +242,8 @@ set clipboard=unnamed,unnamedplus
 
 " TODO: make this generic instead of hardcoded to mac/maxjacobson
 set hidden
-let g:racer_cmd = "/Users/maxjacobson/.cargo/bin/racer"
-let $RUST_SRC_PATH="/Users/maxjacobson/src/rust/src"
+let g:racer_cmd = "/Users/max/.cargo/bin/racer"
+let $RUST_SRC_PATH="/home/max/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
 let g:racer_experimental_completer = 1
 
 " Don't accidentally enter Ex mode

@@ -2,16 +2,17 @@
 
 while true; do
   ac_info=$(acpi --ac-adapter)
-  battery_info=$(acpi --battery)
-  pct=$(echo $battery_info | grep --extended-regexp "[0-9]+%" --only-matching | grep --extended-regexp "[0-9]+" --only-matching)
 
   if echo $ac_info | grep "off-line" >/dev/null; then
-    if test $pct -lt 50; then
-      notify-send --urgency=critical --expire-time=10000 "Plug in your charger, dummy, you're at $pct%"
+    battery_info=$(acpi --battery)
+    pct=$(echo $battery_info | grep --extended-regexp "[0-9]+%" --only-matching | grep --extended-regexp "[0-9]+" --only-matching)
+
+    if test $pct -lt 30; then
+      notify-send --urgency=critical --expire-time=5000 "Plug in your charger, dummy, you're at $pct%"
     fi
 
-    sleep 30
+    sleep 360
   else
-    sleep 120
+    sleep 1200
   fi
 done

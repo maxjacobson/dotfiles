@@ -11,13 +11,16 @@ unsetopt nomatch
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
-export RUST_SRC_PATH="$HOME/src/rust/src"
 export GOPATH="$HOME/src/gopath"
 export PATH="$GOPATH/bin:$PATH"
 alias grep='grep'
 
-# User configuration
 
+# use vim for things like aurget
+export EDITOR=vim
+
+# use emacs keybindings for shell navigation (even though EDITOR is vim)
+set -o emacs
 export BUNDLER_EDITOR=vim
 
 source ~/.aliases
@@ -27,11 +30,6 @@ source ~/.chruby-configuration
 source ~/.private-environment-variables
 source ~/.linux-only-stuff
 source ~/.prompt
-
-# brew install keychain
-# http://www.funtoo.org/Keychain
-# https://github.com/funtoo/keychain
-eval `keychain --quiet --eval --agents ssh --inherit any id_rsa`
 
 zstyle ':completion:*:*:git:*' script ~/.git-completion.bash
 # For: https://github.com/git/git/blob/master/contrib/completion/git-completion.zsh
@@ -67,10 +65,16 @@ bindkey '^[[B' down-line-or-search
 # case-insensitive tab completion (borrowed from oh-my-zsh)
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 
+# brew install keychain
+# http://www.funtoo.org/Keychain
+# https://github.com/funtoo/keychain
+eval `keychain --quiet --eval --agents ssh --inherit any id_rsa`
+
 # added by travis gem
 [ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
 
 if [ -z "$DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ]; then
+  echo "to jump into xmonad, run: startx"
   # I'm on a computer running linux...
-  exec startx
+  # exec startx
 fi

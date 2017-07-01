@@ -1,10 +1,17 @@
-setxkbmap -option ctrl:nocaps
+xmodmap ~/.Xmodmap
 dropbox-cli start
-xautolock -time 5 -locker slock -secure &
+
+xautolock \
+  -time 10 \
+  -locker slock \
+  -notifier "notify-send --expire-time=30000 'locking shortly...'" \
+  -notify 30 \
+  -secure &
+
 xsetroot -cursor_name left_ptr
 
-sh ~/.fehbg &
-xrandr --output eDP1 --mode 1920x1080
+shuffle_wallpapers &
+
 dunst &
 
 plugged_in_checker &

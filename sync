@@ -71,6 +71,7 @@ LINUX_ONLY_STUFF = [
   ".linux-only-stuff",
   ".Xdefaults",
   ".Xresources",
+  ".Xmodmap",
   ".xinitrc",
   ".xmonad",
 ]
@@ -156,7 +157,10 @@ entries.each do |path|
     Dir.chdir(path) do
       dir_entries = Dir.entries(".")
       dir_entries.each do |dir_entry|
-        next unless File.file?(dir_entry)
+        unless File.file?(dir_entry)
+          My.logger.fatal "Check #{path}/#{dir_entry} manually"
+          next
+        end
         path_to_home_copy = Pathname.new(
           File.expand_path("~/#{path}/#{dir_entry}")
         )

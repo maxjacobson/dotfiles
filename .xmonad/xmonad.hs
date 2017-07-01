@@ -9,7 +9,7 @@ mylayoutHook = smartBorders tiled ||| smartBorders (Mirror tiled) ||| noBorders 
      delta   = 3/100
 
 main = xmonad $ def
-   { borderWidth        = 8
+   { borderWidth        = 4
    , normalBorderColor  = "#d6f7de"
    , focusedBorderColor = "#f442b3"
    , layoutHook = mylayoutHook

@@ -4,6 +4,12 @@ require 'json'
 require 'time'
 
 class Login
+  SKIPPERS = [
+    "cce-unstable",
+    "destroy all software",
+    "fastmail",
+  ].freeze
+
   def initialize(name:, username:, password:, created_at:, updated_at:)
     @name = name
     @username = username
@@ -13,6 +19,7 @@ class Login
   end
 
   def insecure?
+    return false if SKIPPERS.include?(@name)
     @updated_at < threshold
   end
 
@@ -28,7 +35,7 @@ class Login
     hour = minute * 60
     day = hour * 24
     month = day * 31
-    Time.now - (2 * month)
+    Time.now - (6 * month)
   end
 
   def pretty_updated_at
@@ -38,7 +45,7 @@ class Login
   end
 
   def <=>(other)
-    other.updated_at <=> updated_at
+    updated_at <=> other.updated_at
   end
 
   protected
