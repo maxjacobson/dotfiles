@@ -2,9 +2,9 @@
 
 set -ex
 
-while true; do
-  for jpg in $(find "/home/max/Pictures/wallpapers" -name "*.jpg" | sort --random-sort); do
-    feh --no-xinerama --bg-fill "$jpg"
-    sleep 120
-  done
+for jpg in $(find "/home/max/Pictures/wallpapers" -name "*.jpg" | sort --random-sort); do
+  feh --no-xinerama --bg-fill "$jpg"
+  sleep 30
 done
+
+exec "$0"
