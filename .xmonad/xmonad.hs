@@ -1,6 +1,8 @@
 import XMonad
+import XMonad.Hooks.DynamicLog
 import XMonad.Layout.NoBorders
 
+-- makes it so when I only have one window open, I don't see a border
 mylayoutHook = smartBorders tiled ||| smartBorders (Mirror tiled) ||| noBorders Full
   where
      tiled   = Tall nmaster delta ratio
@@ -8,9 +10,27 @@ mylayoutHook = smartBorders tiled ||| smartBorders (Mirror tiled) ||| noBorders 
      ratio   = 1/2
      delta   = 3/100
 
-main = xmonad $ def
-   { borderWidth        = 4
-   , normalBorderColor  = "#d6f7de"
-   , focusedBorderColor = "#f442b3"
-   , layoutHook = mylayoutHook
-   , terminal           = "urxvt" }
+main = xmonad =<< statusBar "xmobar" myXmobarPP toggleStrutsKey myConfig
+
+myXmobarPP = def
+  {
+    ppCurrent = xmobarColor "#f442b3" "#333333"
+    , ppHidden = xmobarColor "yellow" "#333333"
+    , ppHiddenNoWindows = xmobarColor "white" "#333333" -- show all workspace numbers even if they're empty
+    , ppUrgent = xmobarColor "red" "#333333"
+    , ppWsSep = " "
+    , ppOrder = \(workspaces:_layout:title:_) -> [workspaces] -- set order, and exclude layout (idc) and title (hm I don't think I care)
+  }
+
+-- Keybinding to toggle the gap for the bar.
+-- Note: no idea what this means
+toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
+
+-- main config
+myConfig = def {
+  terminal = "urxvt"
+    , layoutHook = mylayoutHook
+    , borderWidth = 4
+    , normalBorderColor  = "#d6f7de"
+    , focusedBorderColor = "#f442b3"
+}

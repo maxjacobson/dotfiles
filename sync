@@ -74,6 +74,7 @@ LINUX_ONLY_STUFF = [
   ".Xmodmap",
   ".xinitrc",
   ".xmonad",
+  ".xmobarrc",
 ]
 
 entries = Dir.entries(".")

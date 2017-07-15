@@ -1,0 +1,25 @@
+Config { font = "xft:inconsolata:pixelsize=16"
+       , additionalFonts = []
+       , bgColor = "#333333"
+       , fgColor = "white"
+       , alpha = 255
+       , position = Bottom
+       , textOffset = -1
+       , iconOffset = -1
+       , lowerOnStart = True
+       , pickBroadest = False
+       , persistent = True
+       , hideOnStart = False
+       , iconRoot = "."
+       , allDesktops = True
+       , overrideRedirect = True
+       , commands = [Run Date "%H:%M" "date" 10
+                    , Run StdinReader
+                    , Run Battery ["-L","30","-H","75","--high","white","--normal","white", "--low", "red"] 50
+     								, Run BatteryP ["BAT0"] ["-t", "<acstatus>" , "-L", "10", "-H", "80", "-l", "red", "-h", "white" , "--", "-O", ":) <left>%", "-o", ":/ <left>%", "-i", ":) <left>%"] 10 -- -O is charging, -o is draining, -i is idle
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "[%StdinReader%]}{%battery% | %date%"
+
+       }
