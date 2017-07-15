@@ -1,7 +1,14 @@
 Rxvt*scrollBar: False
-URxvt.font: xft:inconsolata:pixelsize=18
+URxvt.font: xft:inconsolata:pixelsize=16
 
-! "visibone alt-2" via terminal.sexy (that's a website) (I don't love the name)
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+
+
+! styles via terminal.sexy, (a website) exported as Xresources
+! "visibone alt-2" is pretty good
+
 ! special
 *.foreground:   #cccccc
 *.background:   #333333
@@ -38,7 +45,3 @@ URxvt.font: xft:inconsolata:pixelsize=18
 ! white
 *.color7:       #cccccc
 *.color15:      #ffffff
-
-URxvt.perl-ext-common: default,matcher
-URxvt.url-launcher: /usr/bin/xdg-open
-URxvt.matcher.button: 1
