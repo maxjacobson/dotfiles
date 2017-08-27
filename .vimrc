@@ -115,7 +115,7 @@ set textwidth=0
 set wrapmargin=0
 
 set list
-set listchars=tab:\ \ ,trail:⠐,extends:#,nbsp:.
+set listchars=tab:\ \ ,trail:.,extends:#,nbsp:.
 
 "Treat long lines as break lines (useful when moving around in them)
 map j gj
