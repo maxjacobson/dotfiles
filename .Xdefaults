@@ -1,5 +1,5 @@
 Rxvt*scrollBar: False
-URxvt.font: xft:inconsolata:pixelsize=16
+URxvt.font: xft:inconsolata:pixelsize=20
 
 URxvt.perl-ext-common: default,matcher
 URxvt.url-launcher: /usr/bin/xdg-open
