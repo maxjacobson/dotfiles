@@ -22,8 +22,6 @@ Plug 'ervandew/supertab'
 Plug 'tpope/vim-bundler'
 " useful for quickly commenting code
 Plug 'tpope/vim-commentary'
-" useful for syntax highlighting
-Plug 'kchmck/vim-coffee-script'
 " useful for asynchronously running things from vim while in tmux
 Plug 'tpope/vim-dispatch'
 " useful for auto-ending ruby methods/classes/blocks
@@ -32,8 +30,6 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
 " not sure if I use this one
 Plug 'pangloss/vim-javascript'
-" elixir
-Plug 'elixir-lang/vim-elixir'
 
 " slim template
 Plug 'slim-template/vim-slim'
