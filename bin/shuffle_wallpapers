@@ -4,7 +4,7 @@ set -ex
 
 for jpg in $(find "/home/max/Pictures/wallpapers" -name "*.jpg" | sort --random-sort); do
   feh --no-xinerama --bg-fill "$jpg"
-  sleep 30
+  sleep 240
 done
 
 exec "$0"
