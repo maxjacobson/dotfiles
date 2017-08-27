@@ -14,4 +14,3 @@ bind-key -t vi-copy Enter copy-pipe "reattach-to-user-namespace pbcopy"
 # use nice colors from smyck
 set -g status-bg '#DC8D89'
 set -g status-fg '#F7F7F7'
-
