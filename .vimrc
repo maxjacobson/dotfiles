@@ -50,6 +50,8 @@ Plug 'begriffs/haskell-vim-now'
 Plug 'sotte/presenting.vim'
 
 Plug 'sjl/gundo.vim'
+
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 " press jk to exit insert mode
