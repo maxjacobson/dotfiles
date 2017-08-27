@@ -52,6 +52,8 @@ Plug 'sotte/presenting.vim'
 Plug 'sjl/gundo.vim'
 
 Plug 'airblade/vim-gitgutter'
+
+Plug 'hwartig/vim-seeing-is-believing'
 call plug#end()
 
 " press jk to exit insert mode
@@ -261,3 +263,11 @@ fun! <SID>StripTrailingWhitespaces()
 endfun
 
 autocmd FileType c,cpp,java,php,ruby,python,txt,text autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+
+" Enable seeing-is-believing mappings for Ruby files
+augroup seeingIsBelievingSettings
+  autocmd!
+
+  autocmd FileType ruby nmap <buffer> <Enter> <Plug>(seeing-is-believing-mark-and-run)
+  autocmd FileType ruby xmap <buffer> <Enter> <Plug>(seeing-is-believing-mark-and-run)
+augroup END
