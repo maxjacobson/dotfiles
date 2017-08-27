@@ -15,7 +15,7 @@ main = xmonad =<< statusBar "xmobar" myXmobarPP toggleStrutsKey myConfig
 myXmobarPP = def
   {
     ppCurrent = xmobarColor "#f442b3" "#333333"
-    , ppHidden = xmobarColor "yellow" "#333333"
+    , ppHidden = xmobarColor "#ffe059" "#333333"
     , ppHiddenNoWindows = xmobarColor "white" "#333333" -- show all workspace numbers even if they're empty
     , ppUrgent = xmobarColor "red" "#333333"
     , ppWsSep = " "
