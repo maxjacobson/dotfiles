@@ -4,6 +4,10 @@ require 'pathname'
 require 'readline'
 require 'logger'
 
+OS = {
+  "Darwin" => :macos
+}.fetch(`uname`.chomp, :linux)
+
 class My
   def self.logger
     return @logger if defined?(@logger)
@@ -112,17 +116,41 @@ expected_global_bins = {
   via_cargo_install: %w(
     rooster
     random_nice_emoji
-  )
+  ),
 }.values.flatten
 
-expected_global_bins.each do |global_bin|
-  assert on_path?(global_bin),
-    "#{global_bin} should be installed"
+def assert_on_path(bin)
+  assert on_path?(bin), "#{bin} should be installed"
 end
 
-OS = {
-  "Darwin" => :macos
-}.fetch(`uname`.chomp, :linux)
+expected_global_bins.each do |global_bin|
+  assert_on_path global_bin
+end
+
+os_specific_bins =
+  if OS == :macos
+    []
+  else
+    %w(
+      acpi
+      aurget
+      dmenu
+      dropbox-cli
+      dunst
+      recordmydesktop
+      scrot
+      slock
+      wifi-menu
+      xautolock
+      xmobar
+      xmonad
+      xsel
+    )
+  end
+
+os_specific_bins.each do |bin|
+  assert_on_path bin
+end
 
 entries.each do |path|
   next if OS != :linux && LINUX_ONLY_STUFF.include?(path)
