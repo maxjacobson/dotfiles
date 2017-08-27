@@ -10,6 +10,7 @@
   hist = log --pretty=format:'%h %ai | %s%d [%an]' --graph --date=short
   l = log --pretty='%Cred%h %Creset%<|(58,trunc)%s%n%Cgreen%aN%Creset, %ar%n'
   aa = add -A
+  authors = shortlog -sn
   q = "! git add . --all && git commit --amend --no-message"
   rc = rebase --continue
   rs = rebase --skip
