@@ -1,0 +1,9 @@
+#!/bin/sh
+
+set -e
+
+rm -rf ~/.vim/tmp
+rm -rf ~/.vim/backup
+
+mkdir -p ~/.vim/tmp
+mkdir -p ~/.vim/backup

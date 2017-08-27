@@ -1,0 +1,15 @@
+#!/bin/sh
+
+set -ex
+
+# warm up the awareness of the things that are available
+xrandr
+
+# try to connect to the external display
+xrandr --output DP-1-3 --off --output DP-1-1 --primary --mode 2560x1440 --pos 0x0 --rotate normal --output DP-1-2 --off --output eDP-1 --off
+
+# reset the desktop background
+sh ~/.fehbg
+
+# reset because otherwise the font gets big
+xsetroot -cursor_name left_ptr

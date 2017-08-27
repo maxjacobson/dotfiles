@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -ex
+
+if /home/max/bin/runx xrandr | grep "DP-1-1" | grep " connected" >/dev/null; then
+  sleep 2
+  echo "I, [$(date)] INFO -- : Connecting to EXTERNAL display" >> /home/max/.handle-monitor-change-event.log
+  /home/max/bin/runx /home/max/bin/desktop_xrandr
+else
+  echo "I, [$(date)] INFO -- : Connecting to INTERNAL display" >> /home/max/.handle-monitor-change-event.log
+  /home/max/bin/runx /home/max/bin/laptop_xrandr
+fi

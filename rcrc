@@ -1,0 +1,2 @@
+UNDOTTED="bin"
+EXCLUDES="*.terminal:*.md"

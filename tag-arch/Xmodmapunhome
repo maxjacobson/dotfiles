@@ -1,0 +1,5 @@
+! return the normal behavior
+clear mod1
+clear mod4
+add mod1 = Alt_L Alt_R Meta_L
+add mod4 = Super_L Super_R Super_L Hyper_L

@@ -1,0 +1,20 @@
+#!/usr/bin/env ruby
+
+def assert(bin)
+  print "Checking #{bin}..."
+  ENV["PATH"].split(":").any? do |path|
+    if Dir.exist?(path)
+      if Dir.entries(path).include?(bin)
+        print "... found in #{path}\n"
+        true
+      end
+    end
+  end or raise "Not found: #{bin}"
+end
+
+files = ["expected_bins", "expected_bins.local"].map { |name| File.expand_path "~/.#{name}" }
+files.each do |file|
+  File.read(file.chomp).each_line do |bin|
+    assert bin.chomp
+  end
+end

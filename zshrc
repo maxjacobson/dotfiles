@@ -28,7 +28,7 @@ source ~/.tmux-helpers
 source ~/.handy_functions
 source ~/.chruby-configuration
 source ~/.private-environment-variables
-source ~/.linux-only-stuff
+source ~/.os-specific-stuff
 source ~/.prompt
 
 zstyle ':completion:*:*:git:*' script ~/.git-completion.bash

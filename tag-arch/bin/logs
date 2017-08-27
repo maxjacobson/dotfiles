@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require "cgi"
+
+q = CGI.escape(ARGV.join(" "))
+url = "https://papertrailapp.com/groups/348353/events?q=#{q}"
+system "xdg-open #{url}"

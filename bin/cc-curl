@@ -1,0 +1,16 @@
+#!/usr/bin/sh
+
+set -ex
+
+if [ -z "$1" ]; then
+  echo "WARN: no arguments. Exiting" >&2
+  exit 64
+fi
+
+ res=$(curl  \
+         -H 'Content-Type: application/json' \
+         -H 'Authorization: Token token=$CC_TOKEN' \
+         -H 'Accept: application/json' \
+         https://api.codeclimate.com/v1$1)
+
+echo "$res" | tee out.json | jq
