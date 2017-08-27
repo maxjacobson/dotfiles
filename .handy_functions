@@ -10,3 +10,8 @@ function gogofmt () {
     gofmt -w $f
   done
 }
+
+# specless ag
+function sag () {
+  ag $1 --ignore "*_spec.rb" --ruby
+}
