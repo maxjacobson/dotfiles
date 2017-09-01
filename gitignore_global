@@ -4,3 +4,4 @@
 */*/.DS_STORE
 .byebug_history
 *.rs.bk
+*.rdb
