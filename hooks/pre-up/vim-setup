@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+require "fileutils"
+
+tmp = File.expand_path("~/.vim/tmp")
+backup = File.expand_path("~/.vim/backup")
+FileUtils.mkdir_p(tmp)
+FileUtils.mkdir_p(backup)
