@@ -15,7 +15,6 @@ export GOPATH="$HOME/src/gopath"
 export PATH="$GOPATH/bin:$PATH"
 alias grep='grep'
 
-
 # use vim for things like aurget
 export EDITOR=vim
 
@@ -56,7 +55,6 @@ setopt hist_ignore_space
 setopt hist_verify
 setopt inc_append_history
 setopt share_history # share command history data
-
 
 # make search up and down work, so partially type and hit up/down to find relevant stuff
 bindkey '^[[A' up-line-or-search
