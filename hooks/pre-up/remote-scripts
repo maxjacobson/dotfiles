@@ -29,9 +29,15 @@ class RemoteScript < Struct.new(:local_path, :remote_url)
 end
 
 [
+  # install the zsh-specific completions
   RemoteScript.new(
     "~/.zsh/_git",
-    "https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh"
+    "https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh",
+  ),
+
+  # also install the bash-specific ones, because the zsh ones depend on them
+  RemoteScript.new(
+    "~/.zsh/git-completion.bash",
+    "https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash",
   ),
 ].each(&:install)
-
