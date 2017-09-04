@@ -6,10 +6,10 @@ require "pathname"
 
 class RemoteScript < Struct.new(:local_path, :remote_url)
   def install
-    puts "Installing #{local_path}"
     if File.exist?(path)
-      puts "Skipping, it already exists (delete to update)"
+      puts "skipping #{path}"
     else
+      puts "installing #{path}"
       response = open(remote_url)
 
       if response.status.include?("200")
