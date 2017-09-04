@@ -1,0 +1,10 @@
+if [ -z "$DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ]; then
+  # should only be true when logged in but without a window manager running
+  # could add `exec startx` here to automate this, but it feels risky because if
+  # I have some invalid xmonad configuration, I'll
+  # 1. try to login (startx runs automatically)
+  # 2. see xmonad crash
+  # 3. get logged out before I can even see the error message
+  # 4. have to log in as root to fix the config
+  echo "to jump into xmonad, run: startx"
+fi
