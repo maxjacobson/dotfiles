@@ -68,9 +68,6 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 # https://github.com/funtoo/keychain
 eval `keychain --quiet --eval --agents ssh --inherit any id_rsa`
 
-# added by travis gem
-[ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
-
 if [ -z "$DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ]; then
   echo "to jump into xmonad, run: startx"
   # I'm on a computer running linux...
