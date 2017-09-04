@@ -30,8 +30,7 @@ source ~/.private-environment-variables
 source ~/.os-specific-stuff
 source ~/.prompt
 
-zstyle ':completion:*:*:git:*' script ~/.git-completion.bash
-# For: https://github.com/git/git/blob/master/contrib/completion/git-completion.zsh
+# For git-completion, installed via rcm hook
 fpath=(~/.zsh $fpath)
 autoload -Uz compinit && compinit
 
