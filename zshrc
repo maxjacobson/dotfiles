@@ -55,9 +55,12 @@ setopt hist_verify
 setopt inc_append_history
 setopt share_history # share command history data
 
-# make search up and down work, so partially type and hit up/down to find relevant stuff
+# makes up arrow and down arrow smarter (also C-p and C-n, for emacs-style up
+# and down)
 bindkey '^[[A' up-line-or-search
+bindkey '^P' up-line-or-search
 bindkey '^[[B' down-line-or-search
+bindkey '^N' down-line-or-search
 
 # case-insensitive tab completion (borrowed from oh-my-zsh)
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
