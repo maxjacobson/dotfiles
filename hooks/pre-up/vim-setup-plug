@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+
+set -e
+
+# this is a fun idea but makes the terminal go all screwy.
+
+# plug_path="/tmp/plug.vim"
+# echo ":PlugInstall
+# :PlugUpdate
+# :PlugUpgrade
+# :PlugClean!
+# :quitall
+# " > "$plug_path"
+
+# vim -s "$plug_path" -
