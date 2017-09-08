@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+set -ex
+
+screenshots_path="$HOME/Pictures/Screenshots"
+latest="$(ls $screenshots_path --sort=time | head -n 1)"
+cp "$screenshots_path/$latest" "$1"
