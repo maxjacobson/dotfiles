@@ -12,4 +12,4 @@ set -e
 # :quitall
 # " > "$plug_path"
 
-# vim -s "$plug_path" -
+# vim -s "$plug_path"
