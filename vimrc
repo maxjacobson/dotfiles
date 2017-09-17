@@ -99,6 +99,11 @@ au BufRead,BufNewFile *.py set tabstop=4
 set colorcolumn=81
 " but it should be 51 in git commit message files
 autocmd Filetype gitcommit setlocal colorcolumn=51
+
+" 101 in rust files
+autocmd Filetype rust setlocal colorcolumn=101
+
+" no column in the file browser netrw
 autocmd Filetype netrw setlocal colorcolumn=0
 highlight ColorColumn ctermbg=0
 
