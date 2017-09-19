@@ -3,7 +3,6 @@ cargo
 git
 htop
 jq
-keychain
 matcher
 ncdu
 random_nice_emoji

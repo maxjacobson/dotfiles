@@ -66,10 +66,16 @@ bindkey '^N' down-line-or-search
 # case-insensitive tab completion (borrowed from oh-my-zsh)
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 
-# brew install keychain
-# http://www.funtoo.org/Keychain
-# https://github.com/funtoo/keychain
-eval `keychain --quiet --eval --agents ssh --inherit any id_rsa`
+# SSH Agent
+ssh_env="$HOME/.ssh/agent-env"
+
+if pgrep ssh-agent >/dev/null; then
+  source "$ssh_env"
+else
+  ssh-agent | grep -Fv echo > "$ssh_env"
+  source "$ssh_env"
+  ssh-add
+fi
 
 if [ -f ~/.zshrc.local ]; then
   source ~/.zshrc.local
