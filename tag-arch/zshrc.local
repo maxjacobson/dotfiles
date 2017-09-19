@@ -6,5 +6,6 @@ if [ -z "$DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ]; then
   # 2. see xmonad crash
   # 3. get logged out before I can even see the error message
   # 4. have to log in as root to fix the config
+  echo "consider running bin/consolefont to make fonts bigger"
   echo "to jump into xmonad, run: startx"
 fi
