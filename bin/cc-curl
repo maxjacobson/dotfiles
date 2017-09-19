@@ -9,7 +9,7 @@ fi
 
  res=$(curl  \
          -H 'Content-Type: application/json' \
-         -H 'Authorization: Token token=$CC_TOKEN' \
+         -H "Authorization: Token token=$CC_TOKEN" \
          -H 'Accept: application/json' \
          https://api.codeclimate.com/v1$1)
 
