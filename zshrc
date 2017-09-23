@@ -77,6 +77,12 @@ else
   ssh-add
 fi
 
+cdpath=(
+  ~/src/cc
+  ~/src/personal
+  $cdpath
+)
+
 if [ -f ~/.zshrc.local ]; then
   source ~/.zshrc.local
 fi
