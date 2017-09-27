@@ -9,7 +9,6 @@
 
 echo "in the ~/.xmonad/build script"
 
-
 exec stack ghc \
   -- \
   --make xmonad.hs \
