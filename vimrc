@@ -54,6 +54,8 @@ Plug 'sjl/gundo.vim'
 Plug 'airblade/vim-gitgutter'
 
 Plug 'hwartig/vim-seeing-is-believing'
+
+Plug 'fatih/vim-go'
 call plug#end()
 
 " press jk to exit insert mode
@@ -152,9 +154,6 @@ nmap <Leader>p :Dispatch rubocop %<CR>
 " nmap <Leader>j :!clear; node %<CR>
 nmap <Leader>j :Dispatch; node %<CR>
 
-" run current file in Go
-nmap <Leader>g :!clear; go run %<CR>
-
 nnoremap gu :GundoToggle<CR>
 
 " status line
@@ -200,9 +199,6 @@ let g:netrw_banner=0
 " when selecting a file from netrw, how large to make the new window
 " (hint: press o or v to open the file in a split)
 let g:netrw_winsize=85
-
-" " hide gitignored files from netrw
-let g:go_fmt_command = "goimports"
 
 let g:path_to_matcher = "/usr/local/bin/matcher"
 
