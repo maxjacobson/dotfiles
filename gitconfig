@@ -4,7 +4,7 @@
 [alias]
   br = "! branch" ; script that helps switch branches, in dotfiles/bin
   bump = "commit --allow-empty -m 'bump'"
-  sunrise = "commit --allow-empty -m '🌅'"
+  sunrise = "commit --allow-empty -m ':sunrise:'"
   co = checkout
   st = status
   hist = log --pretty=format:'%h %ai | %s%d [%an]' --graph --date=short
