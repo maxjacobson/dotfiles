@@ -276,3 +276,6 @@ augroup seeingIsBelievingSettings
   autocmd FileType ruby nmap <buffer> <Enter> <Plug>(seeing-is-believing-mark-and-run)
   autocmd FileType ruby xmap <buffer> <Enter> <Plug>(seeing-is-believing-mark-and-run)
 augroup END
+
+" help make sure quickfix text is readable
+highlight Search cterm=NONE ctermfg=white ctermbg=red
