@@ -74,6 +74,9 @@ if pgrep ssh-agent >/dev/null; then
 else
   ssh-agent | grep -Fv echo > "$ssh_env"
   source "$ssh_env"
+fi
+
+if ! ssh-add -l >/dev/null; then
   ssh-add
 fi
 
