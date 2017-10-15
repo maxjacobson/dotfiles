@@ -77,6 +77,10 @@ else
   ssh-add
 fi
 
+# GPG agent
+export GPG_TTY=$(tty)
+export GNUPGHOME="$HOME/.config/gnupg"
+
 cdpath=(
   ~/src/cc
   ~/src/personal

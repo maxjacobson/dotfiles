@@ -1,6 +1,7 @@
 [user]
   name = Max Jacobson
   email = max@hardscrabble.net
+  signingkey = 6001BB2E66586E0C
 [alias]
   br = "! branch" ; script that helps switch branches, in dotfiles/bin
   bump = "commit --allow-empty -m 'bump'"
@@ -38,3 +39,5 @@
   ui = true
 [push]
   default = simple
+[commit]
+  gpgsign = true
