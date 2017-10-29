@@ -5,3 +5,4 @@
 .byebug_history
 *.rs.bk
 *.rdb
+.dropbox
