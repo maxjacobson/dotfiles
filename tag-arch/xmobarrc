@@ -1,9 +1,9 @@
 Config { font = "xft:inconsolata:pixelsize=16"
        , additionalFonts = []
-       , bgColor = "#333333"
-       , fgColor = "white"
+       , bgColor = "#99cc66"
+       , fgColor = "black"
        , alpha = 255
-       , position = Bottom
+       , position = Top
        , textOffset = -1
        , iconOffset = -1
        , lowerOnStart = True
@@ -15,8 +15,8 @@ Config { font = "xft:inconsolata:pixelsize=16"
        , overrideRedirect = True
        , commands = [Run Date "%H:%M" "date" 10
                     , Run StdinReader
-                    , Run Battery ["-L","30","-H","75","--high","white","--normal","white", "--low", "red"] 50
-     								, Run BatteryP ["BAT0"] ["-t", "<acstatus>" , "-L", "25", "-H", "80", "-l", "red", "-h", "white" , "--", "-O", ":) <left>%", "-o", ":/ <left>%", "-i", ":) <left>%"] 10 -- -O is charging, -o is draining, -i is idle
+                    , Run Battery ["-L","30","-H","75","--high","black","--normal","black", "--low", "red"] 50
+     								, Run BatteryP ["BAT0"] ["-t", "<acstatus>" , "-L", "25", "-H", "80", "-l", "red", "-h", "black" , "--", "-O", ":) <left>%", "-o", ":/ <left>%", "-i", ":) <left>%"] 10 -- -O is charging, -o is draining, -i is idle
                     ]
        , sepChar = "%"
        , alignSep = "}{"
