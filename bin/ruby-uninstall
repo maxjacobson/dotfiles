@@ -8,9 +8,13 @@ if [[ -z "$1" ]]; then
 fi
 
 summarize_and_remove() {
-  size="$(du --human-readable --summarize $1 | awk '{print $1}')"
-  rm -rf $1
-  echo "Freed $size at $1"
+  if [ -d $1 ]; then
+    size="$(du -hs $1 | awk '{print $1}')"
+    rm -rf $1
+    echo "Freed $size at $1"
+  else
+    echo "Doesn't exist: $1"
+  fi
 }
 
 summarize_and_remove ~/.rubies/$1
