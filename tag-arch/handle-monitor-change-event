@@ -6,7 +6,7 @@ if /home/max/bin/runx xrandr | grep "DP-1-1" | grep " connected" >/dev/null; the
   echo "I, [$(date)] Going into desktop mode because a display is connected via mini-displayport" >> /home/max/.handle-monitor-change-event.log
   /home/max/bin/runx /home/max/bin/desktop_xrandr
 elif ! /home/max/bin/runx xrandr | grep " connected" | grep -v eDP-1; then
-  echo "I, [$(date)] Going into laptop-only mode because the only connected display is the embedded one." >> /home/max/.handle-monitor-change-event.log
+  echo "I, [$(date)] Going into laptop-only mode because the only connected display is the embedded one" >> /home/max/.handle-monitor-change-event.log
   /home/max/bin/runx /home/max/bin/laptop_xrandr
 else
   connected_displays="$(/home/max/bin/runx xrandr | grep ' connected' | awk '{print $1}'  | xargs)"
