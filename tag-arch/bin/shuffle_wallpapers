@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -ex
+set -euo pipefail
 
 dropbox_location="/home/max/Dropbox/Pictures/wallpapers"
 local_location="/home/max/Pictures/wallpapers"
@@ -15,8 +15,8 @@ else
 fi
 
 for jpg in $(find "$dir" -name "*.jpg" | sort --random-sort); do
-  feh --no-xinerama --bg-fill "$jpg"
-  sleep 240
+  feh --bg-fill "$jpg"
+  sleep 60
 done
 
 exec "$0"
