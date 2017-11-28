@@ -2,8 +2,8 @@
 
 set -euo pipefail
 
-dropbox_location="/home/max/Dropbox/Pictures/wallpapers"
-local_location="/home/max/Pictures/wallpapers"
+dropbox_location="$HOME/Dropbox/Pictures/wallpapers"
+local_location="$HOME/Pictures/wallpapers"
 
 if [ -d "$dropbox_location" ]; then
   dir="$dropbox_location"
