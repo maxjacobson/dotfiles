@@ -277,4 +277,12 @@ augroup END
 " help make sure quickfix text is readable
 highlight Search cterm=NONE ctermfg=white ctermbg=red
 
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+" re-open files with cursor in the same position that it was in last time you
+" had this file open
+" au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+"       \| exe "normal! g'\"" | endif
+
+ :au BufReadPost *
+	 \ if line("'\"") > 1 && line("'\"") <= line("$") && &ft !~# 'commit'
+	 \ |   exe "normal! g`\""
+	 \ | endif
