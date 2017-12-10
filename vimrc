@@ -202,6 +202,7 @@ let g:netrw_winsize=85
 
 let g:path_to_matcher = "/usr/local/bin/matcher"
 
+let g:ctrlp_working_path_mode = 'a'
 let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files . -co --exclude-standard | uniq']
 
 let g:ctrlp_match_func = { 'match': 'GoodMatch' }
