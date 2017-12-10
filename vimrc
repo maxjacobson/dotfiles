@@ -275,3 +275,5 @@ augroup END
 
 " help make sure quickfix text is readable
 highlight Search cterm=NONE ctermfg=white ctermbg=red
+
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
