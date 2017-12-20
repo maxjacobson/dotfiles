@@ -17,9 +17,11 @@ Config { font = "xft:inconsolata:pixelsize=16"
                     , Run StdinReader
                     , Run Battery ["-L","30","-H","75","--high","white","--normal","white", "--low", "red"] 50
      								, Run BatteryP ["BAT0"] ["-t", "<acstatus>" , "-L", "25", "-H", "80", "-l", "red", "-h", "white" , "--", "-O", ":) <left>%", "-o", ":/ <left>%", "-i", ":) <left>%"] 10 -- -O is charging, -o is draining, -i is idle
+                    , Run Cpu ["-L","3","-H","50","--normal","yellow","--high","red"] 10
+                    , Run Memory ["-t","Mem: <usedratio>%"] 10
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "[%StdinReader%]}{%battery% | %date%"
+       , template = "[%StdinReader%]}{ %cpu% | %memory% | %battery% | %date%"
 
        }
