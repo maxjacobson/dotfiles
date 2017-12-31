@@ -1,10 +1,12 @@
 #!/bin/sh
 
-set -ex
+set -eo pipefail
 
 if [[ -z "$1" ]]; then
   echo "missing first argument"
   exit 1
 fi
+
+set -u
 
 ruby-build -v $1 ~/.rubies/$1

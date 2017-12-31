@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -eo pipefail
+set -euo pipefail
 
 if [[ -z "$1" ]]; then
   echo "missing first argument"
