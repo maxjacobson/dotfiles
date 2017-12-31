@@ -56,6 +56,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'hwartig/vim-seeing-is-believing'
 
 Plug 'fatih/vim-go'
+
+Plug 'dietsche/vim-lastplace'
 call plug#end()
 
 " press jk to exit insert mode
@@ -277,12 +279,4 @@ augroup END
 " help make sure quickfix text is readable
 highlight Search cterm=NONE ctermfg=white ctermbg=red
 
-" re-open files with cursor in the same position that it was in last time you
-" had this file open
-" au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
-"       \| exe "normal! g'\"" | endif
-
- :au BufReadPost *
-	 \ if line("'\"") > 1 && line("'\"") <= line("$") && &ft !~# 'commit'
-	 \ |   exe "normal! g`\""
-	 \ | endif
+let g:lastplace_ignore = "gitcommit,gitrebase,conf"
