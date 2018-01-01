@@ -280,3 +280,6 @@ augroup END
 highlight Search cterm=NONE ctermfg=white ctermbg=red
 
 let g:lastplace_ignore = "gitcommit,gitrebase,conf"
+
+" run goimports as well as gofmt on save
+let g:go_fmt_command = "goimports"
