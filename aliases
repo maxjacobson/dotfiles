@@ -30,3 +30,5 @@ man() {
 alias 'c'='codeclimate'
 alias 'emacs'='emacs -nw'
 alias 'dc'='docker-compose'
+alias 'gs'='git status'
+alias 'gb'='git branch'
