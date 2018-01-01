@@ -16,7 +16,7 @@ fi
 
 for jpg in $(find "$dir" -name "*.jpg" | sort --random-sort); do
   feh --bg-fill "$jpg"
-  sleep 60
+  sleep 120
 done
 
 exec "$0"
