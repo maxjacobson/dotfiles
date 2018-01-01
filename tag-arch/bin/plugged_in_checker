@@ -1,23 +1,25 @@
 #!/bin/sh
 
-while true; do
-  ac_info=$(acpi --ac-adapter)
+set -euo pipefail
 
-  if echo $ac_info | grep "off-line" >/dev/null; then
-    battery_info=$(acpi --battery)
-    pct=$(echo $battery_info | grep --extended-regexp "[0-9]+%" --only-matching | grep --extended-regexp "[0-9]+" --only-matching)
+ac_info=$(acpi --ac-adapter)
 
-    if test $pct -lt 30; then
-      notify-send \
-        --urgency=critical \
-        --expire-time=5000 \
-        --icon=battery \
-        "Low battery" \
-        "Plug in your charger, dummy, you're at $pct%"
-    fi
+if echo $ac_info | grep "off-line" >/dev/null; then
+  battery_info=$(acpi --battery)
+  pct=$(echo $battery_info | grep --extended-regexp "[0-9]+%" --only-matching | grep --extended-regexp "[0-9]+" --only-matching)
 
-    sleep 360
-  else
-    sleep 1200
+  if test $pct -lt 30; then
+    notify-send \
+      --urgency=critical \
+      --expire-time=5000 \
+      --icon=battery \
+      "Low battery" \
+      "If I were you, I'd charge my computer because it's at $pct% left and that's not much."
   fi
-done
+
+  sleep 360
+else
+  sleep 1200
+fi
+
+exec "$0"
