@@ -6,6 +6,7 @@ set -euo pipefail
 xrandr
 
 if ! xrandr | grep "1920x1080R" >/dev/null; then
+  # N.B. Generated this mode info by running: `cvt 1920 1080 60`
   xrandr --newmode "1920x1080R"  138.50  1920 1968 2000 2080  1080 1083 1088 1111 +hsync -vsync
   xrandr --addmode eDP-1 1920x1080R
 fi
