@@ -1,6 +1,9 @@
 import XMonad
-import XMonad.Hooks.DynamicLog
+import XMonad.Config.Desktop
 import XMonad.Layout.NoBorders
+import XMonad.Hooks.EwmhDesktops        (ewmh)
+import XMonad.Hooks.ManageDocks
+import System.Taffybar.Hooks.PagerHints (pagerHints)
 
 -- makes it so when I only have one window open, I don't see a border
 mylayoutHook = smartBorders tiled ||| smartBorders (Mirror tiled) ||| noBorders Full
@@ -10,26 +13,17 @@ mylayoutHook = smartBorders tiled ||| smartBorders (Mirror tiled) ||| noBorders 
      ratio   = 1/2
      delta   = 3/100
 
-main = xmonad =<< statusBar "xmobar" myXmobarPP toggleStrutsKey myConfig
+baseConfig = desktopConfig
 
-myXmobarPP = def
-  {
-    ppCurrent = xmobarColor "#f442b3" "#333333"
-    , ppHidden = xmobarColor "#ffe059" "#333333"
-    , ppUrgent = xmobarColor "red" "#333333"
-    , ppWsSep = " "
-    , ppOrder = \(workspaces:_layout:title:_) -> [workspaces] -- set order, and exclude layout (idc) and title (hm I don't think I care)
-  }
-
--- Keybinding to toggle the gap for the bar.
--- Note: no idea what this means
-toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
-
--- main config
-myConfig = def {
-  terminal = "urxvt"
-    , layoutHook = mylayoutHook
+main = xmonad $
+  -- gives taffybar logger information
+  ewmh $
+  pagerHints $
+  baseConfig
+    { terminal = "alacritty"
+    , layoutHook = avoidStruts $ mylayoutHook
+    , manageHook = manageDocks <+> manageHook baseConfig
     , borderWidth = 4
     , normalBorderColor  = "#d6f7de"
     , focusedBorderColor = "#f442b3"
-}
+    }

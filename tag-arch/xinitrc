@@ -1,5 +1,4 @@
 xmodmap ~/.Xmodmap
-dropbox-cli start
 
 xautolock \
   -time 10 \
@@ -15,5 +14,7 @@ shuffle_wallpapers &
 dunst &
 
 plugged_in_checker &
+
+(cd ~/.xmonad && stack exec taffybar &)
 
 exec xmonad
