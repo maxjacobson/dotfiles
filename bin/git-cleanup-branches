@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+file="/tmp/$(uuidgen)"
+
+# write all branches to file
+all_branches=$(git branch | sed 's/^\*?\s+//' --regexp-extended)
+
+for branch in $all_branches; do
+  echo "keep $branch" >> $file
+done
+
+# write instructions to file
+echo "
+
+# All of your branches are listed above
+# change keep to d to delete the branch
+# all other lines are ignored" >> $file
+
+# prompt user to edit file
+$EDITOR "$file"
+
+cat $file | while read -r line; do
+  if echo $line | grep --extended-regexp "^d " > /dev/null; then
+    branch=$(echo $line | sed --regexp-extended 's/^d //')
+
+    git branch -D $branch
+  fi
+done
+
+rm $file
