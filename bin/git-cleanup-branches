@@ -5,7 +5,7 @@ set -euo pipefail
 file="/tmp/$(uuidgen)"
 
 # write all branches to file
-all_branches=$(git branch | sed 's/^\*?\s+//' --regexp-extended)
+all_branches=$(git branch | sed -E 's/\*?[[:space:]]+//')
 
 for branch in $all_branches; do
   echo "keep $branch" >> $file
@@ -23,7 +23,7 @@ $EDITOR "$file"
 
 cat $file | while read -r line; do
   if echo $line | grep --extended-regexp "^d " > /dev/null; then
-    branch=$(echo $line | sed --regexp-extended 's/^d //')
+    branch=$(echo $line | sed -E 's/^d //')
 
     git branch -D $branch
   fi
