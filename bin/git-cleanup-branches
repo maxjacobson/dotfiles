@@ -35,7 +35,7 @@ $EDITOR "$file"
 cat $file | while read -r line; do
 
   # if the line starts with "d "
-  if echo $line | grep --extended-regexp "^d " > /dev/null; then
+  if echo $line | grep --extended-regexp --quiet "^d "; then
     # delete the branch
     branch=$(echo $line | sed -E 's/^d //')
 
