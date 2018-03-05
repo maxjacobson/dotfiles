@@ -85,6 +85,7 @@ export GPG_TTY=$(tty)
 export GNUPGHOME="$HOME/.config/gnupg"
 
 cdpath=(
+  ~/src/oss-interesting
   ~/src/cc
   ~/src/personal
   $cdpath
