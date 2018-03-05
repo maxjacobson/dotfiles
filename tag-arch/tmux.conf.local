@@ -1,0 +1,2 @@
+# Open last URL on screen by pressing alt U
+bind -T root M-u run-shell -b "tmux capture-pane -p -S -100 | grep --only-matching --extended-regexp 'https?://.+\\b' | tail -1 | xargs --no-run-if-empty xdg-open"
