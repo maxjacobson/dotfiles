@@ -12,12 +12,12 @@ function leftTrim {
   sed -E 's/\*?[[:space:]]+//'
 }
 
-
-all_branches=$(git branch | removeCurrentBranch | leftTrim)
+all_branches=$(git branch --sort=authordate | removeCurrentBranch | leftTrim)
 
 # write branches to file
 for branch in $all_branches; do
-  echo "keep $branch" >> $file
+  last_commit_date="$(git log $branch -1 --pretty="%ar")"
+  echo "keep $branch (updated $last_commit_date)" >> $file
 done
 
 # write instructions to file
@@ -33,11 +33,10 @@ $EDITOR "$file"
 
 # check each line of the file
 cat $file | while read -r line; do
-
   # if the line starts with "d "
   if echo $line | grep --extended-regexp --quiet "^d "; then
     # delete the branch
-    branch=$(echo $line | sed -E 's/^d //')
+    branch=$(echo $line | sed -E 's/^d //' | awk '{print $1}')
 
     git branch -D $branch
   fi
