@@ -11,6 +11,8 @@ style "taffybar-default" {
   text[NORMAL] = @white
   fg[PRELIGHT] = @green
   bg[PRELIGHT] = @black
+
+  font_name = "DroidSansMono 12"
 }
 
 style "taffybar-active-window" = "taffybar-default" {
