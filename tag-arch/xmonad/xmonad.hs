@@ -4,6 +4,7 @@ import XMonad.Layout.NoBorders
 import XMonad.Hooks.EwmhDesktops        (ewmh)
 import XMonad.Hooks.ManageDocks
 import System.Taffybar.Hooks.PagerHints (pagerHints)
+import XMonad.Util.EZConfig (additionalKeysP)
 
 -- makes it so when I only have one window open, I don't see a border
 mylayoutHook = smartBorders tiled ||| smartBorders (Mirror tiled) ||| noBorders Full
@@ -26,4 +27,7 @@ main = xmonad $
     , borderWidth = 4
     , normalBorderColor  = "#d6f7de"
     , focusedBorderColor = "#f442b3"
-    }
+    } `additionalKeysP`
+      [
+        ("M-p", spawn "rofi -show run")
+      ]
