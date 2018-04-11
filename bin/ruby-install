@@ -9,4 +9,4 @@ fi
 
 set -u
 
-ruby-build -v $1 ~/.rubies/$1
+time ruby-build -v $1 ~/.rubies/$1
