@@ -69,7 +69,7 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 # SSH Agent
 ssh_env="$HOME/.ssh/agent-env"
 
-if pgrep ssh-agent >/dev/null; then
+if ps x | grep ssh-agent | grep -vq grep; then
   source "$ssh_env"
 else
   ssh-agent | grep -Fv echo > "$ssh_env"
