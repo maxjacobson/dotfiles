@@ -2,10 +2,10 @@
 
 if [[ -s "/usr/local/share/chruby/chruby.sh" ]]; then
   source "/usr/local/share/chruby/chruby.sh"
-  chruby 2.5.0
+  chruby 2.5.1
 fi
 
 if [[ -s "/usr/share/chruby/chruby.sh" ]]; then
   source "/usr/share/chruby/chruby.sh"
-  chruby 2.5.0
+  chruby 2.5.1
 fi
