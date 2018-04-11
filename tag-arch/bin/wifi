@@ -1,3 +1,10 @@
 #!/bin/sh
 
-sudo wifi-menu && echo "Restarting docker..." && sudo systemctl restart docker && sudo systemctl daemon-reload
+set -e
+
+sudo wifi-menu
+
+command -v docker >/dev/null && \
+  echo "Restarting docker..." && \
+  sudo systemctl restart docker && \
+  sudo systemctl daemon-reload
