@@ -62,6 +62,7 @@ logins =
       )
     }
   rescue JSON::ParserError
+    puts "Could not parse output of `rooster export`"
     exit 1
   rescue Interrupt
     exit 1
