@@ -10,5 +10,6 @@ slock
 stack
 wifi-menu
 xautolock
+xdg-open
 xmonad
 xsel
