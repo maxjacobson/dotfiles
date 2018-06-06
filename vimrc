@@ -9,9 +9,8 @@
 call plug#begin('~/.vim/plugged')
 " sensible defaults
 Plug 'tpope/vim-sensible'
-" rust syntax highlighting, etc
+" rust syntax highlighting, auto-formatting etc
 Plug 'rust-lang/rust.vim'
-Plug 'racer-rust/vim-racer'
 " using to pull current git branch into status bar
 Plug 'tpope/vim-fugitive'
 " useful for opening files
@@ -244,11 +243,7 @@ endfunction
 " use system clipboard???
 set clipboard=unnamed,unnamedplus
 
-" TODO: make this generic instead of hardcoded to mac/maxjacobson
 set hidden
-let g:racer_cmd = "/Users/max/.cargo/bin/racer"
-let $RUST_SRC_PATH="/home/max/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
-let g:racer_experimental_completer = 1
 
 " Don't accidentally enter Ex mode
 " http://www.bestofvim.com/tip/leave-ex-mode-good/
@@ -283,3 +278,5 @@ let g:lastplace_ignore = "gitcommit,gitrebase,conf"
 
 " run goimports as well as gofmt on save
 let g:go_fmt_command = "goimports"
+
+let g:rustfmt_autosave = 1
