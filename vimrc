@@ -57,6 +57,8 @@ Plug 'hwartig/vim-seeing-is-believing'
 Plug 'fatih/vim-go'
 
 Plug 'dietsche/vim-lastplace'
+
+Plug 'hashivim/vim-terraform'
 call plug#end()
 
 " press jk to exit insert mode
@@ -280,3 +282,6 @@ let g:lastplace_ignore = "gitcommit,gitrebase,conf"
 let g:go_fmt_command = "goimports"
 
 let g:rustfmt_autosave = 1
+
+" autoload .vimrc upon edit
+" H/T @dblandin
