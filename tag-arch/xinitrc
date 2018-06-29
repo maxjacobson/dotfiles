@@ -15,6 +15,4 @@ dunst &
 
 plugged_in_checker &
 
-(cd ~/.xmonad && stack exec taffybar &)
-
-exec xmonad
+exec i3
