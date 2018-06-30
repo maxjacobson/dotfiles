@@ -6,5 +6,5 @@
 *.rs.bk
 *.rdb
 .dropbox
-tags
+/tags
 target
