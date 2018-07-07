@@ -77,7 +77,12 @@ else
 fi
 
 if ! ssh-add -l >/dev/null; then
+  # Sometimes want to ctrl-c out of this interactive prompt, but still want the
+  # rest of the login shell config to run. Without this trapping business, it
+  # gets aborted
+  trap 'echo' INT
   ssh-add
+  trap - INT
 fi
 
 # GPG agent
