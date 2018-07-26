@@ -2,12 +2,12 @@ ag
 cargo
 git
 htop
+hub
 jq
 matcher
 ncdu
 ruby-build
 rustc
-selecta
 tmux
 tree
 vim
