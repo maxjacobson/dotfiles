@@ -150,7 +150,8 @@
     max_icon_size = 100
 
     # Paths to default icons.
-    icon_folders = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/:/home/max/Pictures/icons
+    # Note: can colon-separate like $PATH to add multiple directories
+    icon_path = /usr/share/icons/Adwaita/256x256/status/:/home/max/Pictures/icons
 
 [shortcuts]
 
