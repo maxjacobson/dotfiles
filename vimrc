@@ -27,8 +27,6 @@ Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-endwise'
 " not sure if I use this one
 Plug 'tpope/vim-eunuch'
-" not sure if I use this one
-Plug 'pangloss/vim-javascript'
 
 " slim template
 Plug 'slim-template/vim-slim'
@@ -59,6 +57,9 @@ Plug 'fatih/vim-go'
 Plug 'dietsche/vim-lastplace'
 
 Plug 'hashivim/vim-terraform'
+
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 call plug#end()
 
 " press jk to exit insert mode
