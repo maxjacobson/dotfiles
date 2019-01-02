@@ -286,3 +286,5 @@ let g:rustfmt_autosave = 1
 " autoload .vimrc upon edit
 " H/T @dblandin
  autocmd! bufwritepost $MYVIMRC source $MYVIMRC
+
+ set mouse=a
