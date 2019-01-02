@@ -1,33 +1,4 @@
-# branch-plucking line via mostly via http://stackoverflow.com/a/1128583
-# uncommitted work check mostly via via http://0xfe.blogspot.com/2010/04/adding-git-status-information-to-your.html
-git_prompt() {
-  root="$(git rev-parse --show-toplevel 2>/dev/null)"
-  if [ "$?" = "0" ]; then
-    root="$root/.git"
-  else
-    echo " %F{blue}%B(not repo)%b%f"
-    return
-  fi
-
-  if [[ -e "$root/rebase-apply" ]]; then # we are mid-rebase (-e checks existence of a file)
-    echo " %F{red}%B(mid rebase)%b%f"
-  elif [[ -e "$root/CHERRY_PICK_HEAD" ]]; then # we are mid cherry-pick
-    echo " %F{magenta}%B(mid cherry-pick)%b%f"
-  elif [[ $(git diff HEAD --shortstat 2>/dev/null | tail -n1) != "" ]]; then # we have uncommitted work among our tracked files
-    branch_part=$(git symbolic-ref HEAD 2>/dev/null || cat "$root/HEAD")
-    branch=$(echo $branch_part | cut -d '/' -f3-)
-    echo " %F{red}%B$branch*%b%f"
-  else
-    branch_part=$(git symbolic-ref HEAD 2>/dev/null)
-    if [ -z "$branch_part" ]; then
-      sha=$(cat "$root/HEAD")
-      echo " %F{blue}%B$sha%b%f"
-    else
-      branch=$(echo $branch_part | cut -d '/' -f3-)
-      echo " %F{green}%B$branch%b%f"
-    fi
-  fi
-}
-
-setopt prompt_subst
-PROMPT="%F{grey}%C%f\$(git_prompt) "
+if command -v my-fancy-zsh-git-prompt >/dev/null; then
+  setopt prompt_subst
+  PROMPT="\$(my-fancy-zsh-git-prompt)"
+fi
