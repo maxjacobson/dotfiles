@@ -12,8 +12,10 @@ that are managed outside of this set of scripts.
 ## usage, I think
 
 * `git clone <repo> ~/.dotfiles`
-* if on arch
-  * `rcup -v -t arch`
+* if on arch at work
+  * `rcup -v -t arch -t arch-manjaro`
+* if on arch at home
+  * `rcup -v -t arch -t arch-i3`
 * if on mac
   * `rcup -v -t mac`
 

@@ -12,7 +12,7 @@ def assert(bin)
   end or raise "Not found: #{bin}"
 end
 
-files = ["expected_bins", "expected_bins.local"].map { |name| File.expand_path "~/.#{name}" }
+files = ["expected_bins", "expected_bins.local", "expected_bins.hyperlocal"].map { |name| File.expand_path "~/.#{name}" }
 files.each do |file|
   File.read(file.chomp).each_line do |bin|
     assert bin.chomp
