@@ -1,1 +1,2 @@
 export TIL_FILE="/Users/$USER/Dropbox (Code Climate)/.til.sqlite3"
+export PATH=$PATH:~/Library/Python/2.7/bin
