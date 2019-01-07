@@ -230,6 +230,7 @@ let g:lastplace_ignore = "gitcommit,gitrebase,conf"
 " run goimports as well as gofmt on save
 let g:go_fmt_command = "goimports"
 let g:rustfmt_autosave = 1
+let g:terraform_fmt_on_save = "1"
 
 " autoload .vimrc upon edit
 " H/T @dblandin
