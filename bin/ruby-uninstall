@@ -1,11 +1,13 @@
 #!/bin/sh
 
-set -euo pipefail
+set -eo pipefail
 
 if [[ -z "$1" ]]; then
   echo "missing first argument"
   exit 1
 fi
+
+set -u
 
 summarize_and_remove() {
   if [ -d $1 ]; then
