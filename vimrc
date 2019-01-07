@@ -102,22 +102,6 @@ au BufRead,BufNewFile *.py set shiftwidth=4
 au BufRead,BufNewFile *.py set softtabstop=4
 au BufRead,BufNewFile *.py set tabstop=4
 
-" don't go too long!
-"
-" add a vertical column at 81 characters
-" discouraging lines longer than 80 characters, which appear to go into the
-" danger zone
-set colorcolumn=81
-" but it should be 51 in git commit message files
-autocmd Filetype gitcommit setlocal colorcolumn=51
-
-" 101 in rust files
-autocmd Filetype rust setlocal colorcolumn=101
-
-" no column in the file browser netrw
-autocmd Filetype netrw setlocal colorcolumn=0
-highlight ColorColumn ctermbg=0
-
 set number " show line numbers
 set showcmd " shows commands (try `55 j` for example and look in the bottom right)
 set ignorecase " ignores case when search
