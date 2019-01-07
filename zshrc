@@ -34,6 +34,9 @@ source ~/.prompt
 fpath=(~/.zsh $fpath)
 autoload -Uz compinit && compinit
 
+# For doctl (digital ocean CLI) completions
+# source ~/.doctl-completions.zsh
+
 export HISTFILE=~/.zsh_history
 export HISTSIZE=1000000
 export SAVEHIST=1000000
