@@ -62,6 +62,8 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 
 Plug 'cespare/vim-toml'
+Plug 'ElmCast/elm-vim'
+
 Plug 'elixir-editors/vim-elixir'
 call plug#end()
 
@@ -290,4 +292,7 @@ let g:rustfmt_autosave = 1
 " H/T @dblandin
  autocmd! bufwritepost $MYVIMRC source $MYVIMRC
 
- set mouse=a
+
+set mouse=a
+
+let g:elm_format_autosave = 1
