@@ -96,6 +96,7 @@ cdpath=(
   ~/src/oss-interesting
   ~/src/cc
   ~/src/personal
+  ~/src-local-personal
   $cdpath
 )
 
