@@ -2,6 +2,7 @@ ag
 aws
 cargo
 git
+gpg
 htop
 hub
 jq
@@ -13,4 +14,5 @@ rustc
 tmux
 tree
 vim
+watch
 zsh
