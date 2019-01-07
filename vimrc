@@ -60,6 +60,9 @@ Plug 'hashivim/vim-terraform'
 
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
+
+Plug 'cespare/vim-toml'
+Plug 'elixir-editors/vim-elixir'
 call plug#end()
 
 " press jk to exit insert mode
