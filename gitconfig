@@ -4,8 +4,8 @@
   signingkey = 6001BB2E66586E0C
 [alias]
   br = "! branch" ; script that helps switch branches, in dotfiles/bin
-  bump = "commit --allow-empty -m 'bump'"
-  sunrise = "commit --allow-empty -m ':sunrise:'"
+  bump = "commit --allow-empty --message 'bump'"
+  sunrise = commit --allow-empty --message ':sunrise:'
   co = checkout
   st = status
   hist = log --pretty=format:'%h %ai | %s%d [%an]' --graph --date=short
