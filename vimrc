@@ -133,20 +133,6 @@ set backup
 set backupdir=~/.vim/backup,.
 set directory=~/.vim/tmp,.
 
-"learning from destroyallsotware
-" control l inserts a hash rockeT!!!
-imap <c-l> <space>=><space>
-
-" Run current file in ruby
-nmap <Leader>r :!clear; ruby %<CR>
-
-" Run current file with rubocop
-nmap <Leader>p :Dispatch rubocop %<CR>
-
-" Run current file in node
-" nmap <Leader>j :!clear; node %<CR>
-nmap <Leader>j :Dispatch; node %<CR>
-
 nnoremap gu :GundoToggle<CR>
 
 " status line
