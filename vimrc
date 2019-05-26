@@ -64,6 +64,9 @@ Plug 'ElmCast/elm-vim'
 
 Plug 'elixir-editors/vim-elixir'
 
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 Plug 'prettier/vim-prettier', { 'for': ['javascript', 'typescript', 'scss'] }
@@ -105,6 +108,9 @@ au BufRead,BufNewFile *.rb set tabstop=2
 au BufRead,BufNewFile *.py set shiftwidth=4
 au BufRead,BufNewFile *.py set softtabstop=4
 au BufRead,BufNewFile *.py set tabstop=4
+au BufRead,BufNewFile *.tsx set shiftwidth=2
+au BufRead,BufNewFile *.tsx set softtabstop=2
+au BufRead,BufNewFile *.tsx set tabstop=2
 
 set number " show line numbers
 set showcmd " shows commands (try `55 j` for example and look in the bottom right)
@@ -248,6 +254,8 @@ set grepprg=ag\ --nogroup\ --nocolor
 :map <c-p> :FZF!<cr>
 
 set mouse=a
+
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
 
 let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.scss PrettierAsync
