@@ -13,8 +13,6 @@ Plug 'tpope/vim-sensible'
 Plug 'rust-lang/rust.vim'
 " using to pull current git branch into status bar
 Plug 'tpope/vim-fugitive'
-" useful for opening files
-Plug 'ctrlpvim/ctrlp.vim'
 " useful for tab completing
 Plug 'ervandew/supertab'
 " not sure if I use this
@@ -65,6 +63,9 @@ Plug 'cespare/vim-toml'
 Plug 'ElmCast/elm-vim'
 
 Plug 'elixir-editors/vim-elixir'
+
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+Plug 'maxjacobson/vim-fzf-coauthorship'
 call plug#end()
 
 " press jk to exit insert mode
@@ -236,7 +237,6 @@ let g:terraform_fmt_on_save = "1"
 " H/T @dblandin
 autocmd! bufwritepost $MYVIMRC source $MYVIMRC
 
-
 set mouse=a
 
 let g:elm_format_autosave = 1
@@ -244,10 +244,8 @@ let g:elm_format_autosave = 1
 " Use ag over grep
 set grepprg=ag\ --nogroup\ --nocolor
 
-" Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
-" ag is fast enough that CtrlP doesn't need to cache
-let g:ctrlp_use_caching = 0
-
 set mouse=a
+
+nmap <silent> <C-p> :FZF!<CR>
+
+nmap <silent> <C-g> :Coauthorship<CR>
