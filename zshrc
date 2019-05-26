@@ -11,6 +11,7 @@ unsetopt nomatch
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.yarn/bin:$PATH"
 export GOPATH="$HOME/src/gopath"
 export PATH="$GOPATH/bin:$PATH"
 export PATH="$(pyenv root)/shims:$PATH"
