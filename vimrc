@@ -64,7 +64,8 @@ Plug 'ElmCast/elm-vim'
 
 Plug 'elixir-editors/vim-elixir'
 
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
 Plug 'maxjacobson/vim-fzf-coauthorship'
 call plug#end()
 
@@ -237,15 +238,13 @@ let g:terraform_fmt_on_save = "1"
 " H/T @dblandin
 autocmd! bufwritepost $MYVIMRC source $MYVIMRC
 
-set mouse=a
-
 let g:elm_format_autosave = 1
 
 " Use ag over grep
 set grepprg=ag\ --nogroup\ --nocolor
 
-set mouse=a
+:map <c-p> :FZF!<cr>
 
-nmap <silent> <C-p> :FZF!<CR>
+set mouse=a
 
 nmap <silent> <C-g> :Coauthorship<CR>

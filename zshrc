@@ -94,8 +94,8 @@ export GPG_TTY=$(tty)
 export GNUPGHOME="$HOME/.config/gnupg"
 
 # FZF
-export FZF_DEFAULT_COMMAND='fd --hidden --type f --exclude .git'
-# export FZF_DEFAULT_OPTS="--preview 'cat {}'"
+export FZF_DEFAULT_COMMAND="fd --type f --hidden --exclude .git"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 cdpath=(
   ~/src/oss-interesting
