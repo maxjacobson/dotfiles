@@ -31,8 +31,11 @@ alias 'c'='codeclimate'
 alias 'emacs'='emacs -nw'
 alias 'gs'='git status'
 alias 'gb'='git branch'
-alias 'tree'='tree -I target'
 alias 'ls'='ls -G'
 alias 'ci'='cheapskate-ci'
 
 alias 'cat'='bat'
+
+treeeee() {
+  fd --type f --hidden --exclude .git | tree --fromfile "$@"
+}
