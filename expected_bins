@@ -9,6 +9,7 @@ hub
 jq
 my-fancy-zsh-git-prompt
 ncdu
+pyenv
 ruby-build
 rustc
 tmux

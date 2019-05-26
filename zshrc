@@ -13,6 +13,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export GOPATH="$HOME/src/gopath"
 export PATH="$GOPATH/bin:$PATH"
+export PATH="$(pyenv root)/shims:$PATH"
 alias grep='grep'
 
 # use vim for things like aurget
