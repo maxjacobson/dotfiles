@@ -3,6 +3,7 @@ aws
 bat
 cargo
 doctl
+fd
 git
 gpg
 htop
@@ -13,6 +14,7 @@ ncdu
 pyenv
 ruby-build
 rustc
+seeing_is_believing
 tmux
 tree
 vim
