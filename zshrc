@@ -104,6 +104,7 @@ cdpath=(
   ~/src/personal
   ~/src-local-personal
   ~/Dropbox\ \(Personal\)
+  ~/src-local
   $cdpath
 )
 
