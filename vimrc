@@ -66,6 +66,8 @@ Plug 'elixir-editors/vim-elixir'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
+Plug 'prettier/vim-prettier', { 'for': ['javascript', 'typescript', 'scss'] }
+
 Plug 'maxjacobson/vim-fzf-coauthorship'
 call plug#end()
 
@@ -246,5 +248,8 @@ set grepprg=ag\ --nogroup\ --nocolor
 :map <c-p> :FZF!<cr>
 
 set mouse=a
+
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.scss PrettierAsync
 
 nmap <silent> <C-g> :Coauthorship<CR>
