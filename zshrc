@@ -92,11 +92,16 @@ fi
 export GPG_TTY=$(tty)
 export GNUPGHOME="$HOME/.config/gnupg"
 
+# FZF
+export FZF_DEFAULT_COMMAND='fd --hidden --type f --exclude .git'
+# export FZF_DEFAULT_OPTS="--preview 'cat {}'"
+
 cdpath=(
   ~/src/oss-interesting
   ~/src/cc
   ~/src/personal
   ~/src-local-personal
+  ~/Dropbox\ \(Personal\)
   $cdpath
 )
 
