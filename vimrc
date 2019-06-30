@@ -19,8 +19,6 @@ Plug 'ervandew/supertab'
 Plug 'tpope/vim-bundler'
 " useful for quickly commenting code
 Plug 'tpope/vim-commentary'
-" useful for asynchronously running things from vim while in tmux
-Plug 'tpope/vim-dispatch'
 " useful for auto-ending ruby methods/classes/blocks
 Plug 'tpope/vim-endwise'
 " not sure if I use this one
