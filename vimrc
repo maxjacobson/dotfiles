@@ -241,10 +241,6 @@ let g:go_fmt_command = "goimports"
 let g:rustfmt_autosave = 1
 let g:terraform_fmt_on_save = "1"
 
-" autoload .vimrc upon edit
-" H/T @dblandin
-autocmd! bufwritepost $MYVIMRC source $MYVIMRC
-
 let g:elm_format_autosave = 1
 
 " Use ag over grep
