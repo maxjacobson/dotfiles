@@ -39,6 +39,12 @@ window:
   #     - none: Neither borders nor title bar
   decorations: full
 
+  # Window title
+  title: Shell
+
+  # Window class (Linux only):
+  class: Alacritty
+
 
 scrolling:
   # Maximum number of lines in the scrollback buffer.
