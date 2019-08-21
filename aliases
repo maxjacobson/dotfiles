@@ -34,8 +34,6 @@ alias 'gb'='git branch'
 alias 'ls'='ls -G'
 alias 'ci'='cheapskate-ci'
 
-alias 'cat'='bat'
-
 treeeee() {
   fd --type f --hidden --exclude .git | tree --fromfile "$@"
 }
