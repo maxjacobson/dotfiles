@@ -27,7 +27,6 @@ man() {
             man "$@"
 }
 
-alias 'c'='codeclimate'
 alias 'emacs'='emacs -nw'
 alias 'gs'='git status'
 alias 'gb'='git branch'

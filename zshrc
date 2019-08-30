@@ -14,7 +14,8 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$PATH"
 export GOPATH="$HOME/src/gopath"
 export PATH="$GOPATH/bin:$PATH"
-export PATH="$(pyenv root)/shims:$PATH"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PYENV_ROOT/shims:$PATH"
 alias grep='grep'
 
 # use vim for things like aurget
@@ -35,9 +36,6 @@ source ~/.prompt
 # For git-completion, installed via rcm hook
 fpath=(~/.zsh $fpath)
 autoload -Uz compinit && compinit
-
-# For doctl (digital ocean CLI) completions
-# source ~/.doctl-completions.zsh
 
 export HISTFILE=~/.zsh_history
 export HISTSIZE=1000000
@@ -74,7 +72,7 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 # SSH Agent
 ssh_env="$HOME/.ssh/agent-env"
 
-if ps x | grep ssh-agent | grep -vq grep; then
+if ps x | grep ssh-agent | grep -v grep | grep -vq defunct; then
   source "$ssh_env"
 else
   ssh-agent | grep -Fv echo > "$ssh_env"

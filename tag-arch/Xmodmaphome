@@ -1,6 +1,0 @@
-! swap alt and command (only really want this on my personal keyboard at home,
-! I think...)
-clear mod1
-clear mod4
-add mod1 = Super_L Super_R Super_L Hyper_L
-add mod4 = Alt_L Alt_R Meta_L

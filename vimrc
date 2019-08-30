@@ -30,8 +30,6 @@ Plug 'slim-template/vim-slim'
 " trying to get visual find and replace working...
 Plug 'osyo-manga/vim-over'
 
-Plug 'wfleming/vim-codeclimate'
-
 Plug 'mustache/vim-mustache-handlebars'
 
 " search the codebase with ag ("the silver searcher")
@@ -178,8 +176,6 @@ map <leader>tp :tabprevious<cr>
 map <leader>tf :tabfirst<cr>
 map <leader>tl :tablast<cr>
 map <leader>tm :tabmove
-
-nmap <Leader>af :CodeClimateAnalyzeCurrentFile<CR>
 
 " hide the giant banner at the top of netrw
 let g:netrw_banner=0

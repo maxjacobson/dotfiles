@@ -1,9 +1,0 @@
-#!/bin/sh
-
-set -e
-
-mkdir -p ~/Pictures/Screenshots
-
-scrot 'Screen Shot %Y-%m-%d at %H.%M.%S.png' \
-  -q 100 \
-  -e 'mv "$f" ~/Pictures/Screenshots'

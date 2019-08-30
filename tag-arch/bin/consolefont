@@ -1,6 +1,0 @@
-#!/usr/bin/env sh
-
-set -euo pipefail
-
-font="$(ls /usr/share/kbd/consolefonts | grep 32 | head -n1)"
-setfont "$font"

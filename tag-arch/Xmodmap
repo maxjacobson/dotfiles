@@ -1,8 +1,0 @@
-! xmodmap -pke to see keycodes
-
-! redefine "control" as something that can be done via the control buttons
-! _and_ the caps lock button
-clear lock
-clear control
-add control = Caps_Lock Control_L Control_R
-keycode 66 = Control_L NoSymbol NoSymbol NoSymbol

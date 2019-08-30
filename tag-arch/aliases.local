@@ -1,2 +1,0 @@
-alias 'p'='sudo pacman'
-alias 'p-clear-cache'='sudo pacman -Sc'

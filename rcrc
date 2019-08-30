@@ -1,2 +1,2 @@
 UNDOTTED="bin"
-EXCLUDES="*.terminal:*.md"
+EXCLUDES="README.md"
