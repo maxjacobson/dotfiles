@@ -129,7 +129,7 @@ map j gj
 map k gk
 
 "clear search with <Leader>/
-nmap <silent> <Leader>/ :let@/=""<CR>
+nmap <silent> <Leader>/ :nohlsearch<CR>
 
 " jump to the list of files with <Leader>e
 nmap <silent> <Leader>e :Explore<CR>jj
