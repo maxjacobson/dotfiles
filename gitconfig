@@ -41,3 +41,5 @@
   default = simple
 [commit]
   gpgsign = true
+[diff "zip"]
+  textconv = unzip -c -a
