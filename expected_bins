@@ -1,5 +1,4 @@
 ag
-aws
 cargo
 fd
 git
@@ -9,6 +8,7 @@ hub
 jq
 my-fancy-zsh-git-prompt
 ncdu
+nvm
 pyenv
 ruby-build
 rustc
