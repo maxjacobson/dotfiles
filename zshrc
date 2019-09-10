@@ -99,7 +99,7 @@ export FZF_DEFAULT_COMMAND="fd --type f --hidden --exclude .git"
 
 cdpath=(
   ~/src/oss-interesting
-  ~/src/cc
+  ~/src/vimeo
   ~/src/personal
   ~/src-local-personal
   ~/Dropbox\ \(Personal\)
