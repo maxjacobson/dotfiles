@@ -29,6 +29,7 @@ source ~/.aliases
 source ~/.tmux-helpers
 source ~/.handy_functions
 source ~/.chruby-configuration
+source ~/.nvm-configuration
 source ~/.private-environment-variables
 source ~/.os-specific-stuff
 source ~/.prompt
