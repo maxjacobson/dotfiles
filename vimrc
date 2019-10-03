@@ -46,8 +46,6 @@ Plug 'airblade/vim-gitgutter'
 
 Plug 'hwartig/vim-seeing-is-believing'
 
-Plug 'fatih/vim-go'
-
 Plug 'dietsche/vim-lastplace'
 
 Plug 'hashivim/vim-terraform'
@@ -68,6 +66,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'prettier/vim-prettier', { 'for': ['javascript', 'typescript', 'scss'] }
 
 Plug 'maxjacobson/vim-fzf-coauthorship'
+
 call plug#end()
 
 " press jk to exit insert mode
@@ -232,8 +231,6 @@ highlight Search cterm=NONE ctermfg=white ctermbg=red
 
 let g:lastplace_ignore = "gitcommit,gitrebase,conf"
 
-" run goimports as well as gofmt on save
-let g:go_fmt_command = "goimports"
 let g:rustfmt_autosave = 1
 let g:terraform_fmt_on_save = "1"
 
