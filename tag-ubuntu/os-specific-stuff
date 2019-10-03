@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+# Install:
+# curl -fsSL https://github.com/Schniz/fnm/raw/master/.ci/install.sh | bash
+export PATH=$HOME/.fnm:$PATH
