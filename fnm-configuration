@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 
-eval "$(fnm env --shell=zsh --use-on-cd)"
+eval "$(fnm env --multi --use-on-cd)"
 alias 'nvm'='echo "use fnm now!!!"'
