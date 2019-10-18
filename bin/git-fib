@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# More info: http://www.hardscrabble.net/2015/improved-commit-squashing
+# More info: https://www.hardscrabble.net/2015/improved-commit-squashing
 function abortIfNotGitRepo {
   if [[ ! -d .git ]]; then
     echo "Not a git repo! Get out of here!"
@@ -38,22 +38,8 @@ function gitFib {
   abortIfMidRebase
   abortIfThereAreUncommittedChanges
 
-  # read some values from the last commit before we reset it
-  local msg
-  msg=$(git log -1 --pretty=%B 2>/dev/null)
-  local authorName
-  authorName=$(git log -1 --pretty=%an 2>/dev/null)
-  local authorEmail
-  authorEmail=$(git log -1 --pretty=%ae 2>/dev/null)
-
-  # uncommit the last commit
-  git reset HEAD~1
-
-  # stage all the changes again
-  git add -A
-
-  # recommit with the same message
-  git commit -m "$msg" --author="$authorName <$authorEmail>"
+  # Amend the last commit's timestamp to right now
+  git commit --no-edit --amend --date="$(date -R)"
 }
 
 # call the function and do the thing!
