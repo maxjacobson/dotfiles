@@ -25,6 +25,9 @@ export EDITOR=vim
 set -o emacs
 export BUNDLER_EDITOR=vim
 
+# Disable spring, the rails development tool that can be unreliable
+export DISABLE_SPRING=1
+
 source ~/.os-specific-stuff
 source ~/.aliases
 source ~/.tmux-helpers
