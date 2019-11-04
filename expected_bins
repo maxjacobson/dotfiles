@@ -1,4 +1,3 @@
-ag
 cargo
 fd
 fnm
@@ -10,6 +9,7 @@ jq
 my-fancy-zsh-git-prompt
 ncdu
 pyenv
+rg
 ruby-build
 rustc
 seeing_is_believing

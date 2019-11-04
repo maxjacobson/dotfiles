@@ -32,8 +32,8 @@ Plug 'osyo-manga/vim-over'
 
 Plug 'mustache/vim-mustache-handlebars'
 
-" search the codebase with ag ("the silver searcher")
-Plug 'rking/ag.vim'
+" search the codebase with rg (ripgrep)
+Plug 'jremmen/vim-ripgrep'
 
 " haskell stuff
 Plug 'begriffs/haskell-vim-now'
@@ -236,9 +236,6 @@ let g:terraform_fmt_on_save = "1"
 
 let g:elm_format_autosave = 1
 
-" Use ag over grep
-set grepprg=ag\ --nogroup\ --nocolor
-
 :map <c-p> :FZF!<cr>
 
 set mouse=a
@@ -249,3 +246,6 @@ let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.scss PrettierAsync
 
 nmap <silent> <C-g> :Coauthorship<CR>
+
+" Adding for the sake of making :Rg use smartcase, may have other side-effects
+set smartcase
