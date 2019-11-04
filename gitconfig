@@ -38,7 +38,7 @@
 [color]
   ui = true
 [push]
-  default = simple
+  default = current
 [commit]
   gpgsign = true
 [diff "zip"]
