@@ -33,6 +33,7 @@ source ~/.aliases
 source ~/.tmux-helpers
 source ~/.handy_functions
 source ~/.chruby-configuration
+# fnm
 source ~/.fnm-configuration
 source ~/.private-environment-variables
 source ~/.prompt
