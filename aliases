@@ -5,13 +5,8 @@ alias 'gst'='git status'
 
 # vi is aliased to the system vim, but I want to use the homebrew vim
 alias 'vi'='vim'
-alias ag='ag --hidden'
 
-# find instances of method calls, whether the dot is on the previous line
-# or not
-calls() {
-  ag \.(\n[[:space:]]+)?$1 $2
-}
+alias 'rg'='rg --smart-case --hidden'
 
 [[ -s "$HOME/.aliases.local" ]] && source "$HOME/.aliases.local"
 
