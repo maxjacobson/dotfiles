@@ -52,6 +52,7 @@ Plug 'hashivim/vim-terraform'
 
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
 Plug 'cespare/vim-toml'
 Plug 'ElmCast/elm-vim'
@@ -249,3 +250,10 @@ nmap <silent> <C-g> :Coauthorship<CR>
 
 " Adding for the sake of making :Rg use smartcase, may have other side-effects
 set smartcase
+
+" Help make sure syntax highlighting doesn't get confused halfway thru long
+" files
+"
+" Via https://thoughtbot.com/blog/modern-typescript-and-react-development-in-vim
+autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
