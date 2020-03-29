@@ -25,6 +25,10 @@ function clone () {
 
   mkdir -p "$gh_user_dir" &&
     cd "$gh_user_dir" &&
-    hub clone "$@" &&
+    if test -d "$gh_repo"; then
+      echo "Already exists..."
+    else
+      gh repo clone "$@" &&
+    fi
     cd "$gh_repo"
 }
