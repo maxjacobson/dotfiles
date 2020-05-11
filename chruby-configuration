@@ -8,7 +8,7 @@ if [[ -s "/usr/share/chruby/chruby.sh" ]]; then
   source "/usr/share/chruby/chruby.sh"
 fi
 
-chruby 2.7.0
+chruby 2.7.1
 
 if [[ -s "/usr/local/share/chruby/auto.sh" ]]; then
   source "/usr/local/share/chruby/auto.sh"
