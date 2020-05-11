@@ -1,7 +1,6 @@
 # this is helpful!
 alias 'be'='bundle exec'
 alias 'giit'='git'
-alias 'gst'='git status'
 
 # vi is aliased to the system vim, but I want to use the homebrew vim
 alias 'vi'='vim'
@@ -29,10 +28,7 @@ man() {
 }
 
 alias 'emacs'='emacs -nw'
-alias 'gs'='git status'
-alias 'gb'='git branch'
 alias 'ls'='ls -G'
-alias 'ci'='cheapskate-ci'
 
 treeeee() {
   fd --type f --hidden --exclude .git | tree --fromfile "$@"
