@@ -1,3 +1,4 @@
 export PATH=$PATH:~/Library/Python/2.7/bin
 export PATH=/usr/local/sbin:$PATH
 export PATH="/Applications/Postgres.app/Contents/Versions/9.6/bin:$PATH"
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
