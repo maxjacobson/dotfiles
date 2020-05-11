@@ -68,6 +68,8 @@ Plug 'prettier/vim-prettier', { 'for': ['javascript', 'typescript', 'scss'] }
 
 Plug 'maxjacobson/vim-fzf-coauthorship'
 
+Plug 'dense-analysis/ale'
+
 call plug#end()
 
 " press jk to exit insert mode
@@ -257,3 +259,5 @@ set smartcase
 " Via https://thoughtbot.com/blog/modern-typescript-and-react-development-in-vim
 autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
 autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
+
+" let g:ale_fixers = {'rust': ['rls']}
