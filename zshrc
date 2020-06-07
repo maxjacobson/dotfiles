@@ -102,13 +102,9 @@ export FZF_DEFAULT_COMMAND="fd --type f --hidden --exclude .git"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 cdpath=(
-  ~/src/oss-interesting
-  ~/src/vimeo
-  ~/src/personal
-  ~/src-local-personal
-  ~/Dropbox\ \(Personal\)
-  ~/Dropbox
-  ~/src-local
+  ~/src/gh/maxjacobson
+  ~/src/gh/vhx
+  ~/
   $cdpath
 )
 
