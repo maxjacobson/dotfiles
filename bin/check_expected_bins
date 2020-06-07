@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
-def assert(bin)
+def assert(bin_line)
+  bin, * = bin_line.split(/\s+/)
   print "Checking #{bin}..."
   ENV["PATH"].split(":").any? do |path|
     if Dir.exist?(path)
@@ -16,7 +17,10 @@ files = ["expected_bins", "expected_bins.local", "expected_bins.hyperlocal"].map
 files.each do |file|
   next unless File.exist?(file.chomp)
 
-  File.read(file.chomp).each_line do |bin|
-    assert bin.chomp
+  File.read(file.chomp).each_line do |bin_line|
+    next if bin_line =~ /^\s*#/ # skip comment lines
+    next if bin_line =~ /^\s*$/ # skip blank lines
+
+    assert bin_line
   end
 end

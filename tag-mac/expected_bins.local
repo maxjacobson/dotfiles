@@ -1,2 +1,7 @@
+# macOS package manager, via https://brew.sh/
 brew
+
+# sigh, I don't know, something to make tmux work better on macOS
+#
+# brew install reattach-to-user-namespace
 reattach-to-user-namespace

@@ -1,22 +1,75 @@
+# rust build tool, from https://rustup.rs/
 cargo
+
+# Displays diffs pretty
+#
+# Via https://github.com/dandavison/delta
 delta
+
+# find replacement, via https://github.com/sharkdp/fd
 fd
+
+# https://github.com/Schniz/fnm
 fnm
+
+# for version control, via system package manager
 git
+
+# New GitHub CLI, via https://github.com/cli/cli
 gh
+
+# I mainly use this for signing commits, via system package manager
 gpg
+
+# CLI alternative to Activity Monitor, upgrade from the built-in top
 htop
+
+# GitHub CLI, via https://github.com/github/hub
 hub
+
+# utility for pretty-printing and filtering streams of JSON-formatted text
+# from https://stedolan.github.io/jq/
 jq
+
+# my personal prompt
+# compile from source from https://github.com/maxjacobson/my-fancy-zsh-git-prompt
 my-fancy-zsh-git-prompt
+
+# upgrade over du, helps you figure out where your disk space is going
+#
+# via system package manager
 ncdu
+
+# for installing and managing python versions
 pyenv
+
+# grep replacement, via https://github.com/BurntSushi/ripgrep
 rg
+
+# for installing new versions of ruby, used in concert with chruby
+#
+# via https://github.com/rbenv/ruby-build
 ruby-build
+
+# rust compiler, from https://rustup.rs/
 rustc
+
+# ruby debugging helper
+# installed with `gem install seeing_is_believing`
+# via https://github.com/JoshCheek/seeing_is_believing
 seeing_is_believing
+
+# terminal multiplexer, via system package manager
 tmux
+
+# pretty-prints contents of a directory, via system package manager
 tree
+
+# text editor, via system package manager
 vim
+
+# runs some command over and over, via system package manager
 watch
+
+# preferred shell, via system package manager
 zsh
