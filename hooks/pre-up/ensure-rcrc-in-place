@@ -5,7 +5,7 @@ require 'fileutils'
 # Ensure ~/.rcrc is in place before anything else happens.
 # This makes sure that its directives will be respected.
 # Without this, on the first run, it is not yet in place, and so I get a `~/.README.md` and a `~/.bin`.
-# I think it would make sense for `rcup` to prioritize this ~/.dotfiles/rcrc` over other files, but oh well.
+# This bootstrapping problem is discussed at length here: https://github.com/thoughtbot/rcm/issues/103
 #
 # After this hook runs, rcup will actually overwrite the ~/.rcrc with a symlink to ~/.dotfiles/rcrc, which is fine, whatever.
 
