@@ -1,2 +1,3 @@
+COPY_ALWAYS="config/git/template/*"
 UNDOTTED="bin"
 EXCLUDES="README.md"
