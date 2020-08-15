@@ -51,3 +51,5 @@
   diffFilter = delta --color-only --theme="GitHub"
 [init]
   templateDir = ~/.config/git/template/
+[pull]
+	ff = only
