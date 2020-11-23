@@ -1,3 +1,6 @@
+# cat but with syntax highlighting
+bat
+
 # rust build tool, from https://rustup.rs/
 cargo
 
