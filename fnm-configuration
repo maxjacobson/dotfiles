@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 
-eval "$(fnm env --multi --use-on-cd --log-level=quiet)"
+eval "$(fnm --log-level quiet env --use-on-cd)"
 alias 'nvm'='echo "use fnm now!!!"'
