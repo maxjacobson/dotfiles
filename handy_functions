@@ -28,7 +28,8 @@ function clone () {
     if test -d "$gh_repo"; then
       echo "Already exists..."
     else
-      gh repo clone "$@" &&
+      set -x
+      gh repo clone "$@"
     fi
     cd "$gh_repo"
 }
