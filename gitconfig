@@ -49,7 +49,7 @@
   textconv = unzip -c -a
 [interactive]
   diffFilter = delta --color-only --theme="GitHub"
-[init]
-  templateDir = ~/.config/git/template/
 [pull]
 	ff = only
+[init]
+	defaultBranch = main
