@@ -144,12 +144,27 @@ set directory=~/.vim/tmp,.
 
 nnoremap gu :GundoToggle<CR>
 
+
+function! LinterStatus() abort
+    let l:counts = ale#statusline#Count(bufnr(''))
+
+    let l:all_errors = l:counts.error + l:counts.style_error
+    let l:all_non_errors = l:counts.total - l:all_errors
+
+    return l:counts.total == 0 ? 'OK' : printf(
+    \   '%dW %dE',
+    \   all_non_errors,
+    \   all_errors
+    \)
+endfunction
+
 " status line
 set laststatus=2
 "%f = file path
 "%l:%c = line and column
 "%m file modified flag ([+] when there are unsaved changes)
-set statusline=%F\ %l:%c\ %m
+set statusline=%F\ %l:%c\ %m\ %{LinterStatus()}
+
 
 " editing
 set nowrap
@@ -260,4 +275,9 @@ set smartcase
 autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
 autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 
-" let g:ale_fixers = {'rust': ['rls']}
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'ruby': ['rubocop'],
+\}
+
+let g:ale_ruby_rubocop_executable = "bundle"
