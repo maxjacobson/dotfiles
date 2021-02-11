@@ -1,0 +1,32 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'shellwords'
+require 'logger'
+
+logger = Logger.new($stdout)
+
+list =
+  if File.exist?('list.txt')
+    File.read('list.txt')
+  else
+    logger.info 'paste list of specs, then hit enter twice'
+    gets("\n\n").strip.tap do |text|
+      File.write('list.txt', text)
+    end
+  end
+
+list = Shellwords.join list.lines.map(&:strip)
+
+seed =
+  if File.exist?('seed.txt')
+    File.read('seed.txt')
+  else
+    logger.info 'enter seed'
+    gets.chomp.tap do |text|
+      File.write('seed.txt', text)
+    end
+  end
+
+logger.info 'Running RSpec...'
+system "bundle exec rspec #{list} --seed #{seed}"
