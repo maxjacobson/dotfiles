@@ -1,8 +1,6 @@
 # display red dots when preparing autocomplete
 COMPLETION_WAITING_DOTS="true"
 
-# don't set the title in tmux tabs
-DISABLE_AUTO_TITLE="true"
 setopt AUTO_CD
 
 # allow brackets in commands, which lets you pass arguments to rake tasks
