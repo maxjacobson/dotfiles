@@ -208,7 +208,9 @@ function! VisualFindAndReplaceWithSelection() range
     :w
 endfunction
 
-" use system clipboard???
+" use system clipboard
+" On macOS, it requires `brew install vim`-ing, as the native vim does not
+" support it
 set clipboard=unnamed,unnamedplus
 
 set hidden
