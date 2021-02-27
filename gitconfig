@@ -2,7 +2,6 @@
   name = Max Jacobson
   email = max@hardscrabble.net
 [alias]
-  br = "! branch" ; script that helps switch branches, in dotfiles/bin
   branches = "! git for-each-ref --sort=-committerdate --format=\"%(color:blue)%(authordate:relative)|%(color:red)%(authorname)|%(color:white)%(color:bold)%(refname:short)\" refs/remotes | column -s '|' -t"
   bump = "commit --allow-empty --message 'bump'"
   sunrise = commit --allow-empty --message ':sunrise:'

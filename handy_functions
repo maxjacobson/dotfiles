@@ -5,12 +5,6 @@ function md () {
   mkdir -p "$@" && cd "$@";
 }
 
-function gogofmt () {
-  for f in $(git status --short | awk '{print $2}'); do
-    gofmt -w $f
-  done
-}
-
 # Clone repos from GitHub.
 #
 # Usage: clone maxjacobson/film_snob
