@@ -15,7 +15,7 @@ export PATH="$GOPATH/bin:$PATH"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PYENV_ROOT/shims:$PATH"
 
-# use vim for things like aurget
+# Indicate my preferred editor to various tools that check this
 export EDITOR=vim
 
 # use emacs keybindings for shell navigation (even though EDITOR is vim)
