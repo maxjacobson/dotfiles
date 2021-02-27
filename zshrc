@@ -93,6 +93,7 @@ export FZF_DEFAULT_COMMAND="fd --type f --hidden --exclude .git"
 
 cdpath=(
   ~/src/gh/maxjacobson
+  ~/src/gh/hardscrabble
   ~/src/gh/vhx
   ~/
   $cdpath
