@@ -9,6 +9,10 @@
 call plug#begin('~/.vim/plugged')
 " sensible defaults
 Plug 'tpope/vim-sensible'
+
+" project-wide find and replace
+Plug 'Olical/vim-enmasse'
+
 " rust syntax highlighting, auto-formatting etc
 Plug 'rust-lang/rust.vim'
 " using to pull current git branch into status bar
