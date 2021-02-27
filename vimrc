@@ -52,7 +52,7 @@ Plug 'elixir-editors/vim-elixir'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 Plug 'prettier/vim-prettier', { 'for': ['javascript', 'typescript', 'scss'] }
 
@@ -251,7 +251,7 @@ let g:terraform_fmt_on_save = "1"
 
 let g:elm_format_autosave = 1
 
-:map <c-p> :FZF!<cr>
+:map <c-p> :FZF<cr>
 " Customize fzf colors to match your color scheme
 " - fzf#wrap translates this to a set of `--color` options
 let g:fzf_colors =
@@ -268,6 +268,8 @@ let g:fzf_colors =
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
+let g:fzf_buffers_jump = 1
+let g:fzf_layout = { 'down': '50%' }
 
 set mouse=a
 
