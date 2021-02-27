@@ -51,6 +51,8 @@
 	ff = only
 [init]
 	defaultBranch = main
+[checkout]
+  defaultRemote = origin
 [gpg]
   program = bpb
 [tag]
