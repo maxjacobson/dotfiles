@@ -46,11 +46,15 @@
 [diff "zip"]
   textconv = unzip -c -a
 [interactive]
-  diffFilter = delta --color-only --theme="GitHub"
+  diffFilter = delta --line-numbers --color-only --theme="GitHub"
 [pull]
 	ff = only
 [init]
 	defaultBranch = main
+[delta]
+  features = unobtrusive-line-numbers
+[delta "unobtrusive-line-numbers"]
+  line-numbers = true
 [checkout]
   defaultRemote = origin
 [gpg]
