@@ -3,7 +3,7 @@
 set -eo pipefail
 
 if [[ -z "$1" ]]; then
-  echo "missing first argument"
+  echo "Please provide a ruby version!"
   exit 1
 fi
 
