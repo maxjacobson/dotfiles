@@ -24,19 +24,10 @@ Plug 'tpope/vim-endwise'
 " not sure if I use this one
 Plug 'tpope/vim-eunuch'
 
-" slim template
-Plug 'slim-template/vim-slim'
-
-" trying to get visual find and replace working...
-Plug 'osyo-manga/vim-over'
-
 Plug 'mustache/vim-mustache-handlebars'
 
 " search the codebase with rg (ripgrep)
 Plug 'jremmen/vim-ripgrep'
-
-" haskell stuff
-Plug 'begriffs/haskell-vim-now'
 
 Plug 'sotte/presenting.vim'
 
@@ -52,7 +43,6 @@ Plug 'hashivim/vim-terraform'
 
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
 Plug 'cespare/vim-toml'
 Plug 'ElmCast/elm-vim'
