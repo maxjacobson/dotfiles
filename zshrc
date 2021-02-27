@@ -6,7 +6,7 @@ setopt AUTO_CD
 # allow brackets in commands, which lets you pass arguments to rake tasks
 unsetopt nomatch
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:$PATH
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$PATH"
