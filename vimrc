@@ -90,6 +90,13 @@ au BufNewFile,BufRead *.jbuilder set filetype=ruby
 au BufNewFile,BufRead *.yml.example set filetype=yaml
 au BufNewFile,BufRead *.mj set filetype=yaml
 
+if $COLORTERM == 'truecolor'
+  set termguicolors
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  colorscheme smyck
+endif
+
 " smart backspacing
 set backspace=indent,eol,start
 
@@ -255,6 +262,22 @@ let g:terraform_fmt_on_save = "1"
 let g:elm_format_autosave = 1
 
 :map <c-p> :FZF!<cr>
+" Customize fzf colors to match your color scheme
+" - fzf#wrap translates this to a set of `--color` options
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
 
 set mouse=a
 

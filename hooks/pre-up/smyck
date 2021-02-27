@@ -1,0 +1,26 @@
+#!/usr/bin/env ruby
+
+require 'fileutils'
+require 'irb'
+require 'tmpdir'
+
+def system!(command)
+  success = system(command)
+  raise unless success
+end
+
+Dir.mktmpdir do |dir|
+  Dir.chdir(dir) do
+    system! "git clone https://github.com/hukl/Smyck-Color-Scheme.git"
+
+    vim_colors_path = File.expand_path("~/.vim/colors")
+    FileUtils.mkdir_p(vim_colors_path)
+    FileUtils.cp "./Smyck-Color-Scheme/smyck.vim", vim_colors_path
+
+    bat_themes_path = File.expand_path("~/.config/bat/themes")
+    FileUtils.mkdir_p(bat_themes_path)
+    FileUtils.cp "./Smyck-Color-Scheme/Smyck.tmTheme", bat_themes_path
+
+    system! "bat cache --build"
+  end
+end
