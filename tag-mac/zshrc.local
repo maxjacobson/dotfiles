@@ -5,5 +5,8 @@ export PATH="/Applications/Postgres.app/Contents/Versions/9.6/bin:$PATH"
 # Get the actual dir with brew --prefix openssl@1.1
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=/usr/local/opt/openssl@1.1"
 
-# brew install zsh-syntax-highlighting
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [[ -s "/usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]]; then
+  source "/usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+else
+  brew install zsh-syntax-highlighting
+fi
