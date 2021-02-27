@@ -62,6 +62,8 @@ Plug 'maxjacobson/vim-fzf-coauthorship'
 
 Plug 'dense-analysis/ale'
 
+Plug 'rhysd/vim-syntax-codeowners'
+
 call plug#end()
 
 " press jk to exit insert mode
