@@ -14,7 +14,6 @@ export GOPATH="$HOME/src/gopath"
 export PATH="$GOPATH/bin:$PATH"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PYENV_ROOT/shims:$PATH"
-alias grep='grep'
 
 # use vim for things like aurget
 export EDITOR=vim
