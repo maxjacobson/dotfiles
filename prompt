@@ -1,4 +1,8 @@
-if command -v my-fancy-zsh-git-prompt >/dev/null; then
-  setopt prompt_subst
-  PROMPT="\$(my-fancy-zsh-git-prompt)"
-fi
+# See:
+# https://github.com/sindresorhus/pure
+# https://www.hardscrabble.net/2021/pure-prompt/
+
+fpath+=$HOME/.zsh/pure
+autoload -U promptinit; promptinit
+zstyle :prompt:pure:git:stash show yes
+prompt pure

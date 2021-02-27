@@ -37,10 +37,6 @@ hub
 # from https://stedolan.github.io/jq/
 jq
 
-# my personal prompt
-# compile from source from https://github.com/maxjacobson/my-fancy-zsh-git-prompt
-my-fancy-zsh-git-prompt
-
 # upgrade over du, helps you figure out where your disk space is going
 #
 # via system package manager
