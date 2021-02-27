@@ -1,7 +1,6 @@
 [user]
   name = Max Jacobson
   email = max@hardscrabble.net
-  signingkey = 6001BB2E66586E0C
 [alias]
   br = "! branch" ; script that helps switch branches, in dotfiles/bin
   branches = "! git for-each-ref --sort=-committerdate --format=\"%(color:blue)%(authordate:relative)|%(color:red)%(authorname)|%(color:white)%(color:bold)%(refname:short)\" refs/remotes | column -s '|' -t"
@@ -53,3 +52,7 @@
 	ff = only
 [init]
 	defaultBranch = main
+[gpg]
+  program = bpb
+[tag]
+  forceSignAnnotated = true

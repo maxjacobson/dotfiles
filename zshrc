@@ -93,10 +93,6 @@ if ! ssh-add -l >/dev/null; then
   trap - INT
 fi
 
-# GPG agent
-export GPG_TTY=$(tty)
-export GNUPGHOME="$HOME/.config/gnupg"
-
 # FZF
 export FZF_DEFAULT_COMMAND="fd --type f --hidden --exclude .git"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

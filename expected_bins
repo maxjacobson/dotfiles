@@ -1,6 +1,12 @@
 # cat but with syntax highlighting
 bat
 
+# For signing commits without gpg
+# https://github.com/withoutboats/bpb/
+# Installed with:
+# brew install indirect/tap/bpb
+bpb
+
 # rust build tool, from https://rustup.rs/
 cargo
 
@@ -20,9 +26,6 @@ git
 
 # New GitHub CLI, via https://github.com/cli/cli
 gh
-
-# I mainly use this for signing commits, via system package manager
-gpg
 
 # CLI alternative to Activity Monitor, upgrade from the built-in top
 htop
