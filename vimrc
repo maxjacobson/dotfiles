@@ -54,8 +54,6 @@ Plug 'peitalin/vim-jsx-typescript'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
-Plug 'prettier/vim-prettier', { 'for': ['javascript', 'typescript', 'scss'] }
-
 Plug 'maxjacobson/vim-fzf-coauthorship'
 
 Plug 'dense-analysis/ale'
@@ -223,16 +221,6 @@ nnoremap Q <nop>
 " I never use it on purpose...
 nnoremap K <nop>
 
-" http://stackoverflow.com/a/1618401
-fun! <SID>StripTrailingWhitespaces()
-    let l = line(".")
-    let c = col(".")
-    %s/\s\+$//e
-    call cursor(l, c)
-endfun
-
-autocmd FileType c,cpp,java,php,ruby,python,txt,text autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
-
 " Enable seeing-is-believing mappings for Ruby files
 augroup seeingIsBelievingSettings
   autocmd!
@@ -274,9 +262,6 @@ let g:fzf_layout = { 'down': '50%' }
 set mouse=a
 
 autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
-
-let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.scss PrettierAsync
 
 nmap <silent> <C-g> :Coauthorship<CR>
 
