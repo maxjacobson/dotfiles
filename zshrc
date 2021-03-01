@@ -68,25 +68,6 @@ bindkey '^N' down-line-or-search
 # case-insensitive tab completion (borrowed from oh-my-zsh)
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 
-# SSH Agent
-ssh_env="$HOME/.ssh/agent-env"
-
-if ps x | grep ssh-agent | grep -v grep | grep -vq defunct; then
-  source "$ssh_env"
-else
-  ssh-agent | grep -Fv echo > "$ssh_env"
-  source "$ssh_env"
-fi
-
-if ! ssh-add -l >/dev/null; then
-  # Sometimes want to ctrl-c out of this interactive prompt, but still want the
-  # rest of the login shell config to run. Without this trapping business, it
-  # gets aborted
-  trap 'echo' INT
-  ssh-add
-  trap - INT
-fi
-
 # FZF
 export FZF_DEFAULT_COMMAND="fd --type f --hidden --exclude .git"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -10,3 +10,5 @@ if [[ -s "/usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" 
 else
   brew install zsh-syntax-highlighting
 fi
+
+ssh-add -Kq
