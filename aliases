@@ -34,3 +34,5 @@ alias 'cat'='bat --theme="Smyck"'
 treeeee() {
   fd --type f --hidden --exclude .git | tree --fromfile "$@"
 }
+
+alias 'ctags'='ctags -R --exclude=.git --exclude=node_modules --exclude=public/assets'
