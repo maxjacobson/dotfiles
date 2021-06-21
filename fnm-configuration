@@ -1,4 +1,3 @@
 #!/usr/bin/env sh
-
+export PATH=/Users/max.jacobson/.fnm:$PATH
 eval "$(fnm --log-level quiet env --use-on-cd)"
-alias 'nvm'='echo "use fnm now!!!"'
