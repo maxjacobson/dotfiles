@@ -17,7 +17,7 @@ all_branches=$(git branch --sort=authordate | removeCurrentBranch | leftTrim)
 # write branches to file
 for branch in $all_branches; do
   last_commit_date="$(git log $branch -1 --pretty="%ar")"
-  echo "keep $branch (updated $last_commit_date)" >> $file
+  echo "- $branch (updated $last_commit_date)" >> $file
 done
 
 # write instructions to file
@@ -25,7 +25,7 @@ echo "
 
 # All of your branches are listed above
 # (except for the current branch, which you can't delete)
-# change keep to d to delete the branch
+# change - to d to delete the branch
 # all other lines are ignored" >> $file
 
 # prompt user to edit file
