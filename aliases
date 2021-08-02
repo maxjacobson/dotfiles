@@ -29,7 +29,7 @@ man() {
 
 alias 'emacs'='emacs -nw'
 alias 'ls'='ls -G'
-alias 'cat'='bat --theme="Smyck"'
+alias 'cat'='bat'
 
 treeeee() {
   fd --type f --hidden --exclude .git | tree --fromfile "$@"
