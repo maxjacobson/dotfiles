@@ -33,6 +33,7 @@
   pro = pull --rebase origin
   pru = pull --rebase upstream
   unstage = restore --staged .
+  recent-branches = branch --sort=-committerdate --format=\"%(committerdate:relative)%09%(refname:short)\"
 [core]
   editor = vim
 	excludesfile = ~/.gitignore_global
