@@ -31,7 +31,9 @@ Plug 'tpope/vim-eunuch'
 Plug 'mustache/vim-mustache-handlebars'
 
 " search the codebase with rg (ripgrep)
-Plug 'jremmen/vim-ripgrep'
+" Plug 'jremmen/vim-ripgrep'
+" fork with a bug fix
+Plug 'lamchau/vim-ripgrep', { 'branch': 'patch-1' }
 
 Plug 'sotte/presenting.vim'
 
