@@ -175,9 +175,6 @@ set nofoldenable
 set foldlevel=1
 set foldnestmax=10
 
-" skip startup message
-set shortmess+=I
-
 " Tab mappings.
 " via https://github.com/edgibbs/.vim/blob/master/vimrc#L55-L64
 map <leader>tt :tabnew<cr>
