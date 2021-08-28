@@ -277,7 +277,7 @@ autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 
 let g:ale_linters_explicit = 1
 let g:ale_linters= {
-\   'ruby': ['rubocop'],
+\   'ruby': ['rubocop', 'sorbet'],
 \   'javascript': ['prettier', 'eslint', 'stylelint'],
 \   'typescript': ['prettier', 'eslint'],
 \   'jsx': ['stylelint', 'eslint'],
@@ -288,6 +288,7 @@ let g:ale_fixers = {
 \   'ruby': ['rubocop'],
 \   'javascript': ['prettier'],
 \   'jsx': ['prettier'],
+\   'typescript': ['prettier'],
 \}
 
 let g:ale_ruby_rubocop_executable = "bundle"
