@@ -66,6 +66,8 @@ Plug 'dense-analysis/ale'
 
 Plug 'rhysd/vim-syntax-codeowners'
 
+Plug 'roman/golden-ratio'
+
 call plug#end()
 
 " press jk to exit insert mode
