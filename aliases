@@ -1,6 +1,6 @@
 # this is helpful!
 alias 'be'='bundle exec'
-alias 'giit'='git'
+alias 'giit'='sl'
 
 # vi is aliased to the system vim, but I want to use the homebrew vim
 alias 'vi'='vim'
