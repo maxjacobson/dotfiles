@@ -32,6 +32,12 @@ source ~/.fnm-configuration
 source ~/.private-environment-variables
 source ~/.prompt
 
+if [[ "$TERM_PROGRAM" == 'vscode' ]]; then
+  export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep-for-vscode"
+else
+  export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep"
+fi
+
 # For git-completion, installed via rcm hook
 fpath=(~/.zsh $fpath)
 autoload -Uz compinit && compinit
