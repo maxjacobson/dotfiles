@@ -3,7 +3,7 @@
 set -exu
 
 # Usage:
-# $ paywall https://cooking.nytimes.com/recipes/1893-everyday-pancake://cooking.nytimes.com/recipes/1893-everyday-pancakes
+# $ paywall "https://cooking.nytimes.com/recipes/1893-everyday-pancakes"
 f=`mktemp`
 curl -L "$1" > "$f"
 mv "$f" "$f.html"
