@@ -2,7 +2,6 @@
 .DS_Store
 */.DS_STORE
 */*/.DS_STORE
-.byebug_history
 *.rs.bk
 *.rdb
 .dropbox
