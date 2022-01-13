@@ -1,0 +1,26 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+# Usage: examine-flakiness bin/rspec spec/user_spec.rb:14
+require 'shellwords'
+require 'logger'
+
+logger = Logger.new($stdout)
+
+command = ARGV.join(" ")
+logger.info "Examining #{command.inspect}"
+fails = 0
+runs = 0
+count = 25
+
+count.times do
+  success = system(command)
+  runs += 1
+
+  if success
+    logger.info "Passed! So far has failed #{fails} out of #{runs} times"
+  else
+    fails += 1
+    logger.info "Failed! So far has failed #{fails} out of #{runs} times"
+  end
+end
