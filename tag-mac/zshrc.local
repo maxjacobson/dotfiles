@@ -8,4 +8,4 @@ else
   brew install zsh-syntax-highlighting
 fi
 
-ssh-add -Kq
+ssh-add -q --apple-use-keychain
