@@ -27,8 +27,6 @@ source ~/.aliases
 source ~/.tmux-helpers
 source ~/.handy_functions
 source ~/.chruby-configuration
-# fnm
-source ~/.fnm-configuration
 source ~/.private-environment-variables
 source ~/.prompt
 
@@ -77,6 +75,11 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 # FZF
 export FZF_DEFAULT_COMMAND="fd --type f --hidden --exclude .git"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
+# fnm
+export PATH=$HOME/.fnm:$PATH
+eval "`fnm env --use-on-cd --log-level quiet`"
 
 cdpath=(
   ~/src/gh/maxjacobson
