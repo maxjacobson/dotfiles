@@ -1,5 +1,0 @@
-# Lets you run `xdg-open foo.png` and the system will figure out the right app
-# to open the file in
-#
-# Get from the system package manager
-xdg-open
