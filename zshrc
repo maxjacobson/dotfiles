@@ -79,7 +79,7 @@ export FZF_DEFAULT_COMMAND="fd --type f --hidden --exclude .git"
 
 # fnm
 export PATH=$HOME/.fnm:$PATH
-eval "`fnm env --use-on-cd --log-level quiet`"
+eval "`fnm env --use-on-cd`"
 
 cdpath=(
   ~/src/gh/maxjacobson
