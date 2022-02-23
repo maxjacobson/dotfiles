@@ -67,6 +67,10 @@ Plug 'rhysd/vim-syntax-codeowners'
 
 Plug 'roman/golden-ratio'
 
+" Also need to manually run
+" :CocInstall coc-tsserver
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 call plug#end()
 
 " press jk to exit insert mode
