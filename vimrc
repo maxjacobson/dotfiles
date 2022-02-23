@@ -57,6 +57,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 Plug 'maxjacobson/vim-fzf-coauthorship'
 
@@ -239,7 +240,9 @@ let g:terraform_fmt_on_save = "1"
 
 let g:elm_format_autosave = 1
 
-:map <c-p> :FZF<cr>
+" Invokes fzf.vim's fuzzy file picker
+:map <c-p> :Files<cr>
+
 " Customize fzf colors to match your color scheme
 " - fzf#wrap translates this to a set of `--color` options
 let g:fzf_colors =
