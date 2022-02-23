@@ -28,7 +28,35 @@ class RemoteScript < Struct.new(:local_path, :remote_url)
   end
 end
 
+class GitRepository < Struct.new(:url, :target)
+  def install
+    if Dir.exist?(target_path)
+      Dir.chdir(target_path) do
+        system!("git pull --quiet")
+      end
+    else
+      system!("git clone #{url} #{target}")
+    end
+  end
+
+  private
+
+  def target_path
+    @target_path ||= Pathname.new(File.expand_path(target))
+  end
+
+  def system!(command)
+    system(command) or raise
+  end
+end
+
 [
+  # install https://github.com/zsh-users/zsh-autosuggestions
+  GitRepository.new(
+    "https://github.com/zsh-users/zsh-autosuggestions",
+    "~/.zsh/zsh-autosuggestions",
+  ),
+
   # install the zsh-specific completions
   RemoteScript.new(
     "~/.zsh/_git",

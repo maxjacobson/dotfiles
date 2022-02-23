@@ -91,6 +91,8 @@ cdpath=(
   $cdpath
 )
 
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 if [ -f ~/.zshrc.local ]; then
   source ~/.zshrc.local
 fi
