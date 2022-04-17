@@ -29,4 +29,4 @@ seed =
   end
 
 logger.info 'Running RSpec...'
-system "bundle exec rspec #{list} --seed #{seed}"
+system "bundle exec rspec #{list} --seed #{seed} --format documentation"
