@@ -48,10 +48,13 @@ pyenv
 # grep replacement, via https://github.com/BurntSushi/ripgrep
 rg
 
-# for installing new versions of ruby, used in concert with chruby
+# for installing new versions of ruby, used in concert with rbenv
 #
 # via https://github.com/rbenv/ruby-build
 ruby-build
+
+# for managing ruby versions
+rbenv
 
 # rust compiler, from https://rustup.rs/
 rustc

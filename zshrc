@@ -26,7 +26,6 @@ source ~/.os-specific-stuff
 source ~/.aliases
 source ~/.tmux-helpers
 source ~/.handy_functions
-source ~/.chruby-configuration
 source ~/.private-environment-variables
 source ~/.prompt
 
@@ -92,6 +91,8 @@ cdpath=(
 )
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+eval "$(rbenv init - zsh)"
 
 if [ -f ~/.zshrc.local ]; then
   source ~/.zshrc.local
