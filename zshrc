@@ -1,6 +1,3 @@
-# display red dots when preparing autocomplete
-COMPLETION_WAITING_DOTS="true"
-
 setopt AUTO_CD
 
 # allow brackets in commands, which lets you pass arguments to rake tasks
