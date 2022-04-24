@@ -90,6 +90,8 @@ cdpath=(
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 eval "$(rbenv init - zsh)"
+# https://thoughtbot.com/blog/git-safe
+export PATH=".git/safe/../../bin:$PATH"
 
 if [ -f ~/.zshrc.local ]; then
   source ~/.zshrc.local
