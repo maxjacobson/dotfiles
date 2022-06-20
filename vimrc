@@ -268,8 +268,6 @@ let g:fzf_layout = { 'down': '50%' }
 
 set mouse=a
 
-autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
-
 nmap <silent> <C-g> :Coauthorship<CR>
 
 " Adding for the sake of making :Rg use smartcase, may have other side-effects
