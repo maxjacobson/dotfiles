@@ -11,7 +11,7 @@
   l = log --pretty='%Cred%h %Creset%<|(58,trunc)%s%n%Cgreen%aN%Creset, %ar%n'
   aa = add -A
   authors = shortlog -sn
-  recent-authors = shortlog -sn --since='4 weeks ago'
+  recent-authors = shortlog -sn --since='2 weeks ago'
   q = "! git add . --all && git commit --amend --no-message"
   rc = rebase --continue
   rs = rebase --skip
