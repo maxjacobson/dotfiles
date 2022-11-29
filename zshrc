@@ -77,10 +77,9 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 export FZF_DEFAULT_COMMAND="fd --type f --hidden --exclude .git"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-
 # fnm
 export PATH=$HOME/.fnm:$PATH
-eval "`fnm env --use-on-cd`"
+eval "`fnm env --use-on-cd --log-level quiet`"
 
 cdpath=(
   ~/src/gh/maxjacobson
