@@ -292,8 +292,10 @@ let g:ale_linters= {
 let g:ale_fixers = {
 \   'javascript': ['prettier'],
 \   'jsx': ['prettier'],
+\   'scss': ['prettier'],
 \   'typescript': ['prettier'],
 \   'typescriptreact': ['prettier'],
+\   'ruby': ['rubocop'],
 \}
 
 let g:ale_ruby_rubocop_executable = "bundle"
