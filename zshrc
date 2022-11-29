@@ -65,6 +65,11 @@ bindkey '^P' up-line-or-search
 bindkey '^[[B' down-line-or-search
 bindkey '^N' down-line-or-search
 
+# Make alt + left arrow go back a word
+bindkey '^[^[[D' backward-word
+# Make alt + right arrow go forward a word
+bindkey '^[^[[C' forward-word
+
 # case-insensitive tab completion (borrowed from oh-my-zsh)
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 
