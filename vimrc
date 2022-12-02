@@ -212,9 +212,9 @@ function! VisualFindAndReplaceWithSelection() range
 endfunction
 
 " use system clipboard
-" On macOS, it requires `brew install vim`-ing, as the native vim does not
-" support it
-set clipboard=unnamed,unnamedplus
+" N.B. if you switch to neovim, you should change this to
+" set clipboard=unnamed,unnamedplus
+set clipboard=unnamed
 
 set hidden
 
