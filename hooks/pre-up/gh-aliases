@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+if which gh; then
+  echo "Creating gh aliases..."
+  gh alias set open "! gh-open"
+else
+  echo "Run again after installing gh"
+fi

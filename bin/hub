@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+sl
+echo "use gh open instead of hub browse!!!"

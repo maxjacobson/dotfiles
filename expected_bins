@@ -30,9 +30,6 @@ gh
 # CLI alternative to Activity Monitor, upgrade from the built-in top
 htop
 
-# GitHub CLI, via https://github.com/github/hub
-hub
-
 # utility for pretty-printing and filtering streams of JSON-formatted text
 # from https://stedolan.github.io/jq/
 jq
