@@ -84,9 +84,6 @@ eval "`fnm env --use-on-cd --log-level quiet`"
 cdpath=(
   ~/src/gh/maxjacobson
   ~/src/gh/hardscrabble
-  ~/src/gh/vhx
-  ~/src/gh/vimeo
-  ~/src/ghe/vimeo
   ~/
   $cdpath
 )

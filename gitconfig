@@ -62,5 +62,5 @@
   program = bpb
 [tag]
   forceSignAnnotated = true
-[url "git@github.vimeows.com:"]
-	insteadOf = https://github.vimeows.com/
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
