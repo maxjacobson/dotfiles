@@ -56,11 +56,6 @@ rbenv
 # rust compiler, from https://rustup.rs/
 rustc
 
-# ruby debugging helper
-# installed with `gem install seeing_is_believing`
-# via https://github.com/JoshCheek/seeing_is_believing
-seeing_is_believing
-
 # terminal multiplexer, via system package manager
 tmux
 

@@ -39,8 +39,6 @@ Plug 'sjl/gundo.vim'
 
 Plug 'airblade/vim-gitgutter'
 
-Plug 'hwartig/vim-seeing-is-believing'
-
 Plug 'dietsche/vim-lastplace'
 
 Plug 'hashivim/vim-terraform'
@@ -225,14 +223,6 @@ nnoremap Q <nop>
 " While I'm at it, disable K to lookup man pages
 " I never use it on purpose...
 nnoremap K <nop>
-
-" Enable seeing-is-believing mappings for Ruby files
-augroup seeingIsBelievingSettings
-  autocmd!
-
-  autocmd FileType ruby nmap <buffer> <Enter> <Plug>(seeing-is-believing-mark-and-run)
-  autocmd FileType ruby xmap <buffer> <Enter> <Plug>(seeing-is-believing-mark-and-run)
-augroup END
 
 " help make sure quickfix text is readable
 highlight Search cterm=NONE ctermfg=white ctermbg=red
