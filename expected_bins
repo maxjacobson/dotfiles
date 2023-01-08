@@ -1,72 +1,115 @@
 # cat but with syntax highlighting
+#
+# brew install bat
 bat
 
 # For signing commits without gpg
+#
 # https://github.com/withoutboats/bpb/
-# Installed with:
+#
 # brew install indirect/tap/bpb
 bpb
 
-# rust build tool, from https://rustup.rs/
+# rust build tool
+#
+# Used to use rustup but this seems fine for my very limiteed needs:
+#
+# brew install rust
 cargo
 
 # Displays diffs pretty
 #
-# Via https://github.com/dandavison/delta
+# https://github.com/dandavison/delta
+#
+# brew install git-delta
 delta
 
-# find replacement, via https://github.com/sharkdp/fd
+# find replacement
+#
+# https://github.com/sharkdp/fd
+#
+# brew install fd
 fd
 
+# fast node manager
 # https://github.com/Schniz/fnm
+#
+# brew install fnm
 fnm
 
-# for version control, via system package manager
+# for version control
+#
+# brew install git to get the latest version
 git
 
 # New GitHub CLI, via https://github.com/cli/cli
+#
+# brew install gh
 gh
 
 # CLI alternative to Activity Monitor, upgrade from the built-in top
+#
+# brew install htop
 htop
 
 # utility for pretty-printing and filtering streams of JSON-formatted text
 # from https://stedolan.github.io/jq/
+#
+# brew install jq
 jq
 
 # upgrade over du, helps you figure out where your disk space is going
 #
-# via system package manager
+# brew install ncdu
 ncdu
 
 # for installing and managing python versions
+#
+# brew install pyenv
 pyenv
 
-# grep replacement, via https://github.com/BurntSushi/ripgrep
+# grep replacement
+#
+# https://github.com/BurntSushi/ripgrep
+#
+# brew install ripgrep
 rg
 
-# for installing new versions of ruby, used in concert with rbenv
+# managing ruby versions
 #
-# via https://github.com/rbenv/ruby-build
-ruby-build
-
-# for managing ruby versions
+# brew install rbenv
 rbenv
 
-# rust compiler, from https://rustup.rs/
+# rust compiler
+#
+# brew install rust
 rustc
 
-# terminal multiplexer, via system package manager
+# terminal multiplexer
+#
+# brew install tmux
 tmux
 
-# pretty-prints contents of a directory, via system package manager
+# pretty-prints contents of a directory
+#
+# brew install tree
 tree
 
-# text editor, via system package manager
+# text editor
+#
+# brew install vim
 vim
 
-# runs some command over and over, via system package manager
+# runs some command over and over
+#
+# brew install watch
 watch
 
-# preferred shell, via system package manager
+# preferred shell
+#
+# brew install zsh
+#
+# Then...
+#
+# add it to `/etc/shells` and run `chsh -s /opt/homebrew/bin/zsh`
 zsh
