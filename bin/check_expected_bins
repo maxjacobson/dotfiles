@@ -13,7 +13,7 @@ def assert(bin_line)
   end or raise "Not found: #{bin}"
 end
 
-file = File.expand_path "~/.expected_bins.txt"
+file = File.expand_path "~/.config/expected_bins.txt"
 File.read(file.chomp).each_line do |bin_line|
   next if bin_line =~ /^\s*#/ # skip comment lines
   next if bin_line =~ /^\s*$/ # skip blank lines
