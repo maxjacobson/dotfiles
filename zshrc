@@ -19,7 +19,6 @@ export EDITOR=vim
 set -o emacs
 export BUNDLER_EDITOR=vim
 
-source ~/.os-specific-stuff
 source ~/.aliases
 source ~/.tmux-helpers
 source ~/.handy_functions
