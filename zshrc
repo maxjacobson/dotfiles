@@ -94,6 +94,10 @@ eval "$(rbenv init - zsh)"
 export PATH=".git/safe/../../bin:$PATH"
 export PATH=".git/safe/../../exe:$PATH"
 
-if [ -f ~/.zshrc.local ]; then
-  source ~/.zshrc.local
+if [[ -s "/opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]]; then
+  source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+else
+  echo "Suggestion: run brew install zsh-syntax-highlighting"
 fi
+
+ssh-add -q --apple-use-keychain
