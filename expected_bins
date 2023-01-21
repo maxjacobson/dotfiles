@@ -113,3 +113,10 @@ watch
 #
 # add it to `/etc/shells` and run `chsh -s /opt/homebrew/bin/zsh`
 zsh
+
+# steam locomotive
+#
+# https://www.hardscrabble.net/2022/steam-locomotive/
+#
+# brew install sl
+sl
