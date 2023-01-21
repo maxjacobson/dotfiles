@@ -13,14 +13,10 @@ def assert(bin_line)
   end or raise "Not found: #{bin}"
 end
 
-files = ["expected_bins", "expected_bins.local"].map { |name| File.expand_path "~/.#{name}" }
-files.each do |file|
-  next unless File.exist?(file.chomp)
+file = File.expand_path "~/.expected_bins.txt"
+File.read(file.chomp).each_line do |bin_line|
+  next if bin_line =~ /^\s*#/ # skip comment lines
+  next if bin_line =~ /^\s*$/ # skip blank lines
 
-  File.read(file.chomp).each_line do |bin_line|
-    next if bin_line =~ /^\s*#/ # skip comment lines
-    next if bin_line =~ /^\s*$/ # skip blank lines
-
-    assert bin_line
-  end
+  assert bin_line
 end

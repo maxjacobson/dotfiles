@@ -1,3 +1,6 @@
+# macOS package manager, via https://brew.sh/
+brew
+
 # cat but with syntax highlighting
 #
 # brew install bat
