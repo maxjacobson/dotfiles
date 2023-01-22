@@ -169,6 +169,8 @@ cdpath=(
   $cdpath
 )
 
+# rcm will auto-install it from https://github.com/zsh-users/zsh-autosuggestions
+# Adds auto-complete to commands based on your shell history
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 eval "$(rbenv init - zsh)"
