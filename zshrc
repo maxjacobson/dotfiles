@@ -6,12 +6,16 @@ unsetopt nomatch
 export PATH=$HOME/bin:$PATH
 export PATH="$HOME/.cargo/bin:$PATH"
 
-# Indicate my preferred editor to various tools that check this
+# vim rules
+#
+# But use emacs key bindings to naviate inputting text into the shell
+# even though I prefer vim for editing text files,
+# when I'm not _in_ vim I don't really expect vim stuff to work.
+# And if I'm on a mac editing text I kind of expect emacs stuff to
+# work. And so here we are.
 export EDITOR=vim
-
-# use emacs keybindings for shell navigation (even though EDITOR is vim)
-set -o emacs
 export BUNDLER_EDITOR=vim
+setopt emacs
 
 # Adds some color to the man output
 man() {
