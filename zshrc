@@ -154,7 +154,10 @@ export FZF_DEFAULT_COMMAND="fd --type f --hidden --exclude .git"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # fnm
-export PATH=$HOME/.fnm:$PATH
+# fast node manager
+# this configures fnm to auto-switch node versions when it sees a `.node-version` file
+# and also prompt you to install missing versions
+# https://github.com/Schniz/fnm
 eval "`fnm env --use-on-cd --log-level quiet`"
 
 cdpath=(
