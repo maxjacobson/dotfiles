@@ -150,8 +150,10 @@ bindkey '^[^[[C' forward-word
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 
 # FZF
+#
+# This is configuration for the fuzzy file finder I use in vim
+# https://github.com/junegunn/fzf.vim
 export FZF_DEFAULT_COMMAND="fd --type f --hidden --exclude .git"
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # fnm
 # fast node manager
