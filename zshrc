@@ -3,7 +3,13 @@ setopt AUTO_CD
 # allow brackets in commands, which lets you pass arguments to rake tasks
 unsetopt nomatch
 
+# Add ~/bin to path
+# This is a folder where I put custom helper scripts
+# Most of them are stored in my dotfiles git repo and synced there by rcm
 export PATH=$HOME/bin:$PATH
+
+# Add ~/.cargo/bin to path
+# This is where cargo (rust's package manager) installs binaries
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # vim rules
