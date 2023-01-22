@@ -1,4 +1,0 @@
-alias 't'='tmux new-session -A -s "$(basename $PWD | tr -d .\(\)\ )"'
-alias 'tl'='tmux ls'
-alias 'ta'='tmux attach'
-alias 'to'='tmux attach -t'

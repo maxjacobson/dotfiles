@@ -49,7 +49,13 @@ treeeee() {
 # some default behavior for ctags
 alias 'ctags'='ctags -R --exclude=.git --exclude=node_modules'
 
-source ~/.tmux-helpers
+# Some helpful tmux aliases
+# https://www.hardscrabble.net/2015/some-helpful-tmux-aliases/
+alias 't'='tmux new-session -A -s "$(basename $PWD | tr -d .\(\)\ )"'
+alias 'tl'='tmux ls'
+alias 'ta'='tmux attach'
+alias 'to'='tmux attach -t'
+
 source ~/.handy_functions
 source ~/.prompt
 
