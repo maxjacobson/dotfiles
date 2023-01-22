@@ -66,11 +66,6 @@ jq
 # brew install ncdu
 ncdu
 
-# for installing and managing python versions
-#
-# brew install pyenv
-pyenv
-
 # grep replacement
 #
 # https://github.com/BurntSushi/ripgrep
