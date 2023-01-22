@@ -175,6 +175,8 @@ setopt autocd
 # Adds auto-complete to commands based on your shell history
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+# Enables rbenv for this shell session
+# install rbenv with `brew install rbenv`
 eval "$(rbenv init - zsh)"
 
 # https://thoughtbot.com/blog/git-safe
