@@ -118,3 +118,7 @@ zsh
 #
 # brew install sl
 sl
+
+# text editor that I have always meant to learn but never actually got around to
+# brew install emacs
+emacs

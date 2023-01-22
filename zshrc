@@ -19,7 +19,38 @@ export EDITOR=vim
 set -o emacs
 export BUNDLER_EDITOR=vim
 
-source ~/.aliases
+# Adds some color to the man output
+man() {
+    env \
+        LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+        LESS_TERMCAP_md=$(printf "\e[1;31m") \
+        LESS_TERMCAP_me=$(printf "\e[0m") \
+        LESS_TERMCAP_se=$(printf "\e[0m") \
+        LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+        LESS_TERMCAP_ue=$(printf "\e[0m") \
+        LESS_TERMCAP_us=$(printf "\e[1;32m") \
+            man "$@"
+}
+
+# starts emacs in a more minimalist mode
+alias 'emacs'='emacs --no-window-system --quick'
+
+# colorizes ls output
+alias 'ls'='ls -G'
+
+# colorizes file content output
+# https://github.com/sharkdp/bat
+alias 'cat'='bat'
+
+# A handfy function that limits `tree` to just the files tracked by git
+# https://www.hardscrabble.net/2019/tree-but-respecting-your-gitignore/
+treeeee() {
+  fd --type f --hidden --exclude .git | tree --fromfile "$@"
+}
+
+# some default behavior for ctags
+alias 'ctags'='ctags -R --exclude=.git --exclude=node_modules'
+
 source ~/.tmux-helpers
 source ~/.handy_functions
 source ~/.prompt
