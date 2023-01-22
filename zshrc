@@ -22,7 +22,6 @@ export BUNDLER_EDITOR=vim
 source ~/.aliases
 source ~/.tmux-helpers
 source ~/.handy_functions
-source ~/.private-environment-variables
 source ~/.prompt
 
 if [[ "$TERM_PROGRAM" == 'vscode' ]]; then
