@@ -4,7 +4,9 @@
 #
 # This runs automatically via an rcm post-up hook
 
+brew "bash" # shell -- generally using zsh, but nice to have a modern version of bash around
 brew "bat" # cat but with syntax highlighting
+brew "cloc" # count lines of code
 brew "emacs" # text editor that I have always meant to learn but never actually got around to
 brew "fd" # find replacement
 brew "fnm" # fast node.js manager
@@ -26,5 +28,7 @@ brew "tmux" # terminal multiplexer
 brew "tree" # pretty-prints contents of a directory
 brew "vim" # primary text editor
 brew "watch" # runs some command over and over
+brew "wget" # download files
+brew "youtube-dl" # download videos from youtube and other websites
 brew "zsh" # preferred shell; need to add it to `/etc/shells` then run `chsh -s /opt/homebrew/bin/zsh`
-brew "zsh-syntax-highlighting"
+brew "zsh-syntax-highlighting" # syntax highlights commands as you enter them into zsh shell
