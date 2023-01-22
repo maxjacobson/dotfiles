@@ -85,7 +85,16 @@ function clone () {
     cd "$gh_repo"
 }
 
-source ~/.prompt
+# See:
+# https://github.com/sindresorhus/pure
+# https://www.hardscrabble.net/2021/pure-prompt/
+#
+# Must run:
+# brew install pure
+
+autoload -U promptinit; promptinit
+zstyle :prompt:pure:git:stash show yes
+prompt pure
 
 if [[ "$TERM_PROGRAM" == 'vscode' ]]; then
   export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep-for-vscode"
