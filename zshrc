@@ -1,5 +1,3 @@
-setopt AUTO_CD
-
 # allow brackets in commands, which lets you pass arguments to rake tasks
 unsetopt nomatch
 
@@ -162,12 +160,16 @@ export FZF_DEFAULT_COMMAND="fd --type f --hidden --exclude .git"
 # https://github.com/Schniz/fnm
 eval "`fnm env --use-on-cd --log-level quiet`"
 
+# makes it possible to run `cd Desktop` from anywhere, for example
 cdpath=(
   ~/src/gh/maxjacobson
   ~/src/gh/hardscrabble
   ~/
   $cdpath
 )
+
+# Lets you simply type simply Desktop to cd into the desktop, rather than `cd Desktop`
+setopt autocd
 
 # rcm will auto-install it from https://github.com/zsh-users/zsh-autosuggestions
 # Adds auto-complete to commands based on your shell history
