@@ -126,3 +126,8 @@ emacs
 # yet another text editor that I have meant to evaluate but haven't gotten to
 # brew install neovim
 nvim
+
+# git helper thing
+# I use it to browse stashes on the command line
+# brew install tig
+tig
