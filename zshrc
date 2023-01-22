@@ -170,7 +170,14 @@ cdpath=(
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 eval "$(rbenv init - zsh)"
+
 # https://thoughtbot.com/blog/git-safe
+#
+# Run `mkdir -p .git/safe` in a trustworthy repo with a bin or exe folder
+#
+# If you do that, you can simply run `foo` and it will invoke bin/foo or exe/foo
+#
+# which is particularly nice for ruby projects that use binstubs
 export PATH=".git/safe/../../bin:$PATH"
 export PATH=".git/safe/../../exe:$PATH"
 
