@@ -122,3 +122,7 @@ sl
 # text editor that I have always meant to learn but never actually got around to
 # brew install emacs
 emacs
+
+# yet another text editor that I have meant to evaluate but haven't gotten to
+# brew install neovim
+nvim
