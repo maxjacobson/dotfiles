@@ -7,8 +7,6 @@ export PATH=$HOME/bin:$PATH
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$PATH"
-export GOPATH="$HOME/src/gopath"
-export PATH="$GOPATH/bin:$PATH"
 
 # Indicate my preferred editor to various tools that check this
 export EDITOR=vim
