@@ -184,4 +184,6 @@ export PATH=".git/safe/../../exe:$PATH"
 # Must run brew install zsh-syntax-highlighting
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# auto-load my ssh key
+# and read the passphrase from the keychain so I don't need to enter it every time
 ssh-add -q --apple-use-keychain
