@@ -12,7 +12,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 # vim rules
 #
-# But use emacs key bindings to naviate inputting text into the shell
+# But I use emacs key bindings to navigate inputting text into the shell
 # even though I prefer vim for editing text files,
 # when I'm not _in_ vim I don't really expect vim stuff to work.
 # And if I'm on a mac editing text I kind of expect emacs stuff to
