@@ -1,0 +1,30 @@
+# vi: ft=ruby
+
+# See also: https://github.com/Homebrew/homebrew-bundle
+#
+# This runs automatically via an rcm post-up hook
+
+brew "bat" # cat but with syntax highlighting
+brew "emacs" # text editor that I have always meant to learn but never actually got around to
+brew "fd" # find replacement
+brew "fnm" # fast node.js manager
+brew "gh" # New GitHub CLI, via https://github.com/cli/cli
+brew "git" # version control
+brew "git-delta" # Displays diffs pretty, exposes delta CLI
+brew "htop" # CLI alternative to Activity Monitor, upgrade from the built-in top
+brew "indirect/tap/bpb" # For signing commits without gpg
+brew "jq" # utility for pretty-printing and filtering streams of JSON-formatted text
+brew "ncdu" # upgrade over du, helps you figure out where your disk space is going
+brew "neovim" # yet another text editor that I have meant to evaluate but haven't gotten to
+brew "pure" # nice prompt https://www.hardscrabble.net/2021/pure-prompt/
+brew "rbenv" # managing ruby versions
+brew "ripgrep" # grep replacement, exposes rg CLI
+brew "rust" # cool programming language
+brew "sl" # steam locomotive https://www.hardscrabble.net/2022/steam-locomotive/
+brew "tig" # git helper thing I use it to browse stashes on the command line
+brew "tmux" # terminal multiplexer
+brew "tree" # pretty-prints contents of a directory
+brew "vim" # primary text editor
+brew "watch" # runs some command over and over
+brew "zsh" # preferred shell; need to add it to `/etc/shells` then run `chsh -s /opt/homebrew/bin/zsh`
+brew "zsh-syntax-highlighting"

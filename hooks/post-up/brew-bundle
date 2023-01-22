@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -ex
+
+# Install dependencies with homebrew
+# If homebrew isn't yet installed, this will fail
+# Install it by following the instructions here: https://brew.sh
+
+brew bundle --no-lock --global
