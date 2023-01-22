@@ -185,7 +185,9 @@ eval "$(rbenv init - zsh)"
 export PATH=".git/safe/../../bin:$PATH"
 export PATH=".git/safe/../../exe:$PATH"
 
-# Must run brew install zsh-syntax-highlighting
+# highlights commands as you type them in the shell
+#
+# Must run `brew install zsh-syntax-highlighting`
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # auto-load my ssh key
