@@ -285,7 +285,6 @@ let g:ale_fixers = {
 \   'scss': ['prettier'],
 \   'typescript': ['prettier'],
 \   'typescriptreact': ['prettier'],
-\   'ruby': ['rubocop'],
 \}
 
 let g:ale_ruby_rubocop_executable = "bundle"
