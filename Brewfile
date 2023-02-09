@@ -4,6 +4,8 @@
 #
 # This runs automatically via an rcm post-up hook
 
+tap "heroku/brew"
+
 brew "bash" # shell -- generally using zsh, but nice to have a modern version of bash around
 brew "bat" # cat but with syntax highlighting
 brew "cloc" # count lines of code
@@ -13,6 +15,7 @@ brew "fnm" # fast node.js manager
 brew "gh" # New GitHub CLI, via https://github.com/cli/cli
 brew "git" # version control
 brew "git-delta" # Displays diffs pretty, exposes delta CLI
+brew "heroku" # Heroku CLI
 brew "htop" # CLI alternative to Activity Monitor, upgrade from the built-in top
 brew "indirect/tap/bpb" # For signing commits without gpg
 brew "jq" # utility for pretty-printing and filtering streams of JSON-formatted text
@@ -23,6 +26,7 @@ brew "rbenv" # managing ruby versions
 brew "ripgrep" # grep replacement, exposes rg CLI
 brew "rust" # cool programming language
 brew "sl" # steam locomotive https://www.hardscrabble.net/2022/steam-locomotive/
+brew "terminal-notifier" # trigger macOS notifications from shell scripts
 brew "tig" # git helper thing I use it to browse stashes on the command line
 brew "tmux" # terminal multiplexer
 brew "tree" # pretty-prints contents of a directory
