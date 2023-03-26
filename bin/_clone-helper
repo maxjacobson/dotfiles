@@ -1,0 +1,23 @@
+#!/usr/bin/env ruby
+
+require "fileutils"
+
+repository = ARGV.fetch(0)
+gh_user = repository.split("/").fetch(0)
+gh_repo = repository.split("/").fetch(1)
+gh_user_dir = "#{ENV.fetch("HOME")}/src/gh/#{gh_user}"
+
+FileUtils.mkdir_p(gh_user_dir)
+
+Dir.chdir(gh_user_dir)
+
+if Dir.exist?(gh_repo)
+  puts "already exists"
+  Dir.chdir gh_repo
+else
+  puts "does not yet exist"
+  system("gh", "repo", "clone", repository, exception: true)
+  Dir.chdir gh_repo
+end
+
+Kernel.exec ENV.fetch("SHELL")
