@@ -70,7 +70,17 @@ function md () {
 #
 # Usage: clone maxjacobson/film_snob
 function clone () {
-  exec ~/bin/_clone-helper "$@"
+  if [ -d "$HOME/src/gh/$1" ]; then
+    echo "already exists"
+    cd "$HOME/src/gh/$1"
+    echo "fetching"
+    git fetch
+  else
+    echo "Does not yet exist"
+    mkdir -p "$HOME/src/gh/$1"
+    cd "$HOME/src/gh/$1"
+    gh repo clone "$1" .
+  fi
 }
 
 # See:
