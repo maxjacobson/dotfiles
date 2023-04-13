@@ -69,18 +69,27 @@ function md () {
 # Clone repos from GitHub.
 #
 # Usage: clone maxjacobson/film_snob
+#
+# Inspired by https://github.com/pbrisbin/dotfiles/blob/632ab65643eac277c77c18a2587fec17fd1acac3/zshrc#L19-L28
 function clone () {
-  if [ -d "$HOME/src/gh/$1" ]; then
-    echo "already exists"
-    cd "$HOME/src/gh/$1"
-    echo "fetching"
-    git fetch
-  else
-    echo "Does not yet exist"
-    mkdir -p "$HOME/src/gh/$1"
-    cd "$HOME/src/gh/$1"
-    gh repo clone "$1" .
-  fi
+  case "$1" in
+    */*)
+      target="$HOME/src/gh/$1"
+
+      if [ -d "$target" ]; then
+        echo "already exists"
+        cd "$target"
+      else
+        mkdir -p "$target"
+        gh repo clone "$1" "$target"
+        cd "$target"
+      fi
+
+      ;;
+    *)
+      echo "Bad input"
+      ;;
+  esac
 }
 
 # See:
