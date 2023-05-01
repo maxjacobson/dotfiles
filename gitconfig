@@ -3,16 +3,13 @@
   email = max@hardscrabble.net
 [alias]
   branches = "! git for-each-ref --sort=committerdate --format=\"%(color:blue)%(authordate:relative)|%(color:red)%(authorname)|%(color:white)%(color:bold)%(refname:short)\" refs/remotes | column -s '|' -t"
-  bump = "commit --allow-empty --message 'bump'"
   sunrise = commit --allow-empty --message ':sunrise:'
   co = checkout
   st = status
-  hist = log --pretty=format:'%h %ai | %s%d [%an]' --graph --date=short
   l = log --pretty='%Cred%h %Creset%<|(58,trunc)%s%n%Cgreen%aN%Creset, %ar%n'
   aa = add -A
   authors = shortlog -sn
   recent-authors = shortlog -sn --since='2 weeks ago'
-  q = "! git add . --all && git commit --amend --no-message"
   rc = rebase --continue
   rs = rebase --skip
   ra = rebase --abort
@@ -20,16 +17,10 @@
   cp = cherry-pick
   cpc = cherry-pick --continue
   cpa = cherry-pick --abort
-  d = diff
   dc = diff --cached
-  picky = add . -p
   pick = add . -p
-  squasher = "! git add -A && git commit -am 'squasher' && git rebase -i HEAD~2"
-  p = add . -p
   git = "! git"
   vim = "! vim"
-  dif = diff
-  rebsae = rebase
   pro = pull --rebase origin
   pru = pull --rebase upstream
   unstage = restore --staged .
