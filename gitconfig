@@ -18,7 +18,6 @@
   ra = rebase --abort
   rc = rebase --continue
   recent-authors = shortlog -sn --since='2 weeks ago'
-  recent-branches = branch --sort=-committerdate --format=\"%(committerdate:relative)%09%(refname:short)\"
   rh = reset HEAD --hard
   rs = rebase --skip
   st = status
