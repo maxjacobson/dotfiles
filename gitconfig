@@ -2,29 +2,29 @@
   name = Max Jacobson
   email = max@hardscrabble.net
 [alias]
-  branches = "! git for-each-ref --sort=committerdate --format=\"%(color:blue)%(authordate:relative)|%(color:red)%(authorname)|%(color:white)%(color:bold)%(refname:short)\" refs/remotes | column -s '|' -t"
-  sunrise = commit --allow-empty --message ':sunrise:'
-  co = checkout
-  st = status
-  l = log --pretty='%Cred%h %Creset%<|(58,trunc)%s%n%Cgreen%aN%Creset, %ar%n'
   aa = add -A
   authors = shortlog -sn
-  recent-authors = shortlog -sn --since='2 weeks ago'
-  rc = rebase --continue
-  rs = rebase --skip
-  ra = rebase --abort
-  rh = reset HEAD --hard
+  branches = "! git for-each-ref --sort=committerdate --format=\"%(color:blue)%(authordate:relative)|%(color:red)%(authorname)|%(color:white)%(color:bold)%(refname:short)\" refs/remotes | column -s '|' -t"
+  co = checkout
   cp = cherry-pick
-  cpc = cherry-pick --continue
   cpa = cherry-pick --abort
+  cpc = cherry-pick --continue
   dc = diff --cached
-  pick = add . -p
   git = "! git"
-  vim = "! vim"
+  l = log --pretty='%Cred%h %Creset%<|(58,trunc)%s%n%Cgreen%aN%Creset, %ar%n'
+  pick = add . -p
   pro = pull --rebase origin
   pru = pull --rebase upstream
-  unstage = restore --staged .
+  ra = rebase --abort
+  rc = rebase --continue
+  recent-authors = shortlog -sn --since='2 weeks ago'
   recent-branches = branch --sort=-committerdate --format=\"%(committerdate:relative)%09%(refname:short)\"
+  rh = reset HEAD --hard
+  rs = rebase --skip
+  st = status
+  sunrise = commit --allow-empty --message ':sunrise:'
+  unstage = restore --staged .
+  vim = "! vim"
 [core]
   editor = vim
   pager = delta --syntax-theme Smyck
