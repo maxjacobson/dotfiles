@@ -28,8 +28,6 @@
 [core]
   editor = vim
   pager = delta --syntax-theme Smyck
-[color]
-  ui = true
 [push]
   default = current
 [commit]
