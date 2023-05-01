@@ -21,7 +21,7 @@
   rh = reset HEAD --hard
   rs = rebase --skip
   st = status
-  sunrise = commit --allow-empty --message ':sunrise:'
+  sunrise = commit --allow-empty --message '🌅'
   unstage = restore --staged .
   vim = "! vim"
 [core]
