@@ -1,6 +1,7 @@
 [user]
   name = Max Jacobson
   email = max@hardscrabble.net
+  signingKey = ~/.ssh/id_ed25519
 [alias]
   aa = add -A
   authors = shortlog -sn
@@ -31,6 +32,8 @@
   default = current
 [commit]
   gpgsign = true
+[gpg]
+  format = ssh
 [diff "zip"]
   textconv = unzip -c -a
 [interactive]
@@ -45,8 +48,6 @@
   line-numbers = true
 [checkout]
   defaultRemote = origin
-[gpg]
-  program = bpb
 [tag]
   forceSignAnnotated = true
 [url "ssh://git@github.com/"]

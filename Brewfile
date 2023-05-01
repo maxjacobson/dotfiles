@@ -21,7 +21,6 @@ brew "graphviz"
 brew "heroku" # Heroku CLI
 brew "htop" # CLI alternative to Activity Monitor, upgrade from the built-in top
 brew "imagemagick"
-brew "indirect/tap/bpb" # For signing commits without gpg
 brew "jq" # utility for pretty-printing and filtering streams of JSON-formatted text
 brew "ncdu" # upgrade over du, helps you figure out where your disk space is going
 brew "neovim" # yet another text editor that I have meant to evaluate but haven't gotten to
