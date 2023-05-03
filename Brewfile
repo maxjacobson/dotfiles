@@ -17,6 +17,7 @@ brew "fnm" # fast node.js manager
 brew "gh" # New GitHub CLI, via https://github.com/cli/cli
 brew "git" # version control
 brew "git-delta" # Displays diffs pretty, exposes delta CLI
+brew "git-lfs" # git large file storage
 brew "graphviz"
 brew "heroku" # Heroku CLI
 brew "htop" # CLI alternative to Activity Monitor, upgrade from the built-in top
