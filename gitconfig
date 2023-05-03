@@ -49,6 +49,7 @@
 [checkout]
   defaultRemote = origin
 [tag]
+  gpgSign = true
   forceSignAnnotated = true
 [url "ssh://git@github.com/"]
 	insteadOf = https://github.com/
