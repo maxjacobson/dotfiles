@@ -270,6 +270,9 @@ set smartcase
 autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
 autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 
+" use actual tabs over spaces when editing ~/.gitconfig
+autocmd FileType gitconfig setlocal noexpandtab
+
 let g:ale_linters_explicit = 1
 let g:ale_linters= {
 \   'ruby': ['rubocop', 'sorbet', 'standardrb'],

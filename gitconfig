@@ -1,56 +1,60 @@
+# vim: filetype=gitconfig
+# (should be autodetected when editing ~/.gitconfig but isn't when editing ~/.dotfiles/gitconfig
+# so I'm setting it manually)
+
 [user]
-  name = Max Jacobson
-  email = max@hardscrabble.net
-  signingKey = ~/.ssh/id_ed25519
+	name = Max Jacobson
+	email = max@hardscrabble.net
+	signingKey = ~/.ssh/id_ed25519
 [alias]
-  aa = add -A
-  authors = shortlog -sn
-  branches = "! git for-each-ref --sort=committerdate --format=\"%(color:blue)%(authordate:relative)|%(color:red)%(authorname)|%(color:white)%(color:bold)%(refname:short)\" refs/remotes | column -s '|' -t"
-  co = checkout
-  cp = cherry-pick
-  cpa = cherry-pick --abort
-  cpc = cherry-pick --continue
-  dc = diff --cached
-  git = "! git"
-  l = log --pretty='%Cred%h %Creset%<|(58,trunc)%s%n%Cgreen%aN%Creset, %ar%n'
-  pick = add . -p
-  pro = pull --rebase origin
-  pru = pull --rebase upstream
-  ra = rebase --abort
-  rc = rebase --continue
-  recent-authors = shortlog -sn --since='2 weeks ago'
-  rh = reset HEAD --hard
-  rs = rebase --skip
-  st = status
-  sunrise = commit --allow-empty --message '🌅'
-  unstage = restore --staged .
-  vim = "! vim"
+	aa = add -A
+	authors = shortlog -sn
+	branches = "! git for-each-ref --sort=committerdate --format=\"%(color:blue)%(authordate:relative)|%(color:red)%(authorname)|%(color:white)%(color:bold)%(refname:short)\" refs/remotes | column -s '|' -t"
+	co = checkout
+	cp = cherry-pick
+	cpa = cherry-pick --abort
+	cpc = cherry-pick --continue
+	dc = diff --cached
+	git = "! git"
+	l = log --pretty='%Cred%h %Creset%<|(58,trunc)%s%n%Cgreen%aN%Creset, %ar%n'
+	pick = add . -p
+	pro = pull --rebase origin
+	pru = pull --rebase upstream
+	ra = rebase --abort
+	rc = rebase --continue
+	recent-authors = shortlog -sn --since='2 weeks ago'
+	rh = reset HEAD --hard
+	rs = rebase --skip
+	st = status
+	sunrise = commit --allow-empty --message '🌅'
+	unstage = restore --staged .
+	vim = "! vim"
 [core]
-  editor = vim
-  pager = delta --syntax-theme Smyck
+	editor = vim
+	pager = delta --syntax-theme Smyck
 [push]
-  default = current
+	default = current
 [commit]
-  gpgSign = true
+	gpgSign = true
 [gpg]
-  format = ssh
+	format = ssh
 [diff "zip"]
-  textconv = unzip -c -a
+	textconv = unzip -c -a
 [interactive]
-  diffFilter = delta --line-numbers --color-only --syntax-theme Smyck
+	diffFilter = delta --line-numbers --color-only --syntax-theme Smyck
 [pull]
 	ff = only
 [init]
 	defaultBranch = main
 [delta]
-  features = unobtrusive-line-numbers
+	features = unobtrusive-line-numbers
 [delta "unobtrusive-line-numbers"]
-  line-numbers = true
+	line-numbers = true
 [checkout]
-  defaultRemote = origin
+	defaultRemote = origin
 [tag]
-  gpgSign = true
-  forceSignAnnotated = true
+	gpgSign = true
+	forceSignAnnotated = true
 [url "ssh://git@github.com/"]
 	insteadOf = https://github.com/
 [filter "lfs"]
