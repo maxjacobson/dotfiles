@@ -6,10 +6,6 @@ unsetopt nomatch
 # Most of them are stored in my dotfiles git repo and synced there by rcm
 export PATH=$HOME/bin:$PATH
 
-# Add ~/.cargo/bin to path
-# This is where cargo (rust's package manager) installs binaries
-export PATH="$HOME/.cargo/bin:$PATH"
-
 # vim rules
 #
 # But I use emacs key bindings to navigate inputting text into the shell
