@@ -6,7 +6,7 @@ unsetopt nomatch
 # Most of them are stored in my dotfiles git repo and synced there by rcm
 export PATH=$HOME/bin:$PATH
 
-# vim rules
+# <3 vim
 #
 # But I use emacs key bindings to navigate inputting text into the shell
 # even though I prefer vim for editing text files,
