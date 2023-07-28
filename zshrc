@@ -46,6 +46,12 @@ treeeee() {
   fd --type f --hidden --exclude .git | tree --fromfile "$@"
 }
 
+# Just a goofy little hack I did to experiment with chpwd_functions
+track_working_directory_statistics() {
+  ~/bin/track-working-directory-statistics
+}
+chpwd_functions+=(track_working_directory_statistics)
+
 # some default behavior for ctags
 alias 'ctags'='ctags -R --exclude=.git --exclude=node_modules'
 
