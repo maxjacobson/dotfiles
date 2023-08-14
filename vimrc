@@ -7,6 +7,7 @@
 " open this file in vim
 " run :PlugInstall
 call plug#begin('~/.vim/plugged')
+
 " sensible defaults
 Plug 'tpope/vim-sensible'
 
@@ -15,54 +16,73 @@ Plug 'Olical/vim-enmasse'
 
 " rust syntax highlighting, auto-formatting etc
 Plug 'rust-lang/rust.vim'
+
 " using to pull current git branch into status bar
 Plug 'tpope/vim-fugitive'
+
 " useful for tab completing
 Plug 'ervandew/supertab'
+
 " not sure if I use this
 Plug 'tpope/vim-bundler'
+
 " useful for quickly commenting code
 Plug 'tpope/vim-commentary'
+
 " useful for auto-ending ruby methods/classes/blocks
 Plug 'tpope/vim-endwise'
+
 " not sure if I use this one
 Plug 'tpope/vim-eunuch'
-
-Plug 'mustache/vim-mustache-handlebars'
 
 " search the codebase with rg (ripgrep)
 Plug 'jremmen/vim-ripgrep'
 
-Plug 'sotte/presenting.vim'
-
+" Visualizes recent changes so you can undo with confidence
 Plug 'sjl/gundo.vim'
 
+" Adds a column on the left indicating which lines have changed
 Plug 'airblade/vim-gitgutter'
 
+" Remembers where your cursor was in each file and takes you there
 Plug 'dietsche/vim-lastplace'
 
+" Syntax highlighting for terraform .tf files
 Plug 'hashivim/vim-terraform'
 
+" Syntax highlighting for javascript files
 Plug 'pangloss/vim-javascript'
+
+" Syntax highlighting for jsx files
 Plug 'mxw/vim-jsx'
 
+" Syntax highlighting for toml config files
 Plug 'cespare/vim-toml'
+
+" Syntax highlighting for elm files
 Plug 'ElmCast/elm-vim'
 
-Plug 'elixir-editors/vim-elixir'
-
+" Syntax highlighting for TypeScript files
 Plug 'leafgarland/typescript-vim'
+
+" Syntax highlighting for .tsx files
 Plug 'peitalin/vim-jsx-typescript'
 
+" Fuzzy file finder to open files
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+" Insert Co-Authored-By lines into commit messages
 Plug 'maxjacobson/vim-fzf-coauthorship'
 
+" Asynchronous Lint Engine, for invoking things like rubocop, eslint, and
+" prettier automatically
 Plug 'dense-analysis/ale'
 
+" Syntax-highlighting for .github/CODEOWNERS files
 Plug 'rhysd/vim-syntax-codeowners'
 
+" Auto-resizes splits
 Plug 'roman/golden-ratio'
 
 " Also need to manually run
