@@ -295,6 +295,7 @@ autocmd FileType gitconfig setlocal noexpandtab
 
 let g:ale_linters_explicit = 1
 let g:ale_linters= {
+\   'bash': ['shellcheck'],
 \   'ruby': ['rubocop', 'sorbet', 'standardrb'],
 \   'javascript': ['prettier', 'eslint', 'stylelint'],
 \   'typescript': ['prettier', 'eslint'],

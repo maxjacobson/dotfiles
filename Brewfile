@@ -33,6 +33,7 @@ brew "rbenv" # managing ruby versions
 brew "rcm"
 brew "redis"
 brew "ripgrep" # grep replacement, exposes rg CLI
+brew "shellcheck" # linter for shell scripts
 brew "sl" # steam locomotive https://www.hardscrabble.net/2022/steam-locomotive/
 brew "terminal-notifier" # trigger macOS notifications from shell scripts
 brew "tig" # git helper thing I use it to browse stashes on the command line
