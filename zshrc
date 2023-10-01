@@ -155,9 +155,9 @@ eval "`fnm env --use-on-cd --log-level quiet`"
 
 # makes it possible to run `cd Desktop` from anywhere, for example
 cdpath=(
-  ~/src/local
   ~/src/gh/maxjacobson
   ~/src/gh/hardscrabble
+  ~/src/local
   ~/
   $cdpath
 )
