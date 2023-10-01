@@ -40,6 +40,6 @@ brew "vim" # primary text editor
 brew "watch" # runs some command over and over
 brew "wget" # download files
 brew "yarn"
-brew "youtube-dl" # download videos from youtube and other websites
+brew "youtube-dl", args: ["HEAD"] # download videos from youtube and other websites
 brew "zsh" # preferred shell; need to add it to `/etc/shells` then run `chsh -s /opt/homebrew/bin/zsh`
 brew "zsh-syntax-highlighting" # syntax highlights commands as you enter them into zsh shell
