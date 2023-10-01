@@ -57,7 +57,7 @@ alias 'ctags'='ctags -R --exclude=.git --exclude=node_modules'
 
 # Some helpful tmux aliases
 # https://www.hardscrabble.net/2015/some-helpful-tmux-aliases/
-alias 't'='tmux new-session -A -s "$(basename $PWD | tr -d .\(\)\ )"'
+alias 't'='tmux new-session -A -s "$(basename $PWD) $(echo $PWD | shasum -a 256 | cut -c1-4)"'
 alias 'tl'='tmux list-sessions 2>/dev/null || echo "no sessions"'
 alias 'ta'='tmux attach'
 alias 'to'='tmux attach -t'
