@@ -1,10 +1,25 @@
 #!/usr/bin/env sh
 
-branch="$(git symbolic-ref --short HEAD 2>/dev/null)"
+# Usage: in a git repository, run `git browse` to open the current repository
+#        on GitHub
+#
+#
+#
+# N.B. this depends on the GH CLI (https://github.com/cli/cli)
+#      which you can install with
+#
+#      brew install gh
 
-if [ $? -eq 0 ]; then
+set -e
+
+if ! git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
+  echo "Browse what??"
+  exit 1
+fi
+
+if branch="$(git symbolic-ref --short HEAD 2>/dev/null)"; then
   gh browse --branch="$branch"
 else
-  echo "Seems like you're not on a branch... no worries..."
+  echo "You're in a detached HEAD state. Browsing the current commit..."
   gh browse --commit
 fi
