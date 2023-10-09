@@ -301,6 +301,7 @@ let g:ale_linters= {
 \   'typescript': ['prettier', 'eslint'],
 \   'jsx': ['stylelint', 'eslint'],
 \   'scss': ['stylelint'],
+\   'sh': ['shellcheck'],
 \}
 
 let g:ale_fixers = {
