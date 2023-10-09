@@ -4,14 +4,9 @@ require 'fileutils'
 require 'irb'
 require 'tmpdir'
 
-def system!(command)
-  success = system(command)
-  raise unless success
-end
-
 Dir.mktmpdir do |dir|
   Dir.chdir(dir) do
-    system! "git clone https://github.com/hukl/Smyck-Color-Scheme.git"
+    system "git clone https://github.com/hukl/Smyck-Color-Scheme.git", exception: true
 
     vim_colors_path = File.expand_path("~/.vim/colors")
     FileUtils.mkdir_p(vim_colors_path)
@@ -21,6 +16,6 @@ Dir.mktmpdir do |dir|
     FileUtils.mkdir_p(bat_themes_path)
     FileUtils.cp "./Smyck-Color-Scheme/Smyck.tmTheme", bat_themes_path
 
-    system! "bat cache --build"
+    system "bat cache --build", exception: true
   end
 end

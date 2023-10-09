@@ -32,10 +32,10 @@ class GitRepository < Struct.new(:url, :target)
   def install
     if Dir.exist?(target_path)
       Dir.chdir(target_path) do
-        system!("git pull --quiet")
+        system("git pull --quiet", exception: true)
       end
     else
-      system!("git clone #{url} #{target}")
+      system("git clone #{url} #{target}", exception: true)
     end
   end
 
@@ -43,10 +43,6 @@ class GitRepository < Struct.new(:url, :target)
 
   def target_path
     @target_path ||= Pathname.new(File.expand_path(target))
-  end
-
-  def system!(command)
-    system(command) or raise
   end
 end
 
