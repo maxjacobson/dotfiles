@@ -1,6 +1,9 @@
 window:
   title: 🦞
   dynamic_title: false
+  dimensions:
+    columns: 100
+    lines: 40
 
 font:
   size: 18.0
