@@ -7,6 +7,8 @@
 tap "heroku/brew"
 tap "oven-sh/bun"
 
+cask "alacritty" # terminal emulator (I don't actually use this but ok)
+
 brew "bash" # shell -- generally using zsh, but nice to have a modern version of bash around
 brew "bat" # cat but with syntax highlighting
 brew "bun" # node.js replacement
