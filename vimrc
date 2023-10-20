@@ -316,3 +316,14 @@ let g:ale_fixers = {
 let g:ale_ruby_rubocop_executable = "bin/rubocop"
 let g:ale_ruby_standardrb_executable = "bin/standardrb"
 let g:ale_fix_on_save = 1
+
+" Highlight curent line number
+" These colors come from my preferred color scheme, Smyck
+" https://color.smyck.org
+" Tip via https://hachyderm.io/@VimLinks/111223586086176442
+set cursorline
+hi! link CursorLine Normal
+hi my_bg guifg=#b0b0b0 guibg=#292929
+hi my_bg_cursor guifg=#fbb1f9 guibg=#292929
+hi! link LineNr my_bg
+hi! link CursorLineNr my_bg_cursor
