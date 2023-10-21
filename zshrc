@@ -50,12 +50,11 @@ treeeee() {
 alias 'ctags'='ctags -R --exclude=.git --exclude=node_modules'
 
 # Some helpful tmux aliases
-# https://www.hardscrabble.net/2015/some-helpful-tmux-aliases/
+# https://www.hardscrabble.net/2023/my-tmux-aliases/
 alias 't'='tmux new-session -A -s "$(basename $PWD) $(echo $PWD | shasum -a 256 | cut -c1-4)"'
-alias 'tl'='tmux list-sessions 2>/dev/null || echo "no sessions"'
-alias 'ta'='tmux attach'
-alias 'to'='tmux attach -t'
-
+alias 'tl'="tmux list-sessions -F '#{s/ [a-f0-9][a-f0-9][a-f0-9][a-f0-9]$//:session_name}' 2>/dev/null || echo 'no sessions'"
+alias 'ta'='tmux attach-session'
+alias 'to'='tmux attach-session -t'
 
 # create and change into a directory
 function md () {
