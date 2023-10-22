@@ -5,13 +5,11 @@
 # This runs automatically via an rcm post-up hook
 
 tap "heroku/brew"
-tap "oven-sh/bun"
 
 cask "alacritty" # terminal emulator (I don't actually use this but ok)
 
 brew "bash" # shell -- generally using zsh, but nice to have a modern version of bash around
 brew "bat" # cat but with syntax highlighting
-brew "bun" # node.js replacement
 brew "cloc" # count lines of code
 brew "ctags" # generate tags files
 brew "emacs" # text editor that I have always meant to learn but never actually got around to
