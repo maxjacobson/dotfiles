@@ -7,7 +7,6 @@
 tap "heroku/brew"
 
 cask "alacritty" # terminal emulator (I'm trying this one out)
-cask "kitty" # terminal emulator (I'm also trialing this one)
 cask "iterm2" # terminal emulator (I'm currently taking a break from this one)
 
 brew "bash" # shell -- generally using zsh, but nice to have a modern version of bash around
@@ -21,31 +20,28 @@ brew "gh" # New GitHub CLI, via https://github.com/cli/cli
 brew "git" # version control
 brew "git-delta" # Displays diffs pretty, exposes delta CLI
 brew "git-lfs" # git large file storage
-brew "graphviz"
 brew "heroku" # Heroku CLI
 brew "htop" # CLI alternative to Activity Monitor, upgrade from the built-in top
-brew "imagemagick"
 brew "jq" # utility for pretty-printing and filtering streams of JSON-formatted text
 brew "ncdu" # upgrade over du, helps you figure out where your disk space is going
-brew "neovim" # yet another text editor that I have meant to evaluate but haven't gotten to
-brew "postgresql@14"
+brew "postgresql@14" # a database I sometimes use
 brew "pure" # nice prompt https://www.hardscrabble.net/2021/pure-prompt/
 brew "rbenv" # managing ruby versions
-brew "rcm"
-brew "redis"
+brew "rcm" # tool to manage dotfiles repository
+brew "redis" # a database I sometimes use
 brew "ripgrep" # grep replacement, exposes rg CLI
 brew "shellcheck" # linter for shell scripts
 brew "sl" # steam locomotive https://www.hardscrabble.net/2022/steam-locomotive/
-brew "swift-format"
-brew "swiftlint"
-brew "terminal-notifier" # trigger macOS notifications from shell scripts
+brew "swift-format" # formats swift code
+brew "swiftlint" # lints swift code
+brew "switchaudio-osx" # https://www.hardscrabble.net/2023/programming-my-macropad/
 brew "tig" # git helper thing I use it to browse stashes on the command line
 brew "tmux" # terminal multiplexer
 brew "tree" # pretty-prints contents of a directory
 brew "vim" # primary text editor
 brew "watch" # runs some command over and over
 brew "wget" # download files
-brew "yarn"
+brew "yarn" # alternative to npm for managing node.js dependencies and tasks
 brew "youtube-dl", args: ["HEAD"] # download videos from youtube and other websites
 brew "zsh" # preferred shell; need to add it to `/etc/shells` then run `chsh -s /opt/homebrew/bin/zsh`
 brew "zsh-syntax-highlighting" # syntax highlights commands as you enter them into zsh shell
