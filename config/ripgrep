@@ -1,2 +1,5 @@
 --smart-case
 --hidden
+
+# https://github.com/BurntSushi/ripgrep/releases/tag/14.0.0
+--hyperlink-format=file

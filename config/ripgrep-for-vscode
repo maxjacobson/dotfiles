@@ -1,6 +1,5 @@
 --smart-case
 --hidden
 
-# make it easier to command click on files and open them
---no-heading
---column
+# https://github.com/BurntSushi/ripgrep/releases/tag/14.0.0
+--hyperlink-format=vscode
