@@ -1,0 +1,59 @@
+# Docs here:
+# https://alacritty.org/config-alacritty.html
+
+# colors based on
+# https://github.com/hukl/Smyck-Color-Scheme/blob/master/colors
+[colors.bright]
+black = "0x5D5D5D"
+blue = "0x9CD9F0"
+cyan = "0x77DFD8"
+green = "0xCDEE69"
+magenta = "0xFBB1F9"
+red = "0xE09690"
+white = "0xF7F7F7"
+yellow = "0xFFE377"
+
+[colors.cursor]
+cursor = "0xC7C7C7"
+text = "0xF9F9F9"
+
+[colors.normal]
+black = "0x000000"
+blue = "0x4E90A7"
+cyan = "0x218693"
+green = "0x8EB33B"
+magenta = "0xC8A0D1"
+red = "0xC75646"
+white = "0xB0B0B0"
+yellow = "0xD0B03C"
+
+[colors.primary]
+background = "0x282828"
+foreground = "0xF9F9F9"
+
+[font]
+size = 18.0
+
+[font.bold]
+family = "SF Mono"
+style = "Bold"
+
+[font.bold_italic]
+family = "SF Mono"
+style = "Bold Italic"
+
+[font.italic]
+family = "SF Mono"
+style = "Italic"
+
+[font.normal]
+family = "SF Mono"
+style = "Regular"
+
+[window]
+dynamic_title = false
+title = "🦞"
+
+[window.dimensions]
+columns = 100
+lines = 40
