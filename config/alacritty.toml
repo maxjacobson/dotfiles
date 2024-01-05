@@ -50,10 +50,6 @@ style = "Italic"
 family = "SF Mono"
 style = "Regular"
 
-[window]
-dynamic_title = false
-title = "🦞"
-
 [window.dimensions]
 columns = 100
 lines = 40
