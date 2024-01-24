@@ -6,8 +6,7 @@
 
 tap "heroku/brew"
 
-cask "alacritty" # terminal emulator (I'm trying this one out)
-cask "iterm2" # terminal emulator (I'm currently taking a break from this one)
+cask "alacritty" # terminal emulator
 
 brew "bash" # shell -- generally using zsh, but nice to have a modern version of bash around
 brew "bat" # cat but with syntax highlighting
