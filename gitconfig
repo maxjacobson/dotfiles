@@ -36,8 +36,11 @@
 	default = current
 [commit]
 	gpgSign = true
+	verbose = true
 [gpg]
 	format = ssh
+[diff]
+	algorithm = histogram
 [diff "zip"]
 	textconv = unzip -c -a
 [interactive]
@@ -64,3 +67,8 @@
 	required = true
 [branch]
 	sort = -committerdate
+[fetch]
+	prune = true
+	prunetags = true
+[merge]
+	conflictstyle = zdiff3
