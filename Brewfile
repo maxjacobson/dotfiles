@@ -31,8 +31,6 @@ brew "redis" # a database I sometimes use
 brew "ripgrep" # grep replacement, exposes rg CLI
 brew "shellcheck" # linter for shell scripts
 brew "sl" # steam locomotive https://www.hardscrabble.net/2022/steam-locomotive/
-brew "swift-format" # formats swift code
-brew "swiftlint" # lints swift code
 brew "switchaudio-osx" # https://www.hardscrabble.net/2023/programming-my-macropad/
 brew "tig" # git helper thing I use it to browse stashes on the command line
 brew "tmux" # terminal multiplexer
