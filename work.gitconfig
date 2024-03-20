@@ -1,0 +1,4 @@
+# vi: ft=gitconfig
+
+[user]
+	email = maxwell.jacobson@maryland.gov
