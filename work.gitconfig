@@ -1,4 +1,4 @@
-# vi: ft=gitconfig
+# vim: filetype=gitconfig
 
 [user]
 	email = maxwell.jacobson@maryland.gov
