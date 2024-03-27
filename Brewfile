@@ -27,7 +27,7 @@ brew "postgresql@16", restart_service: true, link: true, conflicts_with: ["postg
 brew "pure" # nice prompt https://www.hardscrabble.net/2021/pure-prompt/
 brew "rbenv" # managing ruby versions
 brew "rcm" # tool to manage dotfiles repository
-brew "redis" # a database I sometimes use
+brew "redis", restart_service: true # a database I sometimes use
 brew "ripgrep" # grep replacement, exposes rg CLI
 brew "shellcheck" # linter for shell scripts
 brew "sl" # steam locomotive https://www.hardscrabble.net/2022/steam-locomotive/
