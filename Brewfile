@@ -23,7 +23,7 @@ brew "heroku" # Heroku CLI
 brew "htop" # CLI alternative to Activity Monitor, upgrade from the built-in top
 brew "jq" # utility for pretty-printing and filtering streams of JSON-formatted text
 brew "ncdu" # upgrade over du, helps you figure out where your disk space is going
-brew "postgresql@14" # a database I sometimes use
+brew "postgresql@16", restart_service: true, link: true, conflicts_with: ["postgresql"] # a database I sometimes use
 brew "pure" # nice prompt https://www.hardscrabble.net/2021/pure-prompt/
 brew "rbenv" # managing ruby versions
 brew "rcm" # tool to manage dotfiles repository
