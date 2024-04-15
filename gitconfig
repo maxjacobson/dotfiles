@@ -9,7 +9,6 @@
 [alias]
 	aa = add -A
 	authors = shortlog -sn
-	branches = "! git for-each-ref --sort=committerdate --format=\"%(color:blue)%(authordate:relative)|%(color:red)%(authorname)|%(color:white)%(color:bold)%(refname:short)\" refs/remotes | column -s '|' -t"
 	co = checkout
 	cp = cherry-pick
 	cpa = cherry-pick --abort
