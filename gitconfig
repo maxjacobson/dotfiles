@@ -73,3 +73,5 @@
 	conflictstyle = zdiff3
 [includeIf "gitdir:~/FAMLI/"]
 	path = ~/.work.gitconfig
+[advice]
+	addEmptyPathspec = false
