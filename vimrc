@@ -302,7 +302,7 @@ autocmd FileType gitconfig setlocal noexpandtab
 let g:ale_linters_explicit = 1
 let g:ale_linters= {
 \   'bash': ['shellcheck'],
-\   'ruby': ['rubocop', 'sorbet', 'standardrb'],
+\   'ruby': ['rubocop', 'sorbet', 'standardrb', 'prettier'],
 \   'javascript': ['prettier', 'eslint', 'stylelint'],
 \   'typescript': ['prettier', 'eslint'],
 \   'jsx': ['stylelint', 'eslint'],
@@ -311,7 +311,8 @@ let g:ale_linters= {
 \}
 
 let g:ale_fixers = {
-\   'ruby': ['rubocop', 'standardrb'],
+\   'css': ['prettier'],
+\   'ruby': ['rubocop', 'standardrb', 'prettier'],
 \   'javascript': ['prettier'],
 \   'jsx': ['prettier'],
 \   'scss': ['prettier'],
