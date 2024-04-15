@@ -103,6 +103,8 @@ syntax on
 filetype on
 
 au BufNewFile,BufRead *.jbuilder set filetype=ruby
+au BufNewFile,BufRead Brewfile set filetype=ruby
+au BufNewFile,BufRead .Brewfile set filetype=ruby
 
 autocmd BufRead,BufNewFile *.env.* set ft=env
 
