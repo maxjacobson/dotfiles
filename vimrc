@@ -89,6 +89,8 @@ Plug 'roman/golden-ratio'
 " :CocInstall coc-tsserver
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+Plug 'overleaf/vim-env-syntax'
+
 call plug#end()
 
 " press jk to exit insert mode
@@ -101,6 +103,8 @@ syntax on
 filetype on
 
 au BufNewFile,BufRead *.jbuilder set filetype=ruby
+
+autocmd BufRead,BufNewFile *.env.* set ft=env
 
 if $COLORTERM == 'truecolor'
   set termguicolors
