@@ -34,6 +34,7 @@ brew "sl" # steam locomotive https://www.hardscrabble.net/2022/steam-locomotive/
 brew "switchaudio-osx" # https://www.hardscrabble.net/2023/programming-my-macropad/
 brew "tig" # git helper thing I use it to browse stashes on the command line
 brew "tmux" # terminal multiplexer
+brew "tfenv" # terraform version manager
 brew "tree" # pretty-prints contents of a directory
 brew "vim" # primary text editor
 brew "watch" # runs some command over and over
