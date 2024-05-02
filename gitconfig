@@ -33,6 +33,7 @@
 	pager = delta --syntax-theme Smyck
 [push]
 	default = current
+	autoSetupRemote = true
 [commit]
 	gpgSign = true
 	verbose = true
