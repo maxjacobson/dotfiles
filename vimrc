@@ -82,9 +82,6 @@ Plug 'dense-analysis/ale'
 " Syntax-highlighting for .github/CODEOWNERS files
 Plug 'rhysd/vim-syntax-codeowners'
 
-" Auto-resizes splits
-Plug 'roman/golden-ratio'
-
 " Also need to manually run
 " :CocInstall coc-tsserver
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
