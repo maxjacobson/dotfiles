@@ -86,8 +86,6 @@ Plug 'rhysd/vim-syntax-codeowners'
 " :CocInstall coc-tsserver
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-Plug 'overleaf/vim-env-syntax'
-
 call plug#end()
 
 " press jk to exit insert mode
@@ -103,7 +101,7 @@ au BufNewFile,BufRead *.jbuilder set filetype=ruby
 au BufNewFile,BufRead Brewfile set filetype=ruby
 au BufNewFile,BufRead .Brewfile set filetype=ruby
 
-autocmd BufRead,BufNewFile *.env.* set ft=env
+autocmd BufRead,BufNewFile .env* set ft=dotenv
 
 if $COLORTERM == 'truecolor'
   set termguicolors
