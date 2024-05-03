@@ -310,6 +310,7 @@ let g:ale_fixers = {
 \   'ruby': ['rubocop', 'standardrb', 'prettier'],
 \   'javascript': ['prettier'],
 \   'jsx': ['prettier'],
+\   'markdown': ['prettier'],
 \   'scss': ['prettier'],
 \   'typescript': ['prettier'],
 \   'typescriptreact': ['prettier'],
