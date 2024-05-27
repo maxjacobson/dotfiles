@@ -86,6 +86,8 @@ Plug 'rhysd/vim-syntax-codeowners'
 " :CocInstall coc-tsserver
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+Plug 'pbrisbin/vim-mkdir'
+
 call plug#end()
 
 " press jk to exit insert mode
