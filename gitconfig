@@ -31,6 +31,7 @@
 [core]
 	editor = vim
 	pager = delta --syntax-theme Smyck
+	excludesfile = ~/.gitignore_global
 [push]
 	default = current
 	autoSetupRemote = true
