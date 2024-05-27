@@ -32,9 +32,6 @@ man() {
             man "$@"
 }
 
-# starts emacs in a more minimalist mode
-alias 'emacs'='emacs --no-window-system --quick'
-
 # colorizes ls output
 alias 'ls'='ls -G'
 

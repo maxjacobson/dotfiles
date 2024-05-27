@@ -12,7 +12,6 @@ brew "bash" # shell -- generally using zsh, but nice to have a modern version of
 brew "bat" # cat but with syntax highlighting
 brew "cloc" # count lines of code
 brew "ctags" # generate tags files
-brew "emacs" # text editor that I have always meant to learn but never actually got around to
 brew "fd" # find replacement
 brew "fnm" # fast node.js manager
 brew "gh" # New GitHub CLI, via https://github.com/cli/cli
