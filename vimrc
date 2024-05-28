@@ -336,4 +336,3 @@ hi! link LineNr my_bg
 hi! link CursorLineNr my_bg_cursor
 
 let g:vim_plug_periodic_status_interval_seconds = 3 * 24 * 60 * 60
-autocmd VimEnter * call CheckAndCallPlugStatus()
