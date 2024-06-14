@@ -45,9 +45,6 @@ treeeee() {
   fd --type f --hidden --exclude .git | tree --fromfile "$@"
 }
 
-# some default behavior for ctags
-alias 'ctags'='ctags -R --exclude=.git --exclude=node_modules'
-
 # Some helpful tmux aliases
 # https://www.hardscrabble.net/2023/my-tmux-aliases/
 alias 't'='tmux new-session -A -s "$(basename $PWD) $(echo $PWD | shasum -a 256 | cut -c1-4)"'

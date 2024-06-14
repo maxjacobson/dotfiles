@@ -90,6 +90,10 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'pbrisbin/vim-mkdir'
 
+Plug 'preservim/tagbar'
+
+Plug 'ludovicchabant/vim-gutentags'
+
 call plug#end()
 
 " press jk to exit insert mode

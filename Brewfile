@@ -12,7 +12,6 @@ brew "awscli" # Amazon Web Services (aws) CLI
 brew "bash" # shell -- generally using zsh, but nice to have a modern version of bash around
 brew "bat" # cat but with syntax highlighting
 brew "cloc" # count lines of code
-brew "ctags" # generate tags files
 brew "fd" # find replacement
 brew "fnm" # fast node.js manager
 brew "gh" # New GitHub CLI, via https://github.com/cli/cli
@@ -36,6 +35,7 @@ brew "tig" # git helper thing I use it to browse stashes on the command line
 brew "tmux" # terminal multiplexer
 brew "tfenv" # terraform version manager
 brew "tree" # pretty-prints contents of a directory
+brew "universal-ctags" # generate tags file
 brew "vim" # primary text editor
 brew "watch" # runs some command over and over
 brew "wget" # download files
