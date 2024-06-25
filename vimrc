@@ -338,7 +338,3 @@ hi my_bg guifg=#b0b0b0 guibg=#292929
 hi my_bg_cursor guifg=#fbb1f9 guibg=#292929
 hi! link LineNr my_bg
 hi! link CursorLineNr my_bg_cursor
-
-" Configure maxjacobson/vim-plug-periodic-status to run :PlugStatus every 3
-" days
-let g:vim_plug_periodic_status_interval_seconds = 3 * 24 * 60 * 60
