@@ -71,8 +71,6 @@
 [fetch]
 	prune = true
 	prunetags = true
-[merge]
-	conflictstyle = zdiff3
 [includeIf "gitdir:~/FAMLI/"]
 	path = ~/.work.gitconfig
 [advice]
