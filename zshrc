@@ -177,13 +177,14 @@ export PATH=".git/safe/../../exe:$PATH"
 # Must run `brew install zsh-syntax-highlighting`
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-####### ~*~ Work Stuff *~ ##########
+####### ~*~ Work Stuff *~ #############
+export AWS_PROFILE=FAMLI-ReadOnlyAccess
 export MD_FAMLI_GIT_HOOKS_PRE_PUSH=1
 cdpath=(
   ~/FAMLI/Code
   $cdpath
 )
-####################################
+#######################################
 
 # auto-load my ssh key
 # and read the passphrase from the keychain so I don't need to enter it every time
