@@ -32,7 +32,7 @@ background = "0x282828"
 foreground = "0xF9F9F9"
 
 [font]
-size = 18.0
+size = 14.0
 
 [font.bold]
 family = "SF Mono"
