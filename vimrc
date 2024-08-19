@@ -84,10 +84,6 @@ Plug 'dense-analysis/ale'
 " Syntax-highlighting for .github/CODEOWNERS files
 Plug 'rhysd/vim-syntax-codeowners'
 
-" Also need to manually run
-" :CocInstall coc-tsserver
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
 Plug 'pbrisbin/vim-mkdir'
 
 Plug 'preservim/tagbar'
