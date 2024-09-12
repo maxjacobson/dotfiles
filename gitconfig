@@ -42,6 +42,7 @@
 	format = ssh
 [diff]
 	algorithm = histogram
+	colorMoved = default
 [diff "zip"]
 	textconv = unzip -c -a
 [interactive]
@@ -52,6 +53,7 @@
 	defaultBranch = main
 [delta]
 	features = unobtrusive-line-numbers
+	navigate = true
 [delta "unobtrusive-line-numbers"]
 	line-numbers = true
 [checkout]
