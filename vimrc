@@ -303,6 +303,7 @@ autocmd FileType gitconfig setlocal noexpandtab
 let g:ale_linters_explicit = 1
 let g:ale_linters= {
 \   'bash': ['shellcheck'],
+\   'eruby': ['erblint'],
 \   'ruby': ['rubocop', 'sorbet', 'standardrb'],
 \   'javascript': ['eslint', 'stylelint'],
 \   'typescript': ['eslint'],
@@ -325,6 +326,7 @@ let g:ale_fixers = {
 let g:ale_ruby_rubocop_executable = "bin/rubocop"
 let g:ale_ruby_standardrb_executable = "bin/standardrb"
 let g:ale_fix_on_save = 1
+let g:ale_eruby_erblint_executable = "bin/erblint"
 
 " Highlight curent line number
 " These colors come from my preferred color scheme, Smyck
