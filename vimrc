@@ -90,8 +90,6 @@ Plug 'preservim/tagbar'
 
 Plug 'ludovicchabant/vim-gutentags'
 
-Plug 'NoahTheDuke/vim-just'
-
 call plug#end()
 
 " press jk to exit insert mode
