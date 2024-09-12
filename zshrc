@@ -178,12 +178,23 @@ export PATH=".git/safe/../../exe:$PATH"
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ####### ~*~ Work Stuff *~ #############
-export AWS_PROFILE=FAMLI-ReadOnlyAccess
-export MD_FAMLI_GIT_HOOKS_PRE_PUSH=1
-cdpath=(
-  ~/FAMLI/Code
-  $cdpath
-)
+if [ -d ~/FAMLI ]; then
+  export AWS_PROFILE=FAMLI-ReadOnlyAccess
+  export MD_FAMLI_GIT_HOOKS_PRE_PUSH=1
+  export MD_FAMLI_GIT_HOOKS_PRE_PUSH_RSPEC=1
+  export MD_FAMLI_GIT_HOOKS_PRE_PUSH_BRAKEMAN=1
+
+  cdpath=(
+    ~/FAMLI/Code
+    $cdpath
+  )
+
+  if [ -f "$HOME/FAMLI/Code/md-famli-infrastructure/exe/functions.sh" ]; then
+    source "$HOME/FAMLI/Code/md-famli-infrastructure/exe/functions.sh"
+  else
+    echo "md-famli-infrastructure helper functions missing"
+  fi
+fi
 #######################################
 
 # auto-load my ssh key
