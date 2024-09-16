@@ -191,8 +191,6 @@ if [ -d ~/FAMLI ]; then
 
   if [ -f "$HOME/FAMLI/Code/md-famli-infrastructure/exe/functions.sh" ]; then
     source "$HOME/FAMLI/Code/md-famli-infrastructure/exe/functions.sh"
-  else
-    echo "md-famli-infrastructure helper functions missing"
   fi
 fi
 #######################################
