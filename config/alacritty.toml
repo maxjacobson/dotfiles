@@ -53,3 +53,6 @@ style = "Regular"
 [window.dimensions]
 columns = 100
 lines = 40
+
+[mouse]
+hide_when_typing = true
