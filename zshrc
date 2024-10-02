@@ -174,6 +174,7 @@ eval "$(rbenv init - zsh)"
 # which is particularly nice for ruby projects that use binstubs
 export PATH=".git/safe/../../bin:$PATH"
 export PATH=".git/safe/../../exe:$PATH"
+export PATH=".git/safe/../../node_modules/.bin:$PATH"
 
 # highlights commands as you type them in the shell
 #
