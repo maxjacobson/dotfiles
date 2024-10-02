@@ -181,6 +181,10 @@ export PATH=".git/safe/../../node_modules/.bin:$PATH"
 # Must run `brew install zsh-syntax-highlighting`
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# brew install coreutils
+# sets LS_COLOR env var, which styles commands like fd, ls, and tree
+eval "`gdircolors`"
+
 ####### ~*~ Work Stuff *~ #############
 if [ -d ~/FAMLI ]; then
   export AWS_PROFILE=FAMLI-ReadOnlyAccess

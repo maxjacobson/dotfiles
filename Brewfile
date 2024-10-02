@@ -12,6 +12,7 @@ brew "awscli" # Amazon Web Services (aws) CLI
 brew "bash" # shell -- generally using zsh, but nice to have a modern version of bash around
 brew "bat" # cat but with syntax highlighting
 brew "cloc" # count lines of code
+brew "coreutils" # installs gdircolors and others
 brew "fd" # find replacement
 brew "fnm" # fast node.js manager
 brew "gh" # New GitHub CLI, via https://github.com/cli/cli
