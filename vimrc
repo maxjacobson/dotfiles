@@ -107,10 +107,12 @@ au BufNewFile,BufRead .Brewfile set filetype=ruby
 
 autocmd BufRead,BufNewFile .env* set ft=dotenv
 
-if $COLORTERM == 'truecolor'
-  set termguicolors
-  colorscheme smyck
-endif
+" N.B. this assumes you're using a nice modern terminal emulator like
+" Alacritty or iTerm 2
+"
+" (This won't work with macOS's Terminal.app)
+set termguicolors
+colorscheme smyck
 
 " smart backspacing
 set backspace=indent,eol,start
