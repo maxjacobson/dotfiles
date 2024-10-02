@@ -42,7 +42,7 @@
 	format = ssh
 [diff]
 	algorithm = histogram
-	colorMoved = default
+	colorMoved = no
 [diff "zip"]
 	textconv = unzip -c -a
 [interactive]
