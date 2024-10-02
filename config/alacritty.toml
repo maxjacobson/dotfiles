@@ -30,6 +30,10 @@ yellow = "0xD0B03C"
 [colors.primary]
 background = "0x282828"
 foreground = "0xF9F9F9"
+bright_foreground = "0xFEFFFF"
+
+[colors]
+draw_bold_text_with_bright_colors = true
 
 [font]
 size = 14.0
