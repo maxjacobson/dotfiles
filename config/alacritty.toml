@@ -58,5 +58,9 @@ style = "Regular"
 columns = 100
 lines = 40
 
+[window.padding]
+x = 0
+y = 1
+
 [mouse]
 hide_when_typing = true
