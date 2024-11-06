@@ -143,7 +143,7 @@ export FZF_DEFAULT_COMMAND="fd --type f --hidden --exclude .git"
 # this configures fnm to auto-switch node versions when it sees a `.node-version` file
 # and also prompt you to install missing versions
 # https://github.com/Schniz/fnm
-eval "`fnm env --use-on-cd --log-level quiet`"
+eval "`fnm env --use-on-cd --log-level quiet --corepack-enabled`"
 
 # makes it possible to run `cd Desktop` from anywhere, for example
 cdpath=(
