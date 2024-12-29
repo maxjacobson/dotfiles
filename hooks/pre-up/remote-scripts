@@ -28,45 +28,7 @@ class RemoteScript < Struct.new(:local_path, :remote_url)
   end
 end
 
-class GitRepository < Struct.new(:url, :target)
-  def install
-    if Dir.exist?(target_path)
-      Dir.chdir(target_path) do
-        system("git pull --quiet", exception: true)
-      end
-    else
-      system("git clone #{url} #{target}", exception: true)
-    end
-  end
-
-  private
-
-  def target_path
-    @target_path ||= Pathname.new(File.expand_path(target))
-  end
-end
-
-[
-  # install https://github.com/zsh-users/zsh-autosuggestions
-  GitRepository.new(
-    "https://github.com/zsh-users/zsh-autosuggestions",
-    "~/.zsh/zsh-autosuggestions",
-  ),
-
-  # install the zsh-specific completions
-  RemoteScript.new(
-    "~/.zsh/_git",
-    "https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh",
-  ),
-
-  # also install the bash-specific ones, because the zsh ones depend on them
-  RemoteScript.new(
-    "~/.zsh/git-completion.bash",
-    "https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash",
-  ),
-
-  RemoteScript.new(
-    "~/.vim/autoload/plug.vim",
-    "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim",
-  ),
-].each(&:install)
+RemoteScript.new(
+  "~/.vim/autoload/plug.vim",
+  "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim",
+).install

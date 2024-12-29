@@ -9,11 +9,12 @@ tap "heroku/brew"
 cask "alacritty" # terminal emulator
 
 brew "awscli" # Amazon Web Services (aws) CLI
-brew "bash" # shell -- generally using zsh, but nice to have a modern version of bash around
+brew "bash" # shell -- generally using fish, but nice to have a modern version of bash around
 brew "bat" # cat but with syntax highlighting
 brew "cloc" # count lines of code
 brew "coreutils" # installs gdircolors and others
 brew "fd" # find replacement
+brew "fish" # a shell I'm trying out; need to add it to `/etc/shells` then run `chsh -s /opt/homebrew/bin/fish`
 brew "fnm" # fast node.js manager
 brew "gh" # New GitHub CLI, via https://github.com/cli/cli
 brew "git" # version control
@@ -40,5 +41,3 @@ brew "vim" # primary text editor
 brew "watch" # runs some command over and over
 brew "wget" # download files
 brew "yarn" # alternative to npm for managing node.js dependencies and tasks
-brew "zsh" # preferred shell; need to add it to `/etc/shells` then run `chsh -s /opt/homebrew/bin/zsh`
-brew "zsh-syntax-highlighting" # syntax highlights commands as you enter them into zsh shell
