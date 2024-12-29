@@ -16,9 +16,11 @@ if status is-interactive
   # If you do that, you can simply run `foo` and it will invoke bin/foo or exe/foo
   #
   # which is particularly nice for ruby projects that use binstubs
-  set -gx PATH ".git/safe/../../bin:$PATH"
-  set -gx PATH ".git/safe/../../exe:$PATH"
-  set -gx PATH ".git/safe/../../node_modules/.bin:$PATH"
+  set PATH \
+    ".git/safe/../../bin" \
+    ".git/safe/../../exe" \
+    ".git/safe/../../node_modules/.bin" \
+    $PATH
 
   # Some helpful tmux aliases
   # https://www.hardscrabble.net/2023/my-tmux-aliases/
@@ -41,8 +43,13 @@ if status is-interactive
   set -gx EDITOR vim
   set -gx BUNDLER_EDITOR vim
 
-  # makes it possible to run `cd Desktop` from anywhere, for example
-  set -gx CDPATH "$HOME/src/gh/maxjacobson:$HOME/src/gh/hardscrabble:$HOME/src/local:$HOME:$CDPATH"
+  # makes it possible to run `cd Desktop` or `Desktop/` from anywhere, for example
+  set CDPATH \
+    "$HOME/src/gh/maxjacobson" \
+    "$HOME/src/gh/hardscrabble" \
+    "$HOME/src/local" \
+    "$HOME" \
+    $CDPATH
 
   # FZF
   #
