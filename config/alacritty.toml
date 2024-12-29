@@ -61,7 +61,3 @@ lines = 40
 [window.padding]
 x = 0
 y = 1
-
-[terminal.shell]
-# Setting this to remind me to use ghostty
-program = "/opt/homebrew/bin/sl"
