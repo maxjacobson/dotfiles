@@ -1,4 +1,0 @@
-#!/usr/bin/env sh
-
-sl
-echo "use git browse instead of hub browse!!!"
