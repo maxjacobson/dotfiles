@@ -40,4 +40,3 @@ brew "universal-ctags" # generate tags file
 brew "vim" # primary text editor
 brew "watch" # runs some command over and over
 brew "wget" # download files
-brew "yarn" # alternative to npm for managing node.js dependencies and tasks
