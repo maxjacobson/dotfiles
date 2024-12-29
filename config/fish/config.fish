@@ -1,4 +1,4 @@
-fish_add_path "/opt/homebrew/bin"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Add ~/bin to path
 # This is a folder where I put custom helper scripts
