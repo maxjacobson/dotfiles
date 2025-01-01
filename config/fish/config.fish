@@ -1,11 +1,3 @@
-eval "$(/opt/homebrew/bin/brew shellenv)"
-
-# Add ~/bin to path
-# This is a folder where I put custom helper scripts
-# Most of them are stored in my dotfiles git repo and synced there by rcm
-fish_add_path "$HOME/bin"
-
-# Commands to run in interactive sessions can go here
 if status is-interactive
   set -U fish_greeting
 
