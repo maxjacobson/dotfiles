@@ -46,6 +46,11 @@ if status is-interactive
   # sets LS_COLOR env var, which styles commands like fd, ls, and tree
   set -gx LS_COLORS (gdircolors -c | string split ' ')[3]
 
+  # tmux helper abbreviations
+  abbr --add t tmux new-session -A -s (basename $PWD)
+  abbr --add ta tmux attach-session
+  abbr --add tl tmux list-sessions
+
   # auto-load my ssh key
   # and read the passphrase from the keychain so I don't need to enter it every time
   ssh-add -q --apple-use-keychain
