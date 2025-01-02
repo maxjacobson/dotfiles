@@ -5,6 +5,10 @@ if status is-interactive
   set --local file "$HOME/.cache/fish/auto-brew-update.txt"
   set --local perform_update 0
 
+  if ! test -d "$HOME/.cache/fish"
+    mkdir -p "$HOME/.cache/fish"
+  end
+
   if test -f "$file"
     set --local mtime (path mtime --relative "$file")
 
