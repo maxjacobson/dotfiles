@@ -16,7 +16,7 @@ if status is-interactive
 
   # colorizes file content output
   # https://github.com/sharkdp/bat
-  alias cat='bat'
+  abbr --add cat bat
 
   # <3 vim
   #
@@ -47,8 +47,9 @@ if status is-interactive
   set -gx LS_COLORS (gdircolors -c | string split ' ')[3]
 
   # tmux helper abbreviations
-  abbr --add t tmux new-session -A -s (basename $PWD)
+  abbr --add t 'tmux new-session -A -s (basename $PWD)'
   abbr --add ta tmux attach-session
+  abbr --add to tmux attach-session -t
   abbr --add tl tmux list-sessions
 
   # auto-load my ssh key
