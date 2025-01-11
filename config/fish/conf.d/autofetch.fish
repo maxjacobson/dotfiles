@@ -3,8 +3,7 @@ function autofetch --on-event "fish_prompt" --description 'Fetch on prompt'
     set --local mtime (path mtime --relative .git/FETCH_HEAD)
 
     if test "$mtime" -gt (math '10 * 60')
-      echo "Fetching..."
-      git fetch
+      git fetch --quiet
     end
   end
 end
