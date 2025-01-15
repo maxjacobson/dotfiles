@@ -13,6 +13,7 @@ brew "awscli" # Amazon Web Services (aws) CLI
 brew "bat" # cat but with syntax highlighting
 brew "cloc" # count lines of code
 brew "coreutils" # installs gdircolors and others
+brew "eza" # modern ls
 brew "fd" # find replacement
 brew "fish" # a shell I'm trying out; need to add it to `/etc/shells` then run `chsh -s /opt/homebrew/bin/fish`
 brew "fish-shell/fish-beta-4/fish"
@@ -35,7 +36,6 @@ brew "sl" # steam locomotive https://www.hardscrabble.net/2022/steam-locomotive/
 brew "switchaudio-osx" # https://www.hardscrabble.net/2023/programming-my-macropad/
 brew "tmux" # terminal multiplexer
 brew "tfenv" # terraform version manager
-brew "tree" # pretty-prints contents of a directory
 brew "universal-ctags" # generate tags file
 brew "vim" # primary text editor
 brew "watch" # runs some command over and over

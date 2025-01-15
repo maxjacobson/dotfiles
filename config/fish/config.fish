@@ -46,6 +46,18 @@ if status is-interactive
   # sets LS_COLOR env var, which styles commands like fd, ls, and tree
   set -gx LS_COLORS (gdircolors -c | string split ' ')[3]
 
+  abbr --add ls eza \
+    --long \
+    --header \
+    --no-permissions \
+    --no-user \
+    --no-time \
+    --group-directories-first \
+    --icons=always \
+    --all
+
+  abbr --add tree eza --tree --git-ignore
+
   # tmux helper abbreviations
   abbr --add t 'tmux new-session -A -s (basename $PWD)'
   abbr --add ta tmux attach-session
