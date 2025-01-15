@@ -10,7 +10,6 @@ tap "fish-shell/fish-beta-4"
 cask "alacritty" # terminal emulator
 
 brew "awscli" # Amazon Web Services (aws) CLI
-brew "bash" # shell -- generally using fish, but nice to have a modern version of bash around
 brew "bat" # cat but with syntax highlighting
 brew "cloc" # count lines of code
 brew "coreutils" # installs gdircolors and others
