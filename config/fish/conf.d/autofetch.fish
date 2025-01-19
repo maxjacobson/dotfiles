@@ -1,10 +1,10 @@
-function autofetch --on-event "fish_prompt" --description 'Fetch on prompt'
-  if test -f ".git/FETCH_HEAD"
-    set --local mtime (path mtime --relative .git/FETCH_HEAD)
-    set --local duration (math '10 * 60')
+function autofetch --on-event fish_prompt --description 'Fetch on prompt'
+    if test -f ".git/FETCH_HEAD"
+        set --local mtime (path mtime --relative .git/FETCH_HEAD)
+        set --local duration (math '10 * 60')
 
-    if test "$mtime" -gt "$duration"
-      git fetch --quiet
+        if test "$mtime" -gt "$duration"
+            git fetch --quiet
+        end
     end
-  end
 end

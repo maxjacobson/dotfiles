@@ -131,6 +131,9 @@ au BufRead,BufNewFile *.rb set tabstop=2
 au BufRead,BufNewFile *.py set shiftwidth=4
 au BufRead,BufNewFile *.py set softtabstop=4
 au BufRead,BufNewFile *.py set tabstop=4
+au BufRead,BufNewFile *.fish set shiftwidth=4
+au BufRead,BufNewFile *.fish set softtabstop=4
+au BufRead,BufNewFile *.fish set tabstop=4
 au BufRead,BufNewFile *.tsx set shiftwidth=2
 au BufRead,BufNewFile *.tsx set softtabstop=2
 au BufRead,BufNewFile *.tsx set tabstop=2
@@ -302,6 +305,7 @@ let g:ale_linters_explicit = 1
 let g:ale_linters= {
 \   'bash': ['shellcheck'],
 \   'eruby': ['erblint'],
+\   'fish': ['fish', 'fish_indent'],
 \   'ruby': ['rubocop', 'sorbet', 'standardrb'],
 \   'javascript': ['eslint', 'stylelint'],
 \   'typescript': ['eslint'],
@@ -312,6 +316,7 @@ let g:ale_linters= {
 
 let g:ale_fixers = {
 \   'css': ['prettier'],
+\   'fish': ['fish_indent'],
 \   'ruby': ['rubocop', 'standardrb', 'prettier'],
 \   'javascript': ['prettier'],
 \   'jsx': ['prettier'],
