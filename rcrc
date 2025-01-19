@@ -1,2 +1,2 @@
 UNDOTTED="bin"
-EXCLUDES="README.md maxjacobson-iterm-profile.json"
+EXCLUDES="README.md tags"
