@@ -59,7 +59,11 @@ if status is-interactive
   abbr --add tree eza --tree --git-ignore
 
   # tmux helper abbreviations
-  abbr --add t 'tmux new-session -A -s (basename $PWD)'
+  function __fish_t_command
+    set --local name (path basename $PWD)
+    echo "tmux new-session -A -s $name"
+  end
+  abbr --add --function __fish_t_command t
   abbr --add ta tmux attach-session
   abbr --add to tmux attach-session -t
   abbr --add tl tmux list-sessions
