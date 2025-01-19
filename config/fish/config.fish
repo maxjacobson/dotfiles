@@ -1,9 +1,12 @@
 if status is-interactive
-    set -U fish_greeting
+    # Setting the greeting to an empty list so fish doesn't display the default one
+    # Can be restored like so:
+    # set --universal --erase fish_greeting
+    set --universal fish_greeting
 
     # https://thoughtbot.com/blog/git-safe
     #
-    # Run `mkdir -p .git/safe` in a trustworthy repo with a bin or exe folder
+    # Run `mkdir -p .git/safe` in a trustworthy repo with a bin, exe, or node_modules folder
     #
     # If you do that, you can simply run `foo` and it will invoke bin/foo or exe/foo
     #
@@ -25,8 +28,8 @@ if status is-interactive
     # when I'm not _in_ vim I don't really expect vim stuff to work.
     # And if I'm on a mac editing text I kind of expect emacs stuff to
     # work. And so here we are.
-    set -gx EDITOR vim
-    set -gx BUNDLER_EDITOR vim
+    set --global --export EDITOR vim
+    set --global --export BUNDLER_EDITOR vim
 
     # makes it possible to run `cd Desktop` or `Desktop/` from anywhere, for example
     set CDPATH \
@@ -40,11 +43,11 @@ if status is-interactive
     #
     # This is configuration for the fuzzy file finder I use in vim
     # https://github.com/junegunn/fzf.vim
-    set -gx FZF_DEFAULT_COMMAND "fd --type f --hidden --exclude .git"
+    set --global --export FZF_DEFAULT_COMMAND "fd --type f --hidden --exclude .git"
 
     # brew install coreutils
     # sets LS_COLOR env var, which styles commands like fd, ls, and tree
-    set -gx LS_COLORS (gdircolors -c | string split ' ')[3]
+    set --global --export LS_COLORS (gdircolors -c | string split ' ')[3]
 
     abbr --add ls eza \
         --long \
