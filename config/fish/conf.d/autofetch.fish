@@ -4,7 +4,7 @@ function autofetch --on-event fish_prompt --description 'Fetch on prompt'
         set --local duration (math '10 * 60')
 
         if test "$mtime" -gt "$duration"
-            git fetch --quiet
+            git fetch --prune --prune-tags --quiet
         end
     end
 end
