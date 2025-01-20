@@ -73,7 +73,7 @@ if status is-interactive
 
     #### Git command abbreviations
 
-    abbr --command git aa aa -A
+    abbr --command git aa add -A
     abbr --command git authors shortlog --summary --numbered
     abbr --command git co checkout
     abbr --command git cp cherry-pick
