@@ -6,28 +6,6 @@
 	name = Max Jacobson
 	email = max@hardscrabble.net
 	signingKey = ~/.ssh/id_ed25519
-[alias]
-	aa = add -A
-	authors = shortlog -sn
-	co = checkout
-	cp = cherry-pick
-	cpa = cherry-pick --abort
-	cpc = cherry-pick --continue
-	dc = diff --cached
-	git = "! git"
-	l = log --pretty='%Cred%h %Creset%<|(58,trunc)%s%n%Cgreen%aN%Creset, %ar%n'
-	pick = add . -p
-	pro = pull --rebase origin
-	pru = pull --rebase upstream
-	ra = rebase --abort
-	rc = rebase --continue
-	recent-authors = shortlog -sn --since='2 weeks ago'
-	rh = reset HEAD --hard
-	rs = rebase --skip
-	st = status
-	sunrise = commit --allow-empty --message '🌅'
-	unstage = restore --staged .
-	vim = "! vim"
 [core]
 	editor = vim
 	pager = delta --syntax-theme Smyck
