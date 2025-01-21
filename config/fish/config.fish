@@ -17,17 +17,7 @@ if status is-interactive
         ".git/safe/../../node_modules/.bin" \
         $PATH
 
-    # colorizes file content output
-    # https://github.com/sharkdp/bat
-    abbr --add cat bat
-
     # <3 vim
-    #
-    # But I use emacs key bindings to navigate inputting text into the shell
-    # even though I prefer vim for editing text files,
-    # when I'm not _in_ vim I don't really expect vim stuff to work.
-    # And if I'm on a mac editing text I kind of expect emacs stuff to
-    # work. And so here we are.
     set --global --export EDITOR vim
     set --global --export BUNDLER_EDITOR vim
 
@@ -39,59 +29,9 @@ if status is-interactive
         "$HOME" \
         $CDPATH
 
-    # FZF
-    #
-    # This is configuration for the fuzzy file finder I use in vim
-    # https://github.com/junegunn/fzf.vim
-    set --global --export FZF_DEFAULT_COMMAND "fd --type f --hidden --exclude .git"
-
     # brew install coreutils
     # sets LS_COLOR env var, which styles commands like fd, ls, and tree
     set --global --export LS_COLORS (gdircolors -c | string split ' ')[3]
-
-    abbr --add ls eza \
-        --long \
-        --header \
-        --no-permissions \
-        --no-user \
-        --no-time \
-        --group-directories-first \
-        --icons=always \
-        --all
-
-    abbr --add tree eza --tree --git-ignore
-
-    # tmux helper abbreviations
-    function __fish_t_command
-        set --local name (path basename $PWD)
-        echo "tmux new-session -A -s $name"
-    end
-    abbr --add --function __fish_t_command t
-    abbr --add ta tmux attach-session
-    abbr --add to tmux attach-session -t
-    abbr --add tl tmux list-sessions
-
-    #### Git command abbreviations
-
-    abbr --command git aa add -A
-    abbr --command git authors shortlog --summary --numbered
-    abbr --command git co checkout
-    abbr --command git cp cherry-pick
-    abbr --command git cpa cherry-pick --abort
-    abbr --command git cpc cherry-pick --continue
-    abbr --command git dc diff --cached
-    abbr --command git l "log --pretty='%Cred%h %Creset%<|(58,trunc)%s%n%Cgreen%aN%Creset, %ar%n'"
-    abbr --command git pick add . -p
-    abbr --command git pro pull --rebase origin
-    abbr --command git pru pull --rebase upstream
-    abbr --command git ra rebase --abort
-    abbr --command git rc rebase --continue
-    abbr --command git recent-authors shortlog --summary --numbered --since='2 weeks ago'
-    abbr --command git rh reset HEAD --hard
-    abbr --command git rs rebase --skip
-    abbr --command git st status
-    abbr --command git sunrise commit --allow-empty --message '🌅'
-    abbr --command git unstage restore --staged .
 
     # auto-load my ssh key
     # and read the passphrase from the keychain so I don't need to enter it every time
