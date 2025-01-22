@@ -4,17 +4,17 @@ if status is-interactive
 
     # ls
     abbr --add ls eza \
-        --long \
-        --header \
-        --no-permissions \
-        --no-user \
-        --no-time \
         --group-directories-first \
         --icons=always \
         --all
 
     # tree
-    abbr --add tree eza --tree --git-ignore
+    abbr --add tree eza \
+        --tree \
+        --git-ignore \
+        --group-directories-first \
+        --icons=always \
+        --all
 
     # tmux
     function __fish_t_command
