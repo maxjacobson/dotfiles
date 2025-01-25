@@ -40,7 +40,7 @@ if status is-interactive
     abbr --command git pru pull --rebase upstream
     abbr --command git ra rebase --abort
     abbr --command git rc rebase --continue
-    abbr --command git recent-authors shortlog --summary --numbered --since='2 weeks ago'
+    abbr --command git recent-authors "shortlog --summary --numbered --since='2 weeks ago'"
     abbr --command git rh reset HEAD --hard
     abbr --command git rs rebase --skip
     abbr --command git st status
