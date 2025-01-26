@@ -2,18 +2,14 @@
 #
 # this doesn't upgrade the packages, it just lets me know if there are any upgrades available
 if status is-interactive
-    set --local file "$HOME/.cache/fish/auto-brew-update.txt"
     set --local perform_update 0
-    set --local duration (math '24 * 60 * 60')
+    set --local threshold (math '24 * 60 * 60')
+    set --local now (date +%s)
 
-    if ! test -d "$HOME/.cache/fish"
-        mkdir -p "$HOME/.cache/fish"
-    end
+    if set --query --universal __auto_brew_updated_at
+        set --local diff (math "$now - $__auto_brew_updated_at")
 
-    if test -f "$file"
-        set --local mtime (path mtime --relative "$file")
-
-        if test "$mtime" -gt "$duration"
+        if test "$diff" -gt "$threshold"
             set perform_update 1
         end
     else
@@ -22,6 +18,6 @@ if status is-interactive
 
     if test "$perform_update" -eq 1
         brew update
-        touch "$file"
+        set --universal __auto_brew_updated_at $now
     end
 end
