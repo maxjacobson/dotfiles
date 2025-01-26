@@ -3,6 +3,13 @@ function fish_prompt
     # did not succeed
     set --local last_status $status
 
+    # Work out how many seconds the last command took if it was slow
+    set --local duration_msg
+    if test "$CMD_DURATION" -gt 5000
+        set --local duration (math floor (math "$CMD_DURATION / 1000"))
+        set duration_msg (string join '' -- " $duration" "s")
+    end
+
     # Configure fish_git_prompt to show some more info
     set --global __fish_git_prompt_show_informative_status true
     set --global __fish_git_prompt_showdirtystate true
@@ -20,7 +27,8 @@ function fish_prompt
     # print some info
     string join '' -- \
         (set_color blue) (prompt_pwd --full-length-dirs 2) (set_color normal) \
-        (fish_git_prompt)
+        (fish_git_prompt) \
+        (set_color yellow) "$duration_msg"
 
     # print the actual prompt
     if test "$last_status" -ne 0
