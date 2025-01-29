@@ -5,7 +5,7 @@ function fish_prompt
 
     # Work out how many seconds the last command took if it was slow
     set --local duration_msg
-    if test "$CMD_DURATION" -gt 5000
+    if test "$CMD_DURATION" -gt 2000
         set --local duration (math floor (math "$CMD_DURATION / 1000"))
         set duration_msg (string join '' -- " $duration" "s")
     end
