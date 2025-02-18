@@ -27,7 +27,7 @@ if status is-interactive
     abbr --add tl tmux list-sessions
 
     # git commands
-    abbr --command git aa add -A
+    abbr --command git aa add --all
     abbr --command git authors shortlog --summary --numbered
     abbr --command git co checkout
     abbr --command git cp cherry-pick
