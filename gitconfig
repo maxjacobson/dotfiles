@@ -9,7 +9,6 @@
 [core]
 	editor = vim
 	pager = delta --syntax-theme Smyck
-	excludesfile = ~/.gitignore_global
 [push]
 	default = current
 	autoSetupRemote = true
@@ -20,7 +19,9 @@
 	format = ssh
 [diff]
 	algorithm = histogram
-	colorMoved = no
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
 [diff "zip"]
 	textconv = unzip -c -a
 [interactive]
@@ -39,6 +40,7 @@
 [tag]
 	gpgSign = true
 	forceSignAnnotated = true
+	sort = version:refname
 [url "ssh://git@github.com/"]
 	insteadOf = https://github.com/
 [filter "lfs"]
@@ -51,7 +53,17 @@
 [fetch]
 	prune = true
 	prunetags = true
+	all = true
 [includeIf "gitdir:~/FAMLI/"]
 	path = ~/.work.gitconfig
 [advice]
 	addEmptyPathspec = false
+[column]
+	ui = auto
+[rerere]
+	enabled = true
+	autoupdate = true
+[rebase]
+	updateRefs = true
+[merge]
+	conflictstyle = zdiff3
