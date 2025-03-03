@@ -1,2 +1,2 @@
 UNDOTTED="bin"
-EXCLUDES="README.md tags"
+EXCLUDES="README.md"
