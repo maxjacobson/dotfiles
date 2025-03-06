@@ -6,7 +6,6 @@
 
 tap "heroku/brew"
 
-brew "awscli" # Amazon Web Services (aws) CLI
 brew "bat" # cat but with syntax highlighting
 brew "cloc" # count lines of code
 brew "coreutils" # installs gdircolors and others
