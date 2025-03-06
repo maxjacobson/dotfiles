@@ -12,8 +12,11 @@ function clone --description "Clone a repository from GitHub"
                 cd "$target"
             else
                 mkdir -p "$target"
-                gh repo clone "$argv" "$target"
-                cd "$target"
+                if gh repo clone "$argv" "$target"
+                    cd "$target"
+                else
+                    rm -rf "$target"
+                end
             end
         case '*'
             echo "Bad input"
