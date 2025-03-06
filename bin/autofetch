@@ -1,0 +1,8 @@
+#!/usr/bin/env fish
+
+if ! test -d .git/fish-autofetching
+    trap 'rmdir .git/fish-autofetching' EXIT
+
+    mkdir -p .git/fish-autofetching
+    git fetch --prune --prune-tags --quiet 2>/dev/null; or true
+end
