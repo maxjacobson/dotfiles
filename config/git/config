@@ -54,7 +54,7 @@
 	prunetags = true
 	all = true
 [includeIf "gitdir:~/FAMLI/"]
-	path = ~/.work.gitconfig
+	path = ~/.config/git/workconfig
 [advice]
 	addEmptyPathspec = false
 [column]
