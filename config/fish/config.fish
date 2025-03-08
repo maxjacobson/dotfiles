@@ -33,7 +33,9 @@ if status is-interactive
     # sets LS_COLOR env var, which styles commands like fd, ls, and tree
     set --global --export LS_COLORS (gdircolors -c | string split ' ')[3]
 
-    # auto-load my ssh key
-    # and read the passphrase from the keychain so I don't need to enter it every time
-    ssh-add -q --apple-use-keychain
+    if ! test Linux = (uname)
+        # auto-load my ssh key
+        # and read the passphrase from the keychain so I don't need to enter it every time
+        ssh-add -q --apple-use-keychain
+    end
 end

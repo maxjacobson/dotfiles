@@ -1,7 +1,11 @@
 # This file is loaded first, and it makes sure the $PATH is set up,
 # in case other conf.d files need to use those programs
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
+if test Linux = (uname)
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+else
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+end
 
 # Add ~/bin to path
 # This is a folder where I put custom helper scripts
