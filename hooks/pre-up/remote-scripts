@@ -1,8 +1,9 @@
 #!/usr/bin/env ruby
 
 require "fileutils"
-require "open-uri"
 require "pathname"
+require "net/http"
+require "uri"
 
 class RemoteScript < Struct.new(:local_path, :remote_url)
   def install
@@ -10,13 +11,14 @@ class RemoteScript < Struct.new(:local_path, :remote_url)
       puts "skipping #{path}"
     else
       puts "installing #{path}"
-      response = open(remote_url)
+      response = Net::HTTP.get_response(URI(remote_url))
 
-      if response.status.include?("200")
+      if response.is_a?(Net::HTTPSuccess)
         FileUtils.mkdir_p(path.parent)
-        File.write(path, response.read)
+        File.write(path, response.body)
       else
-        raise response.status.inspect
+        puts "Failed to fetch #{remote_url} #{response.inspect}"
+        exit 1
       end
     end
   end
