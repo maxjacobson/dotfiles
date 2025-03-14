@@ -310,6 +310,7 @@ let g:ale_linters= {
 \   'javascript': ['eslint', 'stylelint'],
 \   'typescript': ['eslint'],
 \   'jsx': ['stylelint', 'eslint'],
+\   'rust': ['analyzer', 'cargo'],
 \   'scss': ['stylelint'],
 \   'sh': ['shellcheck'],
 \}
@@ -330,7 +331,7 @@ let g:ale_fixers = {
 let g:ale_ruby_rubocop_executable = "bin/rubocop"
 let g:ale_ruby_standardrb_executable = "bin/standardrb"
 let g:ale_eruby_erblint_executable = "bin/erb_lint"
-
+let g:ale_rust_cargo_use_clippy = 1
 let g:ale_fix_on_save = 1
 
 " Highlight curent line number
