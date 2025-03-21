@@ -4,8 +4,6 @@
 #
 # This runs automatically via an rcm post-up hook
 
-tap "heroku/brew"
-
 brew "bat" # cat but with syntax highlighting
 brew "cloc" # count lines of code
 brew "coreutils" # installs gdircolors and others
@@ -17,7 +15,6 @@ brew "gh" # New GitHub CLI, via https://github.com/cli/cli
 brew "git" # version control
 brew "git-delta" # Displays diffs pretty, exposes delta CLI
 brew "git-lfs" # git large file storage
-brew "heroku" # Heroku CLI
 brew "htop" # CLI alternative to Activity Monitor, upgrade from the built-in top
 brew "jq" # utility for pretty-printing and filtering streams of JSON-formatted text
 brew "ncdu" # upgrade over du, helps you figure out where your disk space is going
