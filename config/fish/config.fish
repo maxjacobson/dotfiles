@@ -21,6 +21,12 @@ if status is-interactive
     set --global --export EDITOR vim
     set --global --export BUNDLER_EDITOR vim
 
+    # move history files for some tools, just to not clutter up the home directory
+    set --global --export LESSHISTFILE "$HOME/.cache/less/less_history"
+    set --global --export NODE_REPL_HISTORY "$HOME/.cache/node/node_repl_history"
+    set --global --export PSQL_HISTORY "$HOME/.cache/psql/psql_history"
+    set --global --export RUBY_DEBUG_HISTORY_FILE "$HOME/.cache/ruby/rdbg_history"
+
     # makes it possible to run `cd Desktop` or `Desktop/` from anywhere, for example
     set CDPATH \
         "$HOME/src/gh/maxjacobson" \
