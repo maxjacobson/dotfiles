@@ -43,7 +43,7 @@ if status is-interactive
     abbr --command git recent-authors "shortlog --summary --numbered --since='2 weeks ago'"
     abbr --command git rh reset HEAD --hard
     abbr --command git rs rebase --skip
-    abbr --command git st status
+    abbr --command git st status --short
     abbr --command git sunrise commit --allow-empty --message '🌅'
     abbr --command git unstage restore --staged .
 end
