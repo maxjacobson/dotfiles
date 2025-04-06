@@ -25,7 +25,10 @@ if status is-interactive
     set --global --export LESSHISTFILE "$HOME/.cache/less/less_history"
     set --global --export NODE_REPL_HISTORY "$HOME/.cache/node/node_repl_history"
     set --global --export PSQL_HISTORY "$HOME/.cache/psql/psql_history"
+    set --global --export PYTHON_HISTORY "$HOME/.cache/python/python_history"
+    set --global --export REDISCLI_HISTFILE "$HOME/.cache/redis/rediscli_history"
     set --global --export RUBY_DEBUG_HISTORY_FILE "$HOME/.cache/ruby/rdbg_history"
+    set --global --export SQLITE_HISTORY "$HOME/sqlite/sqlite_history"
 
     # makes it possible to run `cd Desktop` or `Desktop/` from anywhere, for example
     set CDPATH \
