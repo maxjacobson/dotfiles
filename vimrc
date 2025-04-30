@@ -90,6 +90,8 @@ Plug 'preservim/tagbar'
 
 Plug 'ludovicchabant/vim-gutentags'
 
+Plug 'amadeus/vim-mjml'
+
 call plug#end()
 
 " press jk to exit insert mode
@@ -306,6 +308,7 @@ let g:ale_linters= {
 \   'bash': ['shellcheck'],
 \   'eruby': ['erblint'],
 \   'fish': ['fish', 'fish_indent'],
+\   'mjml': ['erblint'],
 \   'ruby': ['rubocop', 'sorbet', 'standardrb'],
 \   'javascript': ['eslint', 'stylelint'],
 \   'typescript': ['eslint'],
