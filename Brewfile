@@ -23,6 +23,7 @@ brew "rbenv" # managing ruby versions
 brew "rcm" # tool to manage dotfiles repository
 brew "redis", restart_service: true # a database I sometimes use
 brew "ripgrep" # grep replacement, exposes rg CLI
+brew "ruby", version_file: File.expand_path("~/.rbenv/version")
 brew "shellcheck" # linter for shell scripts
 brew "sl" # steam locomotive https://www.hardscrabble.net/2022/steam-locomotive/
 brew "switchaudio-osx" # https://www.hardscrabble.net/2023/programming-my-macropad/
