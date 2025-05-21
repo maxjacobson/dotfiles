@@ -19,7 +19,7 @@ if status is-interactive
     # tmux
     function __fish_t_command
         set --local name (path basename $PWD)
-        echo "tmux new-session -A -s $name"
+        echo "tmux new-session -A -s \"$name\""
     end
     abbr --add --function __fish_t_command t
     abbr --add ta tmux attach-session
