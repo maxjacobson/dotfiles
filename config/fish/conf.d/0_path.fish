@@ -2,7 +2,7 @@
 # in case other conf.d files need to use those programs
 
 if test Linux = (uname)
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+    # This space intentionally left blank
 else
     eval "$(/opt/homebrew/bin/brew shellenv)"
 end

@@ -1,3 +1,7 @@
+if test Linux = (uname)
+    exit 0
+end
+
 # automatically run `brew update` once a day or so
 #
 # this doesn't upgrade the packages, it just lets me know if there are any upgrades available
