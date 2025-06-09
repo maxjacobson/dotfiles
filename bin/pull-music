@@ -1,0 +1,10 @@
+#!/usr/bin/env fish
+
+# Pulls ~/Music/Doppler from Mac Studio
+# to ~/Music on Thinkpad
+rsync \
+    --verbose \
+    --prune-empty-dirs \
+    --recursive \
+    --delete-during \
+    max@192.168.7.208:/Users/max/Music/Doppler/ ~/Music/
