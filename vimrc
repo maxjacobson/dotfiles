@@ -1,98 +1,52 @@
 " Using this vimrc:
 "
-" Install vim plug: https://github.com/junegunn/vim-plug#usage
+" Install minpac: https://github.com/k-takata/minpac?tab=readme-ov-file#installation
 " run: mkdir ~/.vim/backup
 " run: mkdir ~/.vim/tmp
 " copy this code to ~/.vimrc
+"
 " open this file in vim
-" run :PlugInstall
-call plug#begin('~/.vim/plugged')
+" run :call minpac#update()
+"
+" Occasional maintenance:
+" run :call minpac#update()
+" run :call minpac#clean()
 
-" sensible defaults
-Plug 'tpope/vim-sensible'
+packadd minpac
+call minpac#init()
 
-" project-wide find and replace
-Plug 'Olical/vim-enmasse'
+call minpac#add('k-takata/minpac', {'type': 'opt'}) " package manager
+call minpac#add('tpope/vim-sensible') " sensible defaults
+call minpac#add('Olical/vim-enmasse') " project-wide find and replace
+call minpac#add('rust-lang/rust.vim') " rust syntax highlighting, auto-formatting etc
+call minpac#add('tpope/vim-fugitive') " using to pull current git branch into status bar
+call minpac#add('ervandew/supertab') " useful for tab completing
+call minpac#add('tpope/vim-bundler') " not sure if I use this
+call minpac#add('tpope/vim-commentary') " useful for quickly commenting code
+call minpac#add('tpope/vim-endwise') " useful for auto-ending ruby methods/classes/blocks
+call minpac#add('tpope/vim-eunuch') " not sure if I use this one
+call minpac#add('jremmen/vim-ripgrep') " search the codebase with rg (ripgrep)
+call minpac#add('sjl/gundo.vim') " Visualizes recent changes so you can undo with confidence
+call minpac#add('airblade/vim-gitgutter') " Adds a column on the left indicating which lines have changed
+call minpac#add('dietsche/vim-lastplace') " Remembers where your cursor was in each file and takes you there
+call minpac#add('hashivim/vim-terraform') " Syntax highlighting for terraform .tf files
+call minpac#add('pangloss/vim-javascript') " Syntax highlighting for javascript files
+call minpac#add('mxw/vim-jsx') " Syntax highlighting for jsx files
+call minpac#add('cespare/vim-toml') " Syntax highlighting for toml config files
+call minpac#add('ElmCast/elm-vim') " Syntax highlighting for elm files
+call minpac#add('leafgarland/typescript-vim') " Syntax highlighting for TypeScript files
+call minpac#add('peitalin/vim-jsx-typescript') " Syntax highlighting for .tsx files
+call minpac#add('junegunn/fzf') " Fuzzy file finder to open files
+call minpac#add('junegunn/fzf.vim') " Fuzzy file finder to open files
+call minpac#add('maxjacobson/vim-fzf-coauthorship') " Insert Co-Authored-By lines into commit messages
+call minpac#add('dense-analysis/ale') " Asynchronous Lint Engine, for invoking things like rubocop, eslint, and prettier automatically
+call minpac#add('rhysd/vim-syntax-codeowners') " Syntax-highlighting for .github/CODEOWNERS files
+call minpac#add('pbrisbin/vim-mkdir')
+call minpac#add('preservim/tagbar')
+call minpac#add('ludovicchabant/vim-gutentags')
+call minpac#add('amadeus/vim-mjml')
 
-" rust syntax highlighting, auto-formatting etc
-Plug 'rust-lang/rust.vim'
-
-" using to pull current git branch into status bar
-Plug 'tpope/vim-fugitive'
-
-" useful for tab completing
-Plug 'ervandew/supertab'
-
-" not sure if I use this
-Plug 'tpope/vim-bundler'
-
-" useful for quickly commenting code
-Plug 'tpope/vim-commentary'
-
-" useful for auto-ending ruby methods/classes/blocks
-Plug 'tpope/vim-endwise'
-
-" not sure if I use this one
-Plug 'tpope/vim-eunuch'
-
-" search the codebase with rg (ripgrep)
-Plug 'jremmen/vim-ripgrep'
-
-" Visualizes recent changes so you can undo with confidence
-Plug 'sjl/gundo.vim'
-
-" Adds a column on the left indicating which lines have changed
-Plug 'airblade/vim-gitgutter'
-
-" Remembers where your cursor was in each file and takes you there
-Plug 'dietsche/vim-lastplace'
-
-" Syntax highlighting for terraform .tf files
-Plug 'hashivim/vim-terraform'
-
-" Syntax highlighting for javascript files
-Plug 'pangloss/vim-javascript'
-
-" Syntax highlighting for jsx files
-Plug 'mxw/vim-jsx'
-
-" Syntax highlighting for toml config files
-Plug 'cespare/vim-toml'
-
-" Syntax highlighting for elm files
-Plug 'ElmCast/elm-vim'
-
-" Syntax highlighting for TypeScript files
-Plug 'leafgarland/typescript-vim'
-
-" Syntax highlighting for .tsx files
-Plug 'peitalin/vim-jsx-typescript'
-
-" Fuzzy file finder to open files
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-
-" Insert Co-Authored-By lines into commit messages
-Plug 'maxjacobson/vim-fzf-coauthorship'
-
-Plug 'maxjacobson/vim-plug-periodic-status'
-
-" Asynchronous Lint Engine, for invoking things like rubocop, eslint, and
-" prettier automatically
-Plug 'dense-analysis/ale'
-
-" Syntax-highlighting for .github/CODEOWNERS files
-Plug 'rhysd/vim-syntax-codeowners'
-
-Plug 'pbrisbin/vim-mkdir'
-
-Plug 'preservim/tagbar'
-
-Plug 'ludovicchabant/vim-gutentags'
-
-Plug 'amadeus/vim-mjml'
-
-call plug#end()
+packloadall
 
 " press jk to exit insert mode
 inoremap jk <ESC>
