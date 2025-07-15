@@ -1,6 +1,14 @@
 #!/usr/bin/env fish
 
-if ! test -d .git/fish-autofetching
+if test -d .git/fish-autofetching
+    set --local timeout 300 # seconds
+    set --local mtime (path mtime --relative .git/fish-autofetching)
+
+    if test "$mtime" -gt "$timeout"
+        echo "Removing stale .git/fish-autofetching (deadlock cleanup)"
+        rmdir .git/fish-autofetching
+    end
+else
     trap 'rmdir .git/fish-autofetching' EXIT
 
     mkdir -p .git/fish-autofetching
