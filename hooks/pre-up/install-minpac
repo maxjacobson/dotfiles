@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -ex
+
+dir="$HOME/.vim/pack/minpac/opt/minpac"
+
+if test -d "$dir"; then
+  echo "minpac already installed"
+else
+  git clone https://github.com/k-takata/minpac.git "$dir"
+fi
