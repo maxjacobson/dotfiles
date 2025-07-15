@@ -314,3 +314,5 @@ let g:gutentags_file_list_command = "fd --type file --hidden --exclude .git"
 let g:gutentags_ctags_auto_set_tags = 1
 
 packadd hlyank
+
+set textwidth=120
