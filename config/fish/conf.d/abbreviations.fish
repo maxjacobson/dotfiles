@@ -46,4 +46,16 @@ if status is-interactive
     abbr --command git st status --short
     abbr --command git sunrise commit --allow-empty --message '🌅'
     abbr --command git unstage restore --staged .
+
+    # vim shortcuts
+    abbr --command vim fish ~/.config/fish/config.fish
+    abbr --command vim gitconfig ~/.config/git/config
+
+    # kitty protocol
+    abbr --add icat /Applications/kitty.app/Contents/MacOS/kitten icat
+
+    function last_history_item
+        echo $history[1]
+    end
+    abbr -a !! --position anywhere --function last_history_item
 end
