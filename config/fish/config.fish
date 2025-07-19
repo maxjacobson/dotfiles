@@ -17,9 +17,8 @@ if status is-interactive
         ".git/safe/../../node_modules/.bin" \
         $PATH
 
-    # <3 vim
-    set --global --export EDITOR vim
-    set --global --export BUNDLER_EDITOR vim
+    set --global --export EDITOR nvim
+    set --global --export BUNDLER_EDITOR nvim
 
     # move history files for some tools, just to not clutter up the home directory
     set --global --export LESSHISTFILE "$HOME/.cache/less/less_history"

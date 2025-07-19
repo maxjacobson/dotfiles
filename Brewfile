@@ -17,6 +17,7 @@ brew "git-delta" # Displays diffs pretty, exposes delta CLI
 brew "git-lfs" # git large file storage
 brew "htop" # CLI alternative to Activity Monitor, upgrade from the built-in top
 brew "jq" # utility for pretty-printing and filtering streams of JSON-formatted text
+brew "neovim"
 brew "ncdu" # upgrade over du, helps you figure out where your disk space is going
 brew "postgresql@16", restart_service: true, link: true, conflicts_with: ["postgresql"] # a database I sometimes use
 brew "rbenv" # managing ruby versions
