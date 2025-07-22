@@ -7,7 +7,7 @@
 	email = max@hardscrabble.net
 	signingKey = ~/.ssh/id_ed25519
 [core]
-	editor = vim
+	editor = nvim
 	pager = delta --syntax-theme Smyck
 [push]
 	default = current
