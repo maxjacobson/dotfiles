@@ -84,15 +84,9 @@ set smartindent
 au BufRead,BufNewFile *.rb set shiftwidth=2
 au BufRead,BufNewFile *.rb set softtabstop=2
 au BufRead,BufNewFile *.rb set tabstop=2
-au BufRead,BufNewFile *.py set shiftwidth=4
-au BufRead,BufNewFile *.py set softtabstop=4
-au BufRead,BufNewFile *.py set tabstop=4
 au BufRead,BufNewFile *.fish set shiftwidth=4
 au BufRead,BufNewFile *.fish set softtabstop=4
 au BufRead,BufNewFile *.fish set tabstop=4
-au BufRead,BufNewFile *.tsx set shiftwidth=2
-au BufRead,BufNewFile *.tsx set softtabstop=2
-au BufRead,BufNewFile *.tsx set tabstop=2
 
 set number " show line numbers
 set showcmd " shows commands (try `55 j` for example and look in the bottom right)
