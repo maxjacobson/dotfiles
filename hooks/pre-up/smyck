@@ -11,6 +11,10 @@ Dir.mktmpdir do |dir|
     FileUtils.mkdir_p(vim_colors_path)
     FileUtils.cp "./Smyck-Color-Scheme/smyck.vim", vim_colors_path
 
+    nvim_colors_path = File.expand_path("~/.config/nvim/colors")
+    FileUtils.mkdir_p(nvim_colors_path)
+    FileUtils.cp "./Smyck-Color-Scheme/smyck.vim", nvim_colors_path
+
     bat_themes_path = File.expand_path("~/.config/bat/themes")
     FileUtils.mkdir_p(bat_themes_path)
     FileUtils.cp "./Smyck-Color-Scheme/Smyck.tmTheme", bat_themes_path
