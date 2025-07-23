@@ -5,6 +5,7 @@ vim.opt.number = true
 vim.opt.wrap = false
 vim.opt.cursorline = true
 vim.opt.textwidth = 120
+vim.cmd('colorscheme smyck')
 
 -- copy and paste
 vim.opt.clipboard = "unnamedplus"
@@ -41,4 +42,8 @@ vim.keymap.set({'n', 'v'}, '0', 'g0', { desc = 'Start of visual line' })
 vim.keymap.set({'n', 'v'}, '$', 'g$', { desc = 'End of visual line' })
 vim.keymap.set({'n', 'v'}, '^', 'g^', { desc = 'First non-blank of visual line' })
 
-vim.cmd('colorscheme smyck')
+-- folding
+vim.opt.foldmethod = 'indent'
+vim.opt.foldenable = false
+vim.opt.foldlevel = 1
+vim.opt.foldnestmax = 10
