@@ -50,6 +50,7 @@ if status is-interactive
     # vim shortcuts
     abbr --command vim fish ~/.config/fish/config.fish
     abbr --command vim gitconfig ~/.config/git/config
+    abbr --add vim nvim
 
     # kitty protocol
     abbr --add icat /Applications/kitty.app/Contents/MacOS/kitten icat
