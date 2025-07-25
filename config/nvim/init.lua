@@ -38,9 +38,6 @@ vim.keymap.set('n', '<leader>/', '<cmd>nohlsearch<CR>', { desc = 'Clear search h
 -- Move by visual lines instead of actual lines
 vim.keymap.set({'n', 'v'}, 'j', 'gj', { desc = 'Move down by visual line' })
 vim.keymap.set({'n', 'v'}, 'k', 'gk', { desc = 'Move up by visual line' })
-vim.keymap.set({'n', 'v'}, '0', 'g0', { desc = 'Start of visual line' })
-vim.keymap.set({'n', 'v'}, '$', 'g$', { desc = 'End of visual line' })
-vim.keymap.set({'n', 'v'}, '^', 'g^', { desc = 'First non-blank of visual line' })
 
 -- folding
 vim.opt.foldmethod = 'indent'
