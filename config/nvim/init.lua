@@ -44,3 +44,10 @@ vim.opt.foldmethod = 'indent'
 vim.opt.foldenable = false
 vim.opt.foldlevel = 1
 vim.opt.foldnestmax = 10
+
+-- ruby
+vim.filetype.add({
+  extension = {
+    jbuilder = 'ruby',
+  },
+})
