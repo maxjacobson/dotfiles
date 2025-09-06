@@ -52,9 +52,7 @@ if status is-interactive
     abbr --command vim gitconfig ~/.config/git/config
     abbr --add vim nvim
 
-    # kitty protocol
-    abbr --add icat /Applications/kitty.app/Contents/MacOS/kitten icat
-
+    # bash/zsh-style !! to insert the last command from history
     function last_history_item
         echo $history[1]
     end
