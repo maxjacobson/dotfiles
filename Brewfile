@@ -15,6 +15,7 @@ brew "gh" # New GitHub CLI, via https://github.com/cli/cli
 brew "git" # version control
 brew "git-delta" # Displays diffs pretty, exposes delta CLI
 brew "git-lfs" # git large file storage
+brew "gum" # some shell scripting helpers
 brew "htop" # CLI alternative to Activity Monitor, upgrade from the built-in top
 brew "jq" # utility for pretty-printing and filtering streams of JSON-formatted text
 brew "neovim"
