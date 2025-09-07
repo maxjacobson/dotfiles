@@ -6,6 +6,8 @@ vim.opt.wrap = false
 vim.opt.cursorline = true
 vim.opt.textwidth = 120
 vim.cmd('colorscheme smyck')
+vim.opt.ignorecase = true -- ignores case when search
+
 
 -- copy and paste
 vim.opt.clipboard = "unnamedplus"
