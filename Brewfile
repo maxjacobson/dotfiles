@@ -29,7 +29,6 @@ brew "ruby", version_file: File.expand_path("~/.rbenv/version")
 brew "shellcheck" # linter for shell scripts
 brew "sl" # steam locomotive https://www.hardscrabble.net/2022/steam-locomotive/
 brew "switchaudio-osx" # https://www.hardscrabble.net/2023/programming-my-macropad/
-brew "tmux" # terminal multiplexer
 brew "tfenv" # terraform version manager
 brew "universal-ctags" # generate tags file
 brew "vim" # primary text editor

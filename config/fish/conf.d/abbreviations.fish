@@ -16,16 +16,6 @@ if status is-interactive
         --icons=always \
         --all
 
-    # tmux
-    function __fish_t_command
-        set --local name (path basename $PWD)
-        echo "tmux new-session -A -s \"$name\""
-    end
-    abbr --add --function __fish_t_command t
-    abbr --add ta tmux attach-session
-    abbr --add to tmux attach-session -t
-    abbr --add tl tmux list-sessions
-
     # git commands
     abbr --command git aa add --all
     abbr --command git authors shortlog --summary --numbered
