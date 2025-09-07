@@ -17,6 +17,7 @@ brew "git-delta" # Displays diffs pretty, exposes delta CLI
 brew "git-lfs" # git large file storage
 brew "gum" # some shell scripting helpers
 brew "htop" # CLI alternative to Activity Monitor, upgrade from the built-in top
+brew "imagemagick"
 brew "jq" # utility for pretty-printing and filtering streams of JSON-formatted text
 brew "neovim"
 brew "ncdu" # upgrade over du, helps you figure out where your disk space is going
