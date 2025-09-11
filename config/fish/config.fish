@@ -20,8 +20,6 @@ if status is-interactive
     set --global --export EDITOR nvim
     set --global --export BUNDLER_EDITOR nvim
 
-    set --global --export PAGER gum-pager
-
     # move history files for some tools, just to not clutter up the home directory
     set --global --export LESSHISTFILE "$HOME/.cache/less/less_history"
     set --global --export NODE_REPL_HISTORY "$HOME/.cache/node/node_repl_history"
