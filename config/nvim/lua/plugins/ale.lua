@@ -32,5 +32,6 @@ return {
     vim.g.ale_eruby_erblint_executable = "bin/erb_lint"
     vim.g.ale_rust_cargo_use_clippy = 1
     vim.g.ale_fix_on_save = 1
+    vim.g.ale_ruby_rubocop_options = "--editor-mode"
   end
 }
