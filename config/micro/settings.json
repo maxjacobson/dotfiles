@@ -1,6 +1,10 @@
 {
+  "colorcolumn": 120,
   "colorscheme": "darcula",
   "diffgutter": true,
+  "hlsearch": true,
+  "hltrailingws": true,
+  "savecursor": true,
   "tabsize": 2,
   "tabstospaces": true
 }
