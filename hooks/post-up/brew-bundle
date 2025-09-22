@@ -8,4 +8,4 @@ set -ex
 #
 # ⚠️ this will uninstall things that are _not_ listed in ~/.Brewfile
 
-brew bundle --global --cleanup
+brew bundle --global --cleanup --upgrade
