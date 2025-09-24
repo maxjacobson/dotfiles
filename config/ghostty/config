@@ -4,3 +4,5 @@ theme = Smyck
 cursor-style = block
 shell-integration-features = no-cursor
 cursor-style-blink = false
+window-height = 40
+window-width = 120
