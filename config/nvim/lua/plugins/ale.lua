@@ -1,5 +1,6 @@
 return {
-  'dense-analysis/ale',
+  'maxjacobson/ale',
+  branch = 'mj/editor-mode-rubocop',
   config = function()
     vim.g.ale_linters_explicit = 1
 
@@ -32,6 +33,5 @@ return {
     vim.g.ale_eruby_erblint_executable = "bin/erb_lint"
     vim.g.ale_rust_cargo_use_clippy = 1
     vim.g.ale_fix_on_save = 1
-    vim.g.ale_ruby_rubocop_options = "--editor-mode"
   end
 }
