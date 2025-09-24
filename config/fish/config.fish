@@ -31,7 +31,7 @@ if status is-interactive
 
     # makes it possible to run `cd Desktop` or `Desktop/` from anywhere, for example
     set CDPATH \
-        "$HOME/src/gh/maxjacobson" \
+        "$HOME/src/github/maxjacobson" \
         "$HOME/src/local" \
         "$HOME" \
         $CDPATH
