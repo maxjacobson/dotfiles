@@ -6,10 +6,10 @@ if test -d .git/fish-autofetching
 
     if test "$mtime" -gt "$timeout"
         echo "Removing stale .git/fish-autofetching (deadlock cleanup)"
-        rmdir .git/fish-autofetching
+        rm -rf ./.git/fish-autofetching
     end
 else
-    trap 'rmdir .git/fish-autofetching' EXIT
+    trap 'rm -rf ./.git/fish-autofetching' EXIT
 
     mkdir -p .git/fish-autofetching
     git fetch --prune --prune-tags --quiet 2>/dev/null; or true
