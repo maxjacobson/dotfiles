@@ -17,6 +17,7 @@ return {
     }
 
     vim.g.ale_fixers = {
+      c = { 'clang-format' },
       css = { 'prettier' },
       fish = { 'fish_indent' },
       ruby = { 'rubocop', 'prettier' },
