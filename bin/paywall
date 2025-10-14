@@ -8,7 +8,9 @@ if test (count $argv) -ne 1
     exit 1
 end
 
-set --local f (mktemp -t "document.XXXXXXXXXX.html")
+# Using GNU mktemp (brew install coreutils on macOS) because it can create tempfiles
+# with a particular extension
+set --local f (gmktemp -t "document.XXXXXXXXXX.html")
 
 if curl --silent --show-error --location "$argv[1]" --output "$f"
     open "$f"
