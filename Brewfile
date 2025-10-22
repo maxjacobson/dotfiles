@@ -25,6 +25,8 @@ brew "gum" # some shell scripting helpers
 brew "htop" # CLI alternative to Activity Monitor, upgrade from the built-in top
 brew "imagemagick"
 brew "jq" # utility for pretty-printing and filtering streams of JSON-formatted text
+brew "jj"
+brew "jjui"
 brew "micro" # simple text editor to use every now and then
 brew "neovim" # finally made the leap from regular old vim
 brew "ncdu" # upgrade over du, helps you figure out where your disk space is going
