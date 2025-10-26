@@ -1,3 +1,8 @@
 [user]
 name = "Max Jacobson"
 email = "max@hardscrabble.net"
+
+[signing]
+behavior = "own"
+backend = "ssh"
+key = "~/.ssh/id_ed25519"
