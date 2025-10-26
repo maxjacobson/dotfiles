@@ -1,6 +1,5 @@
 return {
-  'maxjacobson/ale',
-  branch = 'mj/editor-mode-rubocop',
+  'dense-analysis/ale',
   config = function()
     vim.g.ale_linters_explicit = 1
 
