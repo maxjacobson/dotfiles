@@ -19,6 +19,7 @@ return {
       c = { 'clang-format' },
       css = { 'prettier' },
       fish = { 'fish_indent' },
+      html = { 'prettier' },
       ruby = { 'rubocop', 'prettier' },
       javascript = { 'prettier' },
       jsx = { 'prettier' },
