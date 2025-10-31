@@ -28,6 +28,7 @@ return {
       scss = { 'prettier' },
       typescript = { 'prettier' },
       typescriptreact = { 'prettier' },
+      yaml = { 'prettier' },
     }
 
     vim.g.ale_ruby_rubocop_executable = "bin/rubocop"
