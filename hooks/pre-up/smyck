@@ -7,10 +7,6 @@ Dir.mktmpdir do |dir|
   Dir.chdir(dir) do
     system "git clone https://github.com/hukl/Smyck-Color-Scheme.git", exception: true
 
-    vim_colors_path = File.expand_path("~/.vim/colors")
-    FileUtils.mkdir_p(vim_colors_path)
-    FileUtils.cp "./Smyck-Color-Scheme/smyck.vim", vim_colors_path
-
     nvim_colors_path = File.expand_path("~/.config/nvim/colors")
     FileUtils.mkdir_p(nvim_colors_path)
     FileUtils.cp "./Smyck-Color-Scheme/smyck.vim", nvim_colors_path
