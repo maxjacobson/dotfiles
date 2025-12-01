@@ -6,6 +6,10 @@ if status is-interactive
     abbr --add ls eza \
         --group-directories-first \
         --icons=always \
+        --long \
+        --no-permissions \
+        --no-user \
+        --no-time \
         --all
 
     # tree
