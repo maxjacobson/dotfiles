@@ -8,6 +8,13 @@ vim.opt.textwidth = 120
 vim.cmd('colorscheme smyck')
 vim.opt.ignorecase = true -- ignores case when search
 
+-- statusline
+-- %f = filepath, %l = line number, %c = column number
+-- %m = modified flag, %r = readonly flag
+-- %= = right align everything after this
+-- %y = filetype
+vim.opt.statusline = '%f:%l:%c %m%r%=%y'
+
 
 -- copy and paste
 vim.opt.clipboard = "unnamedplus"
