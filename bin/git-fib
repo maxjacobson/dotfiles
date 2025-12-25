@@ -1,46 +1,35 @@
-#!/usr/bin/env bash
+#!/usr/bin/env fish
 
 # More info: https://www.hardscrabble.net/2015/improved-commit-squashing
-function abortIfNotGitRepo {
-  if [[ ! -d .git ]]; then
-    echo "Not a git repo! Get out of here!"
-    exit 1
-  fi
-}
 
-function abortIfMidCherryPick {
-  if [[ -e .git/CHERRY_PICK_HEAD ]]; then
-    echo "I don't want to fib right now, you're in the middle of a cherry-pick"
-    exit 1
-  fi
-}
+# the git_fib function does the work of git fibbing
+function git_fib
+    if ! test -d .git
+        echo "Not a git repo! Get out of here!"
+        exit 1
+    end
 
-function abortIfMidRebase {
-  if [[ -e .git/rebase-apply ]]; then
-    echo "I don't want to fib right now, you're mid rebase"
-    exit 1
-  fi
-}
+    if test -e .git/CHERRY_PICK_HEAD
+        echo "I don't want to fib right now, you're in the middle of a cherry-pick"
+        exit 1
+    end
 
-# via http://0xfe.blogspot.com/2010/04/adding-git-status-information-to-your.html
-function abortIfThereAreUncommittedChanges {
-  if [[ $(git diff HEAD --shortstat 2> /dev/null | tail -n1) != "" ]]; then
-    echo "I don't want to fib right now, you have uncommited work"
-    exit 1
-  fi
-}
+    if test -e .git/rebase-apply
+        echo "I don't want to fib right now, you're mid rebase"
+        exit 1
+    end
 
-# the gitFib function does the work of git fibbing
-function gitFib {
-  # check a few things
-  abortIfNotGitRepo
-  abortIfMidCherryPick
-  abortIfMidRebase
-  abortIfThereAreUncommittedChanges
+    set --local git_status (git status --porcelain)
+    if test -n "$git_status"
+        echo "I don't want to fib right now, you have uncommitted work"
+        exit 1
+    end
 
-  # Amend the last commit's timestamp to right now
-  git commit --no-edit --amend --date="$(date -R)"
-}
+    set --local timestamp (date -R)
+
+    # Amend the last commit's timestamp to right now
+    git commit --no-edit --amend --date="$timestamp"
+end
 
 # call the function and do the thing!
-gitFib
+git_fib
