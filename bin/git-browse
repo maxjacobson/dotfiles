@@ -1,25 +1,28 @@
-#!/usr/bin/env sh
+#!/usr/bin/env fish
 
 # Usage: in a git repository, run `git browse` to open the current repository
 #        on GitHub
-#
-#
 #
 # N.B. this depends on the GH CLI (https://github.com/cli/cli)
 #      which you can install with
 #
 #      brew install gh
 
-set -e
+if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1
+    echo "Browse what??"
+    exit 1
+end
 
-if ! git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
-  echo "Browse what??"
-  exit 1
-fi
+if ! git remote --verbose | grep github >/dev/null
+    echo "Can only browse repos with GitHub remotes"
+    exit 1
+end
 
-if branch="$(git symbolic-ref --short HEAD 2>/dev/null)"; then
-  gh pr view --web || gh browse --branch="$branch"
+set --local branch (git symbolic-ref --short HEAD 2>/dev/null)
+
+if test "$status" -eq 0
+    gh pr view --web || gh browse --branch="$branch"
 else
-  echo "You're in a detached HEAD state. Browsing the current commit..."
-  gh browse --commit
-fi
+    echo "You're in a detached HEAD state. Browsing the current commit..."
+    gh browse --commit
+end
