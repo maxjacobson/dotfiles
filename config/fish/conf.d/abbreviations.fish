@@ -41,10 +41,6 @@ if status is-interactive
     abbr --command git sunrise commit --allow-empty --message '🌅'
     abbr --command git unstage restore --staged .
 
-    # Habit breaker
-    abbr --add t sl
-    abbr --add tl sl
-
     # vim shortcuts
     abbr --command vim fish ~/.config/fish/config.fish
     abbr --command vim gitconfig ~/.config/git/config
