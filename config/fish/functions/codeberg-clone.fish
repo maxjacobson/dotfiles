@@ -12,7 +12,7 @@ function codeberg-clone --description "Clone a repository from Codeberg.org"
                 cd "$target"
             else
                 mkdir -p "$target"
-                if git clone "ssh://git@codeberg.org/$argv.git" "$target"
+                if git clone "ssh://git@codeberg.org/$argv.git" "$target"; or git clone "https://codeberg.org/$argv.git"
                     cd "$target"
                 else
                     rm -rf "$target"
