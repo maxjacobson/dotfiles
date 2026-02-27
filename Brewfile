@@ -15,6 +15,7 @@ brew "eza" # modern ls
 brew "fd" # find replacement
 brew "fish" # My main shell; need to add it to `/etc/shells` then run `chsh -s /opt/homebrew/bin/fish`
 brew "fnm" # fast node.js manager
+brew "fzf"
 brew "gh" # New GitHub CLI, via https://github.com/cli/cli
 brew "git" # version control
 brew "gitleaks"
