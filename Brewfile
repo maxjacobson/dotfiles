@@ -44,6 +44,7 @@ brew "switchaudio-osx" # https://www.hardscrabble.net/2023/programming-my-macrop
 brew "terraform-docs" # generates terraform docs automatically
 brew "tfenv" # terraform version manager
 brew "universal-ctags" # generate tags file
+brew "uv" # python tooling
 brew "vim" # primary text editor
 brew "watch" # runs some command over and over
 brew "wget" # download files
