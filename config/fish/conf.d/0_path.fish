@@ -5,6 +5,10 @@ if test Linux = (uname)
     # This space intentionally left blank
 else
     eval "$(/opt/homebrew/bin/brew shellenv)"
+
+    # Obsidian CLI!
+    # https://help.obsidian.md/cli#Troubleshooting
+    fish_add_path --path /Applications/Obsidian.app/Contents/MacOS
 end
 
 # Add ~/bin to path
