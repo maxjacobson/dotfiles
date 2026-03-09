@@ -9,6 +9,9 @@ else
     # Obsidian CLI!
     # https://help.obsidian.md/cli#Troubleshooting
     fish_add_path --path /Applications/Obsidian.app/Contents/MacOS
+
+    fish_add_path --path "/Applications/Sublime Text.app/Contents/SharedSupport/bin"
+    fish_add_path --path "/Applications/Sublime Merge.app/Contents/SharedSupport/bin/"
 end
 
 # Add ~/bin to path
