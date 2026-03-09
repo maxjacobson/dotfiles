@@ -38,6 +38,7 @@ if status is-interactive
     abbr --command git rh reset HEAD --hard
     abbr --command git rs rebase --skip
     abbr --command git st status
+    abbr --command git co-b checkout -b # just a typo I sometimes do
     abbr --command git sunrise commit --allow-empty --message '🌅'
     abbr --command git unstage restore --staged .
 
