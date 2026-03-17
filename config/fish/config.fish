@@ -44,11 +44,5 @@ if status is-interactive
         set --global --export LS_COLORS (gdircolors -c | string split ' ')[3]
     end
 
-    if ! test Linux = (uname)
-        # auto-load my ssh key
-        # and read the passphrase from the keychain so I don't need to enter it every time
-        ssh-add -q --apple-use-keychain
-    end
-
     fnm env --use-on-cd --shell fish --log-level quiet --corepack-enabled | source
 end
