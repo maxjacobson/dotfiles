@@ -8,7 +8,7 @@
 	signingKey = ~/.ssh/id_ed25519
 [core]
 	editor = nvim
-	pager = delta --syntax-theme Smyck
+	pager = delta --syntax-theme 'Catppuccin Macchiato'
 [push]
 	default = current
 	autoSetupRemote = true
@@ -24,7 +24,7 @@
 [diff "zip"]
 	textconv = unzip -c -a
 [interactive]
-	diffFilter = delta --line-numbers --color-only --syntax-theme Smyck
+	diffFilter = delta --line-numbers --color-only --syntax-theme 'Catppuccin Macchiato'
 [pull]
 	ff = only
 [init]

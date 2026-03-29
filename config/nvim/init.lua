@@ -4,8 +4,8 @@ require("config.lazy")
 vim.opt.number = true
 vim.opt.wrap = false
 vim.opt.cursorline = true
-vim.opt.textwidth = 120
-vim.cmd('colorscheme smyck')
+-- vim.cmd('colorscheme smyck')
+vim.cmd('colorscheme catppuccin-macchiato')
 vim.opt.ignorecase = true -- ignores case when search
 
 -- statusline

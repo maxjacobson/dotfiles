@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+
+require 'fileutils'
+require 'tmpdir'
+
+Dir.mktmpdir do |dir|
+  Dir.chdir(dir) do
+    system 'git clone https://github.com/catppuccin/bat.git', exception: true
+
+    bat_themes_path = File.expand_path('~/.config/bat/themes')
+    FileUtils.mkdir_p(bat_themes_path)
+    Dir.glob('./catppuccin/themes/*.tmTheme').each do |path|
+      FileUtils.cp path, bat_themes_path
+    end
+
+    system 'bat cache --build', exception: true
+  end
+end

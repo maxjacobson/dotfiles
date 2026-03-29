@@ -18,7 +18,7 @@ notify-on-command-finish-action = bell,notify
 
 shell-integration-features = no-cursor
 
-theme = Smyck
+theme = Catppuccin Macchiato
 
 window-height = 40
 window-width = 120
