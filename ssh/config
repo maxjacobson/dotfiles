@@ -3,3 +3,8 @@ Host github.com
   IgnoreUnknown UseKeychain
   UseKeychain yes
   IdentityFile ~/.ssh/id_ed25519
+
+Host pi
+    hostname 192.168.7.24
+    user maxwell
+    port 22
