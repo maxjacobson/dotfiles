@@ -2,6 +2,14 @@ if status is-interactive
     # cat
     abbr --add cat bat
 
+    # corepack
+    abbr --add npm "corepack npm"
+    abbr --add npx "corepack npx"
+    abbr --add pnpm "corepack pnpm"
+    abbr --add pnpx "corepack pnpx"
+    abbr --add yarn "corepack yarn"
+    abbr --add yarnpkg "corepack yarnpkg"
+
     # ls
     abbr --add ls eza \
         --group-directories-first \
