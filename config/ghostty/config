@@ -2,7 +2,7 @@ cursor-style = block
 cursor-style-blink = false
 
 font-family = SF Mono
-font-size = 24
+font-size = 18
 
 keybind = resize/arrow_up=resize_split:up,10
 keybind = resize/arrow_down=resize_split:down,10
