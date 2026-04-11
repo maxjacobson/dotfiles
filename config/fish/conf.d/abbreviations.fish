@@ -18,7 +18,10 @@ if status is-interactive
         --git-ignore \
         --group-directories-first \
         --icons=always \
-        --all
+
+
+    # podman
+    abbr --add docker podman
 
     # git commands
     abbr --command git aa add --all
