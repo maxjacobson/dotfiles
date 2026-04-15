@@ -1,0 +1,70 @@
+#!/usr/bin/env fish
+
+set --local output (mktemp)
+
+echo "date,day of week,time,author,url" >>$output
+
+set --local today_epoch (date +%s)
+
+for logline in (git log --since="2025-02-19" --pretty="%aN;;;%h;;;%ad;;;%at" --date=format-local:"%A;;;%H;;;%M;;;%D")
+    set --local info (string split ";;;" "$logline")
+
+    set --local author $info[1]
+    set --local sha $info[2]
+    set --local day_of_week $info[3]
+    set --local hour $info[4]
+    set --local minute $info[5]
+    set --local commit_epoch $info[7]
+
+    set --local rule_broken 0
+
+    switch $day_of_week
+        case Saturday Sunday
+            set rule_broken 1
+        case Friday
+            if test "$hour" -ge 15; or test "$hour" -lt 9
+                set rule_broken 1
+            end
+        case '*'
+            if test "$hour" -ge 17; or test "$hour" -lt 9
+                set rule_broken 1
+            end
+    end
+
+    if test $rule_broken -eq 1
+        set --local diff_seconds (math "$today_epoch - $commit_epoch")
+        set --local diff_days (math "floor($diff_seconds / 86400)")
+
+        set --local relative
+
+        if test $diff_seconds -lt 3600
+            set --local minutes (math "floor($diff_seconds / 60)")
+            if test $minutes -le 1
+                set relative "1 minute ago"
+            else
+                set relative "$minutes minutes ago"
+            end
+
+        else if test $diff_seconds -lt 172800
+            set --local hours (math "floor($diff_seconds / 3600)")
+            if test $hours -eq 1
+                set relative "1 hour ago"
+            else
+                set relative "$hours hours ago"
+            end
+
+        else
+            set --local days (math "floor($diff_seconds / 86400)")
+            if test $days -eq 1
+                set relative "1 day ago"
+            else
+                set relative "$days days ago"
+            end
+        end
+
+        echo "$relative,$day_of_week,$hour:$minute,$author,https://github.com/dolfamli/md-famli/commit/$sha" >>"$output"
+    end
+end
+
+gum table --height=$LINES --file="$output" --return-column=5 | xargs open
+echo "csv file: $output"
