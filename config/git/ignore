@@ -3,5 +3,3 @@ tags
 tags.lock
 tags.temp
 .erblint-rubocop*
-
-**/.claude/settings.local.json
