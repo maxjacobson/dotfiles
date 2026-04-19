@@ -12,6 +12,7 @@ else
 
     fish_add_path --path "/Applications/Sublime Text.app/Contents/SharedSupport/bin"
     fish_add_path --path "/Applications/Sublime Merge.app/Contents/SharedSupport/bin/"
+    fish_add_path /opt/homebrew/opt/imagemagick-full/bin
 end
 
 # Add ~/bin to path
