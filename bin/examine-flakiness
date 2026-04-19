@@ -11,7 +11,7 @@ command = ARGV.join(" ")
 logger.info "Examining #{command.inspect}"
 fails = 0
 runs = 0
-count = 25
+count = 50
 
 count.times do
   success = system(command)
