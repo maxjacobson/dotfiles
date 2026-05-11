@@ -43,6 +43,4 @@ if status is-interactive
         # brew install coreutils
         set --global --export LS_COLORS (gdircolors -c | string split ' ')[3]
     end
-
-    fnm env --use-on-cd --shell fish --log-level quiet --corepack-enabled | source
 end
