@@ -20,9 +20,6 @@ if status is-interactive
         --icons=always \
 
 
-    # podman
-    abbr --add docker podman
-
     # git commands
     abbr --command git aa add --all
     abbr --command git authors shortlog --summary --numbered
