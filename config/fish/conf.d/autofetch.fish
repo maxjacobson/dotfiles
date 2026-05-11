@@ -9,9 +9,7 @@ function autofetch --on-event fish_prompt --description 'Fetch on prompt'
             set mtime (path mtime --relative .git/HEAD)
         end
 
-        set --local duration (math '10 * 60')
-
-        if test "$mtime" -gt "$duration"
+        if test "$mtime" -gt 600
             $HOME/bin/autofetch &
         end
     end
