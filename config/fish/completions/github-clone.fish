@@ -27,7 +27,7 @@ function __fish_github_clone_search_results
         --owner="$groups[1]" \
         --json fullName \
         --jq '.[].fullName' \
-        "$groups[2]"
+        "$groups[2]" 2>/dev/null
 end
 
 # github-clone foo/<tab>
