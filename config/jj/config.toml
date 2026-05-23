@@ -2,7 +2,16 @@
 name = "Max Jacobson"
 email = "max@hardscrabble.net"
 
+# Use work email for repos under FAMLI directory
+[[--scope]]
+--when.repositories = ["~/FAMLI"]
+[--scope.user]
+email = "maxwell.jacobson@maryland.gov"
+
 [signing]
 behavior = "own"
 backend = "ssh"
 key = "~/.ssh/id_ed25519"
+
+[ui]
+default-command = "log"
