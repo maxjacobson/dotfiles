@@ -29,6 +29,7 @@ if status is-interactive
     abbr --command git cpc cherry-pick --continue
     abbr --command git dc diff --cached
     abbr --command git l "log --pretty='%Cred%h %Creset%s%n%Cgreen%aN%Creset, %ar%n'"
+    abbr --command git today "log --pretty='%Cred%h %Creset%s%n%Cgreen%aN%Creset, %ar%n' --since yesterday"
     abbr --command git pick add . -p
     abbr --command git pro pull --rebase origin
     abbr --command git pru pull --rebase upstream
