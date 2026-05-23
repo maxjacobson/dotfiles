@@ -21,6 +21,7 @@ brew "git" # version control
 brew "gitleaks"
 brew "git-delta" # Displays diffs pretty, exposes delta CLI
 brew "git-lfs" # git large file storage
+brew "go"
 brew "graphviz"
 brew "gum" # some shell scripting helpers
 brew "htop" # CLI alternative to Activity Monitor, upgrade from the built-in top
