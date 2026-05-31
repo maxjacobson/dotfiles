@@ -18,7 +18,7 @@ if status is-interactive
         --git-ignore \
         --group-directories-first \
         --icons=always \
-        all
+        --all
 
     # git commands
     abbr --command git aa add --all
