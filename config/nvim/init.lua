@@ -57,7 +57,9 @@ vim.opt.foldnestmax = 10
 -- ruby
 vim.filetype.add({
   extension = {
+    erdconfig = 'yaml',
     jbuilder = 'ruby',
+    simplecov = 'ruby',
     webc = 'html',
   },
 })
