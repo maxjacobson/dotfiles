@@ -15,7 +15,6 @@ vim.opt.ignorecase = true -- ignores case when search
 -- %y = filetype
 vim.opt.statusline = '%f:%l:%c %m%r%=%y'
 
-
 -- copy and paste
 vim.opt.clipboard = "unnamedplus"
 
