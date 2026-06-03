@@ -43,6 +43,8 @@ if status is-interactive
     abbr --command git sunrise commit --allow-empty --message '🌅'
     abbr --command git unstage restore --staged .
 
+    abbr --command jj l log --template builtin_log_compact_full_description
+
     # vim shortcuts
     abbr --command vim fish ~/.config/fish/config.fish
     abbr --command vim gitconfig ~/.config/git/config
