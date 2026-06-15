@@ -50,4 +50,5 @@ brew "uv" # python tooling
 brew "vim" # primary text editor
 brew "watch" # runs some command over and over
 brew "wget" # download files
+brew "zig"
 brew "zizmor" # lints github actions for security issues
