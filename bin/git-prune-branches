@@ -1,0 +1,49 @@
+#!/bin/sh
+#
+# Prune branches already merged into main.
+#
+# Based on https://codeberg.org/pbrisbin/dotfiles/src/branch/main/git/dot-local/bin/git-prune-branches
+#
+###
+
+set -e
+
+non_default_branches() {
+  git branch "$@" | grep -v ' \(main\|master\|v[0-9]\+\)$'
+}
+
+main=${1:-main}
+
+if ! git branch | grep -q '^\* '"$main"'$'; then
+  git checkout --quiet "$main"
+fi
+
+echo ":: Updating default branch $main"
+git fetch --quiet
+git pull origin "$main"
+
+non_default_branches | while read -r branch; do
+  echo ":: Rebasing $branch onto $main"
+  git checkout --quiet "$branch"
+
+  if git rebase "$main" >/dev/null 2>&1; then
+    echo ":: ↳ Successfully rebased $branch onto $main"
+  else
+    echo ":: ↳ Failed to rebase $branch onto $main (will abort)"
+    git rebase --abort
+  fi
+done
+
+git checkout --quiet "$main"
+
+non_default_branches --merged | while read -r branch; do
+  echo ":: Deleting merged branch $branch"
+  git branch --delete "$branch"
+
+  echo ":: Deleting remote merged branch origin/$branch"
+  if git branch --delete --remote "origin/$branch" 2>/dev/null; then
+    echo ":: ↳ Deleted remote merged branch origin/$branch"
+  else
+    echo ":: ↳ Failed to delete remote merged branch origin/$branch"
+  fi
+done
