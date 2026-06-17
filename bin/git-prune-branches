@@ -18,6 +18,20 @@ function merged_non_default_branches
     end
 end
 
+function log_header --argument-names msg
+    set_color blue
+    set --local len (string length "$msg")
+    set len (math "$len + 6")
+
+    echo
+    string repeat "$len" ":"
+    echo ":: $msg" ::
+    string repeat "$len" ":"
+    echo
+
+    set_color normal
+end
+
 function log_info --argument-names msg
     echo ":: $msg"
 end
@@ -50,6 +64,8 @@ log_info "Updating default branch $main"
 git fetch --quiet
 git pull origin "$main"
 
+log_header "Rebasing each non-default branches"
+
 non_default_branches | while read -l branch
     log_info "Rebasing $branch onto $main"
     git checkout --quiet "$branch"
@@ -60,9 +76,12 @@ non_default_branches | while read -l branch
         log_unsuccessful_result "Failed to rebase $branch onto $main (will abort)"
         git rebase --abort
     end
+    echo
 end
 
 git checkout --quiet "$main"
+
+log_header "Deleting merged branches"
 
 merged_non_default_branches | while read -l branch
     log_info "Deleting merged branch $branch"
@@ -74,4 +93,7 @@ merged_non_default_branches | while read -l branch
     else
         log_unsuccessful_result "Failed to delete remote merged branch origin/$branch"
     end
+    echo
 end
+
+log_info "Done!"
