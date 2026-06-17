@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env fish
 #
 # Prune branches already merged into main.
 #
@@ -6,44 +6,72 @@
 #
 ###
 
-set -e
+function non_default_branches
+    git branch | grep -v ' \(main\|master\|v[0-9]\+\)$' | while read -l branch
+        string trim "$branch"
+    end
+end
 
-non_default_branches() {
-  git branch "$@" | grep -v ' \(main\|master\|v[0-9]\+\)$'
-}
+function merged_non_default_branches
+    git branch --merged | grep -v ' \(main\|master\|v[0-9]\+\)$' | while read -l branch
+        string trim "$branch"
+    end
+end
 
-main=${1:-main}
+function log_info --argument-names msg
+    echo ":: $msg"
+end
 
-if ! git branch | grep -q '^\* '"$main"'$'; then
-  git checkout --quiet "$main"
-fi
+function log_unsuccessful_result --argument-names msg
+    set_color red
+    echo ":: ↳ $msg"
+    set_color normal
+end
 
-echo ":: Updating default branch $main"
+function log_successful_result --argument-names msg
+    set_color green
+    echo ":: ↳ $msg"
+    set_color normal
+end
+
+set --local main main
+
+if test -n "$argv[1]"
+    set main $argv[1]
+end
+
+log_info "main is $main"
+
+if ! git branch | grep -q '^\* '"$main"'$'
+    git checkout --quiet "$main"
+end
+
+log_info "Updating default branch $main"
 git fetch --quiet
 git pull origin "$main"
 
-non_default_branches | while read -r branch; do
-  echo ":: Rebasing $branch onto $main"
-  git checkout --quiet "$branch"
+non_default_branches | while read -l branch
+    log_info "Rebasing $branch onto $main"
+    git checkout --quiet "$branch"
 
-  if git rebase "$main" >/dev/null 2>&1; then
-    echo ":: ↳ Successfully rebased $branch onto $main"
-  else
-    echo ":: ↳ Failed to rebase $branch onto $main (will abort)"
-    git rebase --abort
-  fi
-done
+    if git rebase "$main" >/dev/null 2>&1
+        log_successful_result "Successfully rebased $branch onto $main"
+    else
+        log_unsuccessful_result "Failed to rebase $branch onto $main (will abort)"
+        git rebase --abort
+    end
+end
 
 git checkout --quiet "$main"
 
-non_default_branches --merged | while read -r branch; do
-  echo ":: Deleting merged branch $branch"
-  git branch --delete "$branch"
+merged_non_default_branches | while read -l branch
+    log_info "Deleting merged branch $branch"
+    git branch --delete "$branch"
 
-  echo ":: Deleting remote merged branch origin/$branch"
-  if git branch --delete --remote "origin/$branch" 2>/dev/null; then
-    echo ":: ↳ Deleted remote merged branch origin/$branch"
-  else
-    echo ":: ↳ Failed to delete remote merged branch origin/$branch"
-  fi
-done
+    log_info "Deleting remote merged branch origin/$branch"
+    if git branch --delete --remote "origin/$branch" 2>/dev/null
+        log_successful_result "Deleted remote merged branch origin/$branch"
+    else
+        log_unsuccessful_result "Failed to delete remote merged branch origin/$branch"
+    end
+end
