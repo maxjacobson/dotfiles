@@ -7,13 +7,13 @@
 ###
 
 function non_default_branches
-    git branch | grep -v ' \(main\|master\|v[0-9]\+\)$' | while read -l branch
+    git branch | grep -v '^+' | grep -v ' \(main\|master\|v[0-9]\+\)$' | while read -l branch
         string trim "$branch"
     end
 end
 
 function merged_non_default_branches
-    git branch --merged | grep -v ' \(main\|master\|v[0-9]\+\)$' | while read -l branch
+    git branch --merged | grep -v '^+' | grep -v ' \(main\|master\|v[0-9]\+\)$' | while read -l branch
         string trim "$branch"
     end
 end
