@@ -13,16 +13,28 @@ if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1
     exit 1
 end
 
-if ! git remote --verbose | grep github >/dev/null
-    echo "Can only browse repos with GitHub remotes"
-    exit 1
-end
-
 set --local branch (git symbolic-ref --short HEAD 2>/dev/null)
+set --local could_read_branch "$status"
 
-if test "$status" -eq 0
-    gh pr view --web || gh browse --branch="$branch"
+if git remote --verbose | grep github >/dev/null
+    if test "$could_read_branch" -eq 0
+        gh pr view --web || gh browse --branch="$branch"
+    else
+        echo "You're in a detached HEAD state. Browsing the current commit..."
+        gh browse --commit
+    end
+else if git remote --verbose | grep codeberg >/dev/null
+    set --local push_url (git remote get-url --push origin)
+    set --local url (string match --regex --groups-only "(codeberg\.org/.+)\.git" "$push_url")
+
+    if test "$could_read_branch" -eq 0
+        set url "https://$url/src/branch/$branch"
+    else
+        echo "not sure what branch you're on... opening the default branch"
+        set url "https://$url/"
+    end
+    open "$url"
 else
-    echo "You're in a detached HEAD state. Browsing the current commit..."
-    gh browse --commit
+    echo "Can only browse repos with GitHub or Codeberg remotes"
+    exit 1
 end
