@@ -1,0 +1,20 @@
+#!/usr/bin/env fish
+
+set --local tmpdir (mktemp -d)
+
+# Get all commits as "YYYY-MM;;;author" lines in one pass
+set --local lines (git log --pretty=format:"%ad;;;%aN" --date=format:"%Y-%m" | grep -v dependabot)
+
+# Collect unique months (newest first)
+set --local months (printf '%s\n' $lines | string replace --regex ';;;.*' '' | sort -ru)
+
+# For each month, write a summary file with authors sorted by commit count
+for month in $months
+    set --local month_lines (printf '%s\n' $lines | string match "$month;;;*")
+    printf '%s\n' $month_lines | string replace --regex '^.*;;;' '' | sort | uniq -c | sort -rn | string trim >$tmpdir/$month
+end
+
+# Pipe months into fzf with preview
+printf '%s\n' $months | fzf \
+    --no-sort \
+    --preview "cat $tmpdir/{}"
