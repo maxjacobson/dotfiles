@@ -3,4 +3,5 @@ set --global --export RBENV_ROOT "$HOME/.cache/rbenv"
 
 # Enables rbenv for this shell session
 # install rbenv with `brew install rbenv`
-eval "$(rbenv init - fish)"
+# Temporarily evaluating asdf instead of rbenv
+# eval "$(rbenv init - fish)"
