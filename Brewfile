@@ -9,7 +9,6 @@ cask "1password-cli"
 tap "atlassian/homebrew-acli", trusted: true
 
 brew "acli" # atlassian CLI
-brew "asdf" # generic version manager
 brew "awscli"
 brew "bat" # cat but with syntax highlighting
 brew "btop" # top/htop alternatiave
