@@ -6,7 +6,7 @@
 
 cask "1password-cli"
 
-tap "atlassian/homebrew-acli"
+tap "atlassian/homebrew-acli", trusted: true
 
 brew "acli" # atlassian CLI
 brew "asdf" # generic version manager
