@@ -42,6 +42,12 @@ function log_unsuccessful_result --argument-names msg
     set_color normal
 end
 
+function log_warning_result --argument-names msg
+    set_color yellow
+    echo ":: ↳ $msg"
+    set_color normal
+end
+
 function log_successful_result --argument-names msg
     set_color green
     echo ":: ↳ $msg"
@@ -91,7 +97,7 @@ merged_non_default_branches | while read -l branch
     if git branch --delete --remote "origin/$branch" 2>/dev/null
         log_successful_result "Deleted remote merged branch origin/$branch"
     else
-        log_unsuccessful_result "Failed to delete remote merged branch origin/$branch"
+        log_warning_result "Failed to delete remote merged branch origin/$branch"
     end
     echo
 end
