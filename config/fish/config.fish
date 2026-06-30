@@ -12,8 +12,6 @@ if not contains $_asdf_shims $PATH
 end
 set --erase _asdf_shims
 
-set --global --export ASDF_NODEJS_AUTO_ENABLE_COREPACK 1
-
 if status is-interactive
     # Setting the greeting to an empty list so fish doesn't display the default one
     # Can be restored like so:
