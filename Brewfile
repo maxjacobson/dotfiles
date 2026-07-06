@@ -47,7 +47,6 @@ brew "rv" # new rbenv alternative
 brew "shellcheck" # linter for shell scripts
 brew "sl" # steam locomotive https://www.hardscrabble.net/2022/steam-locomotive/
 brew "switchaudio-osx" # https://www.hardscrabble.net/2023/programming-my-macropad/
-brew "terraform-docs" # generates terraform docs automatically
 brew "tfenv" # terraform version manager
 brew "universal-ctags" # generate tags file
 brew "uv" # python tooling
