@@ -1,12 +1,12 @@
-#!/bin/bash
-
-set -ex
-
+#!/bin/sh
+#
 # Install dependencies with homebrew
 # If homebrew isn't yet installed, this will fail
 # Install it by following the instructions here: https://brew.sh
 #
 # ⚠️ this will uninstall things that are _not_ listed in ~/.Brewfile
+
+set -ex
 
 brew bundle --global install
 brew bundle --global cleanup --force
