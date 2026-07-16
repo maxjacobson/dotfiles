@@ -7,6 +7,7 @@
 cask "1password-cli"
 
 tap "atlassian/homebrew-acli", trusted: true
+tap "datadog-labs/pack", trusted: true
 
 brew "acli" # atlassian CLI
 brew "ast-grep" # ast-grep (sg)
@@ -38,6 +39,7 @@ brew "msedit" # simple text editor from Microsoft to use every now and then
 brew "neovim" # finally made the leap from regular old vim
 brew "ncdu" # upgrade over du, helps you figure out where your disk space is going
 brew "postgresql@18", restart_service: true, link: true, conflicts_with: ["postgresql"] # a database I sometimes use
+brew "pup" # DataDog CLI
 brew "rbenv" # managing ruby versions
 brew "rcm" # tool to manage dotfiles repository
 brew "redis", restart_service: true # a database I sometimes use
