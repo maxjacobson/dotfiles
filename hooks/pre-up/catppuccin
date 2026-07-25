@@ -9,7 +9,13 @@ Dir.mktmpdir do |dir|
 
     bat_themes_path = File.expand_path('~/.config/bat/themes')
     FileUtils.mkdir_p(bat_themes_path)
-    Dir.glob('./catppuccin/themes/*.tmTheme').each do |path|
+    themes = Dir.glob('./bat/themes/*.tmTheme')
+
+    if themes.empty?
+      raise "No themes???"
+    end
+
+    themes.each do |path|
       FileUtils.cp path, bat_themes_path
     end
 
