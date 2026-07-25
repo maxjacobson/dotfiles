@@ -10,7 +10,7 @@ function autofetch --on-event fish_prompt --description 'Fetch on prompt'
         end
 
         if test "$mtime" -gt 600
-            $HOME/bin/autofetch &
+            $HOME/.local/bin/autofetch &
         end
     end
 end
