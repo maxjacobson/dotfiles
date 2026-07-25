@@ -15,9 +15,9 @@ else
     fish_add_path /opt/homebrew/opt/imagemagick-full/bin
 end
 
-# Add ~/bin to path
+# Add ~/.local/bin to path
 # This is a folder where I put custom helper scripts
 # Most of them are stored in my dotfiles git repo and synced there by rcm
-fish_add_path --path "$HOME/bin"
+fish_add_path --path "$HOME/.local/bin"
 
 fish_add_path --path "$HOME/go/bin"
