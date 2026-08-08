@@ -49,6 +49,7 @@
 	required = true
 [branch]
 	sort = -committerdate
+	autoSetupMerge = simple
 [fetch]
 	prune = true
 	prunetags = true
