@@ -8,17 +8,47 @@ function codeberg-clone --description "Clone a repository from Codeberg.org" --a
         case "*/*"
             set --local target "$HOME/src/codeberg/$repo"
             if test -d "$target"
-                echo "already exists"
+                _codeberg-clone-info "Already exists: $target"
                 cd "$target"
             else
                 mkdir -p "$target"
-                if git clone "ssh://git@codeberg.org/$repo" "$target"; or git clone "https://codeberg.org/$repo"
+
+                _codeberg-clone-info "Attempting to clone with SSH"
+
+                if git clone --quiet "ssh://git@codeberg.org/$repo.git" "$target"
+                    _codeberg-clone-success "Successfully clone with SSH"
                     cd "$target"
+                    return
                 else
+                    _codeberg-clone-info "SSH clone failed"
+                    rm -rf "$target"
+                end
+
+                echo ""
+                _codeberg-clone-info "Attempting to clone with HTTPS"
+                if git clone --quiet "https://codeberg.org/$repo.git" "$target"
+                    _codeberg-clone-success "Successfully clone with HTTPS"
+                    cd "$target"
+                    return
+                else
+                    _codeberg-clone-warn "HTTPS clone failed too"
+
                     rm -rf "$target"
                 end
             end
         case '*'
-            echo "Bad input: $repo"
+            _codeberg-clone-warn "Bad input: $repo"
     end
+end
+
+function _codeberg-clone-success --argument-names msg
+    string join '' -- (set_color green) "$msg" (set_color normal)
+end
+
+function _codeberg-clone-warn --argument-names msg
+    string join '' -- (set_color yellow) "$msg" (set_color normal)
+end
+
+function _codeberg-clone-info --argument-name msg
+    string join '' -- (set_color blue) "$msg" (set_color normal)
 end
