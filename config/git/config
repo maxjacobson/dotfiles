@@ -58,6 +58,7 @@
 	path = ~/.config/git/workconfig
 [advice]
 	addEmptyPathspec = false
+	skippedCherryPicks = false
 [column]
 	ui = auto
 [rerere]
