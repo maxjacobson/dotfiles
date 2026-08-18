@@ -1,20 +1,16 @@
-#!/usr/bin/env ruby
+#!/bin/sh
 
-require 'fileutils'
-require 'tmpdir'
+set -e
 
-Dir.mktmpdir do |dir|
-  Dir.chdir(dir) do
-    system "git clone https://github.com/hukl/Smyck-Color-Scheme.git", exception: true
+tempdir="$(mktemp --directory)"
+cd "$tempdir"
+git clone https://github.com/hukl/Smyck-Color-Scheme.git
 
-    nvim_colors_path = File.expand_path("~/.config/nvim/colors")
-    FileUtils.mkdir_p(nvim_colors_path)
-    FileUtils.cp "./Smyck-Color-Scheme/smyck.vim", nvim_colors_path
+mkdir -p ~/.config/nvim/colors
+cp "./Smyck-Color-Scheme/smyck.vim" ~/.config/nvim/colors
 
-    bat_themes_path = File.expand_path("~/.config/bat/themes")
-    FileUtils.mkdir_p(bat_themes_path)
-    FileUtils.cp "./Smyck-Color-Scheme/Smyck.tmTheme", bat_themes_path
+mkdir -p ~/.config/bat/themes
+cp "./Smyck-Color-Scheme/Smyck.tmTheme" ~/.config/bat/themes
 
-    system "bat cache --build", exception: true
-  end
-end
+bat cache --build
+rm -rf "$tempdir"

@@ -1,24 +1,15 @@
-#!/usr/bin/env ruby
+#!/bin/sh
 
-require 'fileutils'
-require 'tmpdir'
+set -e
 
-Dir.mktmpdir do |dir|
-  Dir.chdir(dir) do
-    system 'git clone https://github.com/catppuccin/bat.git', exception: true
+tempdir="$(mktemp --directory)"
+cd "$tempdir"
+git clone https://github.com/catppuccin/bat.git
+mkdir -p ~/.config/bat/themes
 
-    bat_themes_path = File.expand_path('~/.config/bat/themes')
-    FileUtils.mkdir_p(bat_themes_path)
-    themes = Dir.glob('./bat/themes/*.tmTheme')
+for path in ./bat/themes/*.tmTheme; do
+  cp "$path" ~/.config/bat/themes
+done
 
-    if themes.empty?
-      raise "No themes???"
-    end
-
-    themes.each do |path|
-      FileUtils.cp path, bat_themes_path
-    end
-
-    system 'bat cache --build', exception: true
-  end
-end
+bat cache --build
+rm -rf "$tempdir"
