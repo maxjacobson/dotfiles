@@ -1,0 +1,29 @@
+#!/bin/sh
+
+set -e
+
+mkdir -p ~/.config/bat/themes
+mkdir -p ~/.config/bat/syntaxes
+mkdir -p ~/.config/nvim/colors
+
+tempdir="$(mktemp --directory)"
+cd "$tempdir"
+
+git clone --quiet https://github.com/digitalcora/sublime-text-gleam.git sublime-text-gleam
+git clone --quiet https://github.com/catppuccin/bat.git catppuccin-bat
+git clone --quiet https://github.com/hukl/Smyck-Color-Scheme.git smyck
+
+# Gleam syntax highlighting
+cp ./sublime-text-gleam/package/Gleam.sublime-syntax ~/.config/bat/syntaxes
+
+# catppuccin theme
+for path in ./catppuccin-bat/themes/*.tmTheme; do
+  cp "$path" ~/.config/bat/themes
+done
+
+# Smyck theme
+cp "./smyck/Smyck.tmTheme" ~/.config/bat/themes
+cp "./smyck/smyck.vim" ~/.config/nvim/colors
+
+bat cache --build
+rm -rf "$tempdir"
