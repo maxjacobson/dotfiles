@@ -43,7 +43,6 @@ brew "postgresql@18", restart_service: true, link: true, conflicts_with: ["postg
 brew "pup" # DataDog CLI
 brew "rbenv" # managing ruby versions
 brew "rcm" # tool to manage dotfiles repository
-brew "redis", restart_service: true # a database I sometimes use
 brew "ripgrep" # grep replacement, exposes rg CLI
 brew "ruby", version_file: File.expand_path("~/.cache/rbenv/version")
 brew "rv" # new rbenv alternative
@@ -53,6 +52,7 @@ brew "switchaudio-osx" # https://www.hardscrabble.net/2023/programming-my-macrop
 brew "tfenv" # terraform version manager
 brew "universal-ctags" # generate tags file
 brew "uv" # python tooling
+brew "valkey", restart_service: true # a database I sometimes use
 brew "vim" # primary text editor
 brew "watch" # runs some command over and over
 brew "wget" # download files
