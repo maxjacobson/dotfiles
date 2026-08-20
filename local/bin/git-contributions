@@ -1,20 +1,164 @@
 #!/usr/bin/env fish
 
+# Browse commit history by month, then drill down into a single author to see
+# the median size of their commits that month.
+#
+# "Size" here means insertions plus deletions, as reported by git's --shortstat.
+
+function commit_lines --description "Every commit as YYYY-MM;;;author;;;shortstat, newest first"
+    # Each commit's shortstat lands on its own line, so collapse the whole log
+    # into one line and split it back apart on the @@@ marker that starts every
+    # commit. Commits that changed nothing simply have an empty stat section.
+    git log --pretty=format:"@@@%ad;;;%aN;;;" --date=format:"%Y-%m" --shortstat \
+        | tr -d '\n' \
+        | string split '@@@' \
+        | string match --entire ';;;' \
+        | grep --invert-match dependabot
+end
+
+function shortstat_counts --description "Insertions and deletions for one shortstat line"
+    set --local insertions (string match --all --groups-only --regex '(\d+) insertion' -- "$argv[1]")
+    set --local deletions (string match --all --groups-only --regex '(\d+) deletion' -- "$argv[1]")
+
+    # A commit may touch only one side, or nothing at all
+    test -n "$insertions" || set insertions 0
+    test -n "$deletions" || set deletions 0
+
+    echo $insertions
+    echo $deletions
+end
+
+function sum --description "Sum of the numbers given as arguments"
+    if test (count $argv) -eq 0
+        echo 0
+        return
+    end
+
+    math (string join ' + ' $argv)
+end
+
+function with_unit --argument-names count unit --description "Count with its unit, pluralized"
+    if test "$count" = 1
+        echo "$count $unit"
+    else
+        echo "$count "$unit"s"
+    end
+end
+
+# Line counts are whole numbers, so both of these round down rather than report
+# a fraction of a line.
+
+function average --description "Mean of the numbers given as arguments, rounded down"
+    if test (count $argv) -eq 0
+        echo 0
+        return
+    end
+
+    math "floor(("(string join ' + ' $argv)") / "(count $argv)")"
+end
+
+function median --description "Median of the numbers given as arguments, rounded down"
+    if test (count $argv) -eq 0
+        echo 0
+        return
+    end
+
+    set --local sorted (printf '%s\n' $argv | sort --numeric-sort)
+    set --local n (count $sorted)
+
+    if test (math "$n % 2") -eq 1
+        echo $sorted[(math "($n + 1) / 2")]
+    else
+        # No single middle value, so split the difference between the two
+        set --local lower $sorted[(math "$n / 2")]
+        set --local upper $sorted[(math "$n / 2 + 1")]
+        math "floor(($lower + $upper) / 2)"
+    end
+end
+
+function author_stats --argument-names stats_file month author
+    # Each line of the stats file is "author;;;insertions;;;deletions" for one
+    # commit that month, so the preview only has to read a small file rather
+    # than re-walk the whole log.
+    set --local rows (string replace --filter "$author;;;" '' <$stats_file)
+
+    set --local insertions
+    set --local deletions
+    set --local sizes
+    for row in $rows
+        set --local parts (string split ';;;' -- $row)
+        set --append insertions $parts[1]
+        set --append deletions $parts[2]
+        set --append sizes (math "$parts[1] + $parts[2]")
+    end
+
+    # Keep lines narrow so they fit the preview pane without wrapping
+    echo "$author"
+    echo "$month"
+    echo
+    printf '%-12s %s\n' Commits (count $rows)
+    printf '%-12s %s\n' 'Median size' (with_unit (median $sizes) line)
+    printf '%-12s %s\n' 'Mean size' (with_unit (average $sizes) line)
+    printf '%-12s %s\n' Insertions +(with_unit (sum $insertions) line)
+    printf '%-12s %s\n' Deletions -(with_unit (sum $deletions) line)
+end
+
+# The preview command for the author list re-invokes this script so that author
+# names with spaces or other surprising characters are handled by fish rather
+# than smuggled through a filename.
+if test "$argv[1]" = --author-stats
+    author_stats $argv[2] $argv[3] $argv[4]
+    exit 0
+end
+
+set --local self (realpath (status filename))
 set --local tmpdir (mktemp -d)
 
-# Get all commits as "YYYY-MM;;;author" lines in one pass
-set --local lines (git log --pretty=format:"%ad;;;%aN" --date=format:"%Y-%m" | grep -v dependabot)
+set --local lines (commit_lines)
 
 # Collect unique months (newest first)
-set --local months (printf '%s\n' $lines | string replace --regex ';;;.*' '' | sort -ru)
+set --local months (printf '%s\n' $lines | string replace --regex ';;;.*' '' | sort --reverse --unique)
 
 # For each month, write a summary file with authors sorted by commit count
 for month in $months
     set --local month_lines (printf '%s\n' $lines | string match "$month;;;*")
-    printf '%s\n' $month_lines | string replace --regex '^.*;;;' '' | sort | uniq -c | sort -rn | string trim >$tmpdir/$month
+    printf '%s\n' $month_lines | string replace --regex '^.*?;;;' '' | string replace --regex ';;;.*' '' | sort | uniq --count | sort --reverse --numeric-sort | string trim >$tmpdir/$month
 end
 
-# Pipe months into fzf with preview
-printf '%s\n' $months | fzf \
-    --no-sort \
-    --preview "cat $tmpdir/{}"
+# Browse months, drilling into whichever one is picked. Leaving the author list
+# comes back here for another go; leaving the month list ends the script. Escape
+# and ctrl-c both do that, since neither makes fzf print a selection.
+while true
+    set --local month (printf '%s\n' $months | fzf --no-sort --preview "cat $tmpdir/{}" --preview-window right,70%)
+
+    if test -z "$month"
+        break
+    end
+
+    # Precompute each commit's insertions and deletions so previews are file
+    # reads. Only needed the first time we visit a month. Build it under a
+    # temporary name and move it into place, so an interrupted run can't leave a
+    # half-written file that a later visit would treat as complete.
+    set --local stats_file $tmpdir/$month.stats
+    if not test -f $stats_file
+        set --local partial $stats_file.partial
+        rm -f $partial
+        for line in (printf '%s\n' $lines | string match "$month;;;*")
+            set --local without_month (string replace "$month;;;" '' -- $line)
+            set --local author (string replace --regex ';;;.*' '' -- $without_month)
+            set --local stat (string replace --regex '^.*?;;;' '' -- $without_month)
+            set --local counts (shortstat_counts "$stat")
+            echo "$author;;;$counts[1];;;$counts[2]" >>$partial
+        end
+        mv $partial $stats_file
+    end
+
+    # The authors who committed that month, busiest first
+    set --local authors (string replace --regex '^\d+\s+' '' <$tmpdir/$month)
+
+    # Picking an author has no action of its own yet, so discard the selection
+    # rather than printing it over the month list we are about to redraw.
+    printf '%s\n' $authors | fzf --no-sort --preview "'$self' --author-stats '$stats_file' '$month' {}" --preview-window right,60% >/dev/null
+end
+
+rm -rf $tmpdir
