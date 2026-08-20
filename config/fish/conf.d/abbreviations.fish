@@ -20,6 +20,9 @@ if status is-interactive
         --icons=always \
         --all
 
+    # rm interactive
+    abbr --add rm rm -i
+
     # git commands
     abbr --command git aa add --all
     abbr --command git authors shortlog --summary --numbered
