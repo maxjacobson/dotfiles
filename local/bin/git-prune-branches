@@ -88,10 +88,13 @@ end
 git checkout --quiet "$main"
 
 log_header "Deleting merged branches"
+set --local deleted_count 0
 
 merged_non_default_branches | while read -l branch
     log_info "Deleting merged branch $branch"
     git branch --delete "$branch"
+    log_successful_result "Deleted merged branch $branch"
+    set deleted_count (math "$deleted_count + 1")
 
     log_info "Deleting remote merged branch origin/$branch"
     if git branch --delete --remote "origin/$branch" 2>/dev/null
@@ -103,3 +106,4 @@ merged_non_default_branches | while read -l branch
 end
 
 log_info "Done!"
+log_info "Deleted $deleted_count branches"
