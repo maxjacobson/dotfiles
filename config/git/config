@@ -9,6 +9,7 @@
 [core]
 	editor = nvim
 	pager = delta --syntax-theme 'Catppuccin Macchiato'
+	hooksPath = .git-hooks
 [push]
 	default = current
 	autoSetupRemote = true
