@@ -7,6 +7,7 @@
 cask "1password-cli"
 
 tap "datadog-labs/pack", trusted: true
+tap "charmbracelet/tap", trusted: true
 
 brew "ast-grep" # ast-grep (sg)
 brew "awscli"
@@ -14,6 +15,7 @@ brew "bat" # cat but with syntax highlighting
 brew "btop" # top/htop alternatiave
 brew "cloc" # count lines of code
 brew "coreutils" # installs gdircolors and others
+brew "charmbracelet/tap/crush" # Charm Bracelet's AI harness
 brew "eza" # modern ls
 brew "fd" # find replacement
 brew "fish" # My main shell; need to add it to `/etc/shells` then run `chsh -s /opt/homebrew/bin/fish`
