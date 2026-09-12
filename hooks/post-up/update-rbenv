@@ -1,0 +1,6 @@
+#!/bin/sh
+
+set -ex
+
+git -C $HOME/.rbenv pull
+git -C $HOME/.rbenv/plugins/ruby-build pull

@@ -42,10 +42,9 @@ brew "neovim" # finally made the leap from regular old vim
 brew "ncdu" # upgrade over du, helps you figure out where your disk space is going
 brew "postgresql@18", restart_service: true, link: true, conflicts_with: ["postgresql"] # a database I sometimes use
 brew "datadog-labs/pack/pup" # DataDog CLI
-brew "rbenv" # managing ruby versions
 brew "rcm" # tool to manage dotfiles repository
 brew "ripgrep" # grep replacement, exposes rg CLI
-brew "ruby", version_file: File.expand_path("~/.cache/rbenv/version")
+brew "ruby", version_file: File.expand_path("~/.rbenv/version")
 brew "shellcheck" # linter for shell scripts
 brew "sl" # steam locomotive https://www.hardscrabble.net/2022/steam-locomotive/
 brew "switchaudio-osx" # https://www.hardscrabble.net/2023/programming-my-macropad/

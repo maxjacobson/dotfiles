@@ -1,0 +1,18 @@
+#!/bin/sh
+
+set -e
+
+rbenv_path="$HOME/.rbenv"
+ruby_build_path="$rbenv_path/plugins/ruby-build"
+
+if test -d $rbenv_path; then
+    echo "rbenv already exists"
+else
+    git clone https://github.com/rbenv/rbenv.git $rbenv_path
+fi
+
+if test -d $ruby_build_path; then
+    echo "ruby-build already exists"
+else
+    git clone https://github.com/rbenv/ruby-build.git $ruby_build_path
+fi
