@@ -1,0 +1,61 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "cursor_blink": false,
+  "autosave": "on_focus_change",
+  "diff_view_style": "split",
+  "debugger": {
+    "button": false,
+  },
+  "cli_default_open_behavior": "new_window",
+  "git": {
+    "disable_git": false,
+  },
+  "format_on_save": "on",
+  "agent_ui_font_family": "SF Mono",
+  "icon_theme": {
+    "mode": "dark",
+    "light": "Zed (Default)",
+    "dark": "Zed (Default)",
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+    "anthropic_retention": false,
+  },
+  "project_panel": {
+    "dock": "left",
+  },
+  "outline_panel": {
+    "dock": "left",
+  },
+  "collaboration_panel": {
+    "dock": "left",
+  },
+  "git_panel": {
+    "dock": "left",
+  },
+  "terminal": {
+    "font_family": "SF Mono",
+    "dock": "right",
+    "font_size": 16.0,
+  },
+  "buffer_font_family": "SF Mono",
+  "disable_ai": true,
+  "ui_font_size": 16,
+  "buffer_font_size": 16.0,
+  "buffer_font_features": {
+    "calt": false,
+  },
+  "theme": {
+    "mode": "dark",
+    "light": "Alabaster Light",
+    "dark": "Catppuccin Macchiato - No Italics",
+  }
+}
