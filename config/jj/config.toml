@@ -16,6 +16,8 @@ key = "~/.ssh/id_ed25519"
 [ui]
 default-command = "log"
 editor = "micro"
+diff-formatter = ":git"
+pager = ["delta", "--syntax-theme", "Catppuccin Macchiato"]
 
 # Show author name instead of email in log
 # (Commenting out for now while I do the tutorial at https://jj-for-everyone.github.io/ which expects a more stock setup for its examples)
