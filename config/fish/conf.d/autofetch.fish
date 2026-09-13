@@ -1,4 +1,10 @@
 function autofetch --on-event fish_prompt --description 'Fetch on prompt'
+    if test -d ".jj"
+        # Maybe later I'll figure out how to surface useful info in the prompt
+        # that would justify this
+        return
+    end
+
     if test -d ".git"
         set --local mtime
 
