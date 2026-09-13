@@ -15,7 +15,7 @@ key = "~/.ssh/id_ed25519"
 
 [ui]
 default-command = "log"
-editor = "micro"
+editor = "nvim"
 diff-formatter = ":git"
 pager = ["delta", "--syntax-theme", "Catppuccin Macchiato"]
 
