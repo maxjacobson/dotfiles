@@ -5,6 +5,7 @@
 # This runs automatically via an rcm post-up hook
 
 cask "1password-cli"
+cask "homebrew-app" # GUI for homebrew itself
 
 tap "datadog-labs/pack", trusted: true
 tap "charmbracelet/tap", trusted: true
