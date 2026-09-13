@@ -15,6 +15,9 @@ if status is-interactive
         ".git/safe/../../bin" \
         ".git/safe/../../exe" \
         ".git/safe/../../node_modules/.bin" \
+        ".jj/safe/../../bin" \
+        ".jj/safe/../../exe" \
+        ".jj/safe/../../node_modules/.bin" \
         $PATH
 
     set --global --export EDITOR nvim
