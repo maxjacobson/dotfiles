@@ -36,7 +36,24 @@ function jjo --description "Open current branch on GitHub"
     end
 
     if test -n "$bookmark"
-        gh browse --repo "$repo" --branch "$bookmark"
+        # The pulls endpoint wants the head branch qualified with its owner, so
+        # it only finds pull requests opened from this repository. An empty
+        # result means there is no pull request for this bookmark.
+        set --local owner (string split / $repo)[1]
+        set --local pr_number (gh api \
+            --method GET \
+            "repos/$repo/pulls" \
+            --field "head=$owner:$bookmark" \
+            --field "state=all" \
+            --jq '.[0].number // empty' 2>/dev/null)
+
+        if test -n "$pr_number"
+            # gh browse takes a repo, path, commit, or number. It builds an
+            # /issues/N URL for a number, which GitHub redirects to /pull/N
+            gh browse --repo "$repo" "$pr_number"
+        else
+            gh browse --repo "$repo" --branch "$bookmark"
+        end
     else
         gh browse --repo "$repo"
     end
