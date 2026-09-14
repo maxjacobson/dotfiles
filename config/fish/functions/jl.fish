@@ -1,5 +1,5 @@
 function jl --description "jj log command picker"
-    set --local option (gum choose normal trunk full)
+    set --local option (gum choose normal trunk full everything)
 
     switch $option
         case normal
@@ -8,6 +8,8 @@ function jl --description "jj log command picker"
             jj log --revision "::trunk()"
         case full
             jj log --template builtin_log_compact_full_description
+        case everything
+            jj log --revision 'all()'
         case '*'
             echo "Unknown option: $option"
     end
