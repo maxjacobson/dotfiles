@@ -26,3 +26,6 @@ colocate = false
 # (Commenting out for now while I do the tutorial at https://jj-for-everyone.github.io/ which expects a more stock setup for its examples)
 # [template-aliases]
 # 'format_short_signature(signature)' = 'author.name()'
+
+[templates]
+draft_commit_description = 'builtin_draft_commit_description_with_diff'
