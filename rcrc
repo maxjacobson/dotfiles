@@ -1,1 +1,1 @@
-EXCLUDES="README.md tags"
+EXCLUDES="README.md AGENTS.md tags"
