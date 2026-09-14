@@ -1,11 +1,13 @@
 function jl --description "jj log command picker"
-    set --local options normal trunk full everything
+    set --local options normal mine trunk full everything
 
     set --local option (printf '%s\n' $options | fzf --no-sort --prompt 'jj log> ')
 
     switch $option
         case normal
             jj log
+        case mine
+            jj log --revision 'mine()'
         case trunk
             jj log --revision "::trunk()"
         case full
