@@ -15,7 +15,7 @@
   },
   "cli_default_open_behavior": "new_window",
   "git": {
-    "disable_git": false,
+    "disable_git": true,
   },
   "format_on_save": "on",
   "agent_ui_font_family": "SF Mono",
@@ -39,6 +39,7 @@
     "dock": "left",
   },
   "git_panel": {
+    "button": false,
     "dock": "left",
   },
   "terminal": {
