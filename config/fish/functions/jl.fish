@@ -1,5 +1,5 @@
 function jl --description "jj log command picker"
-    set --local options normal mine trunk full everything
+    set --local options normal mine trunk full everything wip
 
     set --local option (printf '%s\n' $options | fzf --no-sort --prompt 'jj log> ')
 
@@ -14,6 +14,8 @@ function jl --description "jj log command picker"
             jj log --template builtin_log_compact_full_description
         case everything
             jj log --revision 'all()'
+        case wip
+            jj log -r 'remote_bookmarks() & mine()'
         case ''
             return 0
         case '*'
