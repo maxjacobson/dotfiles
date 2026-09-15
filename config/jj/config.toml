@@ -9,7 +9,7 @@ email = "max@hardscrabble.net"
 email = "maxwell.jacobson@maryland.gov"
 
 [signing]
-behavior = "own"
+behavior = "force"
 backend = "ssh"
 key = "~/.ssh/id_ed25519"
 
