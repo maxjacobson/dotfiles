@@ -35,8 +35,7 @@ brew "htop" # CLI alternative to Activity Monitor, upgrade from the built-in top
 brew "imagemagick-full"
 brew "jiratui" # Jira TUI
 brew "jq" # utility for pretty-printing and filtering streams of JSON-formatted text
-brew "jj"
-brew "jjui"
+brew "jj" # git alternative I am officially trying out and using as of September 2026
 brew "micro" # simple text editor to use every now and then
 brew "msedit" # simple text editor from Microsoft to use every now and then
 brew "neovim" # finally made the leap from regular old vim
