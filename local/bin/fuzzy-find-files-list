@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# FZF is configured to run this command
+
+set -e
+
+if test -f .gitignore; then
+    fd --type f --hidden --exclude .git --exclude .jj --color never --ignore-file .gitignore
+else
+    fd --type f --hidden --exclude .git --exclude .jj --color never
+fi
