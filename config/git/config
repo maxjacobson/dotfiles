@@ -3,7 +3,7 @@
 # so I'm setting it manually)
 
 [user]
-	name = Max Jacobson
+	name = Maxwell Jacobson
 	email = max@hardscrabble.net
 	signingKey = ~/.ssh/id_ed25519
 [core]
