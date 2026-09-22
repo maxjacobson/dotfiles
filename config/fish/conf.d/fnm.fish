@@ -1,13 +1,8 @@
 # Fast node manager
 # https://github.com/Schniz/fnm
 
-# fnm
-set FNM_PATH "$HOME/.local/share/fnm"
-if [ -d "$FNM_PATH" ]
-    # Linux???
-    set PATH "$FNM_PATH" $PATH
-    fnm env --use-on-cd --log-level quiet --shell fish | source
-else
-    # macOS???
+if status is-interactive
+    set FNM_PATH "$HOME/.local/share/fnm"
+    fish_add_path --path "$FNM_PATH"
     fnm env --use-on-cd --shell fish --log-level quiet | source
 end
