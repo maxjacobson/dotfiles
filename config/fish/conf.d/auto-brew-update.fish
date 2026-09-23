@@ -2,12 +2,12 @@ if test Linux = (uname)
     exit 0
 end
 
-# automatically run `brew update` once a day or so
+# automatically run `brew update` every few days
 #
 # this doesn't upgrade the packages, it just lets me know if there are any upgrades available
 if status is-interactive
     set --local perform_update 0
-    set --local threshold 86400 # 1 day in seconds
+    set --local threshold 259200 # 3 days in seconds
     set --local now (date +%s)
 
     if set --query --universal __auto_brew_updated_at
