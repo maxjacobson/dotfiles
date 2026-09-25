@@ -10,6 +10,6 @@ shell-integration-features = ssh-terminfo
 
 theme = Catppuccin Macchiato
 
-window-height = 35
+window-height = 40
 window-width = 140
 
