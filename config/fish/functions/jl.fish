@@ -1,5 +1,5 @@
 function jl --description "jj log command picker"
-    set --local options normal mine trunk full everything wip
+    set --local options normal mine trunk full everything wip 'search diff'
 
     set --local option (printf '%s\n' $options | fzf --no-sort --prompt 'jj log> ')
 
@@ -16,6 +16,9 @@ function jl --description "jj log command picker"
             jj log --revision 'all()'
         case wip
             jj log -r 'remote_bookmarks() & mine()'
+        case 'search diff'
+            set --local keyword (gum input --header 'Search commit diffs for keyword' --placeholder 'keyword')
+            jj log --revision "diff_lines(substring:"(string escape $keyword)")"
         case ''
             return 0
         case '*'
