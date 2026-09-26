@@ -12,9 +12,13 @@ cd "$tempdir"
 git clone --quiet https://github.com/digitalcora/sublime-text-gleam.git sublime-text-gleam
 git clone --quiet https://github.com/catppuccin/bat.git catppuccin-bat
 git clone --quiet https://github.com/hukl/Smyck-Color-Scheme.git smyck
+git clone --quiet https://github.com/nk9/just_sublime.git sublime-text-just
 
 # Gleam syntax highlighting
 cp ./sublime-text-gleam/package/Gleam.sublime-syntax ~/.config/bat/syntaxes
+
+# Justfile syntax highlighting
+cp ./sublime-text-just/Syntax/Just.sublime-syntax ~/.config/bat/syntaxes
 
 # catppuccin theme
 for path in ./catppuccin-bat/themes/*.tmTheme; do
