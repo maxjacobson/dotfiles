@@ -22,10 +22,9 @@ pager = ["delta", "--syntax-theme", "Catppuccin Macchiato"]
 [git]
 colocate = false
 
-# Show author name instead of email in log
-# (Commenting out for now while I do the tutorial at https://jj-for-everyone.github.io/ which expects a more stock setup for its examples)
-# [template-aliases]
-# 'format_short_signature(signature)' = 'author.name()'
+# Show author name and email in log
+[template-aliases]
+'format_short_signature(signature)' = 'signature.email() ++ " (" ++ signature.name() ++ ")"'
 
 [templates]
 draft_commit_description = 'builtin_draft_commit_description_with_diff'
