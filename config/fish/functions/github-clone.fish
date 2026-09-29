@@ -12,7 +12,7 @@ function github-clone --description "Clone a repository from GitHub" --argument-
                 cd "$target"
             else
                 mkdir -p "$target"
-                if gh repo clone "$repo" "$target"
+                if jj git clone "git@github.com:$repo.git" "$target"
                     cd "$target"
                 else
                     rm -rf "$target"

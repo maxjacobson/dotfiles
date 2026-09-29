@@ -15,8 +15,8 @@ function codeberg-clone --description "Clone a repository from Codeberg.org" --a
 
                 _codeberg-clone-info "Attempting to clone with SSH"
 
-                if git clone --quiet "ssh://git@codeberg.org/$repo.git" "$target"
-                    _codeberg-clone-success "Successfully clone with SSH"
+                if jj git clone --quiet "ssh://git@codeberg.org/$repo.git" "$target"
+                    _codeberg-clone-success "Successfully cloned with SSH"
                     cd "$target"
                     return
                 else
@@ -26,8 +26,8 @@ function codeberg-clone --description "Clone a repository from Codeberg.org" --a
 
                 echo ""
                 _codeberg-clone-info "Attempting to clone with HTTPS"
-                if git clone --quiet "https://codeberg.org/$repo.git" "$target"
-                    _codeberg-clone-success "Successfully clone with HTTPS"
+                if jj git clone --quiet "https://codeberg.org/$repo.git" "$target"
+                    _codeberg-clone-success "Successfully cloned with HTTPS"
                     cd "$target"
                     return
                 else
