@@ -17,7 +17,7 @@
   "git": {
     "disable_git": true,
   },
-  "format_on_save": "on",
+  "format_on_save": "off",
   "agent_ui_font_family": "SF Mono",
   "icon_theme": {
     "mode": "dark",
