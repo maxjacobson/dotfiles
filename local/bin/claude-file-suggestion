@@ -1,0 +1,16 @@
+#!/usr/bin/env -S fish --no-config
+
+set --local query (jq --raw-output '.query')
+set --local limit 20
+
+function list_files
+    if test -d .jj
+        jj file list --no-pager --ignore-working-copy
+    else if test -d .git
+        git ls-files --cached --others --exclude-standard
+    else
+        fd . --type file
+    end
+end
+
+list_files | fzf --filter "$query" | head -n $limit
