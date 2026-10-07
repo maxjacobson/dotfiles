@@ -14,9 +14,10 @@ brew "ast-grep" # ast-grep (sg)
 brew "awscli"
 brew "bat" # cat but with syntax highlighting
 brew "btop" # top/htop alternatiave
+brew "charmbracelet/tap/crush" # Charm Bracelet's AI harness
 brew "cloc" # count lines of code
 brew "coreutils" # installs gdircolors and others
-brew "charmbracelet/tap/crush" # Charm Bracelet's AI harness
+brew "datadog-labs/pack/pup" # DataDog CLI
 brew "eza" # modern ls
 brew "fd" # find replacement
 brew "fish" # My main shell; need to add it to `/etc/shells` then run `chsh -s /opt/homebrew/bin/fish`
@@ -24,9 +25,9 @@ brew "fnm" # fast node.js manager
 brew "fzf"
 brew "gh" # New GitHub CLI, via https://github.com/cli/cli
 brew "git" # version control
-brew "gitleaks"
 brew "git-delta" # Displays diffs pretty, exposes delta CLI
 brew "git-lfs" # git large file storage
+brew "gitleaks"
 brew "gleam" # fun programming language
 brew "go"
 brew "graphviz"
@@ -34,14 +35,14 @@ brew "gum" # some shell scripting helpers
 brew "htop" # CLI alternative to Activity Monitor, upgrade from the built-in top
 brew "imagemagick-full"
 brew "jiratui" # Jira TUI
-brew "jq" # utility for pretty-printing and filtering streams of JSON-formatted text
 brew "jj" # git alternative I am officially trying out and using as of September 2026
+brew "jq" # utility for pretty-printing and filtering streams of JSON-formatted text
+brew "just" # justfile support
 brew "micro" # simple text editor to use every now and then
 brew "msedit" # simple text editor from Microsoft to use every now and then
-brew "neovim" # finally made the leap from regular old vim
 brew "ncdu" # upgrade over du, helps you figure out where your disk space is going
+brew "neovim" # finally made the leap from regular old vim
 brew "postgresql@18", restart_service: true, link: true, conflicts_with: ["postgresql"] # a database I sometimes use
-brew "datadog-labs/pack/pup" # DataDog CLI
 brew "rcm" # tool to manage dotfiles repository
 brew "ripgrep" # grep replacement, exposes rg CLI
 brew "shellcheck" # linter for shell scripts
