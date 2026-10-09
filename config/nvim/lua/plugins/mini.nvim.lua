@@ -4,5 +4,13 @@ return {
     -- require('mini.pairs').setup()
     require('mini.indentscope').setup()
     require('mini.trailspace').setup()
+
+    -- Fuzzy file picker
+    require('mini.pick').setup({
+      options = {
+        content_from_bottom = true
+      }
+    })
+    vim.keymap.set('n', '<C-p>', '<Cmd>Pick files<CR>')
   end,
 }
