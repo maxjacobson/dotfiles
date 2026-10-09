@@ -9,6 +9,13 @@ return {
     require('mini.pick').setup({
       options = {
         content_from_bottom = true
+      },
+      window = {
+        config = function()
+          return {
+            width = vim.o.columns,
+          }
+        end,
       }
     })
     vim.keymap.set('n', '<C-p>', '<Cmd>Pick files<CR>')
