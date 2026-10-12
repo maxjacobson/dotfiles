@@ -23,7 +23,7 @@ function jjo --description "Open current branch on GitHub"
     set --local remotes (jj git remote list)
 
     for remote in (jj git remote list)
-        set repo (string match --groups-only --regex "github\.com[/:]([\w\-]+\/[\w\-]+)\.git" "$remote")
+        set repo (string match --groups-only --regex "github\.com[/:]([\w\-]+\/[\w\.\-]+)\.git" "$remote")
 
         if test -z "$repo"
             break
