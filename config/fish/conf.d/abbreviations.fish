@@ -10,12 +10,14 @@ if status is-interactive
         --no-permissions \
         --no-user \
         --no-time \
+        --ignore-glob .jj \
         --all
 
     # tree
     abbr --add tree eza \
         --tree \
         --git-ignore \
+        --ignore-glob .jj \
         --group-directories-first \
         --icons=always \
         --all
