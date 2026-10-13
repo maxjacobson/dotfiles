@@ -4,20 +4,16 @@
 #
 # This runs automatically via an rcm post-up hook
 
-cask "1password-cli"
 cask "homebrew-app" # GUI for homebrew itself
 
-tap "datadog-labs/pack", trusted: true
 tap "charmbracelet/tap", trusted: true
 
 brew "ast-grep" # ast-grep (sg)
-brew "awscli"
 brew "bat" # cat but with syntax highlighting
 brew "btop" # top/htop alternatiave
 brew "charmbracelet/tap/crush" # Charm Bracelet's AI harness
 brew "cloc" # count lines of code
 brew "coreutils" # installs gdircolors and others
-brew "datadog-labs/pack/pup" # DataDog CLI
 brew "eza" # modern ls
 brew "fd" # find replacement
 brew "fish" # My main shell; need to add it to `/etc/shells` then run `chsh -s /opt/homebrew/bin/fish`
@@ -27,14 +23,12 @@ brew "gh" # New GitHub CLI, via https://github.com/cli/cli
 brew "git" # version control
 brew "git-delta" # Displays diffs pretty, exposes delta CLI
 brew "git-lfs" # git large file storage
-brew "gitleaks"
 brew "gleam" # fun programming language
 brew "go"
 brew "graphviz"
 brew "gum" # some shell scripting helpers
 brew "htop" # CLI alternative to Activity Monitor, upgrade from the built-in top
 brew "imagemagick-full"
-brew "jiratui" # Jira TUI
 brew "jj" # git alternative I am officially trying out and using as of September 2026
 brew "jq" # utility for pretty-printing and filtering streams of JSON-formatted text
 brew "just" # justfile support
@@ -48,12 +42,23 @@ brew "ripgrep" # grep replacement, exposes rg CLI
 brew "shellcheck" # linter for shell scripts
 brew "sl" # steam locomotive https://www.hardscrabble.net/2022/steam-locomotive/
 brew "switchaudio-osx" # https://www.hardscrabble.net/2023/programming-my-macropad/
-brew "tfenv" # terraform version manager
 brew "universal-ctags" # generate tags file
-brew "uv" # python tooling
-brew "valkey", restart_service: true # a database I sometimes use
 brew "vim" # primary text editor
 brew "watch" # runs some command over and over
 brew "wget" # download files
 brew "zig"
-brew "zizmor" # lints github actions for security issues
+
+# Work-specific packages
+if File.expand_path("~/FAMLI/Code").then { |path| File.exist?(path) }
+  tap "datadog-labs/pack", trusted: true
+  cask "1password-cli"
+
+  brew "awscli"
+  brew "datadog-labs/pack/pup" # DataDog CLI
+  brew "gitleaks"
+  brew "jiratui" # Jira TUI
+  brew "tfenv" # terraform version manager
+  brew "uv" # python tooling
+  brew "valkey", restart_service: true # a database I sometimes use
+  brew "zizmor" # lints github actions for security issues
+end
