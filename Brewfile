@@ -2,11 +2,11 @@
 
 # See also: https://github.com/Homebrew/homebrew-bundle
 #
-# This runs automatically via an rcm post-up hook
+# This is invoked automatically via an rcm post-up hook
 
 cask "homebrew-app" # GUI for homebrew itself
 
-tap "charmbracelet/tap", trusted: true
+tap "charmbracelet/tap", trusted: true # allows installing crush directly from GitHub
 
 brew "ast-grep" # ast-grep (sg)
 brew "bat" # cat but with syntax highlighting
@@ -18,17 +18,17 @@ brew "eza" # modern ls
 brew "fd" # find replacement
 brew "fish" # My main shell; need to add it to `/etc/shells` then run `chsh -s /opt/homebrew/bin/fish`
 brew "fnm" # fast node.js manager
-brew "fzf"
-brew "gh" # New GitHub CLI, via https://github.com/cli/cli
+brew "fzf" # fuzzy finder
+brew "gh" # New GitHub CLI, via https://github.com/cli/cli 
 brew "git" # version control
 brew "git-delta" # Displays diffs pretty, exposes delta CLI
 brew "git-lfs" # git large file storage
 brew "gleam" # fun programming language
-brew "go"
-brew "graphviz"
+brew "go" # somewhat boring programming language
+brew "graphviz" # generates graph images
 brew "gum" # some shell scripting helpers
 brew "htop" # CLI alternative to Activity Monitor, upgrade from the built-in top
-brew "imagemagick-full"
+brew "imagemagick-full" # generates images
 brew "jj" # git alternative I am officially trying out and using as of September 2026
 brew "jq" # utility for pretty-printing and filtering streams of JSON-formatted text
 brew "just" # justfile support
@@ -46,16 +46,15 @@ brew "universal-ctags" # generate tags file
 brew "vim" # primary text editor
 brew "watch" # runs some command over and over
 brew "wget" # download files
-brew "zig"
 
 # Work-specific packages
 if File.expand_path("~/FAMLI/Code").then { |path| File.exist?(path) }
   tap "datadog-labs/pack", trusted: true
-  cask "1password-cli"
+  cask "1password-cli" # installs the `op` CLI for 1Password
 
-  brew "awscli"
+  brew "awscli" # interact with AWS
   brew "datadog-labs/pack/pup" # DataDog CLI
-  brew "gitleaks"
+  brew "gitleaks" # scans code for committed credentials
   brew "jiratui" # Jira TUI
   brew "tfenv" # terraform version manager
   brew "uv" # python tooling
