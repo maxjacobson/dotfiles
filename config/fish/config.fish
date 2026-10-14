@@ -42,10 +42,10 @@ if status is-interactive
         $CDPATH
 
     # sets LS_COLOR env var, which styles commands like fd, ls, and tree
-    if test Linux = (uname)
-        set --global --export LS_COLORS (dircolors -c | string split ' ')[3]
-    else
+    if command --search --query gdircolors
         # brew install coreutils
         set --global --export LS_COLORS (gdircolors -c | string split ' ')[3]
+    else
+        set --global --export LS_COLORS (dircolors -c | string split ' ')[3]
     end
 end
