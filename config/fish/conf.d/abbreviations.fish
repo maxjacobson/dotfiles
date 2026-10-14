@@ -2,25 +2,8 @@ if status is-interactive
     # cat
     abbr --add cat bat
 
-    # ls
-    abbr --add ls eza \
-        --group-directories-first \
-        --icons=always \
-        --long \
-        --no-permissions \
-        --no-user \
-        --no-time \
-        --ignore-glob .jj \
-        --all
-
     # tree
-    abbr --add tree eza \
-        --tree \
-        --git-ignore \
-        --ignore-glob .jj \
-        --group-directories-first \
-        --icons=always \
-        --all
+    abbr --add tree tree --gitignore
 
     # git commands
     abbr --command git aa add --all

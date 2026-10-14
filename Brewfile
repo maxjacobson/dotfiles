@@ -13,8 +13,6 @@ brew "bat" # cat but with syntax highlighting
 brew "btop" # top/htop alternatiave
 brew "charmbracelet/tap/crush" # Charm Bracelet's AI harness
 brew "cloc" # count lines of code
-brew "coreutils" # installs gdircolors and others
-brew "eza" # modern ls
 brew "fd" # find replacement
 brew "fish" # My main shell; need to add it to `/etc/shells` then run `chsh -s /opt/homebrew/bin/fish`
 brew "fnm" # fast node.js manager
