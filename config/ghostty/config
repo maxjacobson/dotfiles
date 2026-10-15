@@ -8,6 +8,8 @@ shell-integration-features = no-cursor
 shell-integration-features = ssh-env
 shell-integration-features = ssh-terminfo
 
+unfocused-split-opacity = 1
+
 theme = Catppuccin Macchiato
 
 window-height = 40
