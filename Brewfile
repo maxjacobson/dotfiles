@@ -40,6 +40,7 @@ brew "shellcheck" # linter for shell scripts
 brew "sl" # steam locomotive https://www.hardscrabble.net/2022/steam-locomotive/
 brew "switchaudio-osx" # https://www.hardscrabble.net/2023/programming-my-macropad/
 brew "universal-ctags" # generate tags file
+brew "tree" # lists files as a tree
 brew "vim" # primary text editor
 brew "watch" # runs some command over and over
 brew "wget" # download files
