@@ -9,14 +9,10 @@ function jjo --description "Open current branch on GitHub"
         return 1
     end
 
-    # Matches what gets displayed in the fish prompt
-    set --local bookmarks (jj log --no-graph \
+    set --local bookmark (jj log --no-graph \
         --ignore-working-copy \
         --revisions @ \
-        --template 'bookmarks.join(";;;")')
-
-    set bookmarks (string split ";;;" "$bookmarks")
-    set --local bookmark $bookmarks[1]
+        --template 'try(bookmarks.first().name(), "")')
 
     set --local repo
 
