@@ -59,5 +59,10 @@
     "mode": "dark",
     "light": "Alabaster Light",
     "dark": "Catppuccin Macchiato - No Italics",
+  },
+  "languages": {
+    "Ruby": {
+      "language_servers": ["ruby-lsp"]
+    }
   }
 }
