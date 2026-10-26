@@ -49,6 +49,7 @@ brew "wget" # download files
 if File.expand_path("~/FAMLI/Code").then { |path| File.exist?(path) }
   tap "datadog-labs/pack", trusted: true
   cask "1password-cli" # installs the `op` CLI for 1Password
+  cask "monitorcontrol" # adds a menu bar app for controlling monitor brightness and volume
 
   brew "awscli" # interact with AWS
   brew "datadog-labs/pack/pup" # DataDog CLI
