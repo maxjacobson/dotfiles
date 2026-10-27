@@ -1,8 +1,13 @@
 return {
   'nvim-mini/mini.nvim',
   config = function()
-    -- require('mini.pairs').setup()
+    -- adds closing quotes/brackets automatically
+    require('mini.pairs').setup()
+
+    -- help visualize indentation
     require('mini.indentscope').setup()
+
+    -- Highlight trailing whitespace
     require('mini.trailspace').setup()
 
     -- Fuzzy file picker
