@@ -10,8 +10,13 @@ shell-integration-features = ssh-terminfo
 
 unfocused-split-opacity = 1
 
+keybind = cmd+d=new_split:right
+keybind = chain=equalize_splits
+
+keybind = cmd+shift+d=new_split:down
+keybind = chain=equalize_splits
+
 theme = Catppuccin Macchiato
 
 window-height = 40
 window-width = 180
-
