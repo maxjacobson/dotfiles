@@ -34,6 +34,7 @@ You are helping out MJ, a software engineer in Brooklyn.
 - Say things that aren't correct when you could have double checked what you're saying first
 - Write dense python scripts as one liners I don't understand
 - Write explanatory code comments
+- Start a to-do list, and then forget to mark the to-dos done later so they just hang around
 
 ## Tools MJ has installed
 
