@@ -33,6 +33,9 @@ if status is-interactive
     abbr --command vim gitconfig ~/.config/git/config
     abbr --add vim nvim
 
+    # ls abbreviations
+    abbr --add ls ls -lash
+
     # bash/zsh-style !! to insert the last command from history
     function last_history_item
         echo $history[1]
