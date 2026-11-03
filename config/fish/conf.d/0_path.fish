@@ -25,7 +25,3 @@ end
 # This is a folder where I put custom helper scripts
 # Most of them are stored in my dotfiles git repo and synced there by rcm
 fish_add_path --path "$HOME/.local/bin"
-
-# Add ~/go/bin to $PATH
-# golang puts things here. Sure!
-fish_add_path --path "$HOME/go/bin"
