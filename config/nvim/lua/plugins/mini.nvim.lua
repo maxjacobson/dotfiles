@@ -2,7 +2,12 @@ return {
   'nvim-mini/mini.nvim',
   config = function()
     -- adds closing quotes/brackets automatically
-    require('mini.pairs').setup()
+    -- ` is set to false so backtick never autopairs
+    require('mini.pairs').setup({
+      mappings = {
+        ['`'] = false,
+      },
+    })
 
     -- help visualize indentation
     require('mini.indentscope').setup()
