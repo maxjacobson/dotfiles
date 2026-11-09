@@ -10,12 +10,6 @@ function fish_prompt
         set duration_msg (string join '' -- " $duration" "s")
     end
 
-    set --local fetching_msg
-
-    if test -d .git/fish-autofetching
-        set fetching_msg " 👀"
-    end
-
     # Configure fish_git_prompt to show some more info
     set --global __fish_git_prompt_show_informative_status true
     set --global __fish_git_prompt_showdirtystate true
@@ -35,7 +29,6 @@ function fish_prompt
         (set_color blue) (prompt_pwd --full-length-dirs 2) (set_color normal) \
         (fish_vcs_prompt) \
         (set_color yellow) "$duration_msg" \
-        (set_color purple) "$fetching_msg" \
         (set_color normal)
 
     # print the actual prompt
