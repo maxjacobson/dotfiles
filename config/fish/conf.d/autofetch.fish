@@ -20,7 +20,7 @@ function _autofetch_should_fetch --description 'Determine whether it is time to 
         set mtime (path mtime --relative $marker)
     end
 
-    if test -z "$mtime"; or test "$mtime" -gt 600
+    if test -z "$mtime"; or test "$mtime" -gt 3600
         mkdir -p (path dirname $marker)
         touch $marker
         return 0
