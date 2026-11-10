@@ -5,6 +5,7 @@
 # This is invoked automatically via an rcm post-up hook
 
 cask "homebrew-app" # GUI for homebrew itself
+cask "copilot-cli" # GitHub Copilot
 
 tap "charmbracelet/tap", trusted: true # allows installing crush directly from GitHub
 
@@ -13,7 +14,6 @@ brew "bat" # cat but with syntax highlighting
 brew "btop" # top/htop alternatiave
 brew "charmbracelet/tap/crush" # Charm Bracelet's AI harness
 brew "cloc" # count lines of code
-brew "copilot-cli" # GitHub Copilot
 brew "fd" # find replacement
 brew "fish" # My main shell; need to add it to `/etc/shells` then run `chsh -s /opt/homebrew/bin/fish`
 brew "fnm" # fast node.js manager
