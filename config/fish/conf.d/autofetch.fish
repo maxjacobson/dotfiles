@@ -20,16 +20,20 @@ end
 function _autofetch_should_fetch --description 'Determine whether it is time to fetch'
     set --local marker "$HOME/.cache/fish-autofetch/$PWD/.last_fetch"
 
-    set --local mtime
     if test -f $marker
-        set mtime (path mtime --relative $marker)
-    end
+        set --local mtime (path mtime --relative $marker)
 
-    if test -z "$mtime"; or test "$mtime" -gt 3600
+        if test "$mtime" -gt 3600
+            echo "== 🤖 autofetching!"
+            touch "$marker"
+            return 0
+        else
+            return 1
+        end
+    else
         mkdir -p (path dirname $marker)
         touch $marker
-        return 0
-    else
+        echo "== 🤖 autofetch enabled"
         return 1
     end
 end
