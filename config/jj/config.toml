@@ -18,6 +18,7 @@ default-command = "log"
 editor = "nvim"
 diff-formatter = ":git"
 pager = ["delta", "--syntax-theme", "Catppuccin Macchiato"]
+merge-editor = ":builtin"
 
 [git]
 colocate = false
