@@ -9,7 +9,6 @@ cask "copilot-cli" # GitHub Copilot
 
 tap "charmbracelet/tap", trusted: true # allows installing crush directly from GitHub
 
-brew "ast-grep" # ast-grep (sg)
 brew "bat" # cat but with syntax highlighting
 brew "btop" # top/htop alternatiave
 brew "charmbracelet/tap/crush" # Charm Bracelet's AI harness
