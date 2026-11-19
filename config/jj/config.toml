@@ -25,7 +25,7 @@ colocate = false
 
 # Show author name and email in log
 [template-aliases]
-'format_short_signature(signature)' = 'signature.email() ++ " (" ++ signature.name() ++ ")"'
+'format_short_signature(signature)' = 'signature.name() ++ " <" ++ signature.email() ++ ">"'
 
 [templates]
 draft_commit_description = 'builtin_draft_commit_description_with_diff'
