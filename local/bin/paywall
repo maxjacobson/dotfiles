@@ -2,19 +2,32 @@
 
 # Usage:
 # $ paywall "https://cooking.nytimes.com/recipes/1893-everyday-pancakes"
+# With no argument, uses a URL from the clipboard (if the clipboard holds one).
 
-if test (count $argv) -ne 1
-    echo "Provide exactly one argument" >&2
-    exit 1
-end
+function open_website --argument-names url
+    if not string match --quiet --regex '^https?://\S+$' $url
+        echo "Expected an http(s) URL, got \"$url\"" >&2
+        exit 1
+    end
 
-function main --argument-names url
     set --local document_path (mktemp --directory)/document.html
 
     if curl --silent --show-error --location "$url" --output "$document_path"
         open "$document_path"
     else
         exit 1
+    end
+end
+
+function main
+    switch (count $argv)
+        case 1
+            open_website $argv[1]
+        case 0
+            open_website (fish_clipboard_paste | string collect)
+        case '*'
+            echo "Provide exactly one argument" >&2
+            exit 1
     end
 end
 
